@@ -76,7 +76,7 @@ TOOLS = $(foreach tool,$(TOOLBASE),tools/$(tool)/$(tool)$(EXE))
 
 ASFLAGS         := -mcpu=arm7tdmi
 
-override CC1FLAGS += -mthumb-interwork -Wimplicit -Wparentheses -Wunused -Werror -O2 -fhex-asm
+override CC1FLAGS += -mthumb-interwork -Wimplicit -Wparentheses -Wunused -Werror -O2 -g -fhex-asm
 INCLUDE_PATHS   := -I include -I tools/agbcc/include
 CPPFLAGS        := -iquote include -I tools/agbcc/include -nostdinc -undef
 
@@ -149,9 +149,9 @@ infoshell = $(foreach line, $(shell $1 | sed "s/ /__SPACE__/g"), $(info $(subst 
 # Disable dependency scanning for clean/tidy/tools
 # Use a separate minimal makefile for speed
 # Since we don't need to reload most of this makefile
-ifeq (,$(filter clean,$(MAKECMDGOALS)))
-$(call infoshell, $(MAKE) -f make_tools.mk)
-endif
+#ifeq (,$(filter clean,$(MAKECMDGOALS)))
+#$(call infoshell, $(MAKE) -f make_tools.mk)
+#endif
 
 .PRECIOUS: %.1bpp %.4bpp %.8bpp %.gbapal %.lz %.rl %.pcm %.bin
 
@@ -181,7 +181,9 @@ $(TOOLDIRS):
 compare: $(ROM)
 	@$(SHA1SUM) $(BUILD_NAME).sha1
 
-clean: tidy clean-tools
+clean-all: clean-tools clean
+
+clean: tidy
 	$(RM) $(ALL_OBJECTS) $(ALL_OBJECTS:.o=.d)
 
 clean-tools:
@@ -211,8 +213,8 @@ define scaninc
 endef
 
 $(C_BUILDDIR)/%.o: $(C_SUBDIR)/%.c
-	@$(CPP) $(CPPFLAGS) $< -o $(C_BUILDDIR)/$*.i
-	@$(PREPROC) $(C_BUILDDIR)/$*.i charmap.txt | $(CC1) $(CC1FLAGS) -o $(C_BUILDDIR)/$*.s
+	$(CPP) $(CPPFLAGS) $< -o $(C_BUILDDIR)/$*.i
+	$(PREPROC) $(C_BUILDDIR)/$*.i charmap.txt | $(CC1) $(CC1FLAGS) -o $(C_BUILDDIR)/$*.s
 	@echo -e ".text\n\t.align\t2, 0\n" >> $(C_BUILDDIR)/$*.s
 	$(AS) $(ASFLAGS) -o $@ $(C_BUILDDIR)/$*.s
 
@@ -249,7 +251,7 @@ $(BUILD_DIR)/sym_ewram2.ld: sym_ewram2.txt
 $(LD_SCRIPT): ld_script.txt $(BUILD_DIR)/sym_ewram.ld $(BUILD_DIR)/sym_ewram2.ld $(BUILD_DIR)/sym_iwram.ld
 	cd $(BUILD_DIR) && sed -e "s#tools/#../../tools/#g" ../../ld_script.txt >ld_script.ld
 
-$(ELF): $(LD_SCRIPT) $(ALL_OBJECTS) $(LIBC) libagbsyscall tools
+$(ELF): $(LD_SCRIPT) $(ALL_OBJECTS) $(LIBC) libagbsyscall
 	cd $(BUILD_DIR) && $(LD) -T ld_script.ld -Map ../../$(MAP) -o ../../$@ $(LIB)
 	$(GBAFIX) $@ -t"$(TITLE)" -c$(GAME_CODE) -m$(MAKER_CODE) -r$(REVISION) --silent
 
