@@ -74,9 +74,9 @@ void sub_8004E8C(unkStruct_2039DB0 *);
 void sub_8005180(void);
 void sub_8005304(void);
 void sub_800533C(ax_pose **, UnkSpriteMem **, axdata1 *, u16 *, bool8);
-void AxResInitFile(EntitySpriteInfo *, OpenedFile *, u32, u32, u32, u32, bool8);
-void AxResInit(EntitySpriteInfo *, axmain *, u32, u32, u32, u32, bool8);
-void AxResInitUnorientedFile(EntitySpriteInfo *, OpenedFile *, u32, u32, u32, bool8);
+void AxResInitFile(axdata *, OpenedFile *, u32, u32, u32, u32, bool8);
+void AxResInit(axdata *, axmain *, u32, u32, u32, u32, bool8);
+void AxResInitUnorientedFile(axdata *, OpenedFile *, u32, u32, u32, bool8);
 void RunAxAnimationFrame(struct axPokemon *);
 
 #endif // GUARD_SPRITE_H
