@@ -1,0 +1,291 @@
+
+
+
+
+
+
+
+
+
+
+
+
+static const struct ScriptCommand s_gs204_g0_s0_station_sref_script[] = { /* 0x825ce34 */
+    DEBUGINFO,
+    { 0x08, 0x00,  0x0000,  0x000000cc,  0x00000000, NULL },
+    { 0xc4, 0x00,  0x0003,  0x00000000,  0x00000000, NULL },
+    { 0xcd, 0x02,  0x0000,  0x0000000f,  0x00000000, NULL },
+    JUMP_LOCAL(/* label */ 1),
+  LABEL(0), /* = 0x00 */
+    JUMP_LOCAL(/* label */ 1),
+  LABEL(1), /* = 0x01 */
+    { 0xb3, 0x02,  0x0018,  0x00000001,  0x00000000, NULL },
+    { 0xb3, 0x03,  0x0018,  0x00000003,  0x00000000, NULL },
+    { 0xb3, 0x04,  0x0018,  0x00000002,  0x00000000, NULL },
+    { 0xb3, 0x04,  0x0018,  0x00000009,  0x00000000, NULL },
+    JUMP_LOCAL(/* label */ 2),
+  LABEL(4), /* = 0x04 */
+    { 0xc0, 0x00,  0x000f,  0x00000000,  0x00000000, NULL },
+    { 0xcc, 0x00,  0x0005,  0x00000001,  0x00000000, NULL },
+    JUMP_LOCAL(/* label */ 5),
+  LABEL(2), /* = 0x02 */
+    { 0x0d, 0x03,  0x0000,  0x00000000,  0x00000000, NULL },
+    JUMP_LOCAL(/* label */ 6),
+  LABEL(3), /* = 0x03 */
+    { 0x0d, 0x04,  0x0000,  0x00000000,  0x00000000, NULL },
+    JUMP_LOCAL(/* label */ 6),
+  LABEL(5), /* = 0x05 */
+    { 0x0d, 0x01,  0x0000,  0x00000000,  0x00000000, NULL },
+    JUMP_LOCAL(/* label */ 6),
+  LABEL(6), /* = 0x06 */
+    { 0x44, 0x00,  0x0000,  0x0000006c,  0x00000000, NULL },
+    JUMP_SCRIPT(/* COMMON_ENTER */ 355),
+};
+
+static const struct ScriptRef s_gs204_g0_s0_station_sref = { 404, 1, NULL /* ENTER_CONTROL */, s_gs204_g0_s0_station_sref_script }; /* 0x825d030 */
+
+static const struct ScriptCommand s_gs204_g0_s1_lives0_dlg0[] = { /* 0x825d03c */
+    DEBUGINFO,
+    { 0x54, 0x00,  0x0002,  0x00000000,  0x00000000, NULL },
+    CALL_SCRIPT(/* WAIT_START_FUNC */ 3),
+    RET,
+};
+
+static const struct ScriptCommand s_gs204_g0_s1_lives1_dlg0[] = { /* 0x825d07c */
+    DEBUGINFO,
+    { 0x54, 0x00,  0x0002,  0x00000000,  0x00000000, NULL },
+    CALL_SCRIPT(/* WAIT_START_FUNC */ 3),
+    RET,
+};
+
+static const struct ScriptCommand s_gs204_g0_s3_lives0_dlg0[] = { /* 0x825d0bc */
+    DEBUGINFO,
+    { 0x54, 0x00,  0x0002,  0x00000000,  0x00000000, NULL },
+    CALL_SCRIPT(/* WAIT_START_FUNC */ 3),
+    RET,
+};
+
+static const struct ScriptCommand s_gs204_g0_s3_lives1_dlg0[] = { /* 0x825d0fc */
+    DEBUGINFO,
+    { 0x54, 0x00,  0x0002,  0x00000000,  0x00000000, NULL },
+    CALL_SCRIPT(/* WAIT_START_FUNC */ 3),
+    RET,
+};
+
+static const struct ScriptCommand s_gs204_g0_s4_lives0_dlg0[] = { /* 0x825d13c */
+    DEBUGINFO,
+    CALL_SCRIPT(/* LIVES_WARP_ARRIVE_FUNC */ 81),
+    RET,
+};
+
+static const struct ScriptCommand s_gs204_g0_s4_lives1_dlg0[] = { /* 0x825d16c */
+    DEBUGINFO,
+    CALL_SCRIPT(/* LIVES_WARP_ARRIVE2_FUNC */ 82),
+    RET,
+};
+
+static const struct ScriptCommand s_gs204_g1_s0_station_sref_script[] = { /* 0x825d19c */
+    DEBUGINFO,
+    { 0x08, 0x00,  0x0000,  0x000000cc,  0x00000000, NULL },
+    { 0x0c, 0x00, -0x0001,  0x00000000,  0x00000000, NULL },
+    { 0x44, 0x00,  0x0000,  0x0000006c,  0x00000000, NULL },
+    { 0x22, 0x01,  0x001e,  0x00000000,  0x00000000, NULL },
+    { 0xe3, 0x00,  0x0003,  0x00000000,  0x00000000, NULL },
+    { 0x02, 0x00,  0x001e,  0x00000011,  0x00000000, NULL },
+    RET,
+};
+
+static const struct ScriptRef s_gs204_g1_s0_station_sref = { 400, 7, NULL /* EVENT_CONTROL */, s_gs204_g1_s0_station_sref_script }; /* 0x825d21c */
+
+static const struct ScriptCommand s_gs204_g1_s0_lives0_dlg0[] = { /* 0x825d228 */
+    DEBUGINFO,
+    { 0x54, 0x00,  0x0002,  0x00000000,  0x00000000, NULL },
+    { 0x2d, 0x07,  0x0000,  0x00000000,  0x00000000, NULL },
+    { 0x2d, 0x09,  0x0002,  0x00000067,  0x00000000, NULL },
+    { 0xdf, 0x00,  0x0000,  0x00000000,  0x00000000, NULL },
+    { 0xdb, 0x00,  0x001e,  0x00000000,  0x00000000, NULL },
+    { 0xe4, 0x00,  0x0006,  0x00000000,  0x00000000, NULL },
+    { 0x6b, 0x00,  0x0100,  0x00000000,  0x00000000, NULL },
+    { 0xdb, 0x00,  0x000a,  0x00000000,  0x00000000, NULL },
+    CALL_SCRIPT(/* LOOK_AROUND_FUNC */ 33),
+    { 0xdb, 0x00,  0x001e,  0x00000000,  0x00000000, NULL },
+    { 0xcf, 0x02,  0x0026,  0x00000001,  0x00000000, NULL },
+    { 0xd0, 0x00,  0x0001,  0x00000000,  0x00000000, _(" So this is it...#W\nThe underground cavern where\n$n2 is...") },
+    { 0xd0, 0x00,  0x0001,  0x00000000,  0x00000000, _(" Look at the flowing\nstreams of lava...") },
+    { 0xd0, 0x00,  0x0001,  0x00000000,  0x00000000, _(" It wouldn~27t surprise me if\nthe dungeon is scorching hot...") },
+    { 0xd1, 0x00,  0x0000,  0x00000000,  0x00000000, _(" This must be it...#W\n$n2 is in this underground\ncavern.") },
+    { 0xd1, 0x00,  0x0000,  0x00000000,  0x00000000, _(" Whew...\nLook at the streams of lava.") },
+    { 0xd1, 0x00,  0x0000,  0x00000000,  0x00000000, _(" It~27s going to be scorching\nhot in the dungeon~2c I think.") },
+    { 0x30, 0x00,  0x0000,  0x00000000,  0x00000000, NULL },
+    { 0xe4, 0x00,  0x0006,  0x00000000,  0x00000000, NULL },
+    { 0xdb, 0x00,  0x0005,  0x00000000,  0x00000000, NULL },
+    { 0x93, 0x04,  0x000b,  0x00000022,  0x00000000, NULL },
+    { 0xdb, 0x00,  0x000f,  0x00000000,  0x00000000, NULL },
+    { 0xcf, 0x02,  0x0026,  0x00000001,  0x00000000, NULL },
+    { 0xd0, 0x00,  0x0001,  0x00000000,  0x00000000, _(" Other rescue teams should\nalready be inside.") },
+    { 0xd0, 0x00,  0x0001,  0x00000000,  0x00000000, _(" Let~27s get in there and give\nit our best!") },
+    { 0xd0, 0x00,  0x0003,  0x00000000,  0x00000000, _(" Other rescue teams\nshould already be here.") },
+    { 0xd0, 0x00,  0x0003,  0x00000000,  0x00000000, _(" Let~27s get going and try our\nbest!") },
+    { 0xd1, 0x00,  0x0000,  0x00000000,  0x00000000, _(" There should be other\nrescue teams making their way through\neven now.") },
+    { 0xd1, 0x00,  0x0000,  0x00000000,  0x00000000, _(" Let~27s try our best like\nalways!") },
+    { 0x30, 0x00,  0x0000,  0x00000000,  0x00000000, NULL },
+    { 0xe4, 0x00,  0x0006,  0x00000000,  0x00000000, NULL },
+    { 0x23, 0x00,  0x0050,  0x00000000,  0x00000000, NULL },
+    { 0xdb, 0x00,  0x000f,  0x00000000,  0x00000000, NULL },
+    { 0x6b, 0x00,  0x0100,  0x00000003,  0x00000000, NULL },
+    { 0xe4, 0x00,  0x0003,  0x00000000,  0x00000000, NULL },
+    HALT,
+};
+
+
+static const struct ScriptCommand s_gs204_g1_s0_lives1_dlg0[] = { /* 0x825d6dc */
+    DEBUGINFO,
+    { 0x54, 0x00,  0x0002,  0x00000000,  0x00000000, NULL },
+    { 0x2d, 0x07,  0x0001,  0x00000000,  0x00000000, NULL },
+    { 0xe3, 0x00,  0x0006,  0x00000000,  0x00000000, NULL },
+    { 0x6b, 0x00,  0x0100,  0x00000001,  0x00000000, NULL },
+    CALL_SCRIPT(/* LOOK_AROUND_FUNC */ 33),
+    { 0xe3, 0x00,  0x0006,  0x00000000,  0x00000000, NULL },
+    { 0x93, 0x04,  0x000b,  0x00000000,  0x00000000, NULL },
+    { 0xe3, 0x00,  0x0006,  0x00000000,  0x00000000, NULL },
+    { 0x6b, 0x00,  0x0100,  0x00000002,  0x00000000, NULL },
+    HALT,
+};
+
+static const struct ScriptCommand s_gs204_g2_s0_station_sref_script[] = { /* 0x825d78c */
+    DEBUGINFO,
+    { 0x08, 0x00,  0x0000,  0x000000cc,  0x00000000, NULL },
+    { 0x0c, 0x00, -0x0001,  0x00000000,  0x00000000, NULL },
+    { 0x44, 0x00,  0x0000,  0x0000006c,  0x00000000, NULL },
+    { 0x22, 0x01,  0x001e,  0x00000000,  0x00000000, NULL },
+    { 0xe3, 0x00,  0x0003,  0x00000000,  0x00000000, NULL },
+    { 0x02, 0x00,  0x001e,  0x00000011,  0x00000000, NULL },
+    RET,
+};
+
+static const struct ScriptRef s_gs204_g2_s0_station_sref = { 400, 7, NULL /* EVENT_CONTROL */, s_gs204_g2_s0_station_sref_script }; /* 0x825d80c */
+
+static const struct ScriptCommand s_gs204_g2_s0_lives0_dlg0[] = { /* 0x825d818 */
+    DEBUGINFO,
+    { 0x54, 0x00,  0x0002,  0x00000000,  0x00000000, NULL },
+    { 0x2d, 0x07,  0x0000,  0x00000000,  0x00000000, NULL },
+    { 0x2d, 0x09,  0x0002,  0x00000058,  0x00000000, NULL },
+    { 0xe4, 0x00,  0x0006,  0x00000000,  0x00000000, NULL },
+    { 0x6b, 0x00,  0x0100,  0x00000000,  0x00000000, NULL },
+    { 0x93, 0x04,  0x000b,  0x00000022,  0x00000000, NULL },
+    { 0xdb, 0x00,  0x000f,  0x00000000,  0x00000000, NULL },
+    { 0xcf, 0x02,  0x0026,  0x00000001,  0x00000000, NULL },
+    { 0xd0, 0x00,  0x0001,  0x00000000,  0x00000000, _(" This time~2c we~27ll rescue\n$n2~27s team!\nLet~27s get it done!") },
+    { 0xd1, 0x00,  0x0000,  0x00000000,  0x00000000, _(" This time~2c we have to\nrescue $n2~27s team!\nLet~27s not blow it!") },
+    { 0x30, 0x00,  0x0000,  0x00000000,  0x00000000, NULL },
+    { 0xe4, 0x00,  0x0006,  0x00000000,  0x00000000, NULL },
+    { 0x23, 0x00,  0x0050,  0x00000000,  0x00000000, NULL },
+    { 0xdb, 0x00,  0x000f,  0x00000000,  0x00000000, NULL },
+    { 0x6b, 0x00,  0x0100,  0x00000003,  0x00000000, NULL },
+    { 0xe4, 0x00,  0x0003,  0x00000000,  0x00000000, NULL },
+    HALT,
+};
+
+
+static const struct ScriptCommand s_gs204_g2_s0_lives1_dlg0[] = { /* 0x825d9bc */
+    DEBUGINFO,
+    { 0x54, 0x00,  0x0002,  0x00000000,  0x00000000, NULL },
+    { 0x2d, 0x07,  0x0001,  0x00000000,  0x00000000, NULL },
+    { 0xe3, 0x00,  0x0006,  0x00000000,  0x00000000, NULL },
+    { 0x6b, 0x00,  0x0100,  0x00000001,  0x00000000, NULL },
+    { 0x93, 0x04,  0x000b,  0x00000000,  0x00000000, NULL },
+    { 0xe3, 0x00,  0x0006,  0x00000000,  0x00000000, NULL },
+    { 0x6b, 0x00,  0x0100,  0x00000002,  0x00000000, NULL },
+    HALT,
+};
+
+static const struct GroundLivesData s_gs204_g0_s1_lives[] = { /* 0x825da4c */
+    /*  0 */ {   0,   4,   0,   0, {  26,  29, CPOS_HALFTILE, CPOS_HALFTILE }, {
+        [0] = s_gs204_g0_s1_lives0_dlg0,
+    } },
+    /*  1 */ {   4,   4,   0,   0, {  26,  31, CPOS_HALFTILE, CPOS_HALFTILE }, {
+        [0] = s_gs204_g0_s1_lives1_dlg0,
+    } },
+};
+
+static const struct GroundLivesData s_gs204_g0_s3_lives[] = { /* 0x825da7c */
+    /*  0 */ {   0,   4,   0,   0, {  26,  29, CPOS_HALFTILE, CPOS_HALFTILE }, {
+        [0] = s_gs204_g0_s3_lives0_dlg0,
+    } },
+    /*  1 */ {   4,   4,   0,   0, {  26,  31, CPOS_HALFTILE, CPOS_HALFTILE }, {
+        [0] = s_gs204_g0_s3_lives1_dlg0,
+    } },
+};
+
+static const struct GroundLivesData s_gs204_g0_s4_lives[] = { /* 0x825daac */
+    /*  0 */ {   0,   4,   0,   0, {  26,  29, CPOS_HALFTILE, CPOS_HALFTILE }, {
+        [0] = s_gs204_g0_s4_lives0_dlg0,
+    } },
+    /*  1 */ {   4,   4,   0,   0, {  26,  31, CPOS_HALFTILE, CPOS_HALFTILE }, {
+        [0] = s_gs204_g0_s4_lives1_dlg0,
+    } },
+};
+
+static const struct GroundLivesData s_gs204_g1_s0_lives[] = { /* 0x825dadc */
+    /*  0 */ {   0,   2,   0,   0, {  28,  35, CPOS_HALFTILE, CPOS_HALFTILE }, {
+        [0] = s_gs204_g1_s0_lives0_dlg0,
+    } },
+    /*  1 */ {  34,   6,   0,   0, {  23,  34, CPOS_HALFTILE, CPOS_HALFTILE }, {
+        [0] = s_gs204_g1_s0_lives1_dlg0,
+    } },
+};
+
+static const struct GroundLivesData s_gs204_g2_s0_lives[] = { /* 0x825db0c */
+    /*  0 */ {   0,   2,   0,   0, {  28,  35, 0, CPOS_HALFTILE }, {
+        [0] = s_gs204_g2_s0_lives0_dlg0,
+    } },
+    /*  1 */ {  34,   6,   0,   0, {  23,  34, 0, CPOS_HALFTILE }, {
+        [0] = s_gs204_g2_s0_lives1_dlg0,
+    } },
+};
+
+static const struct GroundEffectData s_gs204_g1_s0_effs[] = { /* 0x825db3c */
+    /*  0 */ {   0,   0,   1,   1, {  26,  17, 0, CPOS_HALFTILE }, NULL },
+};
+
+static const struct GroundEffectData s_gs204_g2_s0_effs[] = { /* 0x825db48 */
+    /*  0 */ {   0,   0,   1,   1, {  26,  17, 0, CPOS_HALFTILE }, NULL },
+};
+
+static const struct ScriptRef * const (sStationScripts[]) = { /* 0x825db54 */
+    &s_gs204_g0_s0_station_sref,
+    &s_gs204_g1_s0_station_sref,
+    &s_gs204_g2_s0_station_sref,
+};
+
+static const struct GroundScriptSector s_gs204_g0_sectors[] = { /* 0x825db60 */
+    { 0,NULL, 0,NULL, 0,NULL, 0,NULL, 1,&sStationScripts[0], },
+    { LPARRAY(s_gs204_g0_s1_lives), 0,NULL, 0,NULL, 0,NULL, 0,NULL, },
+    { 0,NULL, 0,NULL, 0,NULL, 0,NULL, 0,NULL, },
+    { LPARRAY(s_gs204_g0_s3_lives), 0,NULL, 0,NULL, 0,NULL, 0,NULL, },
+    { LPARRAY(s_gs204_g0_s4_lives), 0,NULL, 0,NULL, 0,NULL, 0,NULL, },
+};
+
+static const struct GroundScriptSector s_gs204_g1_sectors[] = { /* 0x825dc28 */
+    { LPARRAY(s_gs204_g1_s0_lives), 0,NULL, LPARRAY(s_gs204_g1_s0_effs), 0,NULL, 1,&sStationScripts[1], },
+};
+
+static const struct GroundScriptSector s_gs204_g2_sectors[] = { /* 0x825dc50 */
+    { LPARRAY(s_gs204_g2_s0_lives), 0,NULL, LPARRAY(s_gs204_g2_s0_effs), 0,NULL, 1,&sStationScripts[2], },
+};
+
+static const struct GroundScriptGroup s_gs204_groups[] = { /* 0x825dc78 */
+    { LPARRAY(s_gs204_g0_sectors) },
+    { LPARRAY(s_gs204_g1_sectors) },
+    { LPARRAY(s_gs204_g2_sectors) },
+    {},
+};
+
+static const struct GroundLink s_gs204_links[] = { /* 0x825dc98 */
+    /* link   0 */ { { /*x*/  28, /*y*/  19, /*flags*/ CPOS_HALFTILE, CPOS_HALFTILE }, /*w*/  1, /*h*/  1, /*ret*/ 1, /*?*/ 0 },
+    /* link   1 */ { { /*x*/  23, /*y*/  19, /*flags*/ CPOS_HALFTILE, CPOS_HALFTILE }, /*w*/  1, /*h*/  1, /*ret*/ 1, /*?*/ 0 },
+    /* link   2 */ { { /*x*/  26, /*y*/  10, /*flags*/ 0, CPOS_HALFTILE }, /*w*/  1, /*h*/  1, /*ret*/ 1, /*?*/ 0 },
+    /* link   3 */ { { /*x*/  26, /*y*/  11, /*flags*/ 0, CPOS_HALFTILE }, /*w*/  1, /*h*/  1, /*ret*/ 1, /*?*/ 0 },
+};
+
+/*extern*/ const struct GroundScriptHeader gGroundScript_gs204 = { LPARRAY(s_gs204_groups), s_gs204_links }; /* 0x825dcb8 */

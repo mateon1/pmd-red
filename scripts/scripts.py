@@ -187,7 +187,10 @@ def read_script(data, start, desc=None, loud=None):
 def read_script_ref(data, p, deep=False, desc="?", loud=None):
     assert p
     stops.add(p)
-    ptrinfo[p] = ("sref", "%s.sref"%desc)
+    if p not in ptrinfo:
+        ptrinfo[p] = ("sref", "%s.sref"%desc)
+        descs[p] = "%s.sref"%desc
+    assert p in descs
     # u2 kind, unk2, unk4, script
     sid = get_u16(data, p+0)
     sty = get_u16(data, p+2)
@@ -292,6 +295,7 @@ def read_scripts(data, p, loud=False, deep=False, desc="gs?"):
     groupbase = get_u32(data, p+4)
     stops.add(groupbase)
     ptrinfo[groupbase] = ("group", desc + ".groups", ngroups)
+    descs[groupbase] = desc + ".groups"
     linkbase = get_u32(data, p+8)
     stops.add(linkbase)
     i = 0
@@ -300,6 +304,7 @@ def read_scripts(data, p, loud=False, deep=False, desc="gs?"):
         if deep and loud != False: print("Link[%3d]: %02x %02x %02x %02x %02x %02x %02x %02x" % ((i,) + link))
         i += 1
     ptrinfo[linkbase] = ("link", desc + ".links", i)
+    descs[linkbase] = desc + ".links"
     if loud: print("%d groups @ 0x%x:" % (ngroups, groupbase))
     groups = []
     curGroundScript = (groups, unks)
@@ -311,30 +316,41 @@ def read_scripts(data, p, loud=False, deep=False, desc="gs?"):
         sectbase = get_u32(data, groupbase+8*i+4)
         if sectbase == 0: continue
         ptrinfo[sectbase] = ("sector", desc + ".g%d.sectors" % (i,), nsect)
+        descs[sectbase] = ptrinfo[sectbase][1]
         stops.add(sectbase)
         for j in range(nsect):
             if loud: print("** Group %d, Sector %d:" % (i, j))
             nlives = get_u32(data, sectbase+40*j+0)
             livesbase = get_u32(data, sectbase+40*j+4)
             assert livesbase if nlives else not livesbase
-            if livesbase: ptrinfo[livesbase] = ("lives", desc + ".g%d.s%d.lives" % (i, j), nlives)
+            if livesbase:
+                ptrinfo[livesbase] = ("lives", desc + ".g%d.s%d.lives" % (i, j), nlives)
+                descs[livesbase] = ptrinfo[livesbase][1]
             nobjs = get_u32(data, sectbase+40*j+8)
             objbase = get_u32(data, sectbase+40*j+12)
             assert objbase if nobjs else not objbase
-            if objbase: ptrinfo[objbase] = ("objs", desc + ".g%d.s%d.objs" % (i, j), nobjs)
+            if objbase:
+                ptrinfo[objbase] = ("objs", desc + ".g%d.s%d.objs" % (i, j), nobjs)
+                descs[objbase] = ptrinfo[objbase][1]
             neff = get_u32(data, sectbase+40*j+16)
             effbase = get_u32(data, sectbase+40*j+20)
             assert effbase if neff else not effbase
-            if effbase: ptrinfo[effbase] = ("effs", desc + ".g%d.s%d.effs" % (i, j), neff)
+            if effbase:
+                ptrinfo[effbase] = ("effs", desc + ".g%d.s%d.effs" % (i, j), neff)
+                descs[effbase] = ptrinfo[effbase][1]
             nevt = get_u32(data, sectbase+40*j+24)
             evtbase = get_u32(data, sectbase+40*j+28)
             assert evtbase if nevt else not evtbase
-            if evtbase: ptrinfo[evtbase] = ("evts", desc + ".g%d.s%d.evts" % (i, j), nevt)
+            if evtbase:
+                ptrinfo[evtbase] = ("evts", desc + ".g%d.s%d.evts" % (i, j), nevt)
+                descs[evtbase] = ptrinfo[evtbase][1]
             nstat = get_u32(data, sectbase+40*j+32)
             assert 0 <= nstat <= 1
             station = get_u32(data, sectbase+40*j+36)
             assert station if nstat else not station
-            if station: ptrinfo[station] = ("psref", desc + ".g%d.s%d.station" % (i, j))
+            if station:
+                ptrinfo[station] = ("psref", desc + ".g%d.s%d.station" % (i, j))
+                descs[station] = ptrinfo[station][1]
             if loud:
                 print("- %3d lives   @ 0x%x" % (nlives, livesbase))
                 print("- %3d objs    @ 0x%x" % (nobjs , objbase))

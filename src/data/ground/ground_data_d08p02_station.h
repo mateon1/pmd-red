@@ -1,0 +1,148 @@
+
+
+
+
+
+
+
+
+
+
+static const struct ScriptCommand s_gs194_g0_s0_station_sref_script[] = { /* 0x8245514 */
+    DEBUGINFO,
+    { 0x08, 0x00,  0x0000,  0x000000c2,  0x00000000, NULL },
+    { 0x47, 0x00,  0x0000,  0x00000000,  0x00000000, NULL },
+    JUMP_SCRIPT(/* COMMON_ENTER */ 355),
+};
+
+static const struct ScriptRef s_gs194_g0_s0_station_sref = { 404, 1, NULL /* ENTER_CONTROL */, s_gs194_g0_s0_station_sref_script }; /* 0x8245580 */
+
+static const struct ScriptCommand s_gs194_g1_s0_station_sref_script[] = { /* 0x824558c */
+    DEBUGINFO,
+    { 0x08, 0x00,  0x0000,  0x000000c2,  0x00000000, NULL },
+    { 0x0c, 0x00, -0x0001,  0x00000000,  0x00000000, NULL },
+    { 0x44, 0x00,  0x0000,  0x0000000a,  0x00000000, NULL },
+    { 0x22, 0x01,  0x001e,  0x00000000,  0x00000000, NULL },
+    { 0xe3, 0x00,  0x0003,  0x00000000,  0x00000000, NULL },
+    { 0x23, 0x01,  0x001e,  0x00000000,  0x00000000, NULL },
+    { 0x34, 0x00, -0x0001,  0x00000000,  0x00000000, _(" Stop right there!\nDon~27t let them get away!") },
+    { 0x30, 0x00,  0x0000,  0x00000000,  0x00000000, NULL },
+    { 0xdb, 0x00,  0x0004,  0x00000000,  0x00000000, NULL },
+    { 0xcf, 0x02,  0x0026,  0x00000001,  0x00000000, NULL },
+    { 0xd0, 0x00,  0x0001,  0x00000000,  0x00000000, _(" Sure. Like we~27re really\ngoing to wait because they said so.") },
+    { 0xd1, 0x00,  0x0000,  0x00000000,  0x00000000, _(" They expect us to stop and\nwait for them?") },
+    { 0x30, 0x00,  0x0000,  0x00000000,  0x00000000, NULL },
+    { 0xdb, 0x00,  0x001e,  0x00000000,  0x00000000, NULL },
+    RET,
+};
+
+static const struct ScriptRef s_gs194_g1_s0_station_sref = { 400, 7, NULL /* EVENT_CONTROL */, s_gs194_g1_s0_station_sref_script }; /* 0x8245728 */
+
+
+
+static const struct ScriptCommand s_gs194_g1_s0_lives0_dlg0[] = { /* 0x8245734 */
+    DEBUGINFO,
+    { 0x54, 0x00,  0x0002,  0x00000000,  0x00000000, NULL },
+    { 0x2d, 0x07,  0x0000,  0x00000000,  0x00000000, NULL },
+    { 0x53, 0x00,  0x0000,  0x0000001f,  0x00000000, NULL },
+    { 0xe4, 0x00,  0x0006,  0x00000000,  0x00000000, NULL },
+    { 0xdb, 0x00,  0x000f,  0x00000000,  0x00000000, NULL },
+    { 0x6b, 0x00,  0x0099,  0x00000000,  0x00000000, NULL },
+    { 0x91, 0x04,  0x000b,  0x00000005,  0x00000000, NULL },
+    { 0x52, 0x00,  0x0000,  0x0000001f,  0x00000000, NULL },
+    { 0xdb, 0x00,  0x002d,  0x00000000,  0x00000000, NULL },
+    { 0xe4, 0x00,  0x0006,  0x00000000,  0x00000000, NULL },
+    { 0xe3, 0x00,  0x0005,  0x00000000,  0x00000000, NULL },
+    { 0x93, 0x04,  0x000b,  0x00000022,  0x00000000, NULL },
+    { 0x2e, 0x03,  0x0001,  0x00000000,  0x00000000, NULL },
+    { 0xcf, 0x02,  0x0026,  0x00000001,  0x00000000, NULL },
+    { 0xd0, 0x00,  0x0001,  0x00000000,  0x00000000, _(" Whew...\nWe finally got through that cave.") },
+    { 0xd0, 0x00,  0x0001,  0x00000000,  0x00000000, _(" Where are the Pokémon\nwho are chasing us?") },
+    { 0xd1, 0x00,  0x0000,  0x00000000,  0x00000000, _(" Whew!\nFinally~2c we made it through that cave.") },
+    { 0xd1, 0x00,  0x0000,  0x00000000,  0x00000000, _(" Where~27s the Pokémon mob\nthat~27s after us?") },
+    { 0x30, 0x00,  0x0000,  0x00000000,  0x00000000, NULL },
+    { 0xe4, 0x00,  0x0006,  0x00000000,  0x00000000, NULL },
+    { 0xe3, 0x00,  0x0005,  0x00000000,  0x00000000, NULL },
+    { 0xdb, 0x00,  0x000a,  0x00000000,  0x00000000, NULL },
+    { 0x34, 0x00, -0x0001,  0x00000000,  0x00000000, _(" Hey~2c look! There they are!\nOver there!") },
+    { 0x4c, 0x00,  0x0000,  0x000001d1,  0x00000000, NULL },
+    { 0xe4, 0x00,  0x0006,  0x00000000,  0x00000000, NULL },
+    CALL_SCRIPT(/* NOTICE_FUNC */ 40),
+    { 0x34, 0x00, -0x0001,  0x00000000,  0x00000000, _(" Catch $n0!") },
+    { 0x30, 0x00,  0x0000,  0x00000000,  0x00000000, NULL },
+    { 0xe4, 0x00,  0x0006,  0x00000000,  0x00000000, NULL },
+    { 0x91, 0x04,  0x000b,  0x00000005,  0x00000000, NULL },
+    { 0x2e, 0x15,  0x0001,  0x0000000c,  0x00000000, NULL },
+    { 0x34, 0x00,  0x0001,  0x00000000,  0x00000000, _(" Whoa! Here they come!\nRun!") },
+    { 0x30, 0x00,  0x0000,  0x00000000,  0x00000000, NULL },
+    { 0xe4, 0x00,  0x0006,  0x00000000,  0x00000000, NULL },
+    { 0xdb, 0x00,  0x0005,  0x00000000,  0x00000000, NULL },
+    { 0x89, 0x50,  0x0200,  0x00000002,  0x00000000, NULL },
+    { 0xe4, 0x00,  0x0003,  0x00000000,  0x00000000, NULL },
+    HALT,
+};
+
+
+
+
+static const struct ScriptCommand s_gs194_g1_s0_lives1_dlg0[] = { /* 0x8245ab0 */
+    DEBUGINFO,
+    { 0x54, 0x00,  0x0002,  0x00000000,  0x00000000, NULL },
+    { 0x2d, 0x07,  0x0001,  0x00000000,  0x00000000, NULL },
+    { 0xe3, 0x00,  0x0006,  0x00000000,  0x00000000, NULL },
+    { 0x53, 0x00,  0x0000,  0x0000001f,  0x00000000, NULL },
+    { 0x6b, 0x00,  0x0099,  0x00000001,  0x00000000, NULL },
+    { 0x91, 0x04,  0x000b,  0x00000005,  0x00000000, NULL },
+    { 0x52, 0x00,  0x0000,  0x0000001f,  0x00000000, NULL },
+    { 0xe3, 0x00,  0x0006,  0x00000000,  0x00000000, NULL },
+    { 0x93, 0x04,  0x000b,  0x00000000,  0x00000000, NULL },
+    { 0xe4, 0x00,  0x0005,  0x00000000,  0x00000000, NULL },
+    { 0xe3, 0x00,  0x0006,  0x00000000,  0x00000000, NULL },
+    CALL_SCRIPT(/* LOOK_AROUND_FUNC */ 33),
+    { 0xe4, 0x00,  0x0005,  0x00000000,  0x00000000, NULL },
+    { 0xe3, 0x00,  0x0006,  0x00000000,  0x00000000, NULL },
+    CALL_SCRIPT(/* JUMP_SURPRISE_FUNC */ 38),
+    { 0xe3, 0x00,  0x0006,  0x00000000,  0x00000000, NULL },
+    { 0x91, 0x04,  0x000b,  0x00000005,  0x00000000, NULL },
+    { 0xe3, 0x00,  0x0006,  0x00000000,  0x00000000, NULL },
+    { 0x89, 0x50,  0x0200,  0x00000002,  0x00000000, NULL },
+    HALT,
+};
+
+static const struct GroundLivesData s_gs194_g1_s0_lives[] = { /* 0x8245c00 */
+    /*  0 */ {   0,   0,   0,   0, {  10,  17, 0, CPOS_HALFTILE }, {
+        [0] = s_gs194_g1_s0_lives0_dlg0,
+    } },
+    /*  1 */ {  34,   0,   0,   0, {  12,  17, 0, CPOS_HALFTILE }, {
+        [0] = s_gs194_g1_s0_lives1_dlg0,
+    } },
+};
+
+static const struct GroundEffectData s_gs194_g1_s0_effs[] = { /* 0x8245c30 */
+    /*  0 */ {   0,   0,   1,   1, {  17,  22, 0, CPOS_HALFTILE }, NULL },
+};
+
+static const struct ScriptRef * const (sStationScripts[]) = { /* 0x8245c3c */
+    &s_gs194_g0_s0_station_sref,
+    &s_gs194_g1_s0_station_sref,
+};
+
+static const struct GroundScriptSector s_gs194_g0_sectors[] = { /* 0x8245c44 */
+    { 0,NULL, 0,NULL, 0,NULL, 0,NULL, 1,&sStationScripts[0], },
+};
+
+static const struct GroundScriptSector s_gs194_g1_sectors[] = { /* 0x8245c6c */
+    { LPARRAY(s_gs194_g1_s0_lives), 0,NULL, LPARRAY(s_gs194_g1_s0_effs), 0,NULL, 1,&sStationScripts[1], },
+};
+
+static const struct GroundScriptGroup s_gs194_groups[] = { /* 0x8245c94 */
+    { LPARRAY(s_gs194_g0_sectors) },
+    { LPARRAY(s_gs194_g1_sectors) },
+};
+
+static const struct GroundLink s_gs194_links[] = { /* 0x8245ca4 */
+    /* link   0 */ { { /*x*/  15, /*y*/  24, /*flags*/ 0, CPOS_HALFTILE }, /*w*/  1, /*h*/  1, /*ret*/ 1, /*?*/ 0 },
+    /* link   1 */ { { /*x*/  19, /*y*/  24, /*flags*/ 0, CPOS_HALFTILE }, /*w*/  1, /*h*/  1, /*ret*/ 1, /*?*/ 0 },
+};
+
+/*extern*/ const struct GroundScriptHeader gGroundScript_gs194 = { LPARRAY(s_gs194_groups), s_gs194_links }; /* 0x8245cb4 */
