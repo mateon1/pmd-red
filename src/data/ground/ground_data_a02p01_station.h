@@ -48,7 +48,7 @@ static const struct ScriptCommand s_gs164_g1_s0_lives0_dlg0[] = { /* 0x821833c *
     { 0x86, 0x00,  0x0100,  0x00000000,  0x00000000, NULL },
     { 0xe4, 0x00,  0x0006,  0x00000000,  0x00000000, NULL },
     { 0x2e, 0x02,  0x0001,  0x0000000c,  0x00000000, NULL },
-    { 0xcf, 0x02,  0x0026,  0x00000001,  0x00000000, NULL },
+    MSG_VAR(2, PARTNER_TALK_KIND, 1),
     VARIANT(/* == */  1, _(" Whoa!\nThese cracks go down deep!")),
     VARIANT_DEFAULT(_(" Wow!\nAren~27t these fissures amazing?!")),
     { 0x30, 0x00,  0x0000,  0x00000000,  0x00000000, NULL },

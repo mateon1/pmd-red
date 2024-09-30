@@ -88,6 +88,9 @@ def main():
                 p = addr + 16*i
                 op, b, h, a1, a2, ap = get_u8(data, p+0), get_u8(data, p+1), get_s16(data, p+2), get_s32(data, p+4), get_s32(data, p+8), get_u32(data, p+12)
                 if False: pass
+                elif op == 0xcf:
+                    assert a2 == ap == 0
+                    outfile.write(u'    MSG_VAR(%d, %s, %d),\n' % (b, get_var_name(data, h), a1))
                 elif op == 0xd0:
                     assert b == a1 == a2 == 0
                     outfile.write(u'    VARIANT(/* == */%3d, %s),\n' % (h, cstr(get_str(data, ap))))

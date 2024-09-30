@@ -1761,7 +1761,7 @@ static const struct ScriptCommand s_script_EVENT_DIVIDE_WARP_LOCK_FUNC[] = { /* 
     RET_DIRECT,
   LABEL(0), /* = 0x00 */
     { 0x2d, 0x09,  0x0001,  0x00000022,  0x00000000, NULL },
-    { 0xcf, 0x02,  0x0026,  0x00000001,  0x00000000, NULL },
+    MSG_VAR(2, PARTNER_TALK_KIND, 1),
     VARIANT(/* == */  1, _(" Huh?\nAre you going home already?")),
     VARIANT(/* == */  1, _(" We haven~27t gone to the\n#C5Pelipper Post Office#R yet?")),
     VARIANT(/* == */  1, _(" You can go home after we\ngo to the #C5Pelipper Post Office#R.")),

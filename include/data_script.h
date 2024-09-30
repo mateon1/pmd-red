@@ -5,6 +5,7 @@
 #define CPOS_HALFTILE 0x2
 #define CPOS_CURRENT  0x4
 
+#define MSG_VAR(b,v,a)      { 0xCF, b, v, a, 0, NULL }
 #define VARIANT(c,s)        { 0xD0, 0, c, 0, 0, s    }
 #define VARIANT_DEFAULT(s)  { 0xD1, 0, 0, 0, 0, s    }
 #define ASK_DEBUG(b,h,a,s)  { 0xD2, b, h, a, 0, s    }

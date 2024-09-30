@@ -42,7 +42,7 @@ static const struct ScriptCommand s_gs181_g1_s0_lives0_dlg0[] = { /* 0x8231d84 *
     { 0x6b, 0x00,  0x0100,  0x00000000,  0x00000000, NULL },
     WAIT(15),
     { 0x2e, 0x03,  0x0001,  0x00000000,  0x00000000, NULL },
-    { 0xcf, 0x02,  0x0026,  0x00000001,  0x00000000, NULL },
+    MSG_VAR(2, PARTNER_TALK_KIND, 1),
     VARIANT(/* == */  1, _(" Oh~2c hey~2c there they are.\nLet~27s get them out.")),
     VARIANT_DEFAULT(_(" Oh~2c there they are!\nLet~27s get them out safely.")),
     { 0x30, 0x00,  0x0000,  0x00000000,  0x00000000, NULL },

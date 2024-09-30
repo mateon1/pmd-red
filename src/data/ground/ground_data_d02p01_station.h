@@ -177,7 +177,7 @@ static const struct ScriptCommand s_gs180_g2_s0_lives0_dlg0[] = { /* 0x8230ae4 *
     { 0xe4, 0x00,  0x0006,  0x00000000,  0x00000000, NULL },
     { 0xe3, 0x00,  0x0005,  0x00000000,  0x00000000, NULL },
     { 0x93, 0x04,  0x000a,  0x00000022,  0x00000000, NULL },
-    { 0xcf, 0x02,  0x0026,  0x00000001,  0x00000000, NULL },
+    MSG_VAR(2, PARTNER_TALK_KIND, 1),
     VARIANT(/* == */  1, _(" Let~27s give it our best\nand rescue them $n0!")),
     VARIANT_DEFAULT(_(" Let~27s do our best to rescue\nthem~2c $n0!")),
     { 0x30, 0x00,  0x0000,  0x00000000,  0x00000000, NULL },

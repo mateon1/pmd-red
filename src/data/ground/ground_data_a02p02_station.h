@@ -58,7 +58,7 @@ static const struct ScriptCommand s_gs165_g1_s0_lives0_dlg0[] = { /* 0x8218834 *
     { 0xe3, 0x00,  0x0005,  0x00000000,  0x00000000, NULL },
     WAIT(30),
     { 0x2e, 0x02,  0x0001,  0x00000005,  0x00000000, NULL },
-    { 0xcf, 0x02,  0x0026,  0x00000001,  0x00000000, NULL },
+    MSG_VAR(2, PARTNER_TALK_KIND, 1),
     VARIANT(/* == */  1, _(" Nature~27s gone savage\nhere too...")),
     VARIANT(/* == */  1, _(" The forest fires are still\nburning out of control...")),
     VARIANT_DEFAULT(_(" The environment is out\nof control here too...")),

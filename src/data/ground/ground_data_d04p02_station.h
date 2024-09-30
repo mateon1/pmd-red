@@ -59,7 +59,7 @@ static const struct ScriptCommand s_gs185_g1_s0_lives0_dlg0[] = { /* 0x8234d94 *
     { 0x91, 0x04,  0x0001,  0x00000002,  0x00000000, NULL },
     WAIT(30),
     { 0x2e, 0x03,  0x0001,  0x00000009,  0x00000000, NULL },
-    { 0xcf, 0x02,  0x0026,  0x00000001,  0x00000000, NULL },
+    MSG_VAR(2, PARTNER_TALK_KIND, 1),
     VARIANT(/* == */  1, _(" Well~2c those pests are gone.\nLet~27s find $n2.")),
     VARIANT_DEFAULT(_(" No one should hold us back\nnow. Let~27s find $n2.")),
     { 0x30, 0x00,  0x0000,  0x00000000,  0x00000000, NULL },
