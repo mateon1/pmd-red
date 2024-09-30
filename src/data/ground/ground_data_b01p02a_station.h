@@ -13,19 +13,19 @@
 static const struct ScriptCommand s_gs12_g0_s0_station_sref_script[] = { /* 0x81e1954 */
     DEBUGINFO,
     { 0x08, 0x00,  0x0000,  0x0000000c,  0x00000000, NULL },
-    { 0xc4, 0x00,  0x0003,  0x00000000,  0x00000000, NULL },
+    CJUMP_SCENARIO_0(SCENARIO_MAIN),
     COND(JUDGE_EQ, 3, /* to label */ 0),
     COND(JUDGE_EQ, 18, /* to label */ 1),
     JUMP_LABEL(2),
   LABEL(0), /* = 0x00 */
-    { 0xc5, 0x00,  0x0003,  0x00000000,  0x00000000, NULL },
+    CJUMP_SCENARIO_1(SCENARIO_MAIN),
     COND(JUDGE_LE, 2, /* to label */ 3),
     JUMP_LABEL(2),
   LABEL(3), /* = 0x03 */
     { 0x1d, 0x01,  0x0010, -0x00000001,  0x00000000, NULL },
     RET,
   LABEL(1), /* = 0x01 */
-    { 0xc5, 0x00,  0x0003,  0x00000000,  0x00000000, NULL },
+    CJUMP_SCENARIO_1(SCENARIO_MAIN),
     COND(JUDGE_LE, 1, /* to label */ 4),
     COND(JUDGE_LE, 2, /* to label */ 5),
     JUMP_LABEL(2),
@@ -36,7 +36,7 @@ static const struct ScriptCommand s_gs12_g0_s0_station_sref_script[] = { /* 0x81
     { 0x1d, 0x01,  0x002e, -0x00000001,  0x00000000, NULL },
     RET,
   LABEL(2), /* = 0x02 */
-    { 0xc0, 0x00,  0x0018,  0x00000000,  0x00000000, NULL },
+    CJUMP_VAR(START_MODE),
     COND_EQUAL(1, /* to label */ 6),
     COND_EQUAL(2, /* to label */ 7),
     COND_EQUAL(12, /* to label */ 8),
@@ -45,7 +45,7 @@ static const struct ScriptCommand s_gs12_g0_s0_station_sref_script[] = { /* 0x81
     COND_EQUAL(9, /* to label */ 10),
     JUMP_LABEL(6),
   LABEL(7), /* = 0x07 */
-    { 0xc0, 0x00,  0x000f,  0x00000000,  0x00000000, NULL },
+    CJUMP_VAR(GROUND_GETOUT),
     COND_EQUAL(9, /* to label */ 11),
     COND_EQUAL(10, /* to label */ 11),
     COND_EQUAL(11, /* to label */ 11),
@@ -117,24 +117,24 @@ static const struct ScriptCommand s_gs12_g0_s0_obj0_dlg0[] = { /* 0x81e1ef0 */
 
 static const struct ScriptCommand s_gs12_g0_s0_obj0_dlg2[] = { /* 0x81e1f40 */
     DEBUGINFO,
-    { 0xca, 0x00,  0x0000,  0x00000000,  0x00000000, NULL },
+    CJUMP_DIR_TO_LINK(0),
     COND_EQUAL(4, /* to label */ 0),
     COND_EQUAL(5, /* to label */ 1),
     COND_EQUAL(6, /* to label */ 2),
     JUMP_SCRIPT(END_TALK),
   LABEL(0), /* = 0x00 */
-    { 0xc7, 0x00,  0x0000,  0x00000000,  0x00000000, NULL },
+    CJUMP_DIRECTION,
     COND_EQUAL(4, /* to label */ 3),
     COND_EQUAL(5, /* to label */ 3),
     JUMP_SCRIPT(END_TALK),
   LABEL(1), /* = 0x01 */
-    { 0xc7, 0x00,  0x0000,  0x00000000,  0x00000000, NULL },
+    CJUMP_DIRECTION,
     COND_EQUAL(4, /* to label */ 3),
     COND_EQUAL(5, /* to label */ 3),
     COND_EQUAL(6, /* to label */ 3),
     JUMP_SCRIPT(END_TALK),
   LABEL(2), /* = 0x02 */
-    { 0xc7, 0x00,  0x0000,  0x00000000,  0x00000000, NULL },
+    CJUMP_DIRECTION,
     COND_EQUAL(5, /* to label */ 3),
     COND_EQUAL(6, /* to label */ 3),
     JUMP_SCRIPT(END_TALK),
@@ -1092,7 +1092,7 @@ static const struct ScriptCommand s_gs12_g12_s0_lives1_dlg0[] = { /* 0x81e6294 *
     CALL_SCRIPT(JUMP_HAPPY_FUNC),
     { 0xe4, 0x00,  0x0005,  0x00000000,  0x00000000, NULL },
     { 0xe3, 0x00,  0x0006,  0x00000000,  0x00000000, NULL },
-    { 0xc0, 0x00,  0x0039,  0x00000000,  0x00000000, NULL },
+    CJUMP_VAR(EVENT_LOCAL),
     COND_EQUAL(0, /* to label */ 0),
     COND_EQUAL(1, /* to label */ 1),
   LABEL(0), /* = 0x00 */
@@ -1104,7 +1104,7 @@ static const struct ScriptCommand s_gs12_g12_s0_lives1_dlg0[] = { /* 0x81e6294 *
     CALL_SCRIPT(SHOCK_FUNC),
     { 0xe4, 0x00,  0x0005,  0x00000000,  0x00000000, NULL },
     { 0xe3, 0x00,  0x0006,  0x00000000,  0x00000000, NULL },
-    { 0xc0, 0x00,  0x0039,  0x00000000,  0x00000000, NULL },
+    CJUMP_VAR(EVENT_LOCAL),
     COND_EQUAL(0, /* to label */ 0),
     COND_EQUAL(2, /* to label */ 2),
   LABEL(2), /* = 0x02 */

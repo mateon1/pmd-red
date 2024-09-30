@@ -27,7 +27,7 @@ static const struct ScriptCommand s_gs105_g0_s0_station_sref_script[] = { /* 0x8
     { 0xb3, 0x04,  0x0018,  0x00000009,  0x00000000, NULL },
     JUMP_LABEL(2),
   LABEL(4), /* = 0x04 */
-    { 0xc0, 0x00,  0x000f,  0x00000000,  0x00000000, NULL },
+    CJUMP_VAR(GROUND_GETOUT),
     COND_EQUAL(1, /* to label */ 5),
     JUMP_LABEL(5),
   LABEL(2), /* = 0x02 */

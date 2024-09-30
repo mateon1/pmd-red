@@ -14,6 +14,22 @@
 #define SCENARIO_ADVANCE(v,a){0xAA, 0, v, a, 0, NULL }
 #define SET_DUNGEON_RES(r,e){ 0xAB, 0, r, e, 0, NULL }
 #define SET_PLAYER_KIND(k)  { 0xAC, 0, k, 0, 0, NULL }
+#define CJUMP_VAR(v)        { 0xC0, 0, v, 0, 0, NULL }
+#define CJUMP_CALC_VI(o,v,i){ 0xC1, o, v, i, 0, NULL }
+#define CJUMP_CALC_VV(o,a,b){ 0xC2, o, a, b, 0, NULL }
+#define CJUMP_RANDOM(h)     { 0xC3, 0, h, 0, 0, NULL }
+#define CJUMP_SCENARIO_0(v) { 0xC4, 0, v, 0, 0, NULL }
+#define CJUMP_SCENARIO_1(v) { 0xC5, 0, v, 0, 0, NULL }
+// wtf is c6
+#define CJUMP_UNK_C6(a)     { 0xC6, 0, 0, a, 0, NULL }
+#define CJUMP_DIRECTION     { 0xC7, 0, 0, 0, 0, NULL }
+// C8: distance calculation with that weird 80A7AE8
+#define CJUMP_UNK_C8(a)     { 0xC8, 0, 0, a, 0, NULL }
+// C9: ditto, but with one hardcoded pos of four
+#define CJUMP_UNK_C9(a)     { 0xC9, 0, 0, a, 0, NULL }
+#define CJUMP_DIR_TO_LINK(l){ 0xCA, 0, 0, l, 0, NULL }
+// wtf is cb
+#define CJUMP_UNK_CB(h)     { 0xCB, 0, h, 0, 0, NULL }
 #define COND_EQUAL(v,t)     { 0xCC, 0, t, v, 0, NULL }
 #define COND(o,v,t)         { 0xCD, o, t, v, 0, NULL }
 #define COND_VAR(o,v,t)     { 0xCE, o, t, v, 0, NULL }

@@ -20,7 +20,7 @@ static const struct ScriptCommand s_gs5_g0_s0_station_sref_script[] = { /* 0x819
     CALL_STATION(  1,  0),
     JUMP_LABEL(1),
   LABEL(1), /* = 0x01 */
-    { 0xc0, 0x00,  0x0018,  0x00000000,  0x00000000, NULL },
+    CJUMP_VAR(START_MODE),
     COND_EQUAL(12, /* to label */ 2),
     COND_EQUAL(11, /* to label */ 2),
     COND_EQUAL(10, /* to label */ 3),

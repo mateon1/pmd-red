@@ -14,7 +14,7 @@ static const struct ScriptCommand s_gs201_g0_s0_station_sref_script[] = { /* 0x8
     { 0x1d, 0x00,  0x0000,  0x0000000c,  0x00000000, NULL },
   LABEL(0), /* = 0x00 */
     { 0x08, 0x00,  0x0000,  0x000000c9,  0x00000000, NULL },
-    { 0xc4, 0x00,  0x0003,  0x00000000,  0x00000000, NULL },
+    CJUMP_SCENARIO_0(SCENARIO_MAIN),
     COND(JUDGE_EQ, 14, /* to label */ 1),
     JUMP_LABEL(2),
   LABEL(1), /* = 0x01 */
@@ -33,7 +33,7 @@ static const struct ScriptCommand s_gs201_g0_s0_station_sref_script[] = { /* 0x8
     { 0xb3, 0x06,  0x0018,  0x0000000b,  0x00000000, NULL },
     JUMP_LABEL(3),
   LABEL(5), /* = 0x05 */
-    { 0xc0, 0x00,  0x000f,  0x00000000,  0x00000000, NULL },
+    CJUMP_VAR(GROUND_GETOUT),
     COND_EQUAL(1, /* to label */ 7),
     JUMP_LABEL(7),
   LABEL(3), /* = 0x03 */
@@ -350,7 +350,7 @@ static const struct ScriptCommand s_gs201_g2_s1_lives0_dlg0[] = { /* 0x8253910 *
     VARIANT_DEFAULT(_(" OK!\nLet's go!")),
     VARIANT_DEFAULT(_(" Let's do our best to reach\nthe peak!")),
     { 0x30, 0x00,  0x0000,  0x00000000,  0x00000000, NULL },
-    { 0xc8, 0x00,  0x0000,  0x00000022,  0x00000000, NULL },
+    CJUMP_UNK_C8(34),
     COND_EQUAL(4, /* to label */ 7),
     COND_EQUAL(3, /* to label */ 7),
     COND_EQUAL(5, /* to label */ 7),
@@ -378,7 +378,7 @@ static const struct ScriptCommand s_gs201_g2_s1_lives0_dlg0[] = { /* 0x8253910 *
     VARIANT(/* == */  1, _(" All right!\nLet's roll out!")),
     VARIANT_DEFAULT(_(" OK!\nLet's go!")),
     { 0x30, 0x00,  0x0000,  0x00000000,  0x00000000, NULL },
-    { 0xc8, 0x00,  0x0000,  0x00000022,  0x00000000, NULL },
+    CJUMP_UNK_C8(34),
     COND_EQUAL(4, /* to label */ 9),
     COND_EQUAL(3, /* to label */ 9),
     COND_EQUAL(5, /* to label */ 9),
@@ -413,7 +413,7 @@ static const struct ScriptCommand s_gs201_g2_s1_lives1_dlg0[] = { /* 0x8253f50 *
     { 0x2d, 0x07,  0x0001,  0x00000000,  0x00000000, NULL },
     { 0x8e, 0x01,  0x0000,  0x00000000,  0x00000000, NULL },
     { 0xe3, 0x00,  0x0006,  0x00000000,  0x00000000, NULL },
-    { 0xc8, 0x00,  0x0000,  0x00000000,  0x00000000, NULL },
+    CJUMP_UNK_C8(0),
     COND_EQUAL(0, /* to label */ 0),
     COND_EQUAL(1, /* to label */ 0),
     COND_EQUAL(7, /* to label */ 0),

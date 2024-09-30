@@ -146,6 +146,42 @@ def main():
                 elif op == 0xac:
                     assert b == a1 == a2 == ap == 0
                     outfile.write(u'    SET_PLAYER_KIND(%d),\n' % h)
+                elif op == 0xc0:
+                    assert b == a1 == a2 == ap == 0
+                    outfile.write(u'    CJUMP_VAR(%s),\n' % get_var_name(data, h))
+                elif op == 0xc1:
+                    assert a2 == ap == 0
+                    outfile.write(u'    CJUMP_CALC_VI(%s, %s, %d),\n' % (CALC[b], get_var_name(data, h), a1))
+                elif op == 0xc2:
+                    assert a2 == ap == 0
+                    outfile.write(u'    CJUMP_CALC_VV(%s, %s, %s),\n' % (CALC[b], get_var_name(data, h), get_var_name(data, a1)))
+                elif op == 0xc3:
+                    assert b == a1 == a2 == ap == 0
+                    outfile.write(u'    CJUMP_RANDOM(%d),\n' % h)
+                elif op == 0xc4:
+                    assert b == a1 == a2 == ap == 0
+                    outfile.write(u'    CJUMP_SCENARIO_0(%s),\n' % get_var_name(data, h))
+                elif op == 0xc5:
+                    assert b == a1 == a2 == ap == 0
+                    outfile.write(u'    CJUMP_SCENARIO_1(%s),\n' % get_var_name(data, h))
+                elif op == 0xc6:
+                    assert b == h == a2 == ap == 0
+                    outfile.write(u'    CJUMP_UNK_C6(%d),\n' % a1)
+                elif op == 0xc7:
+                    assert b == h == a1 == a2 == ap == 0
+                    outfile.write(u'    CJUMP_DIRECTION,\n')
+                elif op == 0xc8:
+                    assert b == h == a2 == ap == 0
+                    outfile.write(u'    CJUMP_UNK_C8(%d),\n' % a1)
+                elif op == 0xc9:
+                    assert b == h == a2 == ap == 0
+                    outfile.write(u'    CJUMP_UNK_C9(%d),\n' % a1)
+                elif op == 0xca:
+                    assert b == h == a2 == ap == 0
+                    outfile.write(u'    CJUMP_DIR_TO_LINK(%d),\n' % a1)
+                elif op == 0xcb:
+                    assert b == a1 == a2 == ap == 0
+                    outfile.write(u'    CJUMP_UNK_CB(%d),\n' % h)
                 elif op == 0xcc:
                     assert b == a2 == ap == 0
                     outfile.write(u'    COND_EQUAL(%d, /* to label */ %d),\n' % (a1, h))

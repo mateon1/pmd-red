@@ -23,11 +23,11 @@ static const struct ScriptCommand s_gs158_g0_s0_station_sref_script[] = { /* 0x8
     DEBUGINFO,
     { 0x08, 0x00,  0x0000,  0x0000009e,  0x00000000, NULL },
     { 0xb9, 0x00,  0x0005,  0x00000022,  0x00000002, NULL },
-    { 0xc4, 0x00,  0x0003,  0x00000000,  0x00000000, NULL },
+    CJUMP_SCENARIO_0(SCENARIO_MAIN),
     COND(JUDGE_EQ, 3, /* to label */ 1),
     JUMP_LABEL(2),
   LABEL(1), /* = 0x01 */
-    { 0xc5, 0x00,  0x0003,  0x00000000,  0x00000000, NULL },
+    CJUMP_SCENARIO_1(SCENARIO_MAIN),
     COND(JUDGE_LE, 2, /* to label */ 3),
     JUMP_LABEL(4),
   LABEL(3), /* = 0x03 */
@@ -48,7 +48,7 @@ static const struct ScriptCommand s_gs158_g0_s0_station_sref_script[] = { /* 0x8
     { 0xb3, 0x07,  0x0018,  0x00000009,  0x00000000, NULL },
     JUMP_LABEL(5),
   LABEL(7), /* = 0x07 */
-    { 0xc0, 0x00,  0x000f,  0x00000000,  0x00000000, NULL },
+    CJUMP_VAR(GROUND_GETOUT),
     COND_EQUAL(1, /* to label */ 8),
     JUMP_LABEL(8),
   LABEL(5), /* = 0x05 */
@@ -109,7 +109,7 @@ static const struct ScriptCommand s_gs158_g0_s4_lives1_dlg0[] = { /* 0x820ccb0 *
 
 static const struct ScriptCommand s_gs158_g1_s0_lives0_dlg1[] = { /* 0x820cce0 */
     DEBUGINFO,
-    { 0xc6, 0x00,  0x0000,  0x0000000e,  0x00000000, NULL },
+    CJUMP_UNK_C6(14),
     COND_EQUAL(144, /* to label */ 0),
     COND_EQUAL(145, /* to label */ 1),
     COND_EQUAL(146, /* to label */ 2),
@@ -135,7 +135,7 @@ static const struct ScriptCommand s_gs158_g1_s0_lives0_dlg2[] = { /* 0x820ce00 *
 
 static const struct ScriptCommand s_gs158_g1_s0_lives1_dlg1[] = { /* 0x820ce20 */
     DEBUGINFO,
-    { 0xc6, 0x00,  0x0000,  0x0000000f,  0x00000000, NULL },
+    CJUMP_UNK_C6(15),
     COND_EQUAL(144, /* to label */ 0),
     COND_EQUAL(145, /* to label */ 1),
     COND_EQUAL(146, /* to label */ 2),
@@ -161,7 +161,7 @@ static const struct ScriptCommand s_gs158_g1_s0_lives1_dlg2[] = { /* 0x820cf40 *
 
 static const struct ScriptCommand s_gs158_g1_s0_lives2_dlg1[] = { /* 0x820cf60 */
     DEBUGINFO,
-    { 0xc6, 0x00,  0x0000,  0x00000010,  0x00000000, NULL },
+    CJUMP_UNK_C6(16),
     COND_EQUAL(144, /* to label */ 0),
     COND_EQUAL(145, /* to label */ 1),
     COND_EQUAL(146, /* to label */ 2),
@@ -457,7 +457,7 @@ static const struct ScriptCommand s_gs158_g2_s0_eff1_script[] = { /* 0x820e14c *
 static const struct ScriptCommand s_gs158_g2_s0_lives4_dlg0[] = { /* 0x820e27c */
     DEBUGINFO,
     WAIT(4),
-    { 0xc6, 0x00,  0x0000,  0x0000000e,  0x00000000, NULL },
+    CJUMP_UNK_C6(14),
     COND_EQUAL(144, /* to label */ 0),
     COND_EQUAL(145, /* to label */ 1),
     COND_EQUAL(146, /* to label */ 2),
@@ -475,7 +475,7 @@ static const struct ScriptCommand s_gs158_g2_s0_lives4_dlg0[] = { /* 0x820e27c *
 
 static const struct ScriptCommand s_gs158_g2_s0_lives4_dlg1[] = { /* 0x820e37c */
     DEBUGINFO,
-    { 0xc6, 0x00,  0x0000,  0x0000000e,  0x00000000, NULL },
+    CJUMP_UNK_C6(14),
     COND_EQUAL(144, /* to label */ 0),
     COND_EQUAL(145, /* to label */ 1),
     COND_EQUAL(146, /* to label */ 2),
@@ -497,7 +497,7 @@ static const struct ScriptCommand s_gs158_g2_s0_lives4_dlg1[] = { /* 0x820e37c *
 static const struct ScriptCommand s_gs158_g2_s0_lives5_dlg0[] = { /* 0x820e49c */
     DEBUGINFO,
     WAIT(4),
-    { 0xc6, 0x00,  0x0000,  0x0000000f,  0x00000000, NULL },
+    CJUMP_UNK_C6(15),
     COND_EQUAL(144, /* to label */ 0),
     COND_EQUAL(145, /* to label */ 1),
     COND_EQUAL(146, /* to label */ 2),
@@ -516,7 +516,7 @@ static const struct ScriptCommand s_gs158_g2_s0_lives5_dlg0[] = { /* 0x820e49c *
 static const struct ScriptCommand s_gs158_g2_s0_lives6_dlg0[] = { /* 0x820e59c */
     DEBUGINFO,
     WAIT(4),
-    { 0xc6, 0x00,  0x0000,  0x00000010,  0x00000000, NULL },
+    CJUMP_UNK_C6(16),
     COND_EQUAL(144, /* to label */ 0),
     COND_EQUAL(145, /* to label */ 1),
     COND_EQUAL(146, /* to label */ 2),

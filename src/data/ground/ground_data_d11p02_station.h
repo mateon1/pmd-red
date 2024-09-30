@@ -9,7 +9,7 @@
 static const struct ScriptCommand s_gs202_g0_s0_station_sref_script[] = { /* 0x82556a0 */
     DEBUGINFO,
     { 0x08, 0x00,  0x0000,  0x000000ca,  0x00000000, NULL },
-    { 0xc4, 0x00,  0x0003,  0x00000000,  0x00000000, NULL },
+    CJUMP_SCENARIO_0(SCENARIO_MAIN),
     COND(JUDGE_EQ, 14, /* to label */ 0),
     COND(JUDGE_GT, 17, /* to label */ 1),
     JUMP_LABEL(2),
@@ -30,7 +30,7 @@ static const struct ScriptCommand s_gs202_g0_s0_station_sref_script[] = { /* 0x8
     { 0xb3, 0x05,  0x0018,  0x00000009,  0x00000000, NULL },
     JUMP_LABEL(3),
   LABEL(5), /* = 0x05 */
-    { 0xc0, 0x00,  0x000f,  0x00000000,  0x00000000, NULL },
+    CJUMP_VAR(GROUND_GETOUT),
     COND_EQUAL(1, /* to label */ 6),
     JUMP_LABEL(6),
   LABEL(3), /* = 0x03 */
