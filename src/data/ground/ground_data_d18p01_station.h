@@ -110,7 +110,7 @@ static const struct ScriptCommand s_gs214_g1_s0_lives0_dlg0[] = { /* 0x8266664 *
     { 0xe2, 0x00,  0x01fb,  0x00000000,  0x00000000, NULL },
     { 0x44, 0x00,  0x0000,  0x00000072,  0x00000000, NULL },
     WAIT(60),
-    { 0x32, 0x00, -0x0001,  0x00000000,  0x00000000, _("#+Glittering in the seven colors\n#+of the rainbow~2c this wing is\n#+beautiful beyond description!") },
+    { 0x32, 0x00, -0x0001,  0x00000000,  0x00000000, _("#+Glittering in the seven colors\n#+of the rainbow, this wing is\n#+beautiful beyond description!") },
     { 0x30, 0x00,  0x0000,  0x00000000,  0x00000000, NULL },
     WAIT(30),
     { 0x34, 0x00,  0x0002,  0x00000000,  0x00000000, _(" This #CIRainbow Wing#R...") },

@@ -21,7 +21,7 @@ static const struct ScriptCommand s_gs223_g1_s0_station_sref_script[] = { /* 0x8
     { 0x08, 0x00,  0x0000,  0x000000df,  0x00000000, NULL },
     { 0x37, 0x00, -0x0001,  0x00000000,  0x00000000, _("#+Welcome!") },
     { 0x37, 0x00, -0x0001,  0x00000000,  0x00000000, _("#+This is the portal that leads\n#+to the world of Pokémon!") },
-    { 0x37, 0x00, -0x0001,  0x00000000,  0x00000000, _("#+But before I can let you through~2c\n#+I have several questions for you.") },
+    { 0x37, 0x00, -0x0001,  0x00000000,  0x00000000, _("#+But before I can let you through,\n#+I have several questions for you.") },
     { 0x37, 0x00, -0x0001,  0x00000000,  0x00000000, _("#+I want you to answer them sincerely.") },
     { 0x37, 0x00, -0x0001,  0x00000000,  0x00000000, _("#+Are you ready?") },
     { 0x37, 0x00, -0x0001,  0x00000000,  0x00000000, _("#+OK...#W\n#+Let the interview begin!") },

@@ -1,3 +1,4 @@
+# -*- coding: utf8 -*-
 from __future__ import print_function
 import sys
 import struct
@@ -26,7 +27,7 @@ def main():
             else
               ("gs"[s] + ("_" if "." in descs[p] or " " in descs[p] or "_" in descs[p] else "") + descs[p].replace(".", "_").replace(" ", "_"))
             )
-    cstr = lambda s: u'_("%s")' % s.replace(u'"', u"\\\"").replace(u"\n",u"\\n")
+    cstr = lambda s: u'_("%s")' % s.replace(u'"', u"\\\"").replace(u"\n",u"\\n").replace(u"~27",u"'").replace(u"~2c", u",").replace(u"~93",u"“").replace(u"~94",u"”").replace(u"~22", u"\\\"")
 
     outfile = None
     last = None
