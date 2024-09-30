@@ -99,7 +99,7 @@ static const struct ScriptCommand s_gs214_g1_s0_lives0_dlg0[] = { /* 0x8266664 *
     { 0x32, 0x00, -0x0001,  0x00000000,  0x00000000, _("#+The north wind swirled\n#+around the #CISunset Wing#R!") },
     { 0x32, 0x00, -0x0001,  0x00000000,  0x00000000, _("#+The #CISunset Wing#R...#W\n#+transformed into the #CIRainbow Wing#R!") },
     { 0x30, 0x00,  0x0000,  0x00000000,  0x00000000, NULL },
-    { 0xa6, 0x00,  0x0039,  0x00000001,  0x00000000, NULL },
+    UPDATE_VARINT(CALC_SET, EVENT_LOCAL, 1),
     WAIT(10),
     { 0x4c, 0x00,  0x0000,  0x000001fb,  0x00000000, NULL },
     { 0x28, 0x01,  0x0001,  0x0000003c,  0x00ffffff, NULL },

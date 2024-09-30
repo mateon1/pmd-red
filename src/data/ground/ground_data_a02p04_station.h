@@ -155,7 +155,7 @@ static const struct ScriptCommand s_gs167_g2_s0_lives0_dlg0[] = { /* 0x8219c28 *
     CHOICE(/* label */  2, _("No. There are others.")),
     CHOICE(/* label */  3, _("You're right. No one can get us, hahaha...")),
   LABEL(2), /* = 0x02 */
-    { 0xa6, 0x00,  0x0039,  0x00000000,  0x00000000, NULL },
+    UPDATE_VARINT(CALC_SET, EVENT_LOCAL, 0),
     { 0x30, 0x00,  0x0000,  0x00000000,  0x00000000, NULL },
     WAIT(30),
     { 0x4c, 0x00,  0x0000,  0x000001c7,  0x00000000, NULL },
@@ -178,7 +178,7 @@ static const struct ScriptCommand s_gs167_g2_s0_lives0_dlg0[] = { /* 0x8219c28 *
     { 0x30, 0x00,  0x0000,  0x00000000,  0x00000000, NULL },
     JUMP_LABEL(4),
   LABEL(3), /* = 0x03 */
-    { 0xa6, 0x00,  0x0039,  0x00000001,  0x00000000, NULL },
+    UPDATE_VARINT(CALC_SET, EVENT_LOCAL, 1),
     { 0x2e, 0x03,  0x0001,  0x0000000b,  0x00000000, NULL },
     MSG_VAR(2, PARTNER_TALK_KIND, 1),
     VARIANT(/* == */  1, _(" I knew it!\nI knew you'd say that too, $n0!")),
@@ -202,7 +202,7 @@ static const struct ScriptCommand s_gs167_g2_s0_lives0_dlg0[] = { /* 0x8219c28 *
     VARIANT_DEFAULT(_(" It's Alakazam's team.#W\nThey'll keep chasing us wherever we go.")),
     { 0x30, 0x00,  0x0000,  0x00000000,  0x00000000, NULL },
     JUMP_LABEL(4),
-    { 0xa6, 0x00,  0x0039,  0x00000000,  0x00000000, NULL },
+    UPDATE_VARINT(CALC_SET, EVENT_LOCAL, 0),
   LABEL(4), /* = 0x04 */
     { 0xe4, 0x00,  0x0006,  0x00000000,  0x00000000, NULL },
     { 0xe3, 0x00,  0x0005,  0x00000000,  0x00000000, NULL },

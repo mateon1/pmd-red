@@ -27,8 +27,8 @@ static const struct ScriptCommand s_gs195_g0_s0_station_sref_script[] = { /* 0x8
     { 0xcd, 0x02,  0x0001,  0x0000000c,  0x00000000, NULL },
     JUMP_LABEL(2),
   LABEL(1), /* = 0x01 */
-    { 0xa6, 0x00,  0x001d,  0x00000000,  0x00000000, NULL },
-    { 0xa6, 0x00,  0x001e,  0x00000000,  0x00000000, NULL },
+    UPDATE_VARINT(CALC_SET, PARTNER1_KIND, 0),
+    UPDATE_VARINT(CALC_SET, PARTNER2_KIND, 0),
     { 0x0c, 0x00,  0x0002,  0x00000000,  0x00000000, NULL },
     JUMP_LABEL(2),
   LABEL(2), /* = 0x02 */

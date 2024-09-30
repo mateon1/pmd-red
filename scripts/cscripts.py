@@ -12,6 +12,35 @@ try:
 except TypeError:
     from io import open
 
+CALC = [
+    "CALC_SET",
+    "CALC_SUB",
+    "CALC_ADD",
+    "CALC_MUL",
+    "CALC_DIV",
+    "CALC_MOD",
+    "CALC_AND",
+    "CALC_OR",
+    "CALC_XOR",
+    "CALC_SETBIT",
+    "CALC_CLEARBIT",
+    "CALC_RANDOM",
+]
+
+JUDGE = [
+    "JUDGE_TRUE",
+    "JUDGE_FALSE",
+    "JUDGE_EQ",
+    "JUDGE_GT",
+    "JUDGE_LT",
+    "JUDGE_GE",
+    "JUDGE_LE",
+    "JUDGE_NE",
+    "JUDGE_AND_NONZERO",
+    "JUDGE_XOR_NONZERO",
+    "JUDGE_BIT_SET",
+]
+
 def main():
     with open("baserom.gba", "rb") as f:
         data = bytearray(f.read())
@@ -89,6 +118,34 @@ def main():
                 p = addr + 16*i
                 op, b, h, a1, a2, ap = get_u8(data, p+0), get_u8(data, p+1), get_s16(data, p+2), get_s32(data, p+4), get_s32(data, p+8), get_u32(data, p+12)
                 if False: pass
+                # 9b..a3: camera-related, needs reversing
+                elif op == 0xa4:
+                    assert b == a1 == a2 == ap == 0
+                    outfile.write(u'    RESET_ARRAY(%s),\n' % get_var_name(data, h))
+                elif op == 0xa5:
+                    assert b == a1 == a2 == ap == 0
+                    outfile.write(u'    CLEAR_ARRAY(%s),\n' % get_var_name(data, h))
+                elif op == 0xa6:
+                    assert a2 == ap == 0
+                    outfile.write(u'    UPDATE_VARINT(%s, %s, %d),\n' % (CALC[b], get_var_name(data, h), a1))
+                elif op == 0xa7:
+                    assert a2 == ap == 0
+                    outfile.write(u'    UPDATE_VARVAR(%s, %s, %s),\n' % (CALC[b], get_var_name(data, h), get_var_name(data, a1)))
+                elif op == 0xa8:
+                    assert b == ap == 0
+                    outfile.write(u'    SET_ARRAYVAL(%s, %2d, %2d),\n' % (get_var_name(data, h), a1, a2))
+                elif op == 0xa9:
+                    assert b == ap == 0
+                    outfile.write(u'    SCENARIO_CALC(%s, %2d, %2d),\n' % (get_var_name(data, h), a1, a2))
+                elif op == 0xaa:
+                    assert b == a2 == ap == 0
+                    outfile.write(u'    SCENARIO_ADVANCE(%s, /*unused*/ %d),\n' % (get_var_name(data, h), a1))
+                elif op == 0xab:
+                    assert b == a2 == ap == 0
+                    outfile.write(u'    SET_DUNGEON_RES(/* result */ %d, /* enter */ %d),\n' % (h, a1))
+                elif op == 0xac:
+                    assert b == a1 == a2 == ap == 0
+                    outfile.write(u'    SET_PLAYER_KIND(%d),\n' % h)
                 elif op == 0xcf:
                     assert a2 == ap == 0
                     outfile.write(u'    MSG_VAR(%d, %s, %d),\n' % (b, get_var_name(data, h), a1))

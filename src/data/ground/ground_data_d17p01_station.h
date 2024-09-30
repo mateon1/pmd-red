@@ -97,7 +97,7 @@ static const struct ScriptCommand s_gs213_g1_s0_lives0_dlg0[] = { /* 0x82657d4 *
     { 0x32, 0x00, -0x0001,  0x00000000,  0x00000000, _("#+Raikou's thunderbolt\n#+electrified the #CIRed Wing#R!") },
     { 0x32, 0x00, -0x0001,  0x00000000,  0x00000000, _("#+The #CIRed Wing#R...#W\n#+transformed into\n#+the #CISunset Wing#R!") },
     { 0x30, 0x00,  0x0000,  0x00000000,  0x00000000, NULL },
-    { 0xa6, 0x00,  0x0039,  0x00000001,  0x00000000, NULL },
+    UPDATE_VARINT(CALC_SET, EVENT_LOCAL, 1),
     WAIT(10),
     { 0x4c, 0x00,  0x0000,  0x000001fb,  0x00000000, NULL },
     { 0x28, 0x01,  0x0001,  0x0000003c,  0x00ffffff, NULL },

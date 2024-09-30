@@ -41,7 +41,7 @@ static const struct ScriptCommand s_gs177_g1_s0_station_sref_script[] = { /* 0x8
     { 0x25, 0x01,  0x0000,  0x00000000,  0x00000000, NULL },
     WAIT(60),
     { 0x3b, 0x09,  0x0000,  0x00000000,  0x00000000, NULL },
-    { 0xa6, 0x00,  0x0011,  0x0000000b,  0x00000000, NULL },
+    UPDATE_VARINT(CALC_SET, GROUND_PLACE, 11),
     ASK1(FALSE, /*default*/ -1, /* speaker */ -1, _("Would you like to save your adventure?")),
     CHOICE(/* label */  0, _("Yes.")),
     CHOICE(/* label */  1, _("No.")),

@@ -33,7 +33,7 @@ static const struct ScriptCommand s_gs226_g1_s0_station_sref_script[] = { /* 0x8
     WAIT(20),
     { 0xe4, 0x00,  0x0004,  0x00000000,  0x00000000, NULL },
     { 0xe3, 0x00,  0x0003,  0x00000000,  0x00000000, NULL },
-    { 0xa6, 0x00,  0x0039,  0x00000001,  0x00000000, NULL },
+    UPDATE_VARINT(CALC_SET, EVENT_LOCAL, 1),
     WAIT(4),
     RET,
 };

@@ -150,7 +150,7 @@ static const struct ScriptCommand s_gs186_g1_s0_lives0_dlg0[] = { /* 0x8235ba8 *
     CHOICE(/* label */ 12, _("It's true! It's tearing me up!")),
     CHOICE(/* label */ 13, _("Huh? I'm perfectly fine.")),
   LABEL(12), /* = 0x0c */
-    { 0xa6, 0x00,  0x0039,  0x00000000,  0x00000000, NULL },
+    UPDATE_VARINT(CALC_SET, EVENT_LOCAL, 0),
     { 0x30, 0x00,  0x0000,  0x00000000,  0x00000000, NULL },
     WAIT(30),
     { 0x4c, 0x00,  0x0000,  0x000001c9,  0x00000000, NULL },
@@ -197,7 +197,7 @@ static const struct ScriptCommand s_gs186_g1_s0_lives0_dlg0[] = { /* 0x8235ba8 *
     { 0x30, 0x00,  0x0000,  0x00000000,  0x00000000, NULL },
     JUMP_LABEL(16),
   LABEL(13), /* = 0x0d */
-    { 0xa6, 0x00,  0x0039,  0x00000001,  0x00000000, NULL },
+    UPDATE_VARINT(CALC_SET, EVENT_LOCAL, 1),
     { 0x2e, 0x15,  0x0001,  0x00000004,  0x00000000, NULL },
     { 0x34, 0x00,  0x0001,  0x00000000,  0x00000000, _(" Huh...?") },
     { 0x30, 0x00,  0x0000,  0x00000000,  0x00000000, NULL },

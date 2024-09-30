@@ -14,14 +14,14 @@ static const struct ScriptCommand s_gs202_g0_s0_station_sref_script[] = { /* 0x8
     { 0xcd, 0x03,  0x0001,  0x00000011,  0x00000000, NULL },
     JUMP_LABEL(2),
   LABEL(0), /* = 0x00 */
-    { 0xa6, 0x00,  0x001d,  0x00000002,  0x00000000, NULL },
-    { 0xa6, 0x00,  0x001e,  0x00000000,  0x00000000, NULL },
+    UPDATE_VARINT(CALC_SET, PARTNER1_KIND, 2),
+    UPDATE_VARINT(CALC_SET, PARTNER2_KIND, 0),
     { 0x3b, 0x1c,  0x0000,  0x00000000,  0x00000000, NULL },
     CALL_STATION(  2,  0),
     JUMP_LABEL(2),
   LABEL(1), /* = 0x01 */
-    { 0xa6, 0x00,  0x001d,  0x00000000,  0x00000000, NULL },
-    { 0xa6, 0x00,  0x001e,  0x00000000,  0x00000000, NULL },
+    UPDATE_VARINT(CALC_SET, PARTNER1_KIND, 0),
+    UPDATE_VARINT(CALC_SET, PARTNER2_KIND, 0),
     JUMP_LABEL(2),
   LABEL(2), /* = 0x02 */
     { 0xb3, 0x03,  0x0018,  0x00000001,  0x00000000, NULL },
@@ -84,7 +84,7 @@ static const struct ScriptCommand s_gs202_g0_s0_evt1_sref_script[] = { /* 0x8255
     { 0x48, 0x00,  0x001e,  0x00000000,  0x00000000, NULL },
     { 0x23, 0x01, -0x0001,  0x00000000,  0x00000000, NULL },
     CALL_SCRIPT(DISMISSAL_SALLY_MEMBER4_FUNC),
-    { 0xab, 0x00,  0x000a, -0x00000001,  0x00000000, NULL },
+    SET_DUNGEON_RES(/* result */ 10, /* enter */ -1),
     { 0x1d, 0x00,  0x0004,  0x0000000c,  0x00000000, NULL },
     HALT,
   LABEL(0), /* = 0x00 */
@@ -148,11 +148,11 @@ static const struct ScriptCommand s_gs202_g0_s4_lives1_dlg0[] = { /* 0x8255d94 *
 
 static const struct ScriptCommand s_gs202_g1_s0_station_sref_script[] = { /* 0x8255dc4 */
     DEBUGINFO,
-    { 0xab, 0x00,  0x0000, -0x00000001,  0x00000000, NULL },
-    { 0xa6, 0x00,  0x000d,  0x000000ca,  0x00000000, NULL },
-    { 0xa6, 0x00,  0x000f,  0x000000ca,  0x00000000, NULL },
-    { 0xa6, 0x00,  0x001d,  0x00000002,  0x00000000, NULL },
-    { 0xa6, 0x00,  0x001e,  0x00000000,  0x00000000, NULL },
+    SET_DUNGEON_RES(/* result */ 0, /* enter */ -1),
+    UPDATE_VARINT(CALC_SET, GROUND_ENTER, 202),
+    UPDATE_VARINT(CALC_SET, GROUND_GETOUT, 202),
+    UPDATE_VARINT(CALC_SET, PARTNER1_KIND, 2),
+    UPDATE_VARINT(CALC_SET, PARTNER2_KIND, 0),
     { 0xb3, 0x00,  0x0003,  0x0000000e,  0x00000000, NULL },
     JUMP_LABEL(1),
   LABEL(0), /* = 0x00 */

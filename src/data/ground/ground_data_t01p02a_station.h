@@ -399,7 +399,7 @@ static const struct ScriptCommand s_gs2_g3_s0_lives0_dlg2[] = { /* 0x817e834 */
     { 0x30, 0x00,  0x0000,  0x00000000,  0x00000000, NULL },
     { 0x44, 0x00,  0x0000,  0x00000008,  0x00000000, NULL },
     { 0xaf, 0x01,  0x0010,  0x00000000,  0x00000000, NULL },
-    { 0xa9, 0x00,  0x0005,  0x00000021,  0x00000004, NULL },
+    SCENARIO_CALC(SCENARIO_SUB2, 33,  4),
     JUMP_SCRIPT(END_TALK),
   LABEL(0), /* = 0x00 */
     { 0x34, 0x00,  0x0001,  0x00000000,  0x00000000, _(" If you were to carry the\nHidden Machine #CIDive#R as an item...") },
@@ -471,7 +471,7 @@ static const struct ScriptCommand s_gs2_g4_s0_lives0_dlg2[] = { /* 0x817f4e4 */
     { 0x54, 0x00,  0x0002,  0x00000000,  0x00000000, NULL },
     { 0x2d, 0x07,  0x0000,  0x00000000,  0x00000000, NULL },
     WAIT(1),
-    { 0xa8, 0x00,  0x0040,  0x00000003,  0x00000001, NULL },
+    SET_ARRAYVAL(EVENT_S07E01,  3,  1),
     { 0xe4, 0x00,  0x0006,  0x00000000,  0x00000000, NULL },
     { 0x34, 0x00,  0x0001,  0x00000000,  0x00000000, _(" Hohoho.#W\nThere is an old saying about the #CDBuried\nRelic#R.") },
     { 0xe3, 0x00,  0x0005,  0x00000000,  0x00000000, NULL },
@@ -526,7 +526,7 @@ static const struct ScriptCommand s_gs2_g6_s0_station_sref_script[] = { /* 0x817
     { 0x0c, 0x00, -0x0001,  0x00000000,  0x00000000, NULL },
     { 0xe3, 0x00,  0x0003,  0x00000000,  0x00000000, NULL },
     { 0xba, 0x00,  0x000b,  0x00000033,  0x00000002, NULL },
-    { 0xa9, 0x00,  0x000b,  0x00000033,  0x00000002, NULL },
+    SCENARIO_CALC(SCENARIO_SUB8, 51,  2),
   LABEL(0), /* = 0x00 */
     RET,
 };
@@ -739,7 +739,7 @@ static const struct ScriptCommand s_gs2_g8_s0_station_sref_script[] = { /* 0x818
     { 0x0c, 0x00, -0x0001,  0x00000000,  0x00000000, NULL },
     { 0xe3, 0x00,  0x0003,  0x00000000,  0x00000000, NULL },
     { 0xba, 0x00,  0x000b,  0x00000033,  0x00000003, NULL },
-    { 0xa9, 0x00,  0x000b,  0x00000033,  0x00000004, NULL },
+    SCENARIO_CALC(SCENARIO_SUB8, 51,  4),
   LABEL(0), /* = 0x00 */
     RET,
 };
@@ -929,7 +929,7 @@ static const struct ScriptCommand s_gs2_g9_s1_station_sref_script[] = { /* 0x818
     { 0x0c, 0xff, -0x0001,  0x00000000,  0x00000000, NULL },
     { 0xe3, 0x00,  0x0003,  0x00000000,  0x00000000, NULL },
     { 0xba, 0x00,  0x000b,  0x00000033,  0x00000005, NULL },
-    { 0xa9, 0x00,  0x000b,  0x00000033,  0x00000006, NULL },
+    SCENARIO_CALC(SCENARIO_SUB8, 51,  6),
   LABEL(0), /* = 0x00 */
     { 0x0c, 0x00,  0x0009,  0x00000000,  0x00000000, NULL },
     RET,
@@ -1377,7 +1377,7 @@ static const struct ScriptCommand s_gs2_g16_s1_station_sref_script[] = { /* 0x81
     DEBUGINFO,
     { 0x0c, 0xff, -0x0001,  0x00000000,  0x00000000, NULL },
     { 0xba, 0x00,  0x0003,  0x00000009,  0x00000005, NULL },
-    { 0xa9, 0x00,  0x0003,  0x00000009,  0x00000005, NULL },
+    SCENARIO_CALC(SCENARIO_MAIN,  9,  5),
   LABEL(0), /* = 0x00 */
     RET,
 };
@@ -2132,11 +2132,11 @@ static const struct ScriptCommand s_gs2_g28_s0_lives0_dlg0[] = { /* 0x81861c0 */
 
 static const struct ScriptCommand s_gs2_g29_s0_station_sref_script[] = { /* 0x8186200 */
     DEBUGINFO,
-    { 0xab, 0x00,  0x0000, -0x00000001,  0x00000000, NULL },
-    { 0xa6, 0x00,  0x000d,  0x00000002,  0x00000000, NULL },
-    { 0xa6, 0x00,  0x000f,  0x00000001,  0x00000000, NULL },
-    { 0xa6, 0x00,  0x001d,  0x00000002,  0x00000000, NULL },
-    { 0xa6, 0x00,  0x001e,  0x00000000,  0x00000000, NULL },
+    SET_DUNGEON_RES(/* result */ 0, /* enter */ -1),
+    UPDATE_VARINT(CALC_SET, GROUND_ENTER, 2),
+    UPDATE_VARINT(CALC_SET, GROUND_GETOUT, 1),
+    UPDATE_VARINT(CALC_SET, PARTNER1_KIND, 2),
+    UPDATE_VARINT(CALC_SET, PARTNER2_KIND, 0),
     { 0x08, 0x00,  0x0000,  0x00000003,  0x00000000, NULL },
     { 0x0c, 0x00, -0x0001,  0x00000000,  0x00000000, NULL },
     WAIT(30),

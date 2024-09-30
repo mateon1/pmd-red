@@ -5,6 +5,15 @@
 #define CPOS_HALFTILE 0x2
 #define CPOS_CURRENT  0x4
 
+#define RESET_ARRAY(v)      { 0xA4, 0, v, 0, 0, NULL }
+#define CLEAR_ARRAY(v)      { 0xA5, 0, v, 0, 0, NULL }
+#define UPDATE_VARINT(o,v,i){ 0xA6, o, v, i, 0, NULL }
+#define UPDATE_VARVAR(o,a,b){ 0xA7, o, a, b, 0, NULL }
+#define SET_ARRAYVAL(v,i,x) { 0xA8, 0, v, i, x, NULL }
+#define SCENARIO_CALC(v,a,b){ 0xA9, 0, v, a, b, NULL }
+#define SCENARIO_ADVANCE(v,a){0xAA, 0, v, a, 0, NULL }
+#define SET_DUNGEON_RES(r,e){ 0xAB, 0, r, e, 0, NULL }
+#define SET_PLAYER_KIND(k)  { 0xAC, 0, k, 0, 0, NULL }
 #define MSG_VAR(b,v,a)      { 0xCF, b, v, a, 0, NULL }
 #define VARIANT(c,s)        { 0xD0, 0, c, 0, 0, s    }
 #define VARIANT_DEFAULT(s)  { 0xD1, 0, 0, 0, 0, s    }

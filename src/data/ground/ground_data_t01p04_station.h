@@ -29,18 +29,18 @@ static const struct ScriptCommand s_gs5_g0_s0_station_sref_script[] = { /* 0x819
     JUMP_LABEL(6),
   LABEL(2), /* = 0x02 */
     { 0x1e, 0x00,  0x0004, -0x00000001,  0x00000000, NULL },
-    { 0xab, 0x00,  0x0000, -0x00000001,  0x00000000, NULL },
+    SET_DUNGEON_RES(/* result */ 0, /* enter */ -1),
     RET,
   LABEL(3), /* = 0x03 */
     { 0x1e, 0x00,  0x0003, -0x00000001,  0x00000000, NULL },
-    { 0xab, 0x00,  0x0000, -0x00000001,  0x00000000, NULL },
+    SET_DUNGEON_RES(/* result */ 0, /* enter */ -1),
     RET,
   LABEL(4), /* = 0x04 */
     { 0x1e, 0x00,  0x0002, -0x00000001,  0x00000000, NULL },
-    { 0xab, 0x00,  0x0000, -0x00000001,  0x00000000, NULL },
+    SET_DUNGEON_RES(/* result */ 0, /* enter */ -1),
     RET,
   LABEL(6), /* = 0x06 */
-    { 0xab, 0x00,  0x0000, -0x00000001,  0x00000000, NULL },
+    SET_DUNGEON_RES(/* result */ 0, /* enter */ -1),
     { 0x44, 0x00,  0x0000,  0x00000007,  0x00000000, NULL },
     JUMP_SCRIPT(COMMON_ENTER),
 };

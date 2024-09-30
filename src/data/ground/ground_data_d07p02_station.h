@@ -272,7 +272,7 @@ static const struct ScriptCommand s_gs192_g2_s0_lives0_dlg0[] = { /* 0x823ef68 *
   LABEL(2), /* = 0x02 */
     { 0x30, 0x00,  0x0000,  0x00000000,  0x00000000, NULL },
     WAIT(10),
-    { 0xa6, 0x00,  0x0039,  0x00000000,  0x00000000, NULL },
+    UPDATE_VARINT(CALC_SET, EVENT_LOCAL, 0),
     { 0x2e, 0x03,  0x0001,  0x0000000c,  0x00000000, NULL },
     MSG_VAR(2, PARTNER_TALK_KIND, 1),
     VARIANT(/* == */  1, _(" Hah? Tickle him?#W\n...OK. I'll try it.")),
@@ -381,7 +381,7 @@ static const struct ScriptCommand s_gs192_g2_s0_lives0_dlg0[] = { /* 0x823ef68 *
   LABEL(3), /* = 0x03 */
     { 0x30, 0x00,  0x0000,  0x00000000,  0x00000000, NULL },
     WAIT(10),
-    { 0xa6, 0x00,  0x0039,  0x00000001,  0x00000000, NULL },
+    UPDATE_VARINT(CALC_SET, EVENT_LOCAL, 1),
     { 0xe4, 0x00,  0x0006,  0x00000000,  0x00000000, NULL },
     { 0xe3, 0x00,  0x0005,  0x00000000,  0x00000000, NULL },
     { 0x2e, 0x03,  0x0001,  0x0000000c,  0x00000000, NULL },
