@@ -12,7 +12,7 @@ static const struct ScriptCommand s_gs164_g0_s0_station_sref_script[] = { /* 0x8
     DEBUGINFO,
     { 0x08, 0x00,  0x0000,  0x000000a4,  0x00000000, NULL },
     { 0x47, 0x00,  0x0000,  0x00000000,  0x00000000, NULL },
-    JUMP_SCRIPT(/* COMMON_ENTER */ 355),
+    JUMP_SCRIPT(COMMON_ENTER),
 };
 
 static const struct ScriptRef s_gs164_g0_s0_station_sref = { 404, 1, NULL /* ENTER_CONTROL */, s_gs164_g0_s0_station_sref_script }; /* 0x82181ac */
@@ -28,7 +28,7 @@ static const struct ScriptCommand s_gs164_g1_s0_station_sref_script[] = { /* 0x8
     { 0x39, 0x00,  0x001e,  0x00000000,  0x00000000, _("#+cruel and arduous\n#+journey as a fugitive.") },
     { 0x39, 0x00,  0x001e,  0x00000000,  0x00000000, _("#+Over forbidding mountains...") },
     { 0x30, 0x00,  0x0000,  0x00000000,  0x00000000, NULL },
-    { 0xdb, 0x00,  0x0001,  0x00000000,  0x00000000, NULL },
+    WAIT(1),
     { 0x25, 0x01,  0x0000,  0x00000000,  0x00000000, NULL },
     { 0x0c, 0x00, -0x0001,  0x00000000,  0x00000000, NULL },
     { 0x22, 0x01,  0x001e,  0x00000000,  0x00000000, NULL },
@@ -49,8 +49,8 @@ static const struct ScriptCommand s_gs164_g1_s0_lives0_dlg0[] = { /* 0x821833c *
     { 0xe4, 0x00,  0x0006,  0x00000000,  0x00000000, NULL },
     { 0x2e, 0x02,  0x0001,  0x0000000c,  0x00000000, NULL },
     { 0xcf, 0x02,  0x0026,  0x00000001,  0x00000000, NULL },
-    { 0xd0, 0x00,  0x0001,  0x00000000,  0x00000000, _(" Whoa!\nThese cracks go down deep!") },
-    { 0xd1, 0x00,  0x0000,  0x00000000,  0x00000000, _(" Wow!\nAren~27t these fissures amazing?!") },
+    VARIANT(/* == */  1, _(" Whoa!\nThese cracks go down deep!")),
+    VARIANT_DEFAULT(_(" Wow!\nAren~27t these fissures amazing?!")),
     { 0x30, 0x00,  0x0000,  0x00000000,  0x00000000, NULL },
     { 0xe4, 0x00,  0x0003,  0x00000000,  0x00000000, NULL },
     HALT,
@@ -63,7 +63,7 @@ static const struct ScriptCommand s_gs164_g1_s0_lives1_dlg0[] = { /* 0x8218458 *
     { 0x2d, 0x07,  0x0001,  0x00000000,  0x00000000, NULL },
     { 0x86, 0x00,  0x0100,  0x00000001,  0x00000000, NULL },
     { 0xe3, 0x00,  0x0006,  0x00000000,  0x00000000, NULL },
-    CALL_SCRIPT(/* JUMP_SURPRISE_FUNC */ 38),
+    CALL_SCRIPT(JUMP_SURPRISE_FUNC),
     { 0xe3, 0x00,  0x0006,  0x00000000,  0x00000000, NULL },
     HALT,
 };

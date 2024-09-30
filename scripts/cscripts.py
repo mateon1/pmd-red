@@ -88,15 +88,48 @@ def main():
                 p = addr + 16*i
                 op, b, h, a1, a2, ap = get_u8(data, p+0), get_u8(data, p+1), get_s16(data, p+2), get_s32(data, p+4), get_s32(data, p+8), get_u32(data, p+12)
                 if False: pass
+                elif op == 0xd0:
+                    assert b == a1 == a2 == 0
+                    outfile.write(u'    VARIANT(/* == */%3d, %s),\n' % (h, cstr(get_str(data, ap))))
+                elif op == 0xd1:
+                    assert b == h == a1 == a2 == 0
+                    outfile.write(u'    VARIANT_DEFAULT(%s),\n' % (cstr(get_str(data, ap)),))
+                elif 0xd2 <= op <= 0xd8:
+                    if op <= 0xd5: assert a2 == 0
+                    else: assert ap == 0
+                    assert b in {0,1}
+                    mname = "ASK%d" % ((op-0xd3)%3+1,)
+                    if 0xd6 <= op: mname += "_VAR"
+                    if op == 0xd2: mname = "ASK_DEBUG"
+                    outfile.write(u'    %s(%s, /*default*/ %d, /* speaker */ %d' % (mname, " TRUE" if b else "FALSE", h, a1))
+                    if op >= 0xd6: outfile.write(u', %s),\n' % get_var_name(data, a2))
+                    else: outfile.write(u', %s),\n' % ("NULL" if not ap else cstr(get_str(data, ap)),))
+                elif op == 0xd9:
+                    assert b == a1 == a2 == 0
+                    outfile.write(u'    CHOICE(/* label */%3d, %s),\n' % (h, cstr(get_str(data, ap))))
+                #elif op == 0xda: # LockCheck1
+                elif op == 0xdb:
+                    assert b == a1 == a2 == ap == 0
+                    outfile.write(u'    WAIT(%d),\n' % (h))
+                elif op == 0xdc:
+                    assert b == a2 == ap == 0
+                    outfile.write(u'    WAIT_RANDOM(%d, %d),\n' % (h, a1))
+                # dd..e2: in HandleAction
+                #elif op == 0xe3: # LockCheck(h)
+                #elif op == 0xe4: # LockZero(h)
+                #elif op == 0xe5: # LockCond(h,b)
+                elif op == 0xe6:
+                    assert b == a1 == a2 == ap == 0
+                    outfile.write(u'    CALL_LABEL(%d),\n' % h)
                 elif op == 0xe7:
                     assert b == a1 == a2 == ap == 0
-                    outfile.write(u'    JUMP_LOCAL(/* label */ %d),\n' % h)
+                    outfile.write(u'    JUMP_LABEL(%d),\n' % h)
                 elif op == 0xe8:
                     assert b == a1 == a2 == ap == 0
-                    outfile.write(u'    CALL_SCRIPT(/* %s */ %d),\n' % (SCRIPTNAMES[h], h))
+                    outfile.write(u'    CALL_SCRIPT(%s),\n' % (SCRIPTNAMES[h],))
                 elif op == 0xe9:
                     assert b == a1 == a2 == ap == 0
-                    outfile.write(u'    JUMP_SCRIPT(/* %s */ %d),\n' % (SCRIPTNAMES[h], h))
+                    outfile.write(u'    JUMP_SCRIPT(%s),\n' % (SCRIPTNAMES[h],))
                 elif op == 0xee:
                     assert b == h == a1 == a2 == ap == 0
                     outfile.write(u'    RET_DIRECT,\n')

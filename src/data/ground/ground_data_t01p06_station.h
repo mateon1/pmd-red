@@ -13,23 +13,23 @@ static const struct ScriptCommand s_gs7_g0_s0_station_sref_script[] = { /* 0x819
     { 0xcd, 0x04,  0x0000,  0x00000004,  0x00000000, NULL },
     { 0xcd, 0x02,  0x0001,  0x00000004,  0x00000000, NULL },
     { 0xcd, 0x02,  0x0002,  0x00000005,  0x00000000, NULL },
-    JUMP_LOCAL(/* label */ 2),
-    JUMP_LOCAL(/* label */ 0),
+    JUMP_LABEL(2),
+    JUMP_LABEL(0),
   LABEL(1), /* = 0x01 */
     { 0x0c, 0x00,  0x0001,  0x00000000,  0x00000000, NULL },
-    JUMP_LOCAL(/* label */ 0),
+    JUMP_LABEL(0),
   LABEL(2), /* = 0x02 */
     { 0x0c, 0x00,  0x0001,  0x00000000,  0x00000000, NULL },
-    JUMP_LOCAL(/* label */ 0),
+    JUMP_LABEL(0),
   LABEL(0), /* = 0x00 */
     { 0xc0, 0x00,  0x000f,  0x00000000,  0x00000000, NULL },
     { 0xcc, 0x00,  0x0003,  0x00000006,  0x00000000, NULL },
   LABEL(3), /* = 0x03 */
     { 0x0d, 0x01,  0x0000,  0x00000000,  0x00000000, NULL },
-    JUMP_LOCAL(/* label */ 4),
+    JUMP_LABEL(4),
   LABEL(4), /* = 0x04 */
     { 0x44, 0x00,  0x0000,  0x0000006e,  0x00000000, NULL },
-    JUMP_SCRIPT(/* COMMON_ENTER */ 355),
+    JUMP_SCRIPT(COMMON_ENTER),
 };
 
 static const struct ScriptRef s_gs7_g0_s0_station_sref = { 404, 1, NULL /* ENTER_CONTROL */, s_gs7_g0_s0_station_sref_script }; /* 0x819a574 */
@@ -45,14 +45,14 @@ static const struct ScriptRef s_gs7_g0_s0_evt0_sref = { 357, 2, NULL /* GETOUT_N
 static const struct ScriptCommand s_gs7_g0_s1_lives0_dlg0[] = { /* 0x819a5bc */
     DEBUGINFO,
     { 0x54, 0x00,  0x0002,  0x00000000,  0x00000000, NULL },
-    CALL_SCRIPT(/* WAIT_START_FUNC */ 3),
+    CALL_SCRIPT(WAIT_START_FUNC),
     RET,
 };
 
 static const struct ScriptCommand s_gs7_g0_s1_lives1_dlg0[] = { /* 0x819a5fc */
     DEBUGINFO,
     { 0x54, 0x00,  0x0002,  0x00000000,  0x00000000, NULL },
-    CALL_SCRIPT(/* WAIT_START_FUNC */ 3),
+    CALL_SCRIPT(WAIT_START_FUNC),
     RET,
 };
 

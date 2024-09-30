@@ -13,12 +13,12 @@ static const struct ScriptCommand s_gs8_g0_s0_station_sref_script[] = { /* 0x819
     { 0xcc, 0x00,  0x0001,  0x00000002,  0x00000000, NULL },
     { 0xcc, 0x00,  0x0001,  0x00000003,  0x00000000, NULL },
     { 0x0d, 0x01,  0x0000,  0x00000000,  0x00000000, NULL },
-    JUMP_LOCAL(/* label */ 2),
+    JUMP_LABEL(2),
   LABEL(1), /* = 0x01 */
     { 0xeb, 0x00,  0x0001, -0x00000001,  0x00000000, NULL },
   LABEL(2), /* = 0x02 */
     { 0x44, 0x00,  0x0000,  0x00000008,  0x00000000, NULL },
-    JUMP_SCRIPT(/* COMMON_ENTER */ 355),
+    JUMP_SCRIPT(COMMON_ENTER),
 };
 
 static const struct ScriptRef s_gs8_g0_s0_station_sref = { 404, 1, NULL /* ENTER_CONTROL */, s_gs8_g0_s0_station_sref_script }; /* 0x819a83c */
@@ -35,14 +35,14 @@ static const struct ScriptRef s_gs8_g0_s0_evt0_sref = { 357, 2, NULL /* GETOUT_N
 static const struct ScriptCommand s_gs8_g0_s1_lives0_dlg0[] = { /* 0x819a884 */
     DEBUGINFO,
     { 0x54, 0x00,  0x0002,  0x00000000,  0x00000000, NULL },
-    CALL_SCRIPT(/* WAIT_START_FUNC */ 3),
+    CALL_SCRIPT(WAIT_START_FUNC),
     RET,
 };
 
 static const struct ScriptCommand s_gs8_g0_s1_lives1_dlg0[] = { /* 0x819a8c4 */
     DEBUGINFO,
     { 0x54, 0x00,  0x0002,  0x00000000,  0x00000000, NULL },
-    CALL_SCRIPT(/* WAIT_START_FUNC */ 3),
+    CALL_SCRIPT(WAIT_START_FUNC),
     RET,
 };
 
@@ -62,7 +62,7 @@ static const struct ScriptRef s_gs8_g1_s0_station_sref = { 402, 7, NULL /* EVENT
 static const struct ScriptCommand s_gs8_g1_s0_eff0_script[] = { /* 0x819a990 */
     DEBUGINFO,
     { 0x98, 0x00,  0x0000,  0x00000000,  0x00000000, NULL },
-    CALL_SCRIPT(/* WAIT_START_FUNC */ 3),
+    CALL_SCRIPT(WAIT_START_FUNC),
     { 0x99, 0x00,  0x0000,  0x00000000,  0x00000000, NULL },
     { 0x3c, 0x1a,  0x0000,  0x00000000,  0x00000000, NULL },
     { 0xe4, 0x00,  0x0003,  0x00000000,  0x00000000, NULL },
@@ -93,7 +93,7 @@ static const struct ScriptRef s_gs8_g1_s1_station_sref = { 401, 7, NULL /* EVENT
 static const struct ScriptCommand s_gs8_g1_s1_eff0_script[] = { /* 0x819aadc */
     DEBUGINFO,
     { 0x56, 0x00,  0x0000,  0x000001b4,  0x00000000, NULL },
-    { 0xdb, 0x00,  0x001e,  0x00000000,  0x00000000, NULL },
+    WAIT(30),
     { 0x12, 0x00, -0x0001,  0x00000000,  0x00000000, NULL },
     { 0x0d, 0x01, -0x0001,  0x00000000,  0x00000000, NULL },
     { 0xde, 0x00,  0x0000,  0x00000000,  0x00000000, NULL },

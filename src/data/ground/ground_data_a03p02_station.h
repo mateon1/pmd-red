@@ -10,7 +10,7 @@ static const struct ScriptCommand s_gs169_g0_s0_station_sref_script[] = { /* 0x8
     DEBUGINFO,
     { 0x08, 0x00,  0x0000,  0x000000a9,  0x00000000, NULL },
     { 0x47, 0x00,  0x0000,  0x00000000,  0x00000000, NULL },
-    JUMP_SCRIPT(/* COMMON_ENTER */ 355),
+    JUMP_SCRIPT(COMMON_ENTER),
 };
 
 static const struct ScriptRef s_gs169_g0_s0_station_sref = { 404, 1, NULL /* ENTER_CONTROL */, s_gs169_g0_s0_station_sref_script }; /* 0x821cf0c */
@@ -33,14 +33,14 @@ static const struct ScriptCommand s_gs169_g1_s0_lives0_dlg0[] = { /* 0x821cfa4 *
     { 0x54, 0x00,  0x0002,  0x00000000,  0x00000000, NULL },
     { 0x2d, 0x07,  0x0000,  0x00000000,  0x00000000, NULL },
     { 0xdf, 0x00,  0x0000,  0x00000000,  0x00000000, NULL },
-    { 0xdb, 0x00,  0x001e,  0x00000000,  0x00000000, NULL },
-    { 0xdb, 0x00,  0x005a,  0x00000000,  0x00000000, NULL },
+    WAIT(30),
+    WAIT(90),
     { 0x2e, 0x02,  0x0001,  0x0000000b,  0x00000000, NULL },
     { 0x34, 0x00,  0x0001,  0x00000000,  0x00000000, _(" Wow!#W\nThe snow is like frozen powder!") },
     { 0x2e, 0x15,  0x0001,  0x00000005,  0x00000000, NULL },
     { 0x34, 0x00,  0x0001,  0x00000000,  0x00000000, _(" It looks pretty~2c but...#W\nIt must be harsh there...") },
     { 0x30, 0x00,  0x0000,  0x00000000,  0x00000000, NULL },
-    { 0xdb, 0x00,  0x000a,  0x00000000,  0x00000000, NULL },
+    WAIT(10),
     { 0xe4, 0x00,  0x0003,  0x00000000,  0x00000000, NULL },
     HALT,
 };

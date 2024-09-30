@@ -14,7 +14,7 @@ static const struct ScriptCommand s_gs181_g0_s0_station_sref_script[] = { /* 0x8
     DEBUGINFO,
     { 0x08, 0x00,  0x0000,  0x000000b5,  0x00000000, NULL },
     { 0x47, 0x00,  0x0000,  0x00000000,  0x00000000, NULL },
-    JUMP_SCRIPT(/* COMMON_ENTER */ 355),
+    JUMP_SCRIPT(COMMON_ENTER),
 };
 
 static const struct ScriptRef s_gs181_g0_s0_station_sref = { 404, 1, NULL /* ENTER_CONTROL */, s_gs181_g0_s0_station_sref_script }; /* 0x8231cdc */
@@ -40,15 +40,15 @@ static const struct ScriptCommand s_gs181_g1_s0_lives0_dlg0[] = { /* 0x8231d84 *
     { 0xdf, 0x00,  0x0000,  0x00000000,  0x00000000, NULL },
     { 0xe4, 0x00,  0x0006,  0x00000000,  0x00000000, NULL },
     { 0x6b, 0x00,  0x0100,  0x00000000,  0x00000000, NULL },
-    { 0xdb, 0x00,  0x000f,  0x00000000,  0x00000000, NULL },
+    WAIT(15),
     { 0x2e, 0x03,  0x0001,  0x00000000,  0x00000000, NULL },
     { 0xcf, 0x02,  0x0026,  0x00000001,  0x00000000, NULL },
-    { 0xd0, 0x00,  0x0001,  0x00000000,  0x00000000, _(" Oh~2c hey~2c there they are.\nLet~27s get them out.") },
-    { 0xd1, 0x00,  0x0000,  0x00000000,  0x00000000, _(" Oh~2c there they are!\nLet~27s get them out safely.") },
+    VARIANT(/* == */  1, _(" Oh~2c hey~2c there they are.\nLet~27s get them out.")),
+    VARIANT_DEFAULT(_(" Oh~2c there they are!\nLet~27s get them out safely.")),
     { 0x30, 0x00,  0x0000,  0x00000000,  0x00000000, NULL },
     { 0xe4, 0x00,  0x0006,  0x00000000,  0x00000000, NULL },
     { 0xe4, 0x00,  0x0003,  0x00000000,  0x00000000, NULL },
-    { 0xdb, 0x00,  0x0001,  0x00000000,  0x00000000, NULL },
+    WAIT(1),
     { 0x6b, 0x00,  0x00cc,  0x00000001,  0x00000000, NULL },
     { 0x91, 0x04,  0x000a,  0x00000003,  0x00000000, NULL },
     HALT,

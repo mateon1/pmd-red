@@ -10,7 +10,7 @@ static const struct ScriptCommand s_gs172_g0_s0_station_sref_script[] = { /* 0x8
     DEBUGINFO,
     { 0x08, 0x00,  0x0000,  0x000000ac,  0x00000000, NULL },
     { 0x47, 0x00,  0x0000,  0x00000000,  0x00000000, NULL },
-    JUMP_SCRIPT(/* COMMON_ENTER */ 355),
+    JUMP_SCRIPT(COMMON_ENTER),
 };
 
 static const struct ScriptRef s_gs172_g0_s0_station_sref = { 404, 1, NULL /* ENTER_CONTROL */, s_gs172_g0_s0_station_sref_script }; /* 0x8229920 */
@@ -24,7 +24,7 @@ static const struct ScriptCommand s_gs172_g1_s0_station_sref_script[] = { /* 0x8
     { 0xe4, 0x00,  0x0004,  0x00000000,  0x00000000, NULL },
     { 0x22, 0x01,  0x001e,  0x00000000,  0x00000000, NULL },
     { 0xe3, 0x00,  0x0005,  0x00000000,  0x00000000, NULL },
-    { 0xdb, 0x00,  0x001e,  0x00000000,  0x00000000, NULL },
+    WAIT(30),
     { 0x34, 0x00,  0x0000,  0x00000000,  0x00000000, _(" It~27s a huge tower of\nclouds...") },
     { 0x30, 0x00,  0x0000,  0x00000000,  0x00000000, NULL },
     { 0x23, 0x01,  0x001e,  0x00000000,  0x00000000, NULL },

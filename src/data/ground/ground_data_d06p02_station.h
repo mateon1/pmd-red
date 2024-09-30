@@ -11,44 +11,44 @@ static const struct ScriptCommand s_gs189_g0_s0_station_sref_script[] = { /* 0x8
     { 0x08, 0x00,  0x0000,  0x000000bd,  0x00000000, NULL },
     { 0xc4, 0x00,  0x0003,  0x00000000,  0x00000000, NULL },
     { 0xcd, 0x03,  0x0000,  0x00000011,  0x00000000, NULL },
-    JUMP_LOCAL(/* label */ 1),
+    JUMP_LABEL(1),
   LABEL(0), /* = 0x00 */
     { 0xa6, 0x00,  0x001d,  0x00000000,  0x00000000, NULL },
     { 0xa6, 0x00,  0x001e,  0x00000000,  0x00000000, NULL },
-    JUMP_LOCAL(/* label */ 1),
+    JUMP_LABEL(1),
   LABEL(1), /* = 0x01 */
     { 0xb3, 0x02,  0x0018,  0x00000001,  0x00000000, NULL },
     { 0xb3, 0x03,  0x0018,  0x00000003,  0x00000000, NULL },
     { 0xb3, 0x04,  0x0018,  0x00000002,  0x00000000, NULL },
     { 0xb3, 0x04,  0x0018,  0x00000009,  0x00000000, NULL },
-    JUMP_LOCAL(/* label */ 2),
+    JUMP_LABEL(2),
   LABEL(4), /* = 0x04 */
     { 0xc0, 0x00,  0x000f,  0x00000000,  0x00000000, NULL },
     { 0xcc, 0x00,  0x0005,  0x00000001,  0x00000000, NULL },
-    JUMP_LOCAL(/* label */ 5),
+    JUMP_LABEL(5),
   LABEL(2), /* = 0x02 */
     { 0x0d, 0x03,  0x0000,  0x00000000,  0x00000000, NULL },
-    JUMP_LOCAL(/* label */ 6),
+    JUMP_LABEL(6),
   LABEL(3), /* = 0x03 */
     { 0x0d, 0x04,  0x0000,  0x00000000,  0x00000000, NULL },
-    JUMP_LOCAL(/* label */ 6),
+    JUMP_LABEL(6),
   LABEL(5), /* = 0x05 */
     { 0x0d, 0x01,  0x0000,  0x00000000,  0x00000000, NULL },
-    JUMP_LOCAL(/* label */ 6),
+    JUMP_LABEL(6),
   LABEL(6), /* = 0x06 */
     { 0x44, 0x00,  0x0000,  0x0000006f,  0x00000000, NULL },
-    JUMP_SCRIPT(/* COMMON_ENTER */ 355),
+    JUMP_SCRIPT(COMMON_ENTER),
 };
 
 static const struct ScriptRef s_gs189_g0_s0_station_sref = { 404, 1, NULL /* ENTER_CONTROL */, s_gs189_g0_s0_station_sref_script }; /* 0x823a06c */
 
 static const struct ScriptCommand s_gs189_g0_s0_evt0_sref_script[] = { /* 0x823a078 */
     DEBUGINFO,
-    { 0xd3, 0x00,  0x0000, -0x00000001,  0x00000000, _("Would you like to go on?") },
-    { 0xd9, 0x00,  0x0000,  0x00000000,  0x00000000, _("Yes.") },
-    { 0xd9, 0x00,  0x0001,  0x00000000,  0x00000000, _("*No.") },
+    ASK1(FALSE, /*default*/ 0, /* speaker */ -1, _("Would you like to go on?")),
+    CHOICE(/* label */  0, _("Yes.")),
+    CHOICE(/* label */  1, _("*No.")),
   LABEL(1), /* = 0x01 */
-    JUMP_SCRIPT(/* END_TALK */ 0),
+    JUMP_SCRIPT(END_TALK),
   LABEL(0), /* = 0x00 */
     { 0x30, 0x00,  0x0000,  0x00000000,  0x00000000, NULL },
     { 0x48, 0x00,  0x003c,  0x00000000,  0x00000000, NULL },
@@ -61,16 +61,16 @@ static const struct ScriptRef s_gs189_g0_s0_evt0_sref = { 357, 2, NULL /* GETOUT
 
 static const struct ScriptCommand s_gs189_g0_s0_evt1_sref_script[] = { /* 0x823a170 */
     DEBUGINFO,
-    { 0xd3, 0x00,  0x0000, -0x00000001,  0x00000000, _("Return to the rescue team base?") },
-    { 0xd9, 0x00,  0x0000,  0x00000000,  0x00000000, _("Yes.") },
-    { 0xd9, 0x00,  0x0001,  0x00000000,  0x00000000, _("*No.") },
+    ASK1(FALSE, /*default*/ 0, /* speaker */ -1, _("Return to the rescue team base?")),
+    CHOICE(/* label */  0, _("Yes.")),
+    CHOICE(/* label */  1, _("*No.")),
   LABEL(1), /* = 0x01 */
-    JUMP_SCRIPT(/* END_TALK */ 0),
+    JUMP_SCRIPT(END_TALK),
   LABEL(0), /* = 0x00 */
     { 0x30, 0x00,  0x0000,  0x00000000,  0x00000000, NULL },
     { 0x48, 0x00,  0x001e,  0x00000000,  0x00000000, NULL },
     { 0x23, 0x01, -0x0001,  0x00000000,  0x00000000, NULL },
-    CALL_SCRIPT(/* DISMISSAL_SALLY_MEMBER4_FUNC */ 62),
+    CALL_SCRIPT(DISMISSAL_SALLY_MEMBER4_FUNC),
     { 0xab, 0x00,  0x000a, -0x00000001,  0x00000000, NULL },
     { 0x1d, 0x00,  0x0004,  0x0000000c,  0x00000000, NULL },
     HALT,
@@ -80,46 +80,46 @@ static const struct ScriptRef s_gs189_g0_s0_evt1_sref = { 357, 2, NULL /* GETOUT
 
 static const struct ScriptCommand s_gs189_g0_s0_obj0_dlg2[] = { /* 0x823a27c */
     DEBUGINFO,
-    JUMP_SCRIPT(/* SAVE_POINT */ 65),
+    JUMP_SCRIPT(SAVE_POINT),
 };
 
 static const struct ScriptCommand s_gs189_g0_s1_lives0_dlg0[] = { /* 0x823a29c */
     DEBUGINFO,
     { 0x54, 0x00,  0x0002,  0x00000000,  0x00000000, NULL },
-    CALL_SCRIPT(/* WAIT_START_FUNC */ 3),
+    CALL_SCRIPT(WAIT_START_FUNC),
     RET,
 };
 
 static const struct ScriptCommand s_gs189_g0_s1_lives1_dlg0[] = { /* 0x823a2dc */
     DEBUGINFO,
     { 0x54, 0x00,  0x0002,  0x00000000,  0x00000000, NULL },
-    CALL_SCRIPT(/* WAIT_START_FUNC */ 3),
+    CALL_SCRIPT(WAIT_START_FUNC),
     RET,
 };
 
 static const struct ScriptCommand s_gs189_g0_s3_lives0_dlg0[] = { /* 0x823a31c */
     DEBUGINFO,
     { 0x54, 0x00,  0x0002,  0x00000000,  0x00000000, NULL },
-    CALL_SCRIPT(/* WAIT_START_FUNC */ 3),
+    CALL_SCRIPT(WAIT_START_FUNC),
     RET,
 };
 
 static const struct ScriptCommand s_gs189_g0_s3_lives1_dlg0[] = { /* 0x823a35c */
     DEBUGINFO,
     { 0x54, 0x00,  0x0002,  0x00000000,  0x00000000, NULL },
-    CALL_SCRIPT(/* WAIT_START_FUNC */ 3),
+    CALL_SCRIPT(WAIT_START_FUNC),
     RET,
 };
 
 static const struct ScriptCommand s_gs189_g0_s4_lives0_dlg0[] = { /* 0x823a39c */
     DEBUGINFO,
-    CALL_SCRIPT(/* LIVES_WARP_ARRIVE_FUNC */ 81),
+    CALL_SCRIPT(LIVES_WARP_ARRIVE_FUNC),
     RET,
 };
 
 static const struct ScriptCommand s_gs189_g0_s4_lives1_dlg0[] = { /* 0x823a3cc */
     DEBUGINFO,
-    CALL_SCRIPT(/* LIVES_WARP_ARRIVE2_FUNC */ 82),
+    CALL_SCRIPT(LIVES_WARP_ARRIVE2_FUNC),
     RET,
 };
 
@@ -143,22 +143,22 @@ static const struct ScriptRef s_gs189_g1_s0_station_sref = { 402, 7, NULL /* EVE
 
 static const struct ScriptCommand s_gs189_g1_s0_lives0_dlg0[] = { /* 0x823a4d8 */
     DEBUGINFO,
-    CALL_SCRIPT(/* INIT_SLEEP_FUNC */ 53),
+    CALL_SCRIPT(INIT_SLEEP_FUNC),
     { 0x2d, 0x07,  0x0000,  0x00000000,  0x00000000, NULL },
     { 0xdf, 0x00,  0x0000,  0x00000000,  0x00000000, NULL },
     { 0xe4, 0x00,  0x0006,  0x00000000,  0x00000000, NULL },
-    CALL_SCRIPT(/* WAKEUP_FUNC */ 32),
-    CALL_SCRIPT(/* LOOK_AROUND_LEFT_FUNC */ 36),
+    CALL_SCRIPT(WAKEUP_FUNC),
+    CALL_SCRIPT(LOOK_AROUND_LEFT_FUNC),
     { 0xe3, 0x00,  0x0005,  0x00000000,  0x00000000, NULL },
-    { 0xdb, 0x00,  0x000a,  0x00000000,  0x00000000, NULL },
+    WAIT(10),
     { 0x2e, 0x02,  0x0001,  0x00000002,  0x00000000, NULL },
     { 0xcf, 0x02,  0x0026,  0x00000001,  0x00000000, NULL },
-    { 0xd0, 0x00,  0x0001,  0x00000000,  0x00000000, _(" Hmm...#W\nThings didn~27t go right for us...") },
-    { 0xd1, 0x00,  0x0000,  0x00000000,  0x00000000, _(" Hmm...#W\nThings didn~27t turn out in our favor...") },
+    VARIANT(/* == */  1, _(" Hmm...#W\nThings didn~27t go right for us...")),
+    VARIANT_DEFAULT(_(" Hmm...#W\nThings didn~27t turn out in our favor...")),
     { 0x2e, 0x15,  0x0001,  0x00000000,  0x00000000, NULL },
     { 0xcf, 0x02,  0x0026,  0x00000001,  0x00000000, NULL },
-    { 0xd0, 0x00,  0x0001,  0x00000000,  0x00000000, _(" But we should be getting\nclose.#W\nLet~27s keep going hard at it!") },
-    { 0xd1, 0x00,  0x0000,  0x00000000,  0x00000000, _(" But we shouldn~27t be far.#W\nLet~27s keep doing our best!") },
+    VARIANT(/* == */  1, _(" But we should be getting\nclose.#W\nLet~27s keep going hard at it!")),
+    VARIANT_DEFAULT(_(" But we shouldn~27t be far.#W\nLet~27s keep doing our best!")),
     { 0x30, 0x00,  0x0000,  0x00000000,  0x00000000, NULL },
     { 0x9b, 0x00,  0x0100,  0x00000000,  0x00000000, NULL },
     { 0xe4, 0x00,  0x0003,  0x00000000,  0x00000000, NULL },
@@ -169,12 +169,12 @@ static const struct ScriptCommand s_gs189_g1_s0_lives0_dlg0[] = { /* 0x823a4d8 *
 
 static const struct ScriptCommand s_gs189_g1_s0_lives1_dlg0[] = { /* 0x823a72c */
     DEBUGINFO,
-    CALL_SCRIPT(/* INIT_SLEEP_FUNC */ 53),
+    CALL_SCRIPT(INIT_SLEEP_FUNC),
     { 0x2d, 0x07,  0x0001,  0x00000000,  0x00000000, NULL },
     { 0xe3, 0x00,  0x0006,  0x00000000,  0x00000000, NULL },
-    { 0xdb, 0x00,  0x000f,  0x00000000,  0x00000000, NULL },
-    CALL_SCRIPT(/* WAKEUP_FUNC */ 32),
-    CALL_SCRIPT(/* LOOK_AROUND_RIGHT_FUNC */ 35),
+    WAIT(15),
+    CALL_SCRIPT(WAKEUP_FUNC),
+    CALL_SCRIPT(LOOK_AROUND_RIGHT_FUNC),
     { 0xe4, 0x00,  0x0005,  0x00000000,  0x00000000, NULL },
     { 0xe3, 0x00,  0x0006,  0x00000000,  0x00000000, NULL },
     { 0x52, 0x00,  0x0000,  0x00001000,  0x00000000, NULL },
