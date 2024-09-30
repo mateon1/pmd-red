@@ -15,7 +15,7 @@ static const struct ScriptCommand s_gs8_g0_s0_station_sref_script[] = { /* 0x819
     { 0x0d, 0x01,  0x0000,  0x00000000,  0x00000000, NULL },
     JUMP_LABEL(2),
   LABEL(1), /* = 0x01 */
-    { 0xeb, 0x00,  0x0001, -0x00000001,  0x00000000, NULL },
+    JUMP_STATION(  1,  0),
   LABEL(2), /* = 0x02 */
     { 0x44, 0x00,  0x0000,  0x00000008,  0x00000000, NULL },
     JUMP_SCRIPT(COMMON_ENTER),

@@ -50,7 +50,7 @@ static const struct ScriptCommand s_gs4_g0_s0_station_sref_script[] = { /* 0x818
   LABEL(13), /* = 0x0d */
     JUMP_SCRIPT(EVENT_M01E02B_L003),
   LABEL(14), /* = 0x0e */
-    { 0xea, 0x00,  0x000d, -0x00000001,  0x00000000, NULL },
+    CALL_STATION( 13,  0),
     JUMP_LABEL(0),
   LABEL(2), /* = 0x02 */
     { 0xc5, 0x00,  0x0003,  0x00000000,  0x00000000, NULL },
@@ -59,7 +59,7 @@ static const struct ScriptCommand s_gs4_g0_s0_station_sref_script[] = { /* 0x818
     { 0x0c, 0x00,  0x000f,  0x00000000,  0x00000000, NULL },
     JUMP_LABEL(0),
   LABEL(15), /* = 0x0f */
-    { 0xea, 0x00,  0x000d, -0x00000001,  0x00000000, NULL },
+    CALL_STATION( 13,  0),
     JUMP_LABEL(0),
   LABEL(16), /* = 0x10 */
     { 0x0c, 0x00,  0x000e,  0x00000000,  0x00000000, NULL },
@@ -67,29 +67,29 @@ static const struct ScriptCommand s_gs4_g0_s0_station_sref_script[] = { /* 0x818
   LABEL(3), /* = 0x03 */
     { 0xc5, 0x00,  0x0003,  0x00000000,  0x00000000, NULL },
     { 0xcd, 0x06,  0x0011,  0x00000001,  0x00000000, NULL },
-    { 0xea, 0x00,  0x0010, -0x00000001,  0x00000000, NULL },
+    CALL_STATION( 16,  0),
     JUMP_LABEL(0),
   LABEL(17), /* = 0x11 */
-    { 0xea, 0x00,  0x000f, -0x00000001,  0x00000000, NULL },
+    CALL_STATION( 15,  0),
     JUMP_LABEL(0),
   LABEL(4), /* = 0x04 */
     { 0xc5, 0x00,  0x0003,  0x00000000,  0x00000000, NULL },
     { 0xcd, 0x06,  0x0012,  0x00000001,  0x00000000, NULL },
-    { 0xea, 0x00,  0x0011, -0x00000001,  0x00000000, NULL },
+    CALL_STATION( 17,  0),
     JUMP_LABEL(0),
   LABEL(18), /* = 0x12 */
-    { 0xea, 0x00,  0x0010, -0x00000001,  0x00000000, NULL },
+    CALL_STATION( 16,  0),
     JUMP_LABEL(0),
   LABEL(5), /* = 0x05 */
     { 0xc5, 0x00,  0x0003,  0x00000000,  0x00000000, NULL },
     { 0xcd, 0x06,  0x0013,  0x00000001,  0x00000000, NULL },
-    { 0xea, 0x00,  0x0012, -0x00000001,  0x00000000, NULL },
+    CALL_STATION( 18,  0),
     JUMP_LABEL(0),
   LABEL(19), /* = 0x13 */
-    { 0xea, 0x00,  0x0011, -0x00000001,  0x00000000, NULL },
+    CALL_STATION( 17,  0),
     JUMP_LABEL(0),
   LABEL(6), /* = 0x06 */
-    { 0xea, 0x00,  0x0012, -0x00000001,  0x00000000, NULL },
+    CALL_STATION( 18,  0),
     JUMP_LABEL(0),
   LABEL(7), /* = 0x07 */
     JUMP_LABEL(0),
@@ -101,19 +101,19 @@ static const struct ScriptCommand s_gs4_g0_s0_station_sref_script[] = { /* 0x818
     { 0xcd, 0x06,  0x0017,  0x0000000b,  0x00000000, NULL },
     JUMP_LABEL(24),
   LABEL(20), /* = 0x14 */
-    { 0xea, 0x00,  0x0013, -0x00000001,  0x00000000, NULL },
+    CALL_STATION( 19,  0),
     JUMP_LABEL(0),
   LABEL(21), /* = 0x15 */
-    { 0xea, 0x00,  0x0014, -0x00000001,  0x00000000, NULL },
+    CALL_STATION( 20,  0),
     JUMP_LABEL(0),
   LABEL(22), /* = 0x16 */
-    { 0xea, 0x00,  0x0015, -0x00000001,  0x00000000, NULL },
+    CALL_STATION( 21,  0),
     JUMP_LABEL(0),
   LABEL(23), /* = 0x17 */
-    { 0xea, 0x00,  0x0016, -0x00000001,  0x00000000, NULL },
+    CALL_STATION( 22,  0),
     JUMP_LABEL(0),
   LABEL(24), /* = 0x18 */
-    { 0xea, 0x00,  0x0017, -0x00000001,  0x00000000, NULL },
+    CALL_STATION( 23,  0),
     JUMP_LABEL(0),
   LABEL(9), /* = 0x09 */
     { 0xc5, 0x00,  0x0003,  0x00000000,  0x00000000, NULL },
@@ -121,22 +121,22 @@ static const struct ScriptCommand s_gs4_g0_s0_station_sref_script[] = { /* 0x818
     { 0xcd, 0x06,  0x001a,  0x00000004,  0x00000000, NULL },
     JUMP_LABEL(27),
   LABEL(25), /* = 0x19 */
-    { 0xea, 0x00,  0x0018, -0x00000001,  0x00000000, NULL },
+    CALL_STATION( 24,  0),
     JUMP_LABEL(0),
   LABEL(26), /* = 0x1a */
-    { 0xea, 0x00,  0x0019, -0x00000001,  0x00000000, NULL },
+    CALL_STATION( 25,  0),
     JUMP_LABEL(0),
   LABEL(27), /* = 0x1b */
-    { 0xea, 0x00,  0x001a, -0x00000001,  0x00000000, NULL },
+    CALL_STATION( 26,  0),
     JUMP_LABEL(0),
   LABEL(10), /* = 0x0a */
-    { 0xea, 0x00,  0x001a, -0x00000001,  0x00000000, NULL },
+    CALL_STATION( 26,  0),
     JUMP_LABEL(0),
   LABEL(11), /* = 0x0b */
-    { 0xea, 0x00,  0x001c, -0x00000001,  0x00000000, NULL },
+    CALL_STATION( 28,  0),
     JUMP_LABEL(0),
   LABEL(12), /* = 0x0c */
-    { 0xea, 0x00,  0x0001, -0x00000001,  0x00000000, NULL },
+    CALL_STATION(  1,  0),
     JUMP_LABEL(0),
   LABEL(0), /* = 0x00 */
     { 0xc0, 0x00,  0x000f,  0x00000000,  0x00000000, NULL },
@@ -322,7 +322,7 @@ static const struct ScriptCommand s_gs4_g1_s0_station_sref_script[] = { /* 0x818
   LABEL(0), /* = 0x00 */
     { 0x0c, 0x02, -0x0001,  0x00000000,  0x00000000, NULL },
   LABEL(1), /* = 0x01 */
-    { 0xeb, 0x00,  0x0002, -0x00000001,  0x00000000, NULL },
+    JUMP_STATION(  2,  0),
     RET,
 };
 
@@ -2005,7 +2005,7 @@ static const struct ScriptCommand s_gs4_g18_s1_lives0_dlg2[] = { /* 0x8191d1c */
 static const struct ScriptCommand s_gs4_g19_s0_station_sref_script[] = { /* 0x8192190 */
     DEBUGINFO,
     { 0x0c, 0x00, -0x0001,  0x00000000,  0x00000000, NULL },
-    { 0xeb, 0x00,  0x0002, -0x00000001,  0x00000000, NULL },
+    JUMP_STATION(  2,  0),
     RET,
 };
 
@@ -2118,7 +2118,7 @@ static const struct ScriptCommand s_gs4_g19_s1_lives2_dlg2[] = { /* 0x81926c8 */
 static const struct ScriptCommand s_gs4_g20_s0_station_sref_script[] = { /* 0x81926f8 */
     DEBUGINFO,
     { 0x0c, 0x00, -0x0001,  0x00000000,  0x00000000, NULL },
-    { 0xeb, 0x00,  0x0002, -0x00000001,  0x00000000, NULL },
+    JUMP_STATION(  2,  0),
     RET,
 };
 
@@ -2391,7 +2391,7 @@ static const struct ScriptCommand s_gs4_g20_s1_lives4_dlg2[] = { /* 0x8193668 */
 static const struct ScriptCommand s_gs4_g21_s0_station_sref_script[] = { /* 0x8193698 */
     DEBUGINFO,
     { 0x0c, 0x00, -0x0001,  0x00000000,  0x00000000, NULL },
-    { 0xeb, 0x00,  0x0002, -0x00000001,  0x00000000, NULL },
+    JUMP_STATION(  2,  0),
     RET,
 };
 
@@ -2653,7 +2653,7 @@ static const struct ScriptCommand s_gs4_g22_s0_station_sref_script[] = { /* 0x81
   LABEL(0), /* = 0x00 */
     { 0x0c, 0x02, -0x0001,  0x00000000,  0x00000000, NULL },
   LABEL(1), /* = 0x01 */
-    { 0xeb, 0x00,  0x0002, -0x00000001,  0x00000000, NULL },
+    JUMP_STATION(  2,  0),
     RET,
 };
 
@@ -2811,7 +2811,7 @@ static const struct ScriptCommand s_gs4_g22_s2_lives1_dlg2[] = { /* 0x8194ecc */
 static const struct ScriptCommand s_gs4_g23_s0_station_sref_script[] = { /* 0x8194f20 */
     DEBUGINFO,
     { 0x0c, 0x00, -0x0001,  0x00000000,  0x00000000, NULL },
-    { 0xeb, 0x00,  0x0002, -0x00000001,  0x00000000, NULL },
+    JUMP_STATION(  2,  0),
     RET,
 };
 
@@ -2916,7 +2916,7 @@ static const struct ScriptCommand s_gs4_g24_s0_lives2_dlg2[] = { /* 0x81955d8 */
 static const struct ScriptCommand s_gs4_g25_s0_station_sref_script[] = { /* 0x81956c4 */
     DEBUGINFO,
     { 0x0c, 0x00, -0x0001,  0x00000000,  0x00000000, NULL },
-    { 0xeb, 0x00,  0x0002, -0x00000001,  0x00000000, NULL },
+    JUMP_STATION(  2,  0),
     RET,
 };
 
@@ -2978,7 +2978,7 @@ static const struct ScriptCommand s_gs4_g25_s0_lives2_dlg2[] = { /* 0x819592c */
 static const struct ScriptCommand s_gs4_g26_s0_station_sref_script[] = { /* 0x81959d0 */
     DEBUGINFO,
     { 0x0c, 0x00, -0x0001,  0x00000000,  0x00000000, NULL },
-    { 0xeb, 0x00,  0x0002, -0x00000001,  0x00000000, NULL },
+    JUMP_STATION(  2,  0),
     RET,
 };
 

@@ -22,6 +22,10 @@
 #define JUMP_LABEL(x)       { 0xE7, 0, x, 0, 0, NULL }
 #define CALL_SCRIPT(x)      { 0xE8, 0, x, 0, 0, NULL }
 #define JUMP_SCRIPT(x)      { 0xE9, 0, x, 0, 0, NULL }
+#define CALL_STATION(g,s)   { 0xEA, s, g,-1, 0, NULL }
+#define JUMP_STATION(g,s)   { 0xEB, s, g,-1, 0, NULL }
+#define EXECUTE_MAP_VAR(v)  { 0xEC, 0, v, 0, 0, NULL }
+#define RESET_CALLER        { 0xED, 0, 0, 0, 0, NULL }
 #define RET_DIRECT          { 0xEE, 0, 0, 0, 0, NULL }
 #define RET                 { 0xEF, 0, 0, 0, 0, NULL }
 #define HALT                { 0xF0, 0, 0, 0, 0, NULL }

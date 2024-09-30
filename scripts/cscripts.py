@@ -134,6 +134,20 @@ def main():
                 elif op == 0xe9:
                     assert b == a1 == a2 == ap == 0
                     outfile.write(u'    JUMP_SCRIPT(%s),\n' % (SCRIPTNAMES[h],))
+                elif op == 0xea:
+                    assert a2 == ap == 0
+                    assert a1 == -1
+                    outfile.write(u'    CALL_STATION(%3d,%3d),\n' % (h,b))
+                elif op == 0xeb:
+                    assert a2 == ap == 0
+                    assert a1 == -1
+                    outfile.write(u'    JUMP_STATION(%3d,%3d),\n' % (h,b))
+                elif op == 0xec:
+                    assert b == a1 == a2 == ap == 0
+                    outfile.write(u'    EXECUTE_MAP_VAR(%s),\n' % (get_var_name(data, h),))
+                elif op == 0xed:
+                    assert b == h == a1 == a2 == ap == 0
+                    outfile.write(u'    RESET_CALLER,\n')
                 elif op == 0xee:
                     assert b == h == a1 == a2 == ap == 0
                     outfile.write(u'    RET_DIRECT,\n')
