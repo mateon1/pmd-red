@@ -14,7 +14,7 @@ static const struct ScriptCommand s_gs198_g0_s0_station_sref_script[] = { /* 0x8
   LABEL(0), /* = 0x00 */
     { 0x08, 0x00,  0x0000,  0x000000c6,  0x00000000, NULL },
     { 0xc4, 0x00,  0x0003,  0x00000000,  0x00000000, NULL },
-    { 0xcd, 0x02,  0x0001,  0x0000000d,  0x00000000, NULL },
+    COND(JUDGE_EQ, 13, /* to label */ 1),
     JUMP_LABEL(2),
   LABEL(1), /* = 0x01 */
     UPDATE_VARINT(CALC_SET, PARTNER1_KIND, 0),
@@ -32,7 +32,7 @@ static const struct ScriptCommand s_gs198_g0_s0_station_sref_script[] = { /* 0x8
     JUMP_LABEL(3),
   LABEL(5), /* = 0x05 */
     { 0xc0, 0x00,  0x000f,  0x00000000,  0x00000000, NULL },
-    { 0xcc, 0x00,  0x0007,  0x00000001,  0x00000000, NULL },
+    COND_EQUAL(1, /* to label */ 7),
     JUMP_LABEL(7),
   LABEL(3), /* = 0x03 */
     { 0x0d, 0x03,  0x0000,  0x00000000,  0x00000000, NULL },
@@ -258,9 +258,9 @@ static const struct ScriptCommand s_gs198_g2_s1_lives0_dlg0[] = { /* 0x824c7d4 *
     VARIANT_DEFAULT(_(" It's going to be freezing\ncold, but let's try our best!")),
     { 0x30, 0x00,  0x0000,  0x00000000,  0x00000000, NULL },
     { 0xc8, 0x00,  0x0000,  0x00000022,  0x00000000, NULL },
-    { 0xcc, 0x00,  0x0007,  0x00000004,  0x00000000, NULL },
-    { 0xcc, 0x00,  0x0007,  0x00000003,  0x00000000, NULL },
-    { 0xcc, 0x00,  0x0007,  0x00000005,  0x00000000, NULL },
+    COND_EQUAL(4, /* to label */ 7),
+    COND_EQUAL(3, /* to label */ 7),
+    COND_EQUAL(5, /* to label */ 7),
     { 0xe4, 0x00,  0x0006,  0x00000000,  0x00000000, NULL },
     { 0x23, 0x00,  0x0032,  0x00000000,  0x00000000, NULL },
     { 0x53, 0x00,  0x0000,  0x0000001f,  0x00000000, NULL },
@@ -277,7 +277,7 @@ static const struct ScriptCommand s_gs198_g2_s1_lives0_dlg0[] = { /* 0x824c7d4 *
   LABEL(8), /* = 0x08 */
     { 0x52, 0x00,  0x0000,  0x0000001f,  0x00000000, NULL },
     { 0x07, 0x00,  0x001e,  0x0000000d,  0x00000000, NULL },
-    { 0xcc, 0x00,  0x0003, -0x00000001,  0x00000000, NULL },
+    COND_EQUAL(-1, /* to label */ 3),
     HALT,
   LABEL(6), /* = 0x06 */
     MSG_VAR(2, PARTNER_TALK_KIND, 1),
@@ -285,9 +285,9 @@ static const struct ScriptCommand s_gs198_g2_s1_lives0_dlg0[] = { /* 0x824c7d4 *
     VARIANT_DEFAULT(_(" OK!\nLet's go!")),
     { 0x30, 0x00,  0x0000,  0x00000000,  0x00000000, NULL },
     { 0xc8, 0x00,  0x0000,  0x00000022,  0x00000000, NULL },
-    { 0xcc, 0x00,  0x0009,  0x00000004,  0x00000000, NULL },
-    { 0xcc, 0x00,  0x0009,  0x00000003,  0x00000000, NULL },
-    { 0xcc, 0x00,  0x0009,  0x00000005,  0x00000000, NULL },
+    COND_EQUAL(4, /* to label */ 9),
+    COND_EQUAL(3, /* to label */ 9),
+    COND_EQUAL(5, /* to label */ 9),
     { 0xe4, 0x00,  0x0006,  0x00000000,  0x00000000, NULL },
     { 0x23, 0x00,  0x0032,  0x00000000,  0x00000000, NULL },
     { 0x53, 0x00,  0x0000,  0x0000001f,  0x00000000, NULL },
@@ -304,7 +304,7 @@ static const struct ScriptCommand s_gs198_g2_s1_lives0_dlg0[] = { /* 0x824c7d4 *
   LABEL(10), /* = 0x0a */
     { 0x52, 0x00,  0x0000,  0x0000001f,  0x00000000, NULL },
     { 0x06, 0x00,  0x001e,  0x0000004f,  0x00000000, NULL },
-    { 0xcc, 0x00,  0x0003, -0x00000001,  0x00000000, NULL },
+    COND_EQUAL(-1, /* to label */ 3),
     HALT,
 };
 
@@ -319,9 +319,9 @@ static const struct ScriptCommand s_gs198_g2_s1_lives1_dlg0[] = { /* 0x824cea4 *
     { 0x8e, 0x01,  0x0000,  0x00000000,  0x00000000, NULL },
     { 0xe3, 0x00,  0x0006,  0x00000000,  0x00000000, NULL },
     { 0xc8, 0x00,  0x0000,  0x00000000,  0x00000000, NULL },
-    { 0xcc, 0x00,  0x0000,  0x00000000,  0x00000000, NULL },
-    { 0xcc, 0x00,  0x0000,  0x00000001,  0x00000000, NULL },
-    { 0xcc, 0x00,  0x0000,  0x00000007,  0x00000000, NULL },
+    COND_EQUAL(0, /* to label */ 0),
+    COND_EQUAL(1, /* to label */ 0),
+    COND_EQUAL(7, /* to label */ 0),
     WAIT(15),
     { 0x53, 0x00,  0x0000,  0x0000001f,  0x00000000, NULL },
     { 0x86, 0x00,  0x0080,  0x00000000,  0x00000000, NULL },

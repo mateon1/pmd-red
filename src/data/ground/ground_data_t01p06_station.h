@@ -10,9 +10,9 @@ static const struct ScriptCommand s_gs7_g0_s0_station_sref_script[] = { /* 0x819
     DEBUGINFO,
     { 0x08, 0x00,  0x0000,  0x00000007,  0x00000000, NULL },
     { 0xc4, 0x00,  0x0003,  0x00000000,  0x00000000, NULL },
-    { 0xcd, 0x04,  0x0000,  0x00000004,  0x00000000, NULL },
-    { 0xcd, 0x02,  0x0001,  0x00000004,  0x00000000, NULL },
-    { 0xcd, 0x02,  0x0002,  0x00000005,  0x00000000, NULL },
+    COND(JUDGE_LT, 4, /* to label */ 0),
+    COND(JUDGE_EQ, 4, /* to label */ 1),
+    COND(JUDGE_EQ, 5, /* to label */ 2),
     JUMP_LABEL(2),
     JUMP_LABEL(0),
   LABEL(1), /* = 0x01 */
@@ -23,7 +23,7 @@ static const struct ScriptCommand s_gs7_g0_s0_station_sref_script[] = { /* 0x819
     JUMP_LABEL(0),
   LABEL(0), /* = 0x00 */
     { 0xc0, 0x00,  0x000f,  0x00000000,  0x00000000, NULL },
-    { 0xcc, 0x00,  0x0003,  0x00000006,  0x00000000, NULL },
+    COND_EQUAL(6, /* to label */ 3),
   LABEL(3), /* = 0x03 */
     { 0x0d, 0x01,  0x0000,  0x00000000,  0x00000000, NULL },
     JUMP_LABEL(4),

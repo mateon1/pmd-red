@@ -14,6 +14,9 @@
 #define SCENARIO_ADVANCE(v,a){0xAA, 0, v, a, 0, NULL }
 #define SET_DUNGEON_RES(r,e){ 0xAB, 0, r, e, 0, NULL }
 #define SET_PLAYER_KIND(k)  { 0xAC, 0, k, 0, 0, NULL }
+#define COND_EQUAL(v,t)     { 0xCC, 0, t, v, 0, NULL }
+#define COND(o,v,t)         { 0xCD, o, t, v, 0, NULL }
+#define COND_VAR(o,v,t)     { 0xCE, o, t, v, 0, NULL }
 #define MSG_VAR(b,v,a)      { 0xCF, b, v, a, 0, NULL }
 #define VARIANT(c,s)        { 0xD0, 0, c, 0, 0, s    }
 #define VARIANT_DEFAULT(s)  { 0xD1, 0, 0, 0, 0, s    }

@@ -10,8 +10,8 @@ static const struct ScriptCommand s_gs8_g0_s0_station_sref_script[] = { /* 0x819
     DEBUGINFO,
     { 0x08, 0x00,  0x0000,  0x00000008,  0x00000000, NULL },
     { 0xc0, 0x00,  0x000f,  0x00000000,  0x00000000, NULL },
-    { 0xcc, 0x00,  0x0001,  0x00000002,  0x00000000, NULL },
-    { 0xcc, 0x00,  0x0001,  0x00000003,  0x00000000, NULL },
+    COND_EQUAL(2, /* to label */ 1),
+    COND_EQUAL(3, /* to label */ 1),
     { 0x0d, 0x01,  0x0000,  0x00000000,  0x00000000, NULL },
     JUMP_LABEL(2),
   LABEL(1), /* = 0x01 */

@@ -146,6 +146,15 @@ def main():
                 elif op == 0xac:
                     assert b == a1 == a2 == ap == 0
                     outfile.write(u'    SET_PLAYER_KIND(%d),\n' % h)
+                elif op == 0xcc:
+                    assert b == a2 == ap == 0
+                    outfile.write(u'    COND_EQUAL(%d, /* to label */ %d),\n' % (a1, h))
+                elif op == 0xcd:
+                    assert a2 == ap == 0
+                    outfile.write(u'    COND(%s, %d, /* to label */ %d),\n' % (JUDGE[b], a1, h))
+                elif op == 0xce:
+                    assert a2 == ap == 0
+                    outfile.write(u'    COND_VAR(%s, %s, /* to label */ %d),\n' % (JUDGE[b], get_var_name(data, a1), h))
                 elif op == 0xcf:
                     assert a2 == ap == 0
                     outfile.write(u'    MSG_VAR(%d, %s, %d),\n' % (b, get_var_name(data, h), a1))

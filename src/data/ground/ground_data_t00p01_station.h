@@ -17,9 +17,9 @@ static const struct ScriptCommand s_gs0_g0_s0_station_sref_script[] = { /* 0x813
     JUMP_LABEL(2),
   LABEL(4), /* = 0x04 */
     { 0xc0, 0x00,  0x000f,  0x00000000,  0x00000000, NULL },
-    { 0xcc, 0x00,  0x0005,  0x00000009,  0x00000000, NULL },
-    { 0xcc, 0x00,  0x0005,  0x0000000a,  0x00000000, NULL },
-    { 0xcc, 0x00,  0x0005,  0x0000000b,  0x00000000, NULL },
+    COND_EQUAL(9, /* to label */ 5),
+    COND_EQUAL(10, /* to label */ 5),
+    COND_EQUAL(11, /* to label */ 5),
     JUMP_LABEL(6),
   LABEL(2), /* = 0x02 */
     { 0x0d, 0x07,  0x0000,  0x00000000,  0x00000000, NULL },
@@ -194,7 +194,7 @@ static const struct ScriptCommand s_gs0_g1_s0_lives6_dlg2[] = { /* 0x8132e48 */
     { 0x2d, 0x07,  0x0000,  0x00000000,  0x00000000, NULL },
     WAIT(1),
     { 0x3c, 0x1c,  0x0000,  0x00000000,  0x00000000, NULL },
-    { 0xcc, 0x00,  0x0000,  0x00000001,  0x00000000, NULL },
+    COND_EQUAL(1, /* to label */ 0),
     JUMP_SCRIPT(END_TALK),
   LABEL(0), /* = 0x00 */
     { 0x05, 0x00,  0x001e,  0x00000000,  0x00000000, NULL },

@@ -10,7 +10,7 @@ static const struct ScriptCommand s_gs189_g0_s0_station_sref_script[] = { /* 0x8
     DEBUGINFO,
     { 0x08, 0x00,  0x0000,  0x000000bd,  0x00000000, NULL },
     { 0xc4, 0x00,  0x0003,  0x00000000,  0x00000000, NULL },
-    { 0xcd, 0x03,  0x0000,  0x00000011,  0x00000000, NULL },
+    COND(JUDGE_GT, 17, /* to label */ 0),
     JUMP_LABEL(1),
   LABEL(0), /* = 0x00 */
     UPDATE_VARINT(CALC_SET, PARTNER1_KIND, 0),
@@ -24,7 +24,7 @@ static const struct ScriptCommand s_gs189_g0_s0_station_sref_script[] = { /* 0x8
     JUMP_LABEL(2),
   LABEL(4), /* = 0x04 */
     { 0xc0, 0x00,  0x000f,  0x00000000,  0x00000000, NULL },
-    { 0xcc, 0x00,  0x0005,  0x00000001,  0x00000000, NULL },
+    COND_EQUAL(1, /* to label */ 5),
     JUMP_LABEL(5),
   LABEL(2), /* = 0x02 */
     { 0x0d, 0x03,  0x0000,  0x00000000,  0x00000000, NULL },
@@ -53,7 +53,7 @@ static const struct ScriptCommand s_gs189_g0_s0_evt0_sref_script[] = { /* 0x823a
     { 0x30, 0x00,  0x0000,  0x00000000,  0x00000000, NULL },
     { 0x48, 0x00,  0x003c,  0x00000000,  0x00000000, NULL },
     { 0x02, 0x00,  0x001e,  0x00000008,  0x00000000, NULL },
-    { 0xcc, 0x00,  0x0001, -0x00000001,  0x00000000, NULL },
+    COND_EQUAL(-1, /* to label */ 1),
     HALT,
 };
 

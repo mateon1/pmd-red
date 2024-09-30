@@ -15,13 +15,13 @@ static const struct ScriptCommand s_gs6_g0_s0_station_sref_script[] = { /* 0x819
     JUMP_LABEL(1),
   LABEL(1), /* = 0x01 */
     { 0xc0, 0x00,  0x0018,  0x00000000,  0x00000000, NULL },
-    { 0xcc, 0x00,  0x0002,  0x0000000c,  0x00000000, NULL },
-    { 0xcc, 0x00,  0x0002,  0x0000000b,  0x00000000, NULL },
-    { 0xcc, 0x00,  0x0003,  0x0000000a,  0x00000000, NULL },
-    { 0xcc, 0x00,  0x0004,  0x00000009,  0x00000000, NULL },
+    COND_EQUAL(12, /* to label */ 2),
+    COND_EQUAL(11, /* to label */ 2),
+    COND_EQUAL(10, /* to label */ 3),
+    COND_EQUAL(9, /* to label */ 4),
     { 0xc0, 0x00,  0x000f,  0x00000000,  0x00000000, NULL },
-    { 0xcc, 0x00,  0x0005,  0x00000001,  0x00000000, NULL },
-    { 0xcc, 0x00,  0x0006,  0x00000007,  0x00000000, NULL },
+    COND_EQUAL(1, /* to label */ 5),
+    COND_EQUAL(7, /* to label */ 6),
   LABEL(5), /* = 0x05 */
     { 0x0d, 0x01,  0x0000,  0x00000000,  0x00000000, NULL },
     JUMP_LABEL(7),
@@ -39,7 +39,7 @@ static const struct ScriptCommand s_gs6_g0_s0_station_sref_script[] = { /* 0x819
   LABEL(4), /* = 0x04 */
     SET_DUNGEON_RES(/* result */ 0, /* enter */ -1),
     { 0x3b, 0x0d,  0x0000,  0x00000000,  0x00000000, NULL },
-    { 0xcc, 0x00,  0x0008,  0x00000001,  0x00000000, NULL },
+    COND_EQUAL(1, /* to label */ 8),
     { 0x1e, 0x00,  0x0002, -0x00000001,  0x00000000, NULL },
     RET,
   LABEL(8), /* = 0x08 */
@@ -99,7 +99,7 @@ static const struct ScriptCommand s_gs6_g0_s3_evt0_sref_script[] = { /* 0x819923
     RET,
   LABEL(0), /* = 0x00 */
     { 0x06, 0x00,  0x001e, -0x00000001,  0x00000000, NULL },
-    { 0xcc, 0x00,  0x0002, -0x00000001,  0x00000000, NULL },
+    COND_EQUAL(-1, /* to label */ 2),
     HALT,
   LABEL(2), /* = 0x02 */
     RET,
@@ -134,7 +134,7 @@ static const struct ScriptCommand s_gs6_g1_s0_lives0_dlg2[] = { /* 0x81993dc */
     { 0x2d, 0x07,  0x0000,  0x00000000,  0x00000000, NULL },
     WAIT(1),
     { 0x06, 0x00,  0x001e, -0x00000001,  0x00000000, NULL },
-    { 0xcc, 0x00,  0x0000, -0x00000001,  0x00000000, NULL },
+    COND_EQUAL(-1, /* to label */ 0),
     { 0x48, 0x00,  0x001e,  0x00000000,  0x00000000, NULL },
     HALT,
   LABEL(0), /* = 0x00 */
@@ -196,11 +196,11 @@ static const struct ScriptCommand s_gs6_g2_s0_lives0_dlg0[] = { /* 0x81996f8 */
     CALL_SCRIPT(WAIT_START_FUNC),
     { 0x3c, 0x25,  0x0000,  0x00000000,  0x00000000, NULL },
     { 0x3b, 0x0e,  0x0000,  0x00000000,  0x00000000, NULL },
-    { 0xcc, 0x00,  0x0000,  0x00000001,  0x00000000, NULL },
-    { 0xcc, 0x00,  0x0000,  0x00000002,  0x00000000, NULL },
-    { 0xcc, 0x00,  0x0000,  0x00000003,  0x00000000, NULL },
-    { 0xcc, 0x00,  0x0000,  0x00000004,  0x00000000, NULL },
-    { 0xcc, 0x00,  0x0000,  0x00000005,  0x00000000, NULL },
+    COND_EQUAL(1, /* to label */ 0),
+    COND_EQUAL(2, /* to label */ 0),
+    COND_EQUAL(3, /* to label */ 0),
+    COND_EQUAL(4, /* to label */ 0),
+    COND_EQUAL(5, /* to label */ 0),
     JUMP_LABEL(5),
   LABEL(0), /* = 0x00 */
     { 0x3c, 0x2c,  0x0000,  0x00000049,  0x00000000, NULL },

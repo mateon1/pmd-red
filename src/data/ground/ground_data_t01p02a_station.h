@@ -36,27 +36,27 @@ static const struct ScriptCommand s_gs2_g0_s0_station_sref_script[] = { /* 0x817
     DEBUGINFO,
     { 0x08, 0x00,  0x0000,  0x00000002,  0x00000000, NULL },
     { 0xc4, 0x00,  0x0003,  0x00000000,  0x00000000, NULL },
-    { 0xcd, 0x06,  0x0000,  0x00000004,  0x00000000, NULL },
-    { 0xcd, 0x06,  0x0001,  0x00000005,  0x00000000, NULL },
-    { 0xcd, 0x02,  0x0002,  0x00000006,  0x00000000, NULL },
-    { 0xcd, 0x02,  0x0003,  0x00000007,  0x00000000, NULL },
-    { 0xcd, 0x02,  0x0004,  0x00000008,  0x00000000, NULL },
-    { 0xcd, 0x02,  0x0005,  0x00000009,  0x00000000, NULL },
-    { 0xcd, 0x06,  0x0006,  0x00000009,  0x00000000, NULL },
-    { 0xcd, 0x04,  0x0006,  0x0000000f,  0x00000000, NULL },
-    { 0xcd, 0x02,  0x0007,  0x0000000f,  0x00000000, NULL },
-    { 0xcd, 0x02,  0x0008,  0x00000010,  0x00000000, NULL },
-    { 0xcd, 0x04,  0x0009,  0x00000012,  0x00000000, NULL },
-    { 0xcd, 0x02,  0x000a,  0x00000012,  0x00000000, NULL },
+    COND(JUDGE_LE, 4, /* to label */ 0),
+    COND(JUDGE_LE, 5, /* to label */ 1),
+    COND(JUDGE_EQ, 6, /* to label */ 2),
+    COND(JUDGE_EQ, 7, /* to label */ 3),
+    COND(JUDGE_EQ, 8, /* to label */ 4),
+    COND(JUDGE_EQ, 9, /* to label */ 5),
+    COND(JUDGE_LE, 9, /* to label */ 6),
+    COND(JUDGE_LT, 15, /* to label */ 6),
+    COND(JUDGE_EQ, 15, /* to label */ 7),
+    COND(JUDGE_EQ, 16, /* to label */ 8),
+    COND(JUDGE_LT, 18, /* to label */ 9),
+    COND(JUDGE_EQ, 18, /* to label */ 10),
     JUMP_LABEL(11),
   LABEL(0), /* = 0x00 */
     CALL_STATION( 10,  0),
     JUMP_LABEL(12),
   LABEL(1), /* = 0x01 */
     { 0xc5, 0x00,  0x0003,  0x00000000,  0x00000000, NULL },
-    { 0xcd, 0x06,  0x000d,  0x00000001,  0x00000000, NULL },
-    { 0xcd, 0x06,  0x000e,  0x00000004,  0x00000000, NULL },
-    { 0xcd, 0x06,  0x000f,  0x00000007,  0x00000000, NULL },
+    COND(JUDGE_LE, 1, /* to label */ 13),
+    COND(JUDGE_LE, 4, /* to label */ 14),
+    COND(JUDGE_LE, 7, /* to label */ 15),
     CALL_STATION( 13,  0),
     JUMP_LABEL(12),
   LABEL(13), /* = 0x0d */
@@ -70,7 +70,7 @@ static const struct ScriptCommand s_gs2_g0_s0_station_sref_script[] = { /* 0x817
     JUMP_LABEL(12),
   LABEL(2), /* = 0x02 */
     { 0xc5, 0x00,  0x0003,  0x00000000,  0x00000000, NULL },
-    { 0xcd, 0x06,  0x0010,  0x00000001,  0x00000000, NULL },
+    COND(JUDGE_LE, 1, /* to label */ 16),
     CALL_STATION( 14,  0),
     JUMP_LABEL(12),
   LABEL(16), /* = 0x10 */
@@ -81,7 +81,7 @@ static const struct ScriptCommand s_gs2_g0_s0_station_sref_script[] = { /* 0x817
     JUMP_LABEL(12),
   LABEL(4), /* = 0x04 */
     { 0xc5, 0x00,  0x0003,  0x00000000,  0x00000000, NULL },
-    { 0xcd, 0x06,  0x0011,  0x00000001,  0x00000000, NULL },
+    COND(JUDGE_LE, 1, /* to label */ 17),
     CALL_STATION( 15,  0),
     JUMP_LABEL(12),
   LABEL(17), /* = 0x11 */
@@ -89,8 +89,8 @@ static const struct ScriptCommand s_gs2_g0_s0_station_sref_script[] = { /* 0x817
     JUMP_LABEL(12),
   LABEL(5), /* = 0x05 */
     { 0xc5, 0x00,  0x0003,  0x00000000,  0x00000000, NULL },
-    { 0xcd, 0x06,  0x0012,  0x00000001,  0x00000000, NULL },
-    { 0xcd, 0x06,  0x0013,  0x00000005,  0x00000000, NULL },
+    COND(JUDGE_LE, 1, /* to label */ 18),
+    COND(JUDGE_LE, 5, /* to label */ 19),
     JUMP_LABEL(12),
   LABEL(18), /* = 0x12 */
     CALL_STATION( 15,  0),
@@ -103,10 +103,10 @@ static const struct ScriptCommand s_gs2_g0_s0_station_sref_script[] = { /* 0x817
     JUMP_LABEL(12),
   LABEL(7), /* = 0x07 */
     { 0xc5, 0x00,  0x0003,  0x00000000,  0x00000000, NULL },
-    { 0xcd, 0x06,  0x0014,  0x00000003,  0x00000000, NULL },
-    { 0xcd, 0x06,  0x0015,  0x00000005,  0x00000000, NULL },
-    { 0xcd, 0x06,  0x0016,  0x00000007,  0x00000000, NULL },
-    { 0xcd, 0x06,  0x0017,  0x0000000b,  0x00000000, NULL },
+    COND(JUDGE_LE, 3, /* to label */ 20),
+    COND(JUDGE_LE, 5, /* to label */ 21),
+    COND(JUDGE_LE, 7, /* to label */ 22),
+    COND(JUDGE_LE, 11, /* to label */ 23),
     JUMP_LABEL(24),
   LABEL(20), /* = 0x14 */
     CALL_STATION( 20,  0),
@@ -125,8 +125,8 @@ static const struct ScriptCommand s_gs2_g0_s0_station_sref_script[] = { /* 0x817
     JUMP_LABEL(12),
   LABEL(8), /* = 0x08 */
     { 0xc5, 0x00,  0x0003,  0x00000000,  0x00000000, NULL },
-    { 0xcd, 0x06,  0x0019,  0x00000002,  0x00000000, NULL },
-    { 0xcd, 0x06,  0x001a,  0x00000004,  0x00000000, NULL },
+    COND(JUDGE_LE, 2, /* to label */ 25),
+    COND(JUDGE_LE, 4, /* to label */ 26),
     JUMP_LABEL(27),
   LABEL(25), /* = 0x19 */
     CALL_STATION( 25,  0),
@@ -148,8 +148,8 @@ static const struct ScriptCommand s_gs2_g0_s0_station_sref_script[] = { /* 0x817
     JUMP_LABEL(12),
   LABEL(12), /* = 0x0c */
     { 0xc0, 0x00,  0x000f,  0x00000000,  0x00000000, NULL },
-    { 0xcc, 0x00,  0x001c,  0x00000001,  0x00000000, NULL },
-    { 0xcc, 0x00,  0x001d,  0x00000008,  0x00000000, NULL },
+    COND_EQUAL(1, /* to label */ 28),
+    COND_EQUAL(8, /* to label */ 29),
   LABEL(28), /* = 0x1c */
     { 0x0d, 0x01,  0x0000,  0x00000000,  0x00000000, NULL },
     JUMP_LABEL(30),
@@ -598,9 +598,9 @@ static const struct ScriptCommand s_gs2_g6_s0_lives0_dlg0[] = { /* 0x817f910 */
     { 0x2e, 0x15,  0x0002,  0x00000002,  0x00000000, NULL },
     { 0x2e, 0x0c,  0x0003,  0x00000001,  0x00000000, NULL },
     { 0xc8, 0x00,  0x0000,  0x0000005c,  0x00000000, NULL },
-    { 0xcc, 0x00,  0x0003,  0x00000006,  0x00000000, NULL },
-    { 0xcc, 0x00,  0x0003,  0x00000005,  0x00000000, NULL },
-    { 0xcc, 0x00,  0x0003,  0x00000007,  0x00000000, NULL },
+    COND_EQUAL(6, /* to label */ 3),
+    COND_EQUAL(5, /* to label */ 3),
+    COND_EQUAL(7, /* to label */ 3),
     { 0x2e, 0x03,  0x0003,  0x00000001,  0x00000000, NULL },
   LABEL(3), /* = 0x03 */
     { 0x4c, 0x00,  0x0000,  0x000001d9,  0x00000000, NULL },
@@ -672,7 +672,7 @@ static const struct ScriptCommand s_gs2_g6_s0_lives2_dlg0[] = { /* 0x81800fc */
     { 0xe3, 0x00,  0x0007,  0x00000000,  0x00000000, NULL },
     WAIT(30),
     { 0xc8, 0x00,  0x0000,  0x00000000,  0x00000000, NULL },
-    { 0xcc, 0x00,  0x0000,  0x00000002,  0x00000000, NULL },
+    COND_EQUAL(2, /* to label */ 0),
     { 0x6b, 0x00,  0x0200,  0x00000000,  0x00000000, NULL },
     JUMP_LABEL(1),
   LABEL(0), /* = 0x00 */
@@ -703,7 +703,7 @@ static const struct ScriptCommand s_gs2_g6_s0_lives3_dlg0[] = { /* 0x818034c */
     { 0x54, 0x00,  0x0002,  0x00000000,  0x00000000, NULL },
     { 0xe3, 0x00,  0x0008,  0x00000000,  0x00000000, NULL },
     { 0xc8, 0x00,  0x0000,  0x00000000,  0x00000000, NULL },
-    { 0xcc, 0x00,  0x0000,  0x00000002,  0x00000000, NULL },
+    COND_EQUAL(2, /* to label */ 0),
     { 0x6b, 0x00,  0x0200,  0x00000000,  0x00000000, NULL },
     JUMP_LABEL(1),
   LABEL(0), /* = 0x00 */
@@ -800,9 +800,9 @@ static const struct ScriptCommand s_gs2_g8_s0_lives0_dlg0[] = { /* 0x8180674 */
     { 0x2e, 0x15,  0x0002,  0x00000002,  0x00000000, NULL },
     { 0x2e, 0x0c,  0x0003,  0x00000001,  0x00000000, NULL },
     { 0xc8, 0x00,  0x0000,  0x0000005c,  0x00000000, NULL },
-    { 0xcc, 0x00,  0x0004,  0x00000006,  0x00000000, NULL },
-    { 0xcc, 0x00,  0x0004,  0x00000005,  0x00000000, NULL },
-    { 0xcc, 0x00,  0x0004,  0x00000007,  0x00000000, NULL },
+    COND_EQUAL(6, /* to label */ 4),
+    COND_EQUAL(5, /* to label */ 4),
+    COND_EQUAL(7, /* to label */ 4),
     { 0x2e, 0x03,  0x0003,  0x00000001,  0x00000000, NULL },
   LABEL(4), /* = 0x04 */
     { 0x4c, 0x00,  0x0000,  0x000001d9,  0x00000000, NULL },
@@ -869,7 +869,7 @@ static const struct ScriptCommand s_gs2_g8_s0_lives2_dlg0[] = { /* 0x8180e20 */
     { 0xe3, 0x00,  0x0007,  0x00000000,  0x00000000, NULL },
     WAIT(30),
     { 0xc8, 0x00,  0x0000,  0x00000000,  0x00000000, NULL },
-    { 0xcc, 0x00,  0x0000,  0x00000002,  0x00000000, NULL },
+    COND_EQUAL(2, /* to label */ 0),
     { 0x6b, 0x00,  0x0200,  0x00000006,  0x00000000, NULL },
     JUMP_LABEL(1),
   LABEL(0), /* = 0x00 */
@@ -900,7 +900,7 @@ static const struct ScriptCommand s_gs2_g8_s0_lives3_dlg0[] = { /* 0x8181010 */
     { 0x54, 0x00,  0x0002,  0x00000000,  0x00000000, NULL },
     { 0xe3, 0x00,  0x0008,  0x00000000,  0x00000000, NULL },
     { 0xc8, 0x00,  0x0000,  0x00000000,  0x00000000, NULL },
-    { 0xcc, 0x00,  0x0000,  0x00000002,  0x00000000, NULL },
+    COND_EQUAL(2, /* to label */ 0),
     { 0x6b, 0x00,  0x0200,  0x00000006,  0x00000000, NULL },
     JUMP_LABEL(1),
   LABEL(0), /* = 0x00 */
