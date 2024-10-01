@@ -164,6 +164,11 @@ def get_u8(data, pointer):
     assert 0 <= pointer < len(data)
     return struct.unpack_from("B", data, pointer)[0]
 
+def get_s8(data, pointer):
+    if pointer > len(data): pointer -= 0x8000000
+    assert 0 <= pointer < len(data)
+    return struct.unpack_from("b", data, pointer)[0]
+
 def read_pksdir(data, pointer):
     assert get_raw(data, pointer, 8) == b"pksdir0\0"
 

@@ -2,7 +2,7 @@
 from __future__ import print_function
 import sys
 import struct
-from util import get_u8, get_s16, get_u16, get_s32, get_u32, get_raw, get_str, xdump
+from util import get_s8, get_u8, get_s16, get_u16, get_s32, get_u32, get_raw, get_str, xdump
 import binascii
 from scriptvars import *
 from scripts import *
@@ -294,6 +294,24 @@ COMMENTS = {
     0x822df60: "PART 1 0:11:39-0:12:15 - Player",
     0x822e5fc: "PART 1 0:11:39-0:12:15 - Partner",
     0x822e89c: "PART 1 0:11:39-0:12:15 - Butterfree",
+    0x822fd34: "PART 1 0:16:37-0:17:16 - Tiny Woods end room",
+    0x822fdd0: "PART 1 0:16:37-0:17:16 - Player",
+    0x82300a8: "PART 1 0:16:37-0:17:16 - Partner",
+    0x8230108: "PART 1 0:16:37-0:17:16 - Caterpie",
+    0x822e95c: "PART 1 0:17:17-0:18:51 - Post-Tiny Woods cutscene",
+    0x822ea18: "PART 1 0:17:17-0:18:51 - Player",
+    0x822f68c: "PART 1 0:17:17-0:18:51 - Partner",
+    0x822f84c: "PART 1 0:17:17-0:18:34 - Butterfree",
+    0x822f94c: "PART 1 0:17:17-0:18:34 - Caterpie",
+    0x81a0358: "PART 1 0:18:53-0:22:13 - First base cutscene",
+    0x81a05ac: "PART 1 0:18:53-0:22:03 - Player",
+    0x81a1e94: "PART 1 0:18:53-0:20:11 - Partner",
+    0x81a20f0: "PART 1 0:20:11-0:20:39 - Partner - refused Rescue Team question",
+    0x81a21b0: "PART 1 0:20:40-0:22:03 - Partner - accepted Rescue Team question",
+    0x81a050c: "PART 1 0:18:58-0:19:03 - Possibly the camera scroll? WAIT timing seems to match",
+    0x81e7424: "PART 1 0:22:25-0:22:53 - First day cutscene",
+    0x81e7560: "PART 1 0:22:30-0:22:53 - Player",
+    0x81e77c4: "PART 1 0:22:53 - First day, setup playable state",
 }
 
 def main():
@@ -371,7 +389,8 @@ def main():
             curline += 1
             for i in range(v[2]):
                 p = addr + 16*i
-                op, b, h, a1, a2, ap = get_u8(data, p+0), get_u8(data, p+1), get_s16(data, p+2), get_s32(data, p+4), get_s32(data, p+8), get_u32(data, p+12)
+                op, bs, h, a1, a2, ap = get_u8(data, p+0), get_s8(data, p+1), get_s16(data, p+2), get_s32(data, p+4), get_s32(data, p+8), get_u32(data, p+12)
+                b = bs&0xff
                 if False: pass
                 elif op == 0x08:
                     assert b == h == a2 == ap == 0
@@ -387,34 +406,34 @@ def main():
                     outfile.write(u'    SELECT_WEATHER(%d),\n' % (a1,))
                 elif op == 0x0c:
                     assert a1 == a2 == ap == 0
-                    outfile.write(u'    SELECT_ENTITIES(%d, %d),\n' % (h,b))
+                    outfile.write(u'    SELECT_ENTITIES(%d, %d),\n' % (h,bs))
                 elif op == 0x0d:
                     assert a1 == a2 == ap == 0
-                    outfile.write(u'    SELECT_LIVES(%d, %d),\n' % (h,b))
+                    outfile.write(u'    SELECT_LIVES(%d, %d),\n' % (h,bs))
                 elif op == 0x0e:
                     assert a1 == a2 == ap == 0
-                    outfile.write(u'    SELECT_OBJECTS(%d, %d),\n' % (h,b))
+                    outfile.write(u'    SELECT_OBJECTS(%d, %d),\n' % (h,bs))
                 elif op == 0x0f:
                     assert a1 == a2 == ap == 0
-                    outfile.write(u'    SELECT_EFFECTS(%d, %d),\n' % (h,b))
+                    outfile.write(u'    SELECT_EFFECTS(%d, %d),\n' % (h,bs))
                 elif op == 0x10:
                     assert a1 == a2 == ap == 0
-                    outfile.write(u'    SELECT_EVENTS(%d, %d),\n' % (h,b))
+                    outfile.write(u'    SELECT_EVENTS(%d, %d),\n' % (h,bs))
                 elif op == 0x11:
                     assert a1 == a2 == ap == 0
-                    outfile.write(u'    CANCEL_ENTITIES(%d, %d),\n' % (h,b))
+                    outfile.write(u'    CANCEL_ENTITIES(%d, %d),\n' % (h,bs))
                 elif op == 0x12:
                     assert a1 == a2 == ap == 0
-                    outfile.write(u'    CANCEL_LIVES(%d, %d),\n' % (h,b))
+                    outfile.write(u'    CANCEL_LIVES(%d, %d),\n' % (h,bs))
                 elif op == 0x13:
                     assert a1 == a2 == ap == 0
-                    outfile.write(u'    CANCEL_OBJECTS(%d, %d),\n' % (h,b))
+                    outfile.write(u'    CANCEL_OBJECTS(%d, %d),\n' % (h,bs))
                 elif op == 0x14:
                     assert a1 == a2 == ap == 0
-                    outfile.write(u'    CANCEL_EFFECTS(%d, %d),\n' % (h,b))
+                    outfile.write(u'    CANCEL_EFFECTS(%d, %d),\n' % (h,bs))
                 elif op == 0x15:
                     assert a1 == a2 == ap == 0
-                    outfile.write(u'    CANCEL_EVENTS(%d, %d),\n' % (h,b))
+                    outfile.write(u'    CANCEL_EVENTS(%d, %d),\n' % (h,bs))
                 elif op == 0x16:
                     assert b == h == a1 == a2 == ap == 0
                     outfile.write(u'    CANCEL_OFFSCREEN_LIVES,\n')

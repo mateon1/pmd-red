@@ -220,7 +220,7 @@ static const struct ScriptCommand s_gs202_g1_s0_lives1_dlg0[] = { /* 0x82561ac *
 
 static const struct ScriptCommand s_gs202_g2_s0_station_sref_script[] = { /* 0x825628c */
     DEBUGINFO,
-    SELECT_ENTITIES(-1, 255),
+    SELECT_ENTITIES(-1, -1),
     RET_DIRECT,
 };
 

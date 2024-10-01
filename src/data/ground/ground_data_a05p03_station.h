@@ -18,7 +18,7 @@ static const struct ScriptRef s_gs177_g0_s0_station_sref = { 404, 1, NULL /* ENT
 static const struct ScriptCommand s_gs177_g1_s0_station_sref_script[] = { /* 0x822be60 */
     DEBUGINFO,
     SELECT_MAP(177),
-    SELECT_ENTITIES(-1, 255),
+    SELECT_ENTITIES(-1, -1),
     { 0x22, 0x01,  0x001e,  0x00000000,  0x00000000, NULL },
     { 0xe0, 0x00,  0x002d,  0x00000000,  0x00000000, NULL },
     WAIT(240),

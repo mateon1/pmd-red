@@ -73,8 +73,8 @@ static const struct ScriptCommand s_gs5_g0_s1_lives1_dlg0[] = { /* 0x8197cb0 */
 static const struct ScriptCommand s_gs5_g1_s0_station_sref_script[] = { /* 0x8197cf0 */
     DEBUGINFO,
     JUMPIF_EQUAL(SCENARIO_MAIN, 11, /* to label */ 0),
-    CANCEL_EVENTS(-1, 255),
-    SELECT_ENTITIES(-1, 255),
+    CANCEL_EVENTS(-1, -1),
+    SELECT_ENTITIES(-1, -1),
   LABEL(0), /* = 0x00 */
     RET_DIRECT,
 };
@@ -127,7 +127,7 @@ static const struct ScriptCommand s_gs5_g2_s0_station_sref_script[] = { /* 0x819
     SELECT_MAP(5),
     CALL_SCRIPT(DISMISSAL_SALLY_MEMBER_FUNC),
     CALL_STATION(  1,  0),
-    SELECT_ENTITIES(-1, 255),
+    SELECT_ENTITIES(-1, -1),
     { 0x44, 0x00,  0x0000,  0x00000007,  0x00000000, NULL },
     { 0x22, 0x01, -0x0001,  0x00000000,  0x00000000, NULL },
     { 0xe3, 0x00,  0x0003,  0x00000000,  0x00000000, NULL },
@@ -177,7 +177,7 @@ static const struct ScriptCommand s_gs5_g3_s0_station_sref_script[] = { /* 0x819
     SELECT_MAP(5),
     CALL_SCRIPT(DISMISSAL_SALLY_MEMBER2_FUNC),
     CALL_STATION(  1,  0),
-    SELECT_ENTITIES(-1, 255),
+    SELECT_ENTITIES(-1, -1),
     { 0x44, 0x00,  0x0000,  0x00000007,  0x00000000, NULL },
     { 0x22, 0x01, -0x0001,  0x00000000,  0x00000000, NULL },
     { 0xe3, 0x00,  0x0003,  0x00000000,  0x00000000, NULL },
@@ -230,7 +230,7 @@ static const struct ScriptCommand s_gs5_g4_s0_station_sref_script[] = { /* 0x819
     SELECT_MAP(5),
     CALL_SCRIPT(DISMISSAL_SALLY_MEMBER3_FUNC),
     CALL_STATION(  1,  0),
-    SELECT_ENTITIES(-1, 255),
+    SELECT_ENTITIES(-1, -1),
     { 0x44, 0x00,  0x0000,  0x00000007,  0x00000000, NULL },
     { 0x22, 0x01, -0x0001,  0x00000000,  0x00000000, NULL },
     { 0xe3, 0x00,  0x0003,  0x00000000,  0x00000000, NULL },
@@ -281,7 +281,7 @@ static const struct ScriptCommand s_gs5_g4_s0_lives1_dlg0[] = { /* 0x8198768 */
 static const struct ScriptCommand s_gs5_g5_s0_station_sref_script[] = { /* 0x81987e8 */
     DEBUGINFO,
     SELECT_MAP(5),
-    SELECT_ENTITIES(-1, 255),
+    SELECT_ENTITIES(-1, -1),
     { 0x44, 0x00,  0x0000,  0x00000028,  0x00000000, NULL },
     { 0x22, 0x01,  0x001e,  0x00000000,  0x00000000, NULL },
     { 0xe3, 0x00,  0x0003,  0x00000000,  0x00000000, NULL },

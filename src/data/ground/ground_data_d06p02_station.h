@@ -131,7 +131,7 @@ static const struct ScriptCommand s_gs189_g1_s0_station_sref_script[] = { /* 0x8
     UPDATE_VARINT(CALC_SET, PARTNER1_KIND, 2),
     UPDATE_VARINT(CALC_SET, PARTNER2_KIND, 0),
     SELECT_MAP(189),
-    SELECT_ENTITIES(-1, 255),
+    SELECT_ENTITIES(-1, -1),
     { 0x44, 0x00,  0x0000,  0x0000006f,  0x00000000, NULL },
     { 0x22, 0x01,  0x001e,  0x00000000,  0x00000000, NULL },
     { 0xe3, 0x00,  0x0003,  0x00000000,  0x00000000, NULL },

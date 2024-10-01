@@ -675,7 +675,7 @@ static const struct ScriptCommand s_gs162_g6_s1_lives0_dlg0[] = { /* 0x8212774 *
 static const struct ScriptCommand s_gs162_g7_s0_station_sref_script[] = { /* 0x8212df4 */
     DEBUGINFO,
     SELECT_MAP(162),
-    SELECT_ENTITIES(-1, 255),
+    SELECT_ENTITIES(-1, -1),
     { 0x27, 0x01,  0x000e,  0x0000001e,  0x00000000, NULL },
     { 0xe3, 0x00,  0x0003,  0x00000000,  0x00000000, NULL },
     { 0x28, 0x01,  0x000e,  0x0000001e,  0x00000000, NULL },
@@ -977,7 +977,7 @@ static const struct ScriptCommand s_gs162_g8_s1_lives0_dlg0[] = { /* 0x8213b50 *
 static const struct ScriptCommand s_gs162_g9_s0_station_sref_script[] = { /* 0x8214480 */
     DEBUGINFO,
     SELECT_MAP(162),
-    SELECT_ENTITIES(-1, 255),
+    SELECT_ENTITIES(-1, -1),
     { 0x44, 0x00,  0x0000,  0x00000005,  0x00000000, NULL },
     { 0x27, 0x00,  0x0005,  0x0000003c,  0x00ffffff, NULL },
     { 0xe3, 0x00,  0x0003,  0x00000000,  0x00000000, NULL },

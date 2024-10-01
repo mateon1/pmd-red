@@ -757,7 +757,7 @@ static const struct ScriptRef s_gs4_g2_s0_station_sref = { 403, 8, NULL /* STATI
 static const struct ScriptCommand s_gs4_g3_s0_station_sref_script[] = { /* 0x818c984 */
     DEBUGINFO,
     SELECT_MAP(4),
-    SELECT_ENTITIES(-1, 255),
+    SELECT_ENTITIES(-1, -1),
     { 0x44, 0x00,  0x0000,  0x00000007,  0x00000000, NULL },
     { 0x22, 0x01,  0x001e,  0x00000000,  0x00000000, NULL },
     { 0xe3, 0x00,  0x0003,  0x00000000,  0x00000000, NULL },
@@ -958,7 +958,7 @@ static const struct ScriptCommand s_gs4_g5_s0_station_sref_script[] = { /* 0x818
     DEBUGINFO,
     SELECT_MAP(4),
     WAIT(30),
-    SELECT_ENTITIES(-1, 255),
+    SELECT_ENTITIES(-1, -1),
     { 0x44, 0x00,  0x0000,  0x00000007,  0x00000000, NULL },
     { 0x22, 0x01,  0x001e,  0x00000000,  0x00000000, NULL },
     { 0xe3, 0x00,  0x0003,  0x00000000,  0x00000000, NULL },
@@ -1112,7 +1112,7 @@ static const struct ScriptCommand s_gs4_g7_s0_station_sref_script[] = { /* 0x818
     DEBUGINFO,
     SELECT_MAP(4),
     WAIT(30),
-    SELECT_ENTITIES(-1, 255),
+    SELECT_ENTITIES(-1, -1),
     { 0x44, 0x00,  0x0000,  0x00000007,  0x00000000, NULL },
     { 0x22, 0x01,  0x001e,  0x00000000,  0x00000000, NULL },
     { 0xe3, 0x00,  0x0003,  0x00000000,  0x00000000, NULL },
@@ -1218,7 +1218,7 @@ static const struct ScriptCommand s_gs4_g8_s0_lives1_dlg2[] = { /* 0x818ea60 */
 
 static const struct ScriptCommand s_gs4_g9_s0_station_sref_script[] = { /* 0x818ea90 */
     DEBUGINFO,
-    SELECT_ENTITIES(-1, 255),
+    SELECT_ENTITIES(-1, -1),
     { 0xe3, 0x00,  0x0003,  0x00000000,  0x00000000, NULL },
     SELECT_ENTITIES(10, 0),
     { 0x1b, 0x00,  0x0157,  0x00000000,  0x00000000, NULL },
@@ -1498,7 +1498,7 @@ static const struct ScriptCommand s_gs4_g12_s0_station_sref_script[] = { /* 0x81
     UPDATE_VARINT(CALC_SET, PARTNER1_KIND, 2),
     UPDATE_VARINT(CALC_SET, PARTNER2_KIND, 0),
     SELECT_MAP(4),
-    SELECT_ENTITIES(-1, 255),
+    SELECT_ENTITIES(-1, -1),
     CANCEL_LIVES(0, 0),
     { 0x44, 0x00,  0x0000,  0x00000007,  0x00000000, NULL },
     { 0x22, 0x01,  0x001e,  0x00000000,  0x00000000, NULL },
@@ -1674,7 +1674,7 @@ static const struct ScriptRef s_gs4_g13_s0_station_sref = { 403, 8, NULL /* STAT
 
 static const struct ScriptCommand s_gs4_g14_s0_station_sref_script[] = { /* 0x8190d18 */
     DEBUGINFO,
-    SELECT_ENTITIES(-1, 255),
+    SELECT_ENTITIES(-1, -1),
     RET_DIRECT,
 };
 
@@ -1689,7 +1689,7 @@ static const struct ScriptRef s_gs4_g15_s0_station_sref = { 403, 8, NULL /* STAT
 
 static const struct ScriptCommand s_gs4_g16_s0_station_sref_script[] = { /* 0x8190d80 */
     DEBUGINFO,
-    SELECT_ENTITIES(-1, 255),
+    SELECT_ENTITIES(-1, -1),
     RET_DIRECT,
 };
 
@@ -1812,7 +1812,7 @@ static const struct ScriptCommand s_gs4_g16_s1_lives2_dlg2[] = { /* 0x81913c4 */
 
 static const struct ScriptCommand s_gs4_g17_s0_station_sref_script[] = { /* 0x81913f4 */
     DEBUGINFO,
-    SELECT_ENTITIES(-1, 255),
+    SELECT_ENTITIES(-1, -1),
     RET_DIRECT,
 };
 
@@ -1926,10 +1926,10 @@ static const struct ScriptCommand s_gs4_g17_s1_lives2_dlg2[] = { /* 0x819189c */
 static const struct ScriptCommand s_gs4_g18_s0_station_sref_script[] = { /* 0x81918cc */
     DEBUGINFO,
     JUMPIF_SCENE_LT(SCENARIO_MAIN, 9, 4, /* to label */ 0),
-    SELECT_ENTITIES(-1, 255),
+    SELECT_ENTITIES(-1, -1),
     JUMP_LABEL(1),
   LABEL(0), /* = 0x00 */
-    SELECT_ENTITIES(-1, 255),
+    SELECT_ENTITIES(-1, -1),
     SELECT_LIVES(-1, 1),
   LABEL(1), /* = 0x01 */
     RET_DIRECT,
@@ -3040,7 +3040,7 @@ static const struct ScriptCommand s_gs4_g26_s0_lives2_dlg2[] = { /* 0x8195c38 */
 static const struct ScriptCommand s_gs4_g27_s0_station_sref_script[] = { /* 0x8195cfc */
     DEBUGINFO,
     SELECT_MAP(4),
-    SELECT_ENTITIES(-1, 255),
+    SELECT_ENTITIES(-1, -1),
     { 0x44, 0x00,  0x0000,  0x00000029,  0x00000000, NULL },
     { 0x22, 0x01,  0x002d,  0x00000000,  0x00000000, NULL },
     WAIT(240),
@@ -3149,7 +3149,7 @@ static const struct ScriptCommand s_gs4_g29_s0_station_sref_script[] = { /* 0x81
     DEBUGINFO,
     SELECT_MAP(4),
     CANCEL_ENTITIES(0, 0),
-    SELECT_ENTITIES(-1, 255),
+    SELECT_ENTITIES(-1, -1),
     { 0x44, 0x00,  0x0000,  0x00000028,  0x00000000, NULL },
     { 0x22, 0x01,  0x001e,  0x00000000,  0x00000000, NULL },
     { 0xe3, 0x00,  0x0003,  0x00000000,  0x00000000, NULL },

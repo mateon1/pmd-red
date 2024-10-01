@@ -49,7 +49,7 @@ static const struct ScriptCommand s_gs8_g0_s1_lives1_dlg0[] = { /* 0x819a8c4 */
 static const struct ScriptCommand s_gs8_g1_s0_station_sref_script[] = { /* 0x819a904 */
     DEBUGINFO,
     SELECT_MAP(8),
-    SELECT_ENTITIES(-1, 255),
+    SELECT_ENTITIES(-1, -1),
     { 0x44, 0x00,  0x0000,  0x00000008,  0x00000000, NULL },
     { 0x22, 0x01, -0x0001,  0x00000000,  0x00000000, NULL },
     { 0xe3, 0x00,  0x0003,  0x00000000,  0x00000000, NULL },

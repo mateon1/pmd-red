@@ -17,7 +17,7 @@ static const struct ScriptCommand s_gs179_g0_s0_station_sref_script[] = { /* 0x8
 
 static const struct ScriptRef s_gs179_g0_s0_station_sref = { 404, 1, NULL /* ENTER_CONTROL */, s_gs179_g0_s0_station_sref_script }; /* 0x822fd28 */
 
-static const struct ScriptCommand s_gs179_g1_s0_station_sref_script[] = { /* 0x822fd34 */
+static const struct ScriptCommand s_gs179_g1_s0_station_sref_script[] = { /* 0x822fd34 - PART 1 0:16:37-0:17:16 - Tiny Woods end room */
     DEBUGINFO,
     SELECT_MAP(179),
     SELECT_ENTITIES(-1, 0),
@@ -31,7 +31,7 @@ static const struct ScriptCommand s_gs179_g1_s0_station_sref_script[] = { /* 0x8
 
 static const struct ScriptRef s_gs179_g1_s0_station_sref = { 400, 7, NULL /* EVENT_CONTROL */, s_gs179_g1_s0_station_sref_script }; /* 0x822fdc4 */
 
-static const struct ScriptCommand s_gs179_g1_s0_lives0_dlg0[] = { /* 0x822fdd0 */
+static const struct ScriptCommand s_gs179_g1_s0_lives0_dlg0[] = { /* 0x822fdd0 - PART 1 0:16:37-0:17:16 - Player */
     DEBUGINFO,
     { 0x54, 0x00,  0x0002,  0x00000000,  0x00000000, NULL },
     { 0x2d, 0x07,  0x0000,  0x00000000,  0x00000000, NULL },
@@ -76,7 +76,7 @@ static const struct ScriptCommand s_gs179_g1_s0_lives0_dlg0[] = { /* 0x822fdd0 *
 
 
 
-static const struct ScriptCommand s_gs179_g1_s0_lives1_dlg0[] = { /* 0x82300a8 */
+static const struct ScriptCommand s_gs179_g1_s0_lives1_dlg0[] = { /* 0x82300a8 - PART 1 0:16:37-0:17:16 - Partner */
     DEBUGINFO,
     { 0x54, 0x00,  0x0002,  0x00000000,  0x00000000, NULL },
     { 0x2d, 0x07,  0x0001,  0x00000000,  0x00000000, NULL },
@@ -85,7 +85,7 @@ static const struct ScriptCommand s_gs179_g1_s0_lives1_dlg0[] = { /* 0x82300a8 *
     HALT,
 };
 
-static const struct ScriptCommand s_gs179_g1_s0_lives2_dlg0[] = { /* 0x8230108 */
+static const struct ScriptCommand s_gs179_g1_s0_lives2_dlg0[] = { /* 0x8230108 - PART 1 0:16:37-0:17:16 - Caterpie */
     DEBUGINFO,
     { 0x54, 0x00,  0x0002,  0x00000000,  0x00000000, NULL },
     { 0x2d, 0x07,  0x0002,  0x00000000,  0x00000000, NULL },

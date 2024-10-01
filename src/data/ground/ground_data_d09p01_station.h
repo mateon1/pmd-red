@@ -258,7 +258,7 @@ static const struct ScriptCommand s_gs195_g1_s0_lives1_dlg0[] = { /* 0x824696c *
 
 static const struct ScriptCommand s_gs195_g2_s0_station_sref_script[] = { /* 0x8246acc */
     DEBUGINFO,
-    SELECT_ENTITIES(-1, 255),
+    SELECT_ENTITIES(-1, -1),
     RET_DIRECT,
 };
 

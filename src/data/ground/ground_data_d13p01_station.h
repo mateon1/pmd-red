@@ -21,7 +21,7 @@ static const struct ScriptCommand s_gs207_g1_s0_station_sref_script[] = { /* 0x8
     { 0x48, 0x00,  0x001e,  0x00000000,  0x00000000, NULL },
     WAIT(60),
     SELECT_MAP(207),
-    SELECT_ENTITIES(-1, 255),
+    SELECT_ENTITIES(-1, -1),
     { 0x44, 0x00,  0x0000,  0x00000016,  0x00000000, NULL },
     { 0x22, 0x01,  0x001e,  0x00000000,  0x00000000, NULL },
     { 0xe3, 0x00,  0x0003,  0x00000000,  0x00000000, NULL },
@@ -165,7 +165,7 @@ static const struct ScriptCommand s_gs207_g1_s0_lives2_dlg0[] = { /* 0x8260738 *
 static const struct ScriptCommand s_gs207_g2_s0_station_sref_script[] = { /* 0x82608a8 */
     DEBUGINFO,
     SELECT_MAP(207),
-    SELECT_ENTITIES(-1, 255),
+    SELECT_ENTITIES(-1, -1),
     { 0x44, 0x00,  0x0000,  0x00000016,  0x00000000, NULL },
     { 0x22, 0x01,  0x001e,  0x00000000,  0x00000000, NULL },
     { 0xe3, 0x00,  0x0003,  0x00000000,  0x00000000, NULL },
@@ -231,7 +231,7 @@ static const struct ScriptCommand s_gs207_g2_s0_lives2_dlg0[] = { /* 0x8260c3c *
 static const struct ScriptCommand s_gs207_g3_s0_station_sref_script[] = { /* 0x8260cac */
     DEBUGINFO,
     SELECT_MAP(207),
-    SELECT_ENTITIES(-1, 255),
+    SELECT_ENTITIES(-1, -1),
     { 0x44, 0x00,  0x0000,  0x00000016,  0x00000000, NULL },
     { 0x22, 0x01,  0x001e,  0x00000000,  0x00000000, NULL },
     { 0xe3, 0x00,  0x0003,  0x00000000,  0x00000000, NULL },

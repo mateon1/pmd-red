@@ -514,7 +514,7 @@ static const struct ScriptCommand s_gs178_g2_s0_lives2_dlg0[] = { /* 0x822e89c -
     JUMP_LABEL(0),
 };
 
-static const struct ScriptCommand s_gs178_g3_s0_station_sref_script[] = { /* 0x822e95c */
+static const struct ScriptCommand s_gs178_g3_s0_station_sref_script[] = { /* 0x822e95c - PART 1 0:17:17-0:18:51 - Post-Tiny Woods cutscene */
     DEBUGINFO,
     { 0x3b, 0x39,  0x0004,  0x00000000,  0x00000000, NULL },
     SELECT_MAP(178),
@@ -530,7 +530,7 @@ static const struct ScriptCommand s_gs178_g3_s0_station_sref_script[] = { /* 0x8
 
 static const struct ScriptRef s_gs178_g3_s0_station_sref = { 400, 7, NULL /* EVENT_CONTROL */, s_gs178_g3_s0_station_sref_script }; /* 0x822ea0c */
 
-static const struct ScriptCommand s_gs178_g3_s0_lives0_dlg0[] = { /* 0x822ea18 */
+static const struct ScriptCommand s_gs178_g3_s0_lives0_dlg0[] = { /* 0x822ea18 - PART 1 0:17:17-0:18:51 - Player */
     DEBUGINFO,
     { 0x54, 0x00,  0x0002,  0x00000000,  0x00000000, NULL },
     { 0x2d, 0x07,  0x0000,  0x00000000,  0x00000000, NULL },
@@ -659,7 +659,7 @@ static const struct ScriptCommand s_gs178_g3_s0_lives0_dlg0[] = { /* 0x822ea18 *
 
 
 
-static const struct ScriptCommand s_gs178_g3_s0_lives1_dlg0[] = { /* 0x822f68c */
+static const struct ScriptCommand s_gs178_g3_s0_lives1_dlg0[] = { /* 0x822f68c - PART 1 0:17:17-0:18:51 - Partner */
     DEBUGINFO,
     { 0x54, 0x00,  0x0002,  0x00000000,  0x00000000, NULL },
     { 0x2d, 0x07,  0x0001,  0x00000000,  0x00000000, NULL },
@@ -690,7 +690,7 @@ static const struct ScriptCommand s_gs178_g3_s0_lives1_dlg0[] = { /* 0x822f68c *
     HALT,
 };
 
-static const struct ScriptCommand s_gs178_g3_s0_lives2_dlg0[] = { /* 0x822f84c */
+static const struct ScriptCommand s_gs178_g3_s0_lives2_dlg0[] = { /* 0x822f84c - PART 1 0:17:17-0:18:34 - Butterfree */
     DEBUGINFO,
     { 0x54, 0x00,  0x0002,  0x00000000,  0x00000000, NULL },
     { 0x2d, 0x07,  0x0002,  0x00000000,  0x00000000, NULL },
@@ -709,7 +709,7 @@ static const struct ScriptCommand s_gs178_g3_s0_lives2_dlg0[] = { /* 0x822f84c *
     END_DELETE,
 };
 
-static const struct ScriptCommand s_gs178_g3_s0_lives3_dlg0[] = { /* 0x822f94c */
+static const struct ScriptCommand s_gs178_g3_s0_lives3_dlg0[] = { /* 0x822f94c - PART 1 0:17:17-0:18:34 - Caterpie */
     DEBUGINFO,
     { 0x54, 0x00,  0x0002,  0x00000000,  0x00000000, NULL },
     { 0x2d, 0x07,  0x0003,  0x00000000,  0x00000000, NULL },

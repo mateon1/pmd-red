@@ -19,7 +19,7 @@ static const struct ScriptCommand s_gs174_g1_s0_station_sref_script[] = { /* 0x8
     DEBUGINFO,
     { 0x3b, 0x39,  0x0001,  0x00000000,  0x00000000, NULL },
     SELECT_MAP(174),
-    SELECT_ENTITIES(-1, 255),
+    SELECT_ENTITIES(-1, -1),
     { 0x47, 0x00,  0x0000,  0x00000000,  0x00000000, NULL },
     { 0x27, 0x01,  0x0005,  0x0000003c,  0x00ffffff, NULL },
     { 0xe3, 0x00,  0x0003,  0x00000000,  0x00000000, NULL },
