@@ -15,7 +15,7 @@ static const struct ScriptCommand s_gs223_g0_s0_station_sref_script[] = { /* 0x8
 
 static const struct ScriptRef s_gs223_g0_s0_station_sref = { 404, 1, NULL /* ENTER_CONTROL */, s_gs223_g0_s0_station_sref_script }; /* 0x826dfec */
 
-static const struct ScriptCommand s_gs223_g1_s0_station_sref_script[] = { /* 0x826dff8 */
+static const struct ScriptCommand s_gs223_g1_s0_station_sref_script[] = { /* 0x826dff8 - PART 1 0:00:31-0:00:45 - New game intro to personality test */
     DEBUGINFO,
     { 0x47, 0x00,  0x0000,  0x00000000,  0x00000000, NULL },
     SELECT_MAP(223),

@@ -284,6 +284,14 @@ ITEM = [
     "ITEM_G_MACHINE_8",
 ]
 
+COMMENTS = {
+    0x826dff8: "PART 1 0:00:31-0:00:45 - New game intro to personality test",
+    0x822c2c0: "PART 1 0:04:05-0:04:23",
+    0x822c5e4: "PART 1 0:04:23-0:06:38 - Main script - why/how is $n3 set here?",
+    0x822d950: "PART 1 0:04:23-0:06:38 - Partner script",
+    0x822dc90: "PART 1 0:05:55-0:06:38 - Butterfree",
+}
+
 def main():
     with open("baserom.gba", "rb") as f:
         data = bytearray(f.read())
@@ -355,7 +363,7 @@ def main():
             assert expectline > curline
             outfile.write(u'\n'*(expectline - curline - 1))
             curline += expectline - curline - 1
-            outfile.write(u'static const struct ScriptCommand %s[] = { /* 0x%07x */\n' % (pdesc(addr), addr))
+            outfile.write(u'static const struct ScriptCommand %s[] = { /* 0x%07x%s */\n' % (pdesc(addr), addr, " - "+COMMENTS[addr] if addr in COMMENTS else ""))
             curline += 1
             for i in range(v[2]):
                 p = addr + 16*i
