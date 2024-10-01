@@ -109,7 +109,7 @@ static const struct ScriptRef s_gs12_g0_s0_evt1_sref = { 57, 7, NULL /* NORMAL_E
 
 static const struct ScriptCommand s_gs12_g0_s0_obj0_dlg0[] = { /* 0x81e1ef0 */
     DEBUGINFO,
-    { 0xb4, 0x05,  0x0000,  0x00000028,  0x00000002, NULL },
+    JUMPIF(JUDGE_GE, BASE_LEVEL, 2, /* to label */ 0),
     END_DELETE,
   LABEL(0), /* = 0x00 */
     RET,

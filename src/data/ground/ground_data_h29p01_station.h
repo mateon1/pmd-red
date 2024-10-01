@@ -22,7 +22,7 @@
 static const struct ScriptCommand s_gs158_g0_s0_station_sref_script[] = { /* 0x820c898 */
     DEBUGINFO,
     { 0x08, 0x00,  0x0000,  0x0000009e,  0x00000000, NULL },
-    { 0xb9, 0x00,  0x0005,  0x00000022,  0x00000002, NULL },
+    JUMPIF_SCENE_EQ(SCENARIO_SUB2, 34, 2, /* to label */ 0),
     CJUMP_SCENARIO_0(SCENARIO_MAIN),
     COND(JUDGE_EQ, 3, /* to label */ 1),
     JUMP_LABEL(2),
@@ -42,10 +42,10 @@ static const struct ScriptCommand s_gs158_g0_s0_station_sref_script[] = { /* 0x8
     COND_EQUAL(0, /* to label */ 2),
     JUMP_SCRIPT(EVENT_S02E02A_L002),
   LABEL(4), /* = 0x04 */
-    { 0xb3, 0x05,  0x0018,  0x00000001,  0x00000000, NULL },
-    { 0xb3, 0x06,  0x0018,  0x00000003,  0x00000000, NULL },
-    { 0xb3, 0x07,  0x0018,  0x00000002,  0x00000000, NULL },
-    { 0xb3, 0x07,  0x0018,  0x00000009,  0x00000000, NULL },
+    JUMPIF_EQUAL(START_MODE, 1, /* to label */ 5),
+    JUMPIF_EQUAL(START_MODE, 3, /* to label */ 6),
+    JUMPIF_EQUAL(START_MODE, 2, /* to label */ 7),
+    JUMPIF_EQUAL(START_MODE, 9, /* to label */ 7),
     JUMP_LABEL(5),
   LABEL(7), /* = 0x07 */
     CJUMP_VAR(GROUND_GETOUT),

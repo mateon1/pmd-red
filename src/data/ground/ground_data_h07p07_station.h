@@ -29,10 +29,10 @@ static const struct ScriptCommand s_gs128_g0_s0_station_sref_script[] = { /* 0x8
     { 0x0c, 0x00,  0x0001,  0x00000000,  0x00000000, NULL },
     JUMP_LABEL(2),
   LABEL(2), /* = 0x02 */
-    { 0xb3, 0x04,  0x0018,  0x00000001,  0x00000000, NULL },
-    { 0xb3, 0x05,  0x0018,  0x00000003,  0x00000000, NULL },
-    { 0xb3, 0x06,  0x0018,  0x00000002,  0x00000000, NULL },
-    { 0xb3, 0x06,  0x0018,  0x00000009,  0x00000000, NULL },
+    JUMPIF_EQUAL(START_MODE, 1, /* to label */ 4),
+    JUMPIF_EQUAL(START_MODE, 3, /* to label */ 5),
+    JUMPIF_EQUAL(START_MODE, 2, /* to label */ 6),
+    JUMPIF_EQUAL(START_MODE, 9, /* to label */ 6),
     JUMP_LABEL(4),
   LABEL(6), /* = 0x06 */
     CJUMP_VAR(GROUND_GETOUT),

@@ -289,11 +289,11 @@ static const struct ScriptCommand s_gs167_g2_s0_lives1_dlg0[] = { /* 0x821b5d4 *
     { 0x91, 0x04,  0x000b,  0x00000007,  0x00000000, NULL },
     { 0xe4, 0x00,  0x0005,  0x00000000,  0x00000000, NULL },
     { 0xe3, 0x00,  0x0006,  0x00000000,  0x00000000, NULL },
-    { 0xb4, 0x02,  0x0000,  0x00000039,  0x00000001, NULL },
+    JUMPIF(JUDGE_EQ, EVENT_LOCAL, 1, /* to label */ 0),
     CALL_SCRIPT(JUMP_SURPRISE_FUNC),
     { 0xe4, 0x00,  0x0005,  0x00000000,  0x00000000, NULL },
     { 0xe3, 0x00,  0x0006,  0x00000000,  0x00000000, NULL },
-    { 0xb4, 0x02,  0x0001,  0x00000039,  0x00000000, NULL },
+    JUMPIF(JUDGE_EQ, EVENT_LOCAL, 0, /* to label */ 1),
   LABEL(0), /* = 0x00 */
     CALL_SCRIPT(SMILE_START_FUNC),
     WAIT(30),

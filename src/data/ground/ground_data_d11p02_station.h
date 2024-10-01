@@ -24,10 +24,10 @@ static const struct ScriptCommand s_gs202_g0_s0_station_sref_script[] = { /* 0x8
     UPDATE_VARINT(CALC_SET, PARTNER2_KIND, 0),
     JUMP_LABEL(2),
   LABEL(2), /* = 0x02 */
-    { 0xb3, 0x03,  0x0018,  0x00000001,  0x00000000, NULL },
-    { 0xb3, 0x04,  0x0018,  0x00000003,  0x00000000, NULL },
-    { 0xb3, 0x05,  0x0018,  0x00000002,  0x00000000, NULL },
-    { 0xb3, 0x05,  0x0018,  0x00000009,  0x00000000, NULL },
+    JUMPIF_EQUAL(START_MODE, 1, /* to label */ 3),
+    JUMPIF_EQUAL(START_MODE, 3, /* to label */ 4),
+    JUMPIF_EQUAL(START_MODE, 2, /* to label */ 5),
+    JUMPIF_EQUAL(START_MODE, 9, /* to label */ 5),
     JUMP_LABEL(3),
   LABEL(5), /* = 0x05 */
     CJUMP_VAR(GROUND_GETOUT),
@@ -59,7 +59,7 @@ static const struct ScriptCommand s_gs202_g0_s0_evt0_sref_script[] = { /* 0x8255
   LABEL(0), /* = 0x00 */
     { 0x30, 0x00,  0x0000,  0x00000000,  0x00000000, NULL },
     { 0x48, 0x00,  0x003c,  0x00000000,  0x00000000, NULL },
-    { 0xb6, 0x00,  0x0002,  0x0000002c,  0x0000001d, NULL },
+    JUMPIF_ARRAY(RESCUE_SCENARIO_JOB_LIST, 29, /* to label */ 2),
     { 0x02, 0x00,  0x001e,  0x00000010,  0x00000000, NULL },
     COND_EQUAL(-1, /* to label */ 1),
     HALT,
@@ -73,7 +73,7 @@ static const struct ScriptRef s_gs202_g0_s0_evt0_sref = { 357, 2, NULL /* GETOUT
 
 static const struct ScriptCommand s_gs202_g0_s0_evt1_sref_script[] = { /* 0x8255a70 */
     DEBUGINFO,
-    { 0xbb, 0x00,  0x0005,  0x00000000,  0x00000000, NULL },
+    JUMPIF_SCENARIOCHECK(5, /* to label */ 0),
     ASK1(FALSE, /*default*/ 0, /* speaker */ -1, _("Return to the rescue team base?")),
     CHOICE(/* label */  1, _("Yes.")),
     CHOICE(/* label */  2, _("*No.")),
@@ -153,7 +153,7 @@ static const struct ScriptCommand s_gs202_g1_s0_station_sref_script[] = { /* 0x8
     UPDATE_VARINT(CALC_SET, GROUND_GETOUT, 202),
     UPDATE_VARINT(CALC_SET, PARTNER1_KIND, 2),
     UPDATE_VARINT(CALC_SET, PARTNER2_KIND, 0),
-    { 0xb3, 0x00,  0x0003,  0x0000000e,  0x00000000, NULL },
+    JUMPIF_EQUAL(SCENARIO_MAIN, 14, /* to label */ 0),
     JUMP_LABEL(1),
   LABEL(0), /* = 0x00 */
     { 0x3b, 0x1c,  0x0000,  0x00000000,  0x00000000, NULL },

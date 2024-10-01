@@ -1,68 +1,83 @@
 #include "ground_script.h"
 #include "event_flag.h"
+#include "constants/item.h"
 #define LPARRAY(x) (sizeof(x)/sizeof(*(x))), x
 
 #define CPOS_HALFTILE 0x2
 #define CPOS_CURRENT  0x4
 
-#define RESET_ARRAY(v)      { 0xA4, 0, v, 0, 0, NULL }
-#define CLEAR_ARRAY(v)      { 0xA5, 0, v, 0, 0, NULL }
-#define UPDATE_VARINT(o,v,i){ 0xA6, o, v, i, 0, NULL }
-#define UPDATE_VARVAR(o,a,b){ 0xA7, o, a, b, 0, NULL }
-#define SET_ARRAYVAL(v,i,x) { 0xA8, 0, v, i, x, NULL }
-#define SCENARIO_CALC(v,a,b){ 0xA9, 0, v, a, b, NULL }
-#define SCENARIO_ADVANCE(v,a){0xAA, 0, v, a, 0, NULL }
-#define SET_DUNGEON_RES(r,e){ 0xAB, 0, r, e, 0, NULL }
-#define SET_PLAYER_KIND(k)  { 0xAC, 0, k, 0, 0, NULL }
-#define CJUMP_VAR(v)        { 0xC0, 0, v, 0, 0, NULL }
-#define CJUMP_CALC_VI(o,v,i){ 0xC1, o, v, i, 0, NULL }
-#define CJUMP_CALC_VV(o,a,b){ 0xC2, o, a, b, 0, NULL }
-#define CJUMP_RANDOM(h)     { 0xC3, 0, h, 0, 0, NULL }
-#define CJUMP_SCENARIO_0(v) { 0xC4, 0, v, 0, 0, NULL }
-#define CJUMP_SCENARIO_1(v) { 0xC5, 0, v, 0, 0, NULL }
+#define RESET_ARRAY(v)          { 0xA4, 0, v, 0, 0, NULL }
+#define CLEAR_ARRAY(v)          { 0xA5, 0, v, 0, 0, NULL }
+#define UPDATE_VARINT(o,v,i)    { 0xA6, o, v, i, 0, NULL }
+#define UPDATE_VARVAR(o,a,b)    { 0xA7, o, a, b, 0, NULL }
+#define SET_ARRAYVAL(v,i,x)     { 0xA8, 0, v, i, x, NULL }
+#define SCENARIO_CALC(v,a,b)    { 0xA9, 0, v, a, b, NULL }
+#define SCENARIO_ADVANCE(v,a)   { 0xAA, 0, v, a, 0, NULL }
+#define SET_DUNGEON_RES(r,e)    { 0xAB, 0, r, e, 0, NULL }
+#define SET_PLAYER_KIND(k)      { 0xAC, 0, k, 0, 0, NULL }
+#define JUMPIF_EQUAL(v,i,l)     { 0xB3, l, v, i, 0, NULL }
+#define JUMPIF(o,v,i,l)         { 0xB4, o, l, v, i, NULL }
+#define JUMPIF_2(o,a,b,l)       { 0xB5, o, l, a, b, NULL }
+#define JUMPIF_ARRAY(v,i,l)     { 0xB6, 0, l, v, i, NULL }
+#define JUMPIF_SUM(o,v,i,l)     { 0xB7, o, l, v, i, NULL }
+#define JUMPIF_SCENE_LT(v,a,b,l){ 0xB8, l, v, a, b, NULL }
+#define JUMPIF_SCENE_EQ(v,a,b,l){ 0xB9, l, v, a, b, NULL }
+#define JUMPIF_SCENE_GT(v,a,b,l){ 0xBA, l, v, a, b, NULL }
+#define JUMPIF_SCENARIOCHECK(i,l){0xBB, l, i, 0, 0, NULL }
+// functions need reversing
+#define JUMPIF_UNK_BC(i,l)      { 0xBC, l, i, 0, 0, NULL }
+#define JUMPIF_UNK_BD(i,l)      { 0xBD, l, 0, i, 0, NULL }
+#define JUMPIF_UNK_BE(l)        { 0xBE, l, 0, 0, 0, NULL }
+#define JUMPIF_HASITEM(i,l)     { 0xBF, l, i, 0, 0, NULL }
+#define CJUMP_VAR(v)            { 0xC0, 0, v, 0, 0, NULL }
+#define CJUMP_CALC_VI(o,v,i)    { 0xC1, o, v, i, 0, NULL }
+#define CJUMP_CALC_VV(o,a,b)    { 0xC2, o, a, b, 0, NULL }
+#define CJUMP_RANDOM(h)         { 0xC3, 0, h, 0, 0, NULL }
+#define CJUMP_SCENARIO_0(v)     { 0xC4, 0, v, 0, 0, NULL }
+#define CJUMP_SCENARIO_1(v)     { 0xC5, 0, v, 0, 0, NULL }
 // wtf is c6
-#define CJUMP_UNK_C6(a)     { 0xC6, 0, 0, a, 0, NULL }
-#define CJUMP_DIRECTION     { 0xC7, 0, 0, 0, 0, NULL }
+#define CJUMP_UNK_C6(a)         { 0xC6, 0, 0, a, 0, NULL }
+#define CJUMP_DIRECTION         { 0xC7, 0, 0, 0, 0, NULL }
 // C8: distance calculation with that weird 80A7AE8
-#define CJUMP_UNK_C8(a)     { 0xC8, 0, 0, a, 0, NULL }
+#define CJUMP_UNK_C8(a)         { 0xC8, 0, 0, a, 0, NULL }
 // C9: ditto, but with one hardcoded pos of four
-#define CJUMP_UNK_C9(a)     { 0xC9, 0, 0, a, 0, NULL }
-#define CJUMP_DIR_TO_LINK(l){ 0xCA, 0, 0, l, 0, NULL }
+#define CJUMP_UNK_C9(a)         { 0xC9, 0, 0, a, 0, NULL }
+#define CJUMP_DIR_TO_LINK(l)    { 0xCA, 0, 0, l, 0, NULL }
 // wtf is cb
-#define CJUMP_UNK_CB(h)     { 0xCB, 0, h, 0, 0, NULL }
-#define COND_EQUAL(v,t)     { 0xCC, 0, t, v, 0, NULL }
-#define COND(o,v,t)         { 0xCD, o, t, v, 0, NULL }
-#define COND_VAR(o,v,t)     { 0xCE, o, t, v, 0, NULL }
-#define MSG_VAR(b,v,a)      { 0xCF, b, v, a, 0, NULL }
-#define VARIANT(c,s)        { 0xD0, 0, c, 0, 0, s    }
-#define VARIANT_DEFAULT(s)  { 0xD1, 0, 0, 0, 0, s    }
-#define ASK_DEBUG(b,h,a,s)  { 0xD2, b, h, a, 0, s    }
-#define ASK1(b,h,a,s)       { 0xD3, b, h, a, 0, s    }
-#define ASK2(b,h,a,s)       { 0xD4, b, h, a, 0, s    }
-#define ASK3(b,h,a,s)       { 0xD5, b, h, a, 0, s    }
-#define ASK1_VAR(b,h,a,v)   { 0xD6, b, h, a, v, NULL }
-#define ASK2_VAR(b,h,a,v)   { 0xD7, b, h, a, v, NULL }
-#define ASK3_VAR(b,h,a,v)   { 0xD8, b, h, a, v, NULL }
-#define CHOICE(h,s)         { 0xD9, 0, h, 0, 0, s    }
-#define WAIT(f)             { 0xDB, 0, f, 0, 0, NULL }
-#define WAIT_RANDOM(a,b)    { 0xDC, 0, a, b, 0, NULL }
-#define CALL_LABEL(x)       { 0xE6, 0, x, 0, 0, NULL }
-#define JUMP_LABEL(x)       { 0xE7, 0, x, 0, 0, NULL }
-#define CALL_SCRIPT(x)      { 0xE8, 0, x, 0, 0, NULL }
-#define JUMP_SCRIPT(x)      { 0xE9, 0, x, 0, 0, NULL }
-#define CALL_STATION(g,s)   { 0xEA, s, g,-1, 0, NULL }
-#define JUMP_STATION(g,s)   { 0xEB, s, g,-1, 0, NULL }
-#define EXECUTE_MAP_VAR(v)  { 0xEC, 0, v, 0, 0, NULL }
-#define RESET_CALLER        { 0xED, 0, 0, 0, 0, NULL }
-#define RET_DIRECT          { 0xEE, 0, 0, 0, 0, NULL }
-#define RET                 { 0xEF, 0, 0, 0, 0, NULL }
-#define HALT                { 0xF0, 0, 0, 0, 0, NULL }
-#define END_DELETE          { 0xF1, 0, 0, 0, 0, NULL }
-#define LABEL(x)            { 0xF4, 0, x, 0, 0, NULL }
+#define CJUMP_UNK_CB(h)         { 0xCB, 0, h, 0, 0, NULL }
+#define COND_EQUAL(v,t)         { 0xCC, 0, t, v, 0, NULL }
+#define COND(o,v,t)             { 0xCD, o, t, v, 0, NULL }
+#define COND_VAR(o,v,t)         { 0xCE, o, t, v, 0, NULL }
+#define MSG_VAR(b,v,a)          { 0xCF, b, v, a, 0, NULL }
+#define VARIANT(c,s)            { 0xD0, 0, c, 0, 0, s    }
+#define VARIANT_DEFAULT(s)      { 0xD1, 0, 0, 0, 0, s    }
+#define ASK_DEBUG(b,h,a,s)      { 0xD2, b, h, a, 0, s    }
+#define ASK1(b,h,a,s)           { 0xD3, b, h, a, 0, s    }
+#define ASK2(b,h,a,s)           { 0xD4, b, h, a, 0, s    }
+#define ASK3(b,h,a,s)           { 0xD5, b, h, a, 0, s    }
+#define ASK1_VAR(b,h,a,v)       { 0xD6, b, h, a, v, NULL }
+#define ASK2_VAR(b,h,a,v)       { 0xD7, b, h, a, v, NULL }
+#define ASK3_VAR(b,h,a,v)       { 0xD8, b, h, a, v, NULL }
+#define CHOICE(h,s)             { 0xD9, 0, h, 0, 0, s    }
+#define WAIT(f)                 { 0xDB, 0, f, 0, 0, NULL }
+#define WAIT_RANDOM(a,b)        { 0xDC, 0, a, b, 0, NULL }
+#define CALL_LABEL(x)           { 0xE6, 0, x, 0, 0, NULL }
+#define JUMP_LABEL(x)           { 0xE7, 0, x, 0, 0, NULL }
+#define CALL_SCRIPT(x)          { 0xE8, 0, x, 0, 0, NULL }
+#define JUMP_SCRIPT(x)          { 0xE9, 0, x, 0, 0, NULL }
+#define CALL_STATION(g,s)       { 0xEA, s, g,-1, 0, NULL }
+#define JUMP_STATION(g,s)       { 0xEB, s, g,-1, 0, NULL }
+#define EXECUTE_MAP_VAR(v)      { 0xEC, 0, v, 0, 0, NULL }
+#define RESET_CALLER            { 0xED, 0, 0, 0, 0, NULL }
+#define RET_DIRECT              { 0xEE, 0, 0, 0, 0, NULL }
+#define RET                     { 0xEF, 0, 0, 0, 0, NULL }
+#define HALT                    { 0xF0, 0, 0, 0, 0, NULL }
+#define END_DELETE              { 0xF1, 0, 0, 0, 0, NULL }
+#define LABEL(x)                { 0xF4, 0, x, 0, 0, NULL }
 #ifdef NONMATCHING
-#define DEBUGINFO           { 0xF6, 0, __LINE__, 0, 0, __FILE__ }
+#define DEBUGINFO               { 0xF6, 0, __LINE__, 0, 0, __FILE__ }
 #else
-#define DEBUGINFO           { 0xF6, 0, __LINE__, 0, 0, FAKE_FILENAME }
+#define DEBUGINFO               { 0xF6, 0, __LINE__, 0, 0, FAKE_FILENAME }
 #endif
 
 // function/trigger/script names

@@ -93,7 +93,7 @@ static const struct ScriptCommand s_gs6_g0_s3_evt0_sref_script[] = { /* 0x819923
     DEBUGINFO,
     { 0x21, 0x00,  0x0000,  0x00000054,  0x00000000, NULL },
     HALT,
-    { 0xb3, 0x00,  0x0025,  0x00000000,  0x00000000, NULL },
+    JUMPIF_EQUAL(WARP_LOCK, 0, /* to label */ 0),
     JUMP_LABEL(0),
     CALL_SCRIPT(EVENT_DIVIDE_WARP_LOCK_FUNC),
     RET,
@@ -110,7 +110,7 @@ static const struct ScriptRef s_gs6_g0_s3_evt0_sref = { 357, 2, NULL /* GETOUT_N
 
 static const struct ScriptCommand s_gs6_g1_s0_station_sref_script[] = { /* 0x8199310 */
     DEBUGINFO,
-    { 0xbb, 0x00,  0x000a,  0x00000000,  0x00000000, NULL },
+    JUMPIF_SCENARIOCHECK(10, /* to label */ 0),
     { 0x15, 0xff, -0x0001,  0x00000000,  0x00000000, NULL },
     { 0x0c, 0x01, -0x0001,  0x00000000,  0x00000000, NULL },
     RET_DIRECT,
@@ -144,7 +144,7 @@ static const struct ScriptCommand s_gs6_g1_s0_lives0_dlg2[] = { /* 0x81993dc */
 static const struct ScriptCommand s_gs6_g1_s0_lives0_dlg3[] = { /* 0x819947c */
     DEBUGINFO,
     CALL_SCRIPT(INIT_PLAZA_SLEEP_TALK_FUNC),
-    { 0xbb, 0x00,  0x0004,  0x00000000,  0x00000000, NULL },
+    JUMPIF_SCENARIOCHECK(4, /* to label */ 0),
     { 0x8e, 0x00,  0x0000,  0x00000000,  0x00000000, NULL },
   LABEL(0), /* = 0x00 */
     { 0x8d, 0x01,  0x0000,  0x00000000,  0x00000000, NULL },

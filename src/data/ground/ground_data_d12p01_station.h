@@ -19,10 +19,10 @@ static const struct ScriptCommand s_gs204_g0_s0_station_sref_script[] = { /* 0x8
   LABEL(0), /* = 0x00 */
     JUMP_LABEL(1),
   LABEL(1), /* = 0x01 */
-    { 0xb3, 0x02,  0x0018,  0x00000001,  0x00000000, NULL },
-    { 0xb3, 0x03,  0x0018,  0x00000003,  0x00000000, NULL },
-    { 0xb3, 0x04,  0x0018,  0x00000002,  0x00000000, NULL },
-    { 0xb3, 0x04,  0x0018,  0x00000009,  0x00000000, NULL },
+    JUMPIF_EQUAL(START_MODE, 1, /* to label */ 2),
+    JUMPIF_EQUAL(START_MODE, 3, /* to label */ 3),
+    JUMPIF_EQUAL(START_MODE, 2, /* to label */ 4),
+    JUMPIF_EQUAL(START_MODE, 9, /* to label */ 4),
     JUMP_LABEL(2),
   LABEL(4), /* = 0x04 */
     CJUMP_VAR(GROUND_GETOUT),

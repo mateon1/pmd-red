@@ -72,7 +72,7 @@ static const struct ScriptCommand s_gs5_g0_s1_lives1_dlg0[] = { /* 0x8197cb0 */
 
 static const struct ScriptCommand s_gs5_g1_s0_station_sref_script[] = { /* 0x8197cf0 */
     DEBUGINFO,
-    { 0xb3, 0x00,  0x0003,  0x0000000b,  0x00000000, NULL },
+    JUMPIF_EQUAL(SCENARIO_MAIN, 11, /* to label */ 0),
     { 0x15, 0xff, -0x0001,  0x00000000,  0x00000000, NULL },
     { 0x0c, 0xff, -0x0001,  0x00000000,  0x00000000, NULL },
   LABEL(0), /* = 0x00 */
