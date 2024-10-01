@@ -33,7 +33,7 @@ static const struct ScriptCommand s_gs178_g0_s0_station_sref_script[] = { /* 0x8
 
 static const struct ScriptRef s_gs178_g0_s0_station_sref = { 404, 1, NULL /* ENTER_CONTROL */, s_gs178_g0_s0_station_sref_script }; /* 0x822c2b4 */
 
-static const struct ScriptCommand s_gs178_g1_s0_station_sref_script[] = { /* 0x822c2c0 - PART 1 0:04:05-0:04:23 */
+static const struct ScriptCommand s_gs178_g1_s0_station_sref_script[] = { /* 0x822c2c0 - PART 1 0:04:05-0:06:38 */
     DEBUGINFO,
     { 0x3b, 0x39,  0x0001,  0x00000000,  0x00000000, NULL },
     { 0x47, 0x00,  0x0000,  0x00000000,  0x00000000, NULL },
@@ -72,7 +72,7 @@ static const struct ScriptRef s_gs178_g1_s0_station_sref = { 400, 7, NULL /* EVE
 
 
 
-static const struct ScriptCommand s_gs178_g1_s0_lives0_dlg0[] = { /* 0x822c5e4 - PART 1 0:04:23-0:06:38 - Main script - why/how is $n3 set here? */
+static const struct ScriptCommand s_gs178_g1_s0_lives0_dlg0[] = { /* 0x822c5e4 - PART 1 0:04:23-0:06:38 - Player script - why/how is $n3 set here? */
     DEBUGINFO,
     CALL_SCRIPT(INIT_SLEEP_FUNC),
     { 0x2d, 0x01,  0x0000,  0x00000000,  0x00000000, NULL },
@@ -355,7 +355,7 @@ static const struct ScriptCommand s_gs178_g1_s1_lives0_dlg0[] = { /* 0x822dc90 -
     JUMP_LABEL(0),
 };
 
-static const struct ScriptCommand s_gs178_g2_s0_station_sref_script[] = { /* 0x822de50 */
+static const struct ScriptCommand s_gs178_g2_s0_station_sref_script[] = { /* 0x822de50 - PART 1 0:11:37-0:12:15 - After Tiny Woods death */
     DEBUGINFO,
     { 0x3b, 0x39,  0x0001,  0x00000000,  0x00000000, NULL },
     { 0x47, 0x00,  0x0000,  0x00000000,  0x00000000, NULL },
@@ -376,7 +376,7 @@ static const struct ScriptCommand s_gs178_g2_s0_station_sref_script[] = { /* 0x8
 static const struct ScriptRef s_gs178_g2_s0_station_sref = { 400, 7, NULL /* EVENT_CONTROL */, s_gs178_g2_s0_station_sref_script }; /* 0x822df54 */
 
 
-static const struct ScriptCommand s_gs178_g2_s0_lives0_dlg0[] = { /* 0x822df60 */
+static const struct ScriptCommand s_gs178_g2_s0_lives0_dlg0[] = { /* 0x822df60 - PART 1 0:11:39-0:12:15 - Player */
     DEBUGINFO,
     CALL_SCRIPT(INIT_SLEEP_FUNC),
     { 0x2d, 0x07,  0x0000,  0x00000000,  0x00000000, NULL },
@@ -454,7 +454,7 @@ static const struct ScriptCommand s_gs178_g2_s0_lives0_dlg0[] = { /* 0x822df60 *
 };
 
 
-static const struct ScriptCommand s_gs178_g2_s0_lives1_dlg0[] = { /* 0x822e5fc */
+static const struct ScriptCommand s_gs178_g2_s0_lives1_dlg0[] = { /* 0x822e5fc - PART 1 0:11:39-0:12:15 - Partner */
     DEBUGINFO,
     CALL_SCRIPT(INIT_SLEEP_FUNC),
     { 0x2d, 0x07,  0x0001,  0x00000000,  0x00000000, NULL },
@@ -499,7 +499,7 @@ static const struct ScriptCommand s_gs178_g2_s0_lives1_dlg0[] = { /* 0x822e5fc *
     HALT,
 };
 
-static const struct ScriptCommand s_gs178_g2_s0_lives2_dlg0[] = { /* 0x822e89c */
+static const struct ScriptCommand s_gs178_g2_s0_lives2_dlg0[] = { /* 0x822e89c - PART 1 0:11:39-0:12:15 - Butterfree */
     DEBUGINFO,
     { 0x54, 0x00,  0x0002,  0x00000000,  0x00000000, NULL },
     { 0x2d, 0x07,  0x0002,  0x00000000,  0x00000000, NULL },

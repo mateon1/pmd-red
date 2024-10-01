@@ -286,10 +286,14 @@ ITEM = [
 
 COMMENTS = {
     0x826dff8: "PART 1 0:00:31-0:00:45 - New game intro to personality test",
-    0x822c2c0: "PART 1 0:04:05-0:04:23",
-    0x822c5e4: "PART 1 0:04:23-0:06:38 - Main script - why/how is $n3 set here?",
+    0x822c2c0: "PART 1 0:04:05-0:06:38",
+    0x822c5e4: "PART 1 0:04:23-0:06:38 - Player script - why/how is $n3 set here?",
     0x822d950: "PART 1 0:04:23-0:06:38 - Partner script",
     0x822dc90: "PART 1 0:05:55-0:06:38 - Butterfree",
+    0x822de50: "PART 1 0:11:37-0:12:15 - After Tiny Woods death",
+    0x822df60: "PART 1 0:11:39-0:12:15 - Player",
+    0x822e5fc: "PART 1 0:11:39-0:12:15 - Partner",
+    0x822e89c: "PART 1 0:11:39-0:12:15 - Butterfree",
 }
 
 def main():
