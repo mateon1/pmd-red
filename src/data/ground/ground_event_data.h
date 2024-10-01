@@ -3944,7 +3944,7 @@ static const struct ScriptCommand s_script_EVENT_R00E01A_L001[] = { /* 0x812a604
 
 static const struct ScriptCommand s_script_COMMON_ENTER[] = { /* 0x812a804 */
     DEBUGINFO,
-    { 0x10, 0x00,  0x0000,  0x00000000,  0x00000000, NULL },
+    SELECT_EVENTS(0, 0),
     { 0x22, 0x00, -0x0001,  0x00000000,  0x00000000, NULL },
     RET,
 };

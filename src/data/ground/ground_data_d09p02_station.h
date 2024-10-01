@@ -8,7 +8,7 @@
 
 static const struct ScriptCommand s_gs196_g0_s0_station_sref_script[] = { /* 0x8248a54 */
     DEBUGINFO,
-    { 0x08, 0x00,  0x0000,  0x000000c4,  0x00000000, NULL },
+    SELECT_MAP(196),
     CJUMP_SCENARIO_0(SCENARIO_MAIN),
     COND(JUDGE_EQ, 12, /* to label */ 0),
     COND(JUDGE_GT, 17, /* to label */ 1),
@@ -32,13 +32,13 @@ static const struct ScriptCommand s_gs196_g0_s0_station_sref_script[] = { /* 0x8
     COND_EQUAL(1, /* to label */ 6),
     JUMP_LABEL(6),
   LABEL(3), /* = 0x03 */
-    { 0x0d, 0x03,  0x0000,  0x00000000,  0x00000000, NULL },
+    SELECT_LIVES(0, 3),
     JUMP_LABEL(7),
   LABEL(4), /* = 0x04 */
-    { 0x0d, 0x04,  0x0000,  0x00000000,  0x00000000, NULL },
+    SELECT_LIVES(0, 4),
     JUMP_LABEL(7),
   LABEL(6), /* = 0x06 */
-    { 0x0d, 0x01,  0x0000,  0x00000000,  0x00000000, NULL },
+    SELECT_LIVES(0, 1),
     JUMP_LABEL(7),
   LABEL(7), /* = 0x07 */
     { 0x44, 0x00,  0x0000,  0x00000019,  0x00000000, NULL },
@@ -146,12 +146,12 @@ static const struct ScriptCommand s_gs196_g1_s0_station_sref_script[] = { /* 0x8
     UPDATE_VARINT(CALC_SET, GROUND_GETOUT, 196),
     UPDATE_VARINT(CALC_SET, PARTNER1_KIND, 2),
     UPDATE_VARINT(CALC_SET, PARTNER2_KIND, 0),
-    { 0x08, 0x00,  0x0000,  0x000000c4,  0x00000000, NULL },
-    { 0x0c, 0x00, -0x0001,  0x00000000,  0x00000000, NULL },
+    SELECT_MAP(196),
+    SELECT_ENTITIES(-1, 0),
     { 0x44, 0x00,  0x0000,  0x00000019,  0x00000000, NULL },
     { 0x22, 0x01,  0x001e,  0x00000000,  0x00000000, NULL },
     { 0xe3, 0x00,  0x0003,  0x00000000,  0x00000000, NULL },
-    { 0x10, 0x00,  0x0000,  0x00000000,  0x00000000, NULL },
+    SELECT_EVENTS(0, 0),
     RET,
 };
 

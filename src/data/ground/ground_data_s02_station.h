@@ -19,7 +19,7 @@
 
 static const struct ScriptCommand s_gs224_g0_s0_station_sref_script[] = { /* 0x826e29c */
     DEBUGINFO,
-    { 0x08, 0x00,  0x0000,  0x000000e0,  0x00000000, NULL },
+    SELECT_MAP(224),
     { 0x47, 0x00,  0x0000,  0x00000000,  0x00000000, NULL },
     JUMP_SCRIPT(COMMON_ENTER),
 };
@@ -40,9 +40,9 @@ static const struct ScriptCommand s_gs224_g1_s0_obj0_dlg1[] = { /* 0x826e314 */
 
 static const struct ScriptCommand s_gs224_g2_s0_station_sref_script[] = { /* 0x826e3a4 */
     DEBUGINFO,
-    { 0x08, 0x00,  0x0000,  0x000000e0,  0x00000000, NULL },
-    { 0x0c, 0x00,  0x0001,  0x00000000,  0x00000000, NULL },
-    { 0x0c, 0x00, -0x0001,  0x00000000,  0x00000000, NULL },
+    SELECT_MAP(224),
+    SELECT_ENTITIES(1, 0),
+    SELECT_ENTITIES(-1, 0),
     { 0x44, 0x00,  0x0000,  0x0000002e,  0x00000000, NULL },
     WAIT(60),
     { 0x22, 0x01,  0x003c,  0x00000000,  0x00000000, NULL },
@@ -56,13 +56,13 @@ static const struct ScriptRef s_gs224_g2_s0_station_sref = { 400, 7, NULL /* EVE
 
 static const struct ScriptCommand s_gs224_g3_s0_station_sref_script[] = { /* 0x826e460 */
     DEBUGINFO,
-    { 0x08, 0x00,  0x0000,  0x000000e0,  0x00000000, NULL },
-    { 0x0c, 0x00,  0x0001,  0x00000000,  0x00000000, NULL },
-    { 0x0c, 0x00, -0x0001,  0x00000000,  0x00000000, NULL },
+    SELECT_MAP(224),
+    SELECT_ENTITIES(1, 0),
+    SELECT_ENTITIES(-1, 0),
     { 0x44, 0x00,  0x0000,  0x0000002b,  0x00000000, NULL },
     { 0x27, 0x01,  0x0001,  0x0000003c,  0x00ffffff, NULL },
-    { 0x0c, 0x01, -0x0001,  0x00000000,  0x00000000, NULL },
-    { 0x0c, 0x02, -0x0001,  0x00000000,  0x00000000, NULL },
+    SELECT_ENTITIES(-1, 1),
+    SELECT_ENTITIES(-1, 2),
     { 0xe3, 0x00,  0x0003,  0x00000000,  0x00000000, NULL },
     UPDATE_VARINT(CALC_SET, EVENT_LOCAL, 1),
     { 0x3b, 0x40,  0x0001,  0x00000000,  0x00000000, NULL },
@@ -142,9 +142,9 @@ static const struct ScriptCommand s_gs224_g3_s2_obj0_dlg0[] = { /* 0x826e81c */
 
 static const struct ScriptCommand s_gs224_g4_s0_station_sref_script[] = { /* 0x826e8bc */
     DEBUGINFO,
-    { 0x08, 0x00,  0x0000,  0x000000e0,  0x00000000, NULL },
-    { 0x0c, 0x00,  0x0001,  0x00000000,  0x00000000, NULL },
-    { 0x0c, 0x00, -0x0001,  0x00000000,  0x00000000, NULL },
+    SELECT_MAP(224),
+    SELECT_ENTITIES(1, 0),
+    SELECT_ENTITIES(-1, 0),
     { 0x44, 0x00,  0x0000,  0x0000002b,  0x00000000, NULL },
     { 0x22, 0x01,  0x001e,  0x00000000,  0x00000000, NULL },
     WAIT(120),

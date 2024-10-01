@@ -8,11 +8,11 @@
 
 static const struct ScriptCommand s_gs8_g0_s0_station_sref_script[] = { /* 0x819a750 */
     DEBUGINFO,
-    { 0x08, 0x00,  0x0000,  0x00000008,  0x00000000, NULL },
+    SELECT_MAP(8),
     CJUMP_VAR(GROUND_GETOUT),
     COND_EQUAL(2, /* to label */ 1),
     COND_EQUAL(3, /* to label */ 1),
-    { 0x0d, 0x01,  0x0000,  0x00000000,  0x00000000, NULL },
+    SELECT_LIVES(0, 1),
     JUMP_LABEL(2),
   LABEL(1), /* = 0x01 */
     JUMP_STATION(  1,  0),
@@ -48,12 +48,12 @@ static const struct ScriptCommand s_gs8_g0_s1_lives1_dlg0[] = { /* 0x819a8c4 */
 
 static const struct ScriptCommand s_gs8_g1_s0_station_sref_script[] = { /* 0x819a904 */
     DEBUGINFO,
-    { 0x08, 0x00,  0x0000,  0x00000008,  0x00000000, NULL },
-    { 0x0c, 0xff, -0x0001,  0x00000000,  0x00000000, NULL },
+    SELECT_MAP(8),
+    SELECT_ENTITIES(-1, 255),
     { 0x44, 0x00,  0x0000,  0x00000008,  0x00000000, NULL },
     { 0x22, 0x01, -0x0001,  0x00000000,  0x00000000, NULL },
     { 0xe3, 0x00,  0x0003,  0x00000000,  0x00000000, NULL },
-    { 0x10, 0x00,  0x0000,  0x00000000,  0x00000000, NULL },
+    SELECT_EVENTS(0, 0),
     RET,
 };
 
@@ -82,9 +82,9 @@ static const struct ScriptCommand s_gs8_g1_s0_lives0_dlg0[] = { /* 0x819aa10 */
 
 static const struct ScriptCommand s_gs8_g1_s1_station_sref_script[] = { /* 0x819aa80 */
     DEBUGINFO,
-    { 0x0f, 0x01, -0x0001,  0x00000000,  0x00000000, NULL },
+    SELECT_EFFECTS(-1, 1),
     { 0xe3, 0x00,  0x0003,  0x00000000,  0x00000000, NULL },
-    { 0x10, 0x00,  0x0000,  0x00000000,  0x00000000, NULL },
+    SELECT_EVENTS(0, 0),
     RET,
 };
 
@@ -94,8 +94,8 @@ static const struct ScriptCommand s_gs8_g1_s1_eff0_script[] = { /* 0x819aadc */
     DEBUGINFO,
     { 0x56, 0x00,  0x0000,  0x000001b4,  0x00000000, NULL },
     WAIT(30),
-    { 0x12, 0x00, -0x0001,  0x00000000,  0x00000000, NULL },
-    { 0x0d, 0x01, -0x0001,  0x00000000,  0x00000000, NULL },
+    CANCEL_LIVES(-1, 0),
+    SELECT_LIVES(-1, 1),
     { 0xde, 0x00,  0x0000,  0x00000000,  0x00000000, NULL },
     END_DELETE,
 };

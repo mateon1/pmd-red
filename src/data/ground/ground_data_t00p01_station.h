@@ -8,8 +8,8 @@
 
 static const struct ScriptCommand s_gs0_g0_s0_station_sref_script[] = { /* 0x81326fc */
     DEBUGINFO,
-    { 0x08, 0x00,  0x0000,  0x00000000,  0x00000000, NULL },
-    { 0x0c, 0x00,  0x0001,  0x00000000,  0x00000000, NULL },
+    SELECT_MAP(0),
+    SELECT_ENTITIES(1, 0),
     JUMPIF_EQUAL(START_MODE, 1, /* to label */ 2),
     JUMPIF_EQUAL(START_MODE, 3, /* to label */ 3),
     JUMPIF_EQUAL(START_MODE, 2, /* to label */ 4),
@@ -22,18 +22,18 @@ static const struct ScriptCommand s_gs0_g0_s0_station_sref_script[] = { /* 0x813
     COND_EQUAL(11, /* to label */ 5),
     JUMP_LABEL(6),
   LABEL(2), /* = 0x02 */
-    { 0x0d, 0x07,  0x0000,  0x00000000,  0x00000000, NULL },
+    SELECT_LIVES(0, 7),
     JUMP_LABEL(7),
   LABEL(3), /* = 0x03 */
-    { 0x0d, 0x08,  0x0000,  0x00000000,  0x00000000, NULL },
+    SELECT_LIVES(0, 8),
     JUMP_LABEL(7),
   LABEL(5), /* = 0x05 */
-    { 0x0d, 0x01,  0x0000,  0x00000000,  0x00000000, NULL },
+    SELECT_LIVES(0, 1),
     JUMP_LABEL(7),
-    { 0x0d, 0x02,  0x0000,  0x00000000,  0x00000000, NULL },
+    SELECT_LIVES(0, 2),
     JUMP_LABEL(7),
   LABEL(6), /* = 0x06 */
-    { 0x0d, 0x03,  0x0000,  0x00000000,  0x00000000, NULL },
+    SELECT_LIVES(0, 3),
     JUMP_LABEL(7),
   LABEL(7), /* = 0x07 */
     { 0x44, 0x00,  0x0000,  0x00000007,  0x00000000, NULL },

@@ -8,7 +8,7 @@
 
 static const struct ScriptCommand s_gs187_g0_s0_station_sref_script[] = { /* 0x8237b78 */
     DEBUGINFO,
-    { 0x08, 0x00,  0x0000,  0x000000bb,  0x00000000, NULL },
+    SELECT_MAP(187),
     { 0x47, 0x00,  0x0000,  0x00000000,  0x00000000, NULL },
     JUMP_SCRIPT(COMMON_ENTER),
 };
@@ -17,8 +17,8 @@ static const struct ScriptRef s_gs187_g0_s0_station_sref = { 404, 1, NULL /* ENT
 
 static const struct ScriptCommand s_gs187_g1_s0_station_sref_script[] = { /* 0x8237bf0 */
     DEBUGINFO,
-    { 0x08, 0x00,  0x0000,  0x000000bb,  0x00000000, NULL },
-    { 0x0c, 0x00, -0x0001,  0x00000000,  0x00000000, NULL },
+    SELECT_MAP(187),
+    SELECT_ENTITIES(-1, 0),
     { 0x44, 0x00,  0x0000,  0x00000072,  0x00000000, NULL },
     { 0x22, 0x01,  0x001e,  0x00000000,  0x00000000, NULL },
     { 0xe3, 0x00,  0x0003,  0x00000000,  0x00000000, NULL },
@@ -125,7 +125,7 @@ static const struct ScriptCommand s_gs187_g1_s0_lives0_dlg0[] = { /* 0x8237d1c *
     VARIANT(/* == */  1, _(" Wh-what happened?!\nIt's pitch-black! I can't see!")),
     VARIANT_DEFAULT(_(" Wh-what's going on?!\nWhy did it turn pitch-black?")),
     { 0x30, 0x00,  0x0000,  0x00000000,  0x00000000, NULL },
-    { 0x0c, 0x01, -0x0001,  0x00000000,  0x00000000, NULL },
+    SELECT_ENTITIES(-1, 1),
     { 0x4c, 0x00,  0x0000,  0x000001da,  0x00000000, NULL },
     { 0x36, 0x00, -0x0001,  0x00000000,  0x00000000, _("Gyaoooooh!") },
     WAIT(90),

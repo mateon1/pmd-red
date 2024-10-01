@@ -8,7 +8,7 @@
 
 static const struct ScriptCommand s_gs6_g0_s0_station_sref_script[] = { /* 0x8198e20 */
     DEBUGINFO,
-    { 0x08, 0x00,  0x0000,  0x00000006,  0x00000000, NULL },
+    SELECT_MAP(6),
     JUMP_LABEL(0),
   LABEL(0), /* = 0x00 */
     CALL_STATION(  1,  0),
@@ -23,10 +23,10 @@ static const struct ScriptCommand s_gs6_g0_s0_station_sref_script[] = { /* 0x819
     COND_EQUAL(1, /* to label */ 5),
     COND_EQUAL(7, /* to label */ 6),
   LABEL(5), /* = 0x05 */
-    { 0x0d, 0x01,  0x0000,  0x00000000,  0x00000000, NULL },
+    SELECT_LIVES(0, 1),
     JUMP_LABEL(7),
   LABEL(6), /* = 0x06 */
-    { 0x0d, 0x02,  0x0000,  0x00000000,  0x00000000, NULL },
+    SELECT_LIVES(0, 2),
     JUMP_LABEL(7),
   LABEL(2), /* = 0x02 */
     { 0x1e, 0x00,  0x0004, -0x00000001,  0x00000000, NULL },
@@ -111,12 +111,12 @@ static const struct ScriptRef s_gs6_g0_s3_evt0_sref = { 357, 2, NULL /* GETOUT_N
 static const struct ScriptCommand s_gs6_g1_s0_station_sref_script[] = { /* 0x8199310 */
     DEBUGINFO,
     JUMPIF_SCENARIOCHECK(10, /* to label */ 0),
-    { 0x15, 0xff, -0x0001,  0x00000000,  0x00000000, NULL },
-    { 0x0c, 0x01, -0x0001,  0x00000000,  0x00000000, NULL },
+    CANCEL_EVENTS(-1, 255),
+    SELECT_ENTITIES(-1, 1),
     RET_DIRECT,
   LABEL(0), /* = 0x00 */
-    { 0x15, 0xff, -0x0001,  0x00000000,  0x00000000, NULL },
-    { 0x0c, 0x00, -0x0001,  0x00000000,  0x00000000, NULL },
+    CANCEL_EVENTS(-1, 255),
+    SELECT_ENTITIES(-1, 0),
     RET_DIRECT,
 };
 
@@ -174,14 +174,14 @@ static const struct ScriptRef s_gs6_g1_s1_evt0_sref = { 357, 2, NULL /* GETOUT_N
 
 static const struct ScriptCommand s_gs6_g2_s0_station_sref_script[] = { /* 0x819964c */
     DEBUGINFO,
-    { 0x08, 0x00,  0x0000,  0x00000006,  0x00000000, NULL },
+    SELECT_MAP(6),
     CALL_STATION(  1,  0),
-    { 0x0c, 0xff, -0x0001,  0x00000000,  0x00000000, NULL },
+    SELECT_ENTITIES(-1, 255),
     { 0x44, 0x00,  0x0000,  0x00000007,  0x00000000, NULL },
     { 0x22, 0x01, -0x0001,  0x00000000,  0x00000000, NULL },
     { 0xe3, 0x00,  0x0003,  0x00000000,  0x00000000, NULL },
     CALL_STATION(  1,  0),
-    { 0x10, 0x00,  0x0000,  0x00000000,  0x00000000, NULL },
+    SELECT_EVENTS(0, 0),
     RET,
 };
 
@@ -238,14 +238,14 @@ static const struct ScriptCommand s_gs6_g2_s0_lives2_dlg0[] = { /* 0x81998c8 */
 
 static const struct ScriptCommand s_gs6_g3_s0_station_sref_script[] = { /* 0x8199938 */
     DEBUGINFO,
-    { 0x08, 0x00,  0x0000,  0x00000006,  0x00000000, NULL },
+    SELECT_MAP(6),
     CALL_STATION(  1,  0),
-    { 0x0c, 0xff, -0x0001,  0x00000000,  0x00000000, NULL },
+    SELECT_ENTITIES(-1, 255),
     { 0x44, 0x00,  0x0000,  0x00000007,  0x00000000, NULL },
     { 0x22, 0x01, -0x0001,  0x00000000,  0x00000000, NULL },
     { 0xe3, 0x00,  0x0003,  0x00000000,  0x00000000, NULL },
     CALL_STATION(  1,  0),
-    { 0x10, 0x00,  0x0000,  0x00000000,  0x00000000, NULL },
+    SELECT_EVENTS(0, 0),
     RET,
 };
 
@@ -288,14 +288,14 @@ static const struct ScriptCommand s_gs6_g3_s0_lives2_dlg0[] = { /* 0x8199b14 */
 
 static const struct ScriptCommand s_gs6_g4_s0_station_sref_script[] = { /* 0x8199b84 */
     DEBUGINFO,
-    { 0x08, 0x00,  0x0000,  0x00000006,  0x00000000, NULL },
+    SELECT_MAP(6),
     CALL_STATION(  1,  0),
-    { 0x0c, 0xff, -0x0001,  0x00000000,  0x00000000, NULL },
+    SELECT_ENTITIES(-1, 255),
     { 0x44, 0x00,  0x0000,  0x00000007,  0x00000000, NULL },
     { 0x22, 0x01, -0x0001,  0x00000000,  0x00000000, NULL },
     { 0xe3, 0x00,  0x0003,  0x00000000,  0x00000000, NULL },
     CALL_STATION(  1,  0),
-    { 0x10, 0x00,  0x0000,  0x00000000,  0x00000000, NULL },
+    SELECT_EVENTS(0, 0),
     RET,
 };
 
@@ -338,14 +338,14 @@ static const struct ScriptCommand s_gs6_g4_s0_lives2_dlg0[] = { /* 0x8199d60 */
 
 static const struct ScriptCommand s_gs6_g5_s0_station_sref_script[] = { /* 0x8199dd0 */
     DEBUGINFO,
-    { 0x08, 0x00,  0x0000,  0x00000006,  0x00000000, NULL },
+    SELECT_MAP(6),
     CALL_STATION(  1,  0),
-    { 0x0c, 0xff, -0x0001,  0x00000000,  0x00000000, NULL },
+    SELECT_ENTITIES(-1, 255),
     { 0x44, 0x00,  0x0000,  0x00000007,  0x00000000, NULL },
     { 0x22, 0x01, -0x0001,  0x00000000,  0x00000000, NULL },
     { 0xe3, 0x00,  0x0003,  0x00000000,  0x00000000, NULL },
     CALL_STATION(  1,  0),
-    { 0x10, 0x00,  0x0000,  0x00000000,  0x00000000, NULL },
+    SELECT_EVENTS(0, 0),
     RET,
 };
 

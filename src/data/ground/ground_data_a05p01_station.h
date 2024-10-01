@@ -8,7 +8,7 @@
 
 static const struct ScriptCommand s_gs175_g0_s0_station_sref_script[] = { /* 0x822af80 */
     DEBUGINFO,
-    { 0x08, 0x00,  0x0000,  0x000000af,  0x00000000, NULL },
+    SELECT_MAP(175),
     JUMP_SCRIPT(COMMON_ENTER),
 };
 
@@ -18,8 +18,8 @@ static const struct ScriptCommand s_gs175_g1_s0_station_sref_script[] = { /* 0x8
     DEBUGINFO,
     { 0x47, 0x00,  0x0000,  0x00000000,  0x00000000, NULL },
     WAIT(180),
-    { 0x08, 0x00,  0x0000,  0x000000af,  0x00000000, NULL },
-    { 0x0c, 0x00, -0x0001,  0x00000000,  0x00000000, NULL },
+    SELECT_MAP(175),
+    SELECT_ENTITIES(-1, 0),
     { 0x3b, 0x36,  0x0000, -0x00000002,  0x00000000, NULL },
     { 0x22, 0x01,  0x00b4,  0x00000000,  0x00000000, NULL },
     { 0xe3, 0x00,  0x0003,  0x00000000,  0x00000000, NULL },
@@ -62,8 +62,8 @@ static const struct ScriptCommand s_gs175_g1_s0_eff1_script[] = { /* 0x822b0f4 *
 
 static const struct ScriptCommand s_gs175_g2_s0_station_sref_script[] = { /* 0x822b2f4 */
     DEBUGINFO,
-    { 0x08, 0x00,  0x0000,  0x000000af,  0x00000000, NULL },
-    { 0x0c, 0x00, -0x0001,  0x00000000,  0x00000000, NULL },
+    SELECT_MAP(175),
+    SELECT_ENTITIES(-1, 0),
     { 0x3b, 0x36,  0x0000, -0x00000002,  0x00000000, NULL },
     { 0x47, 0x00,  0x0000,  0x00000000,  0x00000000, NULL },
     { 0x22, 0x01,  0x00b4,  0x00000000,  0x00000000, NULL },

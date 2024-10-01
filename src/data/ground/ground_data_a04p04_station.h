@@ -8,7 +8,7 @@
 
 static const struct ScriptCommand s_gs174_g0_s0_station_sref_script[] = { /* 0x822a124 */
     DEBUGINFO,
-    { 0x08, 0x00,  0x0000,  0x000000ae,  0x00000000, NULL },
+    SELECT_MAP(174),
     { 0x47, 0x00,  0x0000,  0x00000000,  0x00000000, NULL },
     JUMP_SCRIPT(COMMON_ENTER),
 };
@@ -18,8 +18,8 @@ static const struct ScriptRef s_gs174_g0_s0_station_sref = { 404, 1, NULL /* ENT
 static const struct ScriptCommand s_gs174_g1_s0_station_sref_script[] = { /* 0x822a19c */
     DEBUGINFO,
     { 0x3b, 0x39,  0x0001,  0x00000000,  0x00000000, NULL },
-    { 0x08, 0x00,  0x0000,  0x000000ae,  0x00000000, NULL },
-    { 0x0c, 0xff, -0x0001,  0x00000000,  0x00000000, NULL },
+    SELECT_MAP(174),
+    SELECT_ENTITIES(-1, 255),
     { 0x47, 0x00,  0x0000,  0x00000000,  0x00000000, NULL },
     { 0x27, 0x01,  0x0005,  0x0000003c,  0x00ffffff, NULL },
     { 0xe3, 0x00,  0x0003,  0x00000000,  0x00000000, NULL },
@@ -54,7 +54,7 @@ static const struct ScriptCommand s_gs174_g1_s0_lives0_dlg0[] = { /* 0x822a258 *
     { 0x4c, 0x00,  0x0000,  0x000001e5,  0x00000000, NULL },
     { 0x28, 0x01,  0x0005,  0x0000003c,  0x00ffffff, NULL },
     WAIT(30),
-    { 0x0d, 0x01, -0x0001,  0x00000000,  0x00000000, NULL },
+    SELECT_LIVES(-1, 1),
     { 0x27, 0x01,  0x0005,  0x0000003c,  0x00ffffff, NULL },
     { 0x33, 0x00,  0x0000,  0x00000000,  0x00000000, _("(............)") },
     { 0x33, 0x00,  0x0000,  0x00000000,  0x00000000, _("(...This shadow...#W\n$n4...)") },

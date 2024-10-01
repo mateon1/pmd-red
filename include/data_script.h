@@ -6,6 +6,23 @@
 #define CPOS_HALFTILE 0x2
 #define CPOS_CURRENT  0x4
 
+#define SELECT_MAP(m)           { 0x08, 0, 0, m, 0, NULL }
+#define SELECT_GROUND(m)        { 0x09, 0, 0, m, 0, NULL }
+#define SELECT_DUNGEON(m,d,f,b) { 0x0A, b, f, d, m, NULL }
+#define SELECT_WEATHER(w)       { 0x0B, 0, 0, w, 0, NULL }
+#define SELECT_ENTITIES(g,s)    { 0x0C, s, g, 0, 0, NULL }
+#define SELECT_LIVES(g,s)       { 0x0D, s, g, 0, 0, NULL }
+#define SELECT_OBJECTS(g,s)     { 0x0E, s, g, 0, 0, NULL }
+#define SELECT_EFFECTS(g,s)     { 0x0F, s, g, 0, 0, NULL }
+#define SELECT_EVENTS(g,s)      { 0x10, s, g, 0, 0, NULL }
+#define CANCEL_ENTITIES(g,s)    { 0x11, s, g, 0, 0, NULL }
+#define CANCEL_LIVES(g,s)       { 0x12, s, g, 0, 0, NULL }
+#define CANCEL_OBJECTS(g,s)     { 0x13, s, g, 0, 0, NULL }
+#define CANCEL_EFFECTS(g,s)     { 0x14, s, g, 0, 0, NULL }
+#define CANCEL_EVENTS(g,s)      { 0x15, s, g, 0, 0, NULL }
+#define CANCEL_OFFSCREEN_LIVES  { 0x16, 0, 0, 0, 0, NULL }
+#define CANCEL_OFFSCREEN_OBJECTS {0x17, 0, 0, 0, 0, NULL }
+#define CANCEL_OFFSCREEN_EFFECTS {0x18, 0, 0, 0, 0, NULL }
 #define RESET_ARRAY(v)          { 0xA4, 0, v, 0, 0, NULL }
 #define CLEAR_ARRAY(v)          { 0xA5, 0, v, 0, 0, NULL }
 #define UPDATE_VARINT(o,v,i)    { 0xA6, o, v, i, 0, NULL }

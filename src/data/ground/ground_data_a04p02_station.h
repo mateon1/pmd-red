@@ -8,7 +8,7 @@
 
 static const struct ScriptCommand s_gs172_g0_s0_station_sref_script[] = { /* 0x82298b4 */
     DEBUGINFO,
-    { 0x08, 0x00,  0x0000,  0x000000ac,  0x00000000, NULL },
+    SELECT_MAP(172),
     { 0x47, 0x00,  0x0000,  0x00000000,  0x00000000, NULL },
     JUMP_SCRIPT(COMMON_ENTER),
 };
@@ -17,8 +17,8 @@ static const struct ScriptRef s_gs172_g0_s0_station_sref = { 404, 1, NULL /* ENT
 
 static const struct ScriptCommand s_gs172_g1_s0_station_sref_script[] = { /* 0x822992c */
     DEBUGINFO,
-    { 0x08, 0x00,  0x0000,  0x000000ac,  0x00000000, NULL },
-    { 0x0c, 0x00, -0x0001,  0x00000000,  0x00000000, NULL },
+    SELECT_MAP(172),
+    SELECT_ENTITIES(-1, 0),
     { 0x2d, 0x09,  0x0000,  0x00000022,  0x00000000, NULL },
     { 0x44, 0x00,  0x0000,  0x00000016,  0x00000000, NULL },
     { 0xe4, 0x00,  0x0004,  0x00000000,  0x00000000, NULL },

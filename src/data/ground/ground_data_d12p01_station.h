@@ -12,7 +12,7 @@
 
 static const struct ScriptCommand s_gs204_g0_s0_station_sref_script[] = { /* 0x825ce34 */
     DEBUGINFO,
-    { 0x08, 0x00,  0x0000,  0x000000cc,  0x00000000, NULL },
+    SELECT_MAP(204),
     CJUMP_SCENARIO_0(SCENARIO_MAIN),
     COND(JUDGE_EQ, 15, /* to label */ 0),
     JUMP_LABEL(1),
@@ -29,13 +29,13 @@ static const struct ScriptCommand s_gs204_g0_s0_station_sref_script[] = { /* 0x8
     COND_EQUAL(1, /* to label */ 5),
     JUMP_LABEL(5),
   LABEL(2), /* = 0x02 */
-    { 0x0d, 0x03,  0x0000,  0x00000000,  0x00000000, NULL },
+    SELECT_LIVES(0, 3),
     JUMP_LABEL(6),
   LABEL(3), /* = 0x03 */
-    { 0x0d, 0x04,  0x0000,  0x00000000,  0x00000000, NULL },
+    SELECT_LIVES(0, 4),
     JUMP_LABEL(6),
   LABEL(5), /* = 0x05 */
-    { 0x0d, 0x01,  0x0000,  0x00000000,  0x00000000, NULL },
+    SELECT_LIVES(0, 1),
     JUMP_LABEL(6),
   LABEL(6), /* = 0x06 */
     { 0x44, 0x00,  0x0000,  0x0000006c,  0x00000000, NULL },
@@ -86,8 +86,8 @@ static const struct ScriptCommand s_gs204_g0_s4_lives1_dlg0[] = { /* 0x825d16c *
 
 static const struct ScriptCommand s_gs204_g1_s0_station_sref_script[] = { /* 0x825d19c */
     DEBUGINFO,
-    { 0x08, 0x00,  0x0000,  0x000000cc,  0x00000000, NULL },
-    { 0x0c, 0x00, -0x0001,  0x00000000,  0x00000000, NULL },
+    SELECT_MAP(204),
+    SELECT_ENTITIES(-1, 0),
     { 0x44, 0x00,  0x0000,  0x0000006c,  0x00000000, NULL },
     { 0x22, 0x01,  0x001e,  0x00000000,  0x00000000, NULL },
     { 0xe3, 0x00,  0x0003,  0x00000000,  0x00000000, NULL },
@@ -154,8 +154,8 @@ static const struct ScriptCommand s_gs204_g1_s0_lives1_dlg0[] = { /* 0x825d6dc *
 
 static const struct ScriptCommand s_gs204_g2_s0_station_sref_script[] = { /* 0x825d78c */
     DEBUGINFO,
-    { 0x08, 0x00,  0x0000,  0x000000cc,  0x00000000, NULL },
-    { 0x0c, 0x00, -0x0001,  0x00000000,  0x00000000, NULL },
+    SELECT_MAP(204),
+    SELECT_ENTITIES(-1, 0),
     { 0x44, 0x00,  0x0000,  0x0000006c,  0x00000000, NULL },
     { 0x22, 0x01,  0x001e,  0x00000000,  0x00000000, NULL },
     { 0xe3, 0x00,  0x0003,  0x00000000,  0x00000000, NULL },

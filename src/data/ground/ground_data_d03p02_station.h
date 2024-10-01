@@ -13,7 +13,7 @@
 
 static const struct ScriptCommand s_gs183_g0_s0_station_sref_script[] = { /* 0x8233258 */
     DEBUGINFO,
-    { 0x08, 0x00,  0x0000,  0x000000b7,  0x00000000, NULL },
+    SELECT_MAP(183),
     { 0x47, 0x00,  0x0000,  0x00000000,  0x00000000, NULL },
     JUMP_SCRIPT(COMMON_ENTER),
 };
@@ -22,8 +22,8 @@ static const struct ScriptRef s_gs183_g0_s0_station_sref = { 404, 1, NULL /* ENT
 
 static const struct ScriptCommand s_gs183_g1_s0_station_sref_script[] = { /* 0x82332d0 */
     DEBUGINFO,
-    { 0x08, 0x00,  0x0000,  0x000000b7,  0x00000000, NULL },
-    { 0x0c, 0x00, -0x0001,  0x00000000,  0x00000000, NULL },
+    SELECT_MAP(183),
+    SELECT_ENTITIES(-1, 0),
     { 0x44, 0x00,  0x0000,  0x00000072,  0x00000000, NULL },
     { 0x22, 0x01,  0x001e,  0x00000000,  0x00000000, NULL },
     { 0xe3, 0x00,  0x0003,  0x00000000,  0x00000000, NULL },
@@ -95,7 +95,7 @@ static const struct ScriptCommand s_gs183_g1_s0_lives0_dlg0[] = { /* 0x82333ec *
     { 0x2e, 0x15,  0x0001,  0x00000004,  0x00000000, NULL },
     { 0x34, 0x00,  0x0001,  0x00000000,  0x00000000, _(" $n0, what'll\nwe do?\nWe can't get across this.") },
     { 0x30, 0x00,  0x0000,  0x00000000,  0x00000000, NULL },
-    { 0x0c, 0x01, -0x0001,  0x00000000,  0x00000000, NULL },
+    SELECT_ENTITIES(-1, 1),
     { 0xe3, 0x00,  0x0005,  0x00000000,  0x00000000, NULL },
     { 0x2e, 0x0c,  0x0004,  0x00000000,  0x00000000, NULL },
     { 0x34, 0x00, -0x0001,  0x00000000,  0x00000000, _(" BZBZBZZ!") },

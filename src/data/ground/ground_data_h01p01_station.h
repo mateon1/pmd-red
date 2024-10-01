@@ -17,8 +17,8 @@
 
 static const struct ScriptCommand s_gs105_g0_s0_station_sref_script[] = { /* 0x81ee228 */
     DEBUGINFO,
-    { 0x08, 0x00,  0x0000,  0x00000069,  0x00000000, NULL },
-    { 0x0c, 0x00,  0x0001,  0x00000000,  0x00000000, NULL },
+    SELECT_MAP(105),
+    SELECT_ENTITIES(1, 0),
     JUMP_LABEL(1),
   LABEL(1), /* = 0x01 */
     JUMPIF_EQUAL(START_MODE, 1, /* to label */ 2),
@@ -31,13 +31,13 @@ static const struct ScriptCommand s_gs105_g0_s0_station_sref_script[] = { /* 0x8
     COND_EQUAL(1, /* to label */ 5),
     JUMP_LABEL(5),
   LABEL(2), /* = 0x02 */
-    { 0x0d, 0x03,  0x0000,  0x00000000,  0x00000000, NULL },
+    SELECT_LIVES(0, 3),
     JUMP_LABEL(6),
   LABEL(3), /* = 0x03 */
-    { 0x0d, 0x04,  0x0000,  0x00000000,  0x00000000, NULL },
+    SELECT_LIVES(0, 4),
     JUMP_LABEL(6),
   LABEL(5), /* = 0x05 */
-    { 0x0d, 0x01,  0x0000,  0x00000000,  0x00000000, NULL },
+    SELECT_LIVES(0, 1),
     JUMP_LABEL(6),
   LABEL(6), /* = 0x06 */
     { 0x44, 0x00,  0x0000,  0x0000006a,  0x00000000, NULL },

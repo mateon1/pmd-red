@@ -15,7 +15,7 @@
 
 static const struct ScriptCommand s_gs152_g0_s0_station_sref_script[] = { /* 0x8209b1c */
     DEBUGINFO,
-    { 0x08, 0x00,  0x0000,  0x00000098,  0x00000000, NULL },
+    SELECT_MAP(152),
     CJUMP_SCENARIO_0(SCENARIO_MAIN),
     COND(JUDGE_EQ, 3, /* to label */ 0),
     JUMP_LABEL(1),
@@ -27,7 +27,7 @@ static const struct ScriptCommand s_gs152_g0_s0_station_sref_script[] = { /* 0x8
   LABEL(3), /* = 0x03 */
     JUMP_LABEL(2),
   LABEL(1), /* = 0x01 */
-    { 0x0c, 0x00,  0x0001,  0x00000000,  0x00000000, NULL },
+    SELECT_ENTITIES(1, 0),
     JUMP_LABEL(2),
   LABEL(2), /* = 0x02 */
     JUMPIF_EQUAL(START_MODE, 1, /* to label */ 4),
@@ -40,13 +40,13 @@ static const struct ScriptCommand s_gs152_g0_s0_station_sref_script[] = { /* 0x8
     COND_EQUAL(1, /* to label */ 7),
     JUMP_LABEL(7),
   LABEL(4), /* = 0x04 */
-    { 0x0d, 0x03,  0x0000,  0x00000000,  0x00000000, NULL },
+    SELECT_LIVES(0, 3),
     JUMP_LABEL(8),
   LABEL(5), /* = 0x05 */
-    { 0x0d, 0x04,  0x0000,  0x00000000,  0x00000000, NULL },
+    SELECT_LIVES(0, 4),
     JUMP_LABEL(8),
   LABEL(7), /* = 0x07 */
-    { 0x0d, 0x01,  0x0000,  0x00000000,  0x00000000, NULL },
+    SELECT_LIVES(0, 1),
     JUMP_LABEL(8),
   LABEL(8), /* = 0x08 */
     { 0x44, 0x00,  0x0000,  0x0000006a,  0x00000000, NULL },

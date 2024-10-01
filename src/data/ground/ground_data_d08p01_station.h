@@ -14,7 +14,7 @@ static const struct ScriptCommand s_gs193_g0_s0_station_sref_script[] = { /* 0x8
     JUMPIF_SCENARIOCHECK(5, /* to label */ 0),
     { 0x1d, 0x00,  0x0000,  0x0000000c,  0x00000000, NULL },
   LABEL(0), /* = 0x00 */
-    { 0x08, 0x00,  0x0000,  0x000000c1,  0x00000000, NULL },
+    SELECT_MAP(193),
     CJUMP_SCENARIO_0(SCENARIO_MAIN),
     COND(JUDGE_EQ, 11, /* to label */ 1),
     JUMP_LABEL(2),
@@ -35,16 +35,16 @@ static const struct ScriptCommand s_gs193_g0_s0_station_sref_script[] = { /* 0x8
     COND_EQUAL(1, /* to label */ 7),
     JUMP_LABEL(7),
   LABEL(3), /* = 0x03 */
-    { 0x0d, 0x03,  0x0000,  0x00000000,  0x00000000, NULL },
+    SELECT_LIVES(0, 3),
     JUMP_LABEL(8),
   LABEL(4), /* = 0x04 */
-    { 0x0d, 0x04,  0x0000,  0x00000000,  0x00000000, NULL },
+    SELECT_LIVES(0, 4),
     JUMP_LABEL(8),
   LABEL(7), /* = 0x07 */
-    { 0x0d, 0x01,  0x0000,  0x00000000,  0x00000000, NULL },
+    SELECT_LIVES(0, 1),
     JUMP_LABEL(8),
   LABEL(6), /* = 0x06 */
-    { 0x0d, 0x02,  0x0000,  0x00000000,  0x00000000, NULL },
+    SELECT_LIVES(0, 2),
     JUMP_LABEL(8),
   LABEL(8), /* = 0x08 */
     { 0x44, 0x00,  0x0000,  0x00000066,  0x00000000, NULL },
@@ -124,8 +124,8 @@ static const struct ScriptCommand s_gs193_g0_s5_obj1_dlg2[] = { /* 0x8243080 */
 
 static const struct ScriptCommand s_gs193_g1_s0_station_sref_script[] = { /* 0x82430a0 */
     DEBUGINFO,
-    { 0x08, 0x00,  0x0000,  0x000000c1,  0x00000000, NULL },
-    { 0x0c, 0x00, -0x0001,  0x00000000,  0x00000000, NULL },
+    SELECT_MAP(193),
+    SELECT_ENTITIES(-1, 0),
     { 0x44, 0x00,  0x0000,  0x00000018,  0x00000000, NULL },
     { 0x22, 0x01,  0x001e,  0x00000000,  0x00000000, NULL },
     { 0xe3, 0x00,  0x0003,  0x00000000,  0x00000000, NULL },
@@ -233,12 +233,12 @@ static const struct ScriptCommand s_gs193_g1_s0_lives1_dlg0[] = { /* 0x824389c *
 
 static const struct ScriptCommand s_gs193_g2_s0_station_sref_script[] = { /* 0x8243a1c */
     DEBUGINFO,
-    { 0x08, 0x00,  0x0000,  0x000000c1,  0x00000000, NULL },
-    { 0x0c, 0x00, -0x0001,  0x00000000,  0x00000000, NULL },
+    SELECT_MAP(193),
+    SELECT_ENTITIES(-1, 0),
     { 0x44, 0x00,  0x0000,  0x00000066,  0x00000000, NULL },
     { 0x22, 0x01,  0x001e,  0x00000000,  0x00000000, NULL },
     { 0xe3, 0x00,  0x0003,  0x00000000,  0x00000000, NULL },
-    { 0x10, 0x00,  0x0000,  0x00000000,  0x00000000, NULL },
+    SELECT_EVENTS(0, 0),
     CALL_STATION(  3,  0),
     RET,
 };
@@ -295,7 +295,7 @@ static const struct ScriptCommand s_gs193_g2_s0_lives1_dlg0[] = { /* 0x8243e64 *
 
 static const struct ScriptCommand s_gs193_g3_s0_station_sref_script[] = { /* 0x8243f34 */
     DEBUGINFO,
-    { 0x0c, 0xff, -0x0001,  0x00000000,  0x00000000, NULL },
+    SELECT_ENTITIES(-1, 255),
     RET_DIRECT,
 };
 
@@ -324,8 +324,8 @@ static const struct ScriptRef s_gs193_g3_s0_evt0_sref = { 357, 2, NULL /* GETOUT
 
 static const struct ScriptCommand s_gs193_g3_s1_station_sref_script[] = { /* 0x824401c */
     DEBUGINFO,
-    { 0x0c, 0x01, -0x0001,  0x00000000,  0x00000000, NULL },
-    { 0x11, 0x00, -0x0001,  0x00000000,  0x00000000, NULL },
+    SELECT_ENTITIES(-1, 1),
+    CANCEL_ENTITIES(-1, 0),
     { 0xe3, 0x00,  0x0003,  0x00000000,  0x00000000, NULL },
     RET,
 };
@@ -348,7 +348,7 @@ static const struct ScriptCommand s_gs193_g3_s1_lives0_dlg0[] = { /* 0x8244078 *
     VARIANT(/* == */  1, _(" All right.\nWe'll go when you're ready.")),
     VARIANT_DEFAULT(_(" OK.\nLet's go when you're ready.")),
     { 0x30, 0x00,  0x0000,  0x00000000,  0x00000000, NULL },
-    { 0x0c, 0x00, -0x0001,  0x00000000,  0x00000000, NULL },
+    SELECT_ENTITIES(-1, 0),
     JUMP_SCRIPT(END_TALK),
   LABEL(0), /* = 0x00 */
     ASK3( TRUE, /*default*/ 0, /* speaker */ 1, _(" Which way should we go?")),
@@ -434,12 +434,12 @@ static const struct ScriptCommand s_gs193_g3_s1_lives1_dlg0[] = { /* 0x8244648 *
 
 static const struct ScriptCommand s_gs193_g4_s0_station_sref_script[] = { /* 0x8244768 */
     DEBUGINFO,
-    { 0x08, 0x00,  0x0000,  0x000000c1,  0x00000000, NULL },
-    { 0x0c, 0x00, -0x0001,  0x00000000,  0x00000000, NULL },
+    SELECT_MAP(193),
+    SELECT_ENTITIES(-1, 0),
     { 0x44, 0x00,  0x0000,  0x00000066,  0x00000000, NULL },
     { 0x22, 0x01,  0x001e,  0x00000000,  0x00000000, NULL },
     { 0xe3, 0x00,  0x0003,  0x00000000,  0x00000000, NULL },
-    { 0x10, 0x00,  0x0000,  0x00000000,  0x00000000, NULL },
+    SELECT_EVENTS(0, 0),
     CALL_STATION(  3,  0),
     RET,
 };
@@ -501,12 +501,12 @@ static const struct ScriptCommand s_gs193_g4_s0_lives1_dlg0[] = { /* 0x8244bb4 *
 
 static const struct ScriptCommand s_gs193_g5_s0_station_sref_script[] = { /* 0x8244c94 */
     DEBUGINFO,
-    { 0x08, 0x00,  0x0000,  0x000000c1,  0x00000000, NULL },
-    { 0x0c, 0x00, -0x0001,  0x00000000,  0x00000000, NULL },
+    SELECT_MAP(193),
+    SELECT_ENTITIES(-1, 0),
     { 0x44, 0x00,  0x0000,  0x00000066,  0x00000000, NULL },
     { 0x22, 0x01,  0x001e,  0x00000000,  0x00000000, NULL },
     { 0xe3, 0x00,  0x0003,  0x00000000,  0x00000000, NULL },
-    { 0x10, 0x00,  0x0000,  0x00000000,  0x00000000, NULL },
+    SELECT_EVENTS(0, 0),
     CALL_STATION(  3,  0),
     RET,
 };

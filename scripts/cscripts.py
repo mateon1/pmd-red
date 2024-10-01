@@ -361,6 +361,57 @@ def main():
                 p = addr + 16*i
                 op, b, h, a1, a2, ap = get_u8(data, p+0), get_u8(data, p+1), get_s16(data, p+2), get_s32(data, p+4), get_s32(data, p+8), get_u32(data, p+12)
                 if False: pass
+                elif op == 0x08:
+                    assert b == h == a2 == ap == 0
+                    outfile.write(u'    SELECT_MAP(%d),\n' % (a1,))
+                elif op == 0x09:
+                    assert b == h == a2 == ap == 0
+                    outfile.write(u'    SELECT_GROUND(%d),\n' % (a1,))
+                elif op == 0x0a:
+                    assert ap == 0
+                    outfile.write(u'    SELECT_DUNGEON(/*map*/ %d, /*dungeon*/ %d, /*floor*/ %d, /*?*/, %d),\n' % (a2,a1,h,b))
+                elif op == 0x0b:
+                    assert b == h == a2 == ap == 0
+                    outfile.write(u'    SELECT_WEATHER(%d),\n' % (a1,))
+                elif op == 0x0c:
+                    assert a1 == a2 == ap == 0
+                    outfile.write(u'    SELECT_ENTITIES(%d, %d),\n' % (h,b))
+                elif op == 0x0d:
+                    assert a1 == a2 == ap == 0
+                    outfile.write(u'    SELECT_LIVES(%d, %d),\n' % (h,b))
+                elif op == 0x0e:
+                    assert a1 == a2 == ap == 0
+                    outfile.write(u'    SELECT_OBJECTS(%d, %d),\n' % (h,b))
+                elif op == 0x0f:
+                    assert a1 == a2 == ap == 0
+                    outfile.write(u'    SELECT_EFFECTS(%d, %d),\n' % (h,b))
+                elif op == 0x10:
+                    assert a1 == a2 == ap == 0
+                    outfile.write(u'    SELECT_EVENTS(%d, %d),\n' % (h,b))
+                elif op == 0x11:
+                    assert a1 == a2 == ap == 0
+                    outfile.write(u'    CANCEL_ENTITIES(%d, %d),\n' % (h,b))
+                elif op == 0x12:
+                    assert a1 == a2 == ap == 0
+                    outfile.write(u'    CANCEL_LIVES(%d, %d),\n' % (h,b))
+                elif op == 0x13:
+                    assert a1 == a2 == ap == 0
+                    outfile.write(u'    CANCEL_OBJECTS(%d, %d),\n' % (h,b))
+                elif op == 0x14:
+                    assert a1 == a2 == ap == 0
+                    outfile.write(u'    CANCEL_EFFECTS(%d, %d),\n' % (h,b))
+                elif op == 0x15:
+                    assert a1 == a2 == ap == 0
+                    outfile.write(u'    CANCEL_EVENTS(%d, %d),\n' % (h,b))
+                elif op == 0x16:
+                    assert b == h == a1 == a2 == ap == 0
+                    outfile.write(u'    CANCEL_OFFSCREEN_LIVES,\n')
+                elif op == 0x17:
+                    assert b == h == a1 == a2 == ap == 0
+                    outfile.write(u'    CANCEL_OFFSCREEN_OBJECTS,\n')
+                elif op == 0x18:
+                    assert b == h == a1 == a2 == ap == 0
+                    outfile.write(u'    CANCEL_OFFSCREEN_EFFECTS,\n')
                 # 9b..a3: camera-related, needs reversing
                 elif op == 0xa4:
                     assert b == a1 == a2 == ap == 0

@@ -10,7 +10,7 @@
 
 static const struct ScriptCommand s_gs182_g0_s0_station_sref_script[] = { /* 0x8232124 */
     DEBUGINFO,
-    { 0x08, 0x00,  0x0000,  0x000000b6,  0x00000000, NULL },
+    SELECT_MAP(182),
     { 0x47, 0x00,  0x0000,  0x00000000,  0x00000000, NULL },
     JUMP_SCRIPT(COMMON_ENTER),
 };
@@ -19,8 +19,8 @@ static const struct ScriptRef s_gs182_g0_s0_station_sref = { 404, 1, NULL /* ENT
 
 static const struct ScriptCommand s_gs182_g1_s0_station_sref_script[] = { /* 0x823219c */
     DEBUGINFO,
-    { 0x08, 0x00,  0x0000,  0x000000b6,  0x00000000, NULL },
-    { 0x0c, 0x00, -0x0001,  0x00000000,  0x00000000, NULL },
+    SELECT_MAP(182),
+    SELECT_ENTITIES(-1, 0),
     { 0x44, 0x00,  0x0000,  0x00000078,  0x00000000, NULL },
     { 0xe3, 0x00,  0x0003,  0x00000000,  0x00000000, NULL },
     { 0x22, 0x01,  0x001e,  0x00000000,  0x00000000, NULL },
@@ -51,7 +51,7 @@ static const struct ScriptCommand s_gs182_g1_s0_lives0_dlg0[] = { /* 0x8232228 *
     WAIT(30),
     { 0x34, 0x00, -0x0001,  0x00000000,  0x00000000, _(" That's right!") },
     { 0x30, 0x00,  0x0000,  0x00000000,  0x00000000, NULL },
-    { 0x0c, 0x01, -0x0001,  0x00000000,  0x00000000, NULL },
+    SELECT_ENTITIES(-1, 1),
     WAIT(15),
     { 0xe4, 0x00,  0x0006,  0x00000000,  0x00000000, NULL },
     { 0x91, 0x04,  0x000a,  0x00000003,  0x00000000, NULL },
@@ -136,8 +136,8 @@ static const struct ScriptCommand s_gs182_g1_s1_lives0_dlg0[] = { /* 0x823282c *
 
 static const struct ScriptCommand s_gs182_g2_s0_station_sref_script[] = { /* 0x823290c */
     DEBUGINFO,
-    { 0x08, 0x00,  0x0000,  0x000000b6,  0x00000000, NULL },
-    { 0x0c, 0x00, -0x0001,  0x00000000,  0x00000000, NULL },
+    SELECT_MAP(182),
+    SELECT_ENTITIES(-1, 0),
     { 0x44, 0x00,  0x0000,  0x00000078,  0x00000000, NULL },
     { 0x22, 0x01,  0x001e,  0x00000000,  0x00000000, NULL },
     { 0xe3, 0x00,  0x0003,  0x00000000,  0x00000000, NULL },
@@ -170,7 +170,7 @@ static const struct ScriptCommand s_gs182_g2_s0_lives0_dlg0[] = { /* 0x8232988 *
     WAIT(30),
     { 0x34, 0x00, -0x0001,  0x00000000,  0x00000000, _(" That's the spirit!") },
     { 0x30, 0x00,  0x0000,  0x00000000,  0x00000000, NULL },
-    { 0x0c, 0x01, -0x0001,  0x00000000,  0x00000000, NULL },
+    SELECT_ENTITIES(-1, 1),
     WAIT(15),
     { 0xe4, 0x00,  0x0006,  0x00000000,  0x00000000, NULL },
     { 0x91, 0x04,  0x000a,  0x00000003,  0x00000000, NULL },

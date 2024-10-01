@@ -14,7 +14,7 @@
 
 static const struct ScriptCommand s_gs5_g0_s0_station_sref_script[] = { /* 0x8197a1c */
     DEBUGINFO,
-    { 0x08, 0x00,  0x0000,  0x00000005,  0x00000000, NULL },
+    SELECT_MAP(5),
     JUMP_LABEL(0),
   LABEL(0), /* = 0x00 */
     CALL_STATION(  1,  0),
@@ -25,7 +25,7 @@ static const struct ScriptCommand s_gs5_g0_s0_station_sref_script[] = { /* 0x819
     COND_EQUAL(11, /* to label */ 2),
     COND_EQUAL(10, /* to label */ 3),
     COND_EQUAL(9, /* to label */ 4),
-    { 0x0d, 0x01,  0x0000,  0x00000000,  0x00000000, NULL },
+    SELECT_LIVES(0, 1),
     JUMP_LABEL(6),
   LABEL(2), /* = 0x02 */
     { 0x1e, 0x00,  0x0004, -0x00000001,  0x00000000, NULL },
@@ -73,8 +73,8 @@ static const struct ScriptCommand s_gs5_g0_s1_lives1_dlg0[] = { /* 0x8197cb0 */
 static const struct ScriptCommand s_gs5_g1_s0_station_sref_script[] = { /* 0x8197cf0 */
     DEBUGINFO,
     JUMPIF_EQUAL(SCENARIO_MAIN, 11, /* to label */ 0),
-    { 0x15, 0xff, -0x0001,  0x00000000,  0x00000000, NULL },
-    { 0x0c, 0xff, -0x0001,  0x00000000,  0x00000000, NULL },
+    CANCEL_EVENTS(-1, 255),
+    SELECT_ENTITIES(-1, 255),
   LABEL(0), /* = 0x00 */
     RET_DIRECT,
 };
@@ -124,15 +124,15 @@ static const struct ScriptCommand s_gs5_g1_s0_obj0_dlg2[] = { /* 0x8197efc */
 
 static const struct ScriptCommand s_gs5_g2_s0_station_sref_script[] = { /* 0x8197f2c */
     DEBUGINFO,
-    { 0x08, 0x00,  0x0000,  0x00000005,  0x00000000, NULL },
+    SELECT_MAP(5),
     CALL_SCRIPT(DISMISSAL_SALLY_MEMBER_FUNC),
     CALL_STATION(  1,  0),
-    { 0x0c, 0xff, -0x0001,  0x00000000,  0x00000000, NULL },
+    SELECT_ENTITIES(-1, 255),
     { 0x44, 0x00,  0x0000,  0x00000007,  0x00000000, NULL },
     { 0x22, 0x01, -0x0001,  0x00000000,  0x00000000, NULL },
     { 0xe3, 0x00,  0x0003,  0x00000000,  0x00000000, NULL },
     CALL_STATION(  1,  0),
-    { 0x10, 0x00,  0x0000,  0x00000000,  0x00000000, NULL },
+    SELECT_EVENTS(0, 0),
     RET,
 };
 
@@ -174,15 +174,15 @@ static const struct ScriptCommand s_gs5_g2_s0_lives2_dlg0[] = { /* 0x8198118 */
 
 static const struct ScriptCommand s_gs5_g3_s0_station_sref_script[] = { /* 0x8198178 */
     DEBUGINFO,
-    { 0x08, 0x00,  0x0000,  0x00000005,  0x00000000, NULL },
+    SELECT_MAP(5),
     CALL_SCRIPT(DISMISSAL_SALLY_MEMBER2_FUNC),
     CALL_STATION(  1,  0),
-    { 0x0c, 0xff, -0x0001,  0x00000000,  0x00000000, NULL },
+    SELECT_ENTITIES(-1, 255),
     { 0x44, 0x00,  0x0000,  0x00000007,  0x00000000, NULL },
     { 0x22, 0x01, -0x0001,  0x00000000,  0x00000000, NULL },
     { 0xe3, 0x00,  0x0003,  0x00000000,  0x00000000, NULL },
     CALL_STATION(  1,  0),
-    { 0x10, 0x00,  0x0000,  0x00000000,  0x00000000, NULL },
+    SELECT_EVENTS(0, 0),
     RET,
 };
 
@@ -227,15 +227,15 @@ static const struct ScriptCommand s_gs5_g3_s0_lives1_dlg0[] = { /* 0x81984bc */
 
 static const struct ScriptCommand s_gs5_g4_s0_station_sref_script[] = { /* 0x819853c */
     DEBUGINFO,
-    { 0x08, 0x00,  0x0000,  0x00000005,  0x00000000, NULL },
+    SELECT_MAP(5),
     CALL_SCRIPT(DISMISSAL_SALLY_MEMBER3_FUNC),
     CALL_STATION(  1,  0),
-    { 0x0c, 0xff, -0x0001,  0x00000000,  0x00000000, NULL },
+    SELECT_ENTITIES(-1, 255),
     { 0x44, 0x00,  0x0000,  0x00000007,  0x00000000, NULL },
     { 0x22, 0x01, -0x0001,  0x00000000,  0x00000000, NULL },
     { 0xe3, 0x00,  0x0003,  0x00000000,  0x00000000, NULL },
     CALL_STATION(  1,  0),
-    { 0x10, 0x00,  0x0000,  0x00000000,  0x00000000, NULL },
+    SELECT_EVENTS(0, 0),
     RET,
 };
 
@@ -280,8 +280,8 @@ static const struct ScriptCommand s_gs5_g4_s0_lives1_dlg0[] = { /* 0x8198768 */
 
 static const struct ScriptCommand s_gs5_g5_s0_station_sref_script[] = { /* 0x81987e8 */
     DEBUGINFO,
-    { 0x08, 0x00,  0x0000,  0x00000005,  0x00000000, NULL },
-    { 0x0c, 0xff, -0x0001,  0x00000000,  0x00000000, NULL },
+    SELECT_MAP(5),
+    SELECT_ENTITIES(-1, 255),
     { 0x44, 0x00,  0x0000,  0x00000028,  0x00000000, NULL },
     { 0x22, 0x01,  0x001e,  0x00000000,  0x00000000, NULL },
     { 0xe3, 0x00,  0x0003,  0x00000000,  0x00000000, NULL },

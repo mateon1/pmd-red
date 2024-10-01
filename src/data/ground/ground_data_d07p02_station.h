@@ -22,7 +22,7 @@
 
 static const struct ScriptCommand s_gs192_g0_s0_station_sref_script[] = { /* 0x823e248 */
     DEBUGINFO,
-    { 0x08, 0x00,  0x0000,  0x000000c0,  0x00000000, NULL },
+    SELECT_MAP(192),
     { 0x47, 0x00,  0x0000,  0x00000000,  0x00000000, NULL },
     JUMP_SCRIPT(COMMON_ENTER),
 };
@@ -31,8 +31,8 @@ static const struct ScriptRef s_gs192_g0_s0_station_sref = { 404, 1, NULL /* ENT
 
 static const struct ScriptCommand s_gs192_g1_s0_station_sref_script[] = { /* 0x823e2c0 */
     DEBUGINFO,
-    { 0x08, 0x00,  0x0000,  0x000000c0,  0x00000000, NULL },
-    { 0x0c, 0x00, -0x0001,  0x00000000,  0x00000000, NULL },
+    SELECT_MAP(192),
+    SELECT_ENTITIES(-1, 0),
     { 0x44, 0x00,  0x0000,  0x00000072,  0x00000000, NULL },
     { 0x22, 0x01,  0x001e,  0x00000000,  0x00000000, NULL },
     { 0xe3, 0x00,  0x0003,  0x00000000,  0x00000000, NULL },
@@ -156,8 +156,8 @@ static const struct ScriptCommand s_gs192_g1_s0_lives1_dlg0[] = { /* 0x823ec7c *
 
 static const struct ScriptCommand s_gs192_g2_s0_station_sref_script[] = { /* 0x823edfc */
     DEBUGINFO,
-    { 0x08, 0x00,  0x0000,  0x000000c0,  0x00000000, NULL },
-    { 0x0c, 0x00, -0x0001,  0x00000000,  0x00000000, NULL },
+    SELECT_MAP(192),
+    SELECT_ENTITIES(-1, 0),
     { 0x44, 0x00,  0x0000,  0x00000072,  0x00000000, NULL },
     { 0x22, 0x01,  0x001e,  0x00000000,  0x00000000, NULL },
     { 0xe3, 0x00,  0x0003,  0x00000000,  0x00000000, NULL },
@@ -574,7 +574,7 @@ static const struct ScriptCommand s_gs192_g2_s0_lives0_dlg0[] = { /* 0x823ef68 *
     { 0x34, 0x00,  0x0002,  0x00000000,  0x00000000, _(" I fear it...#W\nThe world's destruction.") },
     { 0x30, 0x00,  0x0000,  0x00000000,  0x00000000, NULL },
     WAIT(10),
-    { 0x0d, 0x01, -0x0001,  0x00000000,  0x00000000, NULL },
+    SELECT_LIVES(-1, 1),
     { 0x34, 0x00,  0x0001,  0x00000000,  0x00000000, _(" The world's destruction...?") },
     { 0x30, 0x00,  0x0000,  0x00000000,  0x00000000, NULL },
     WAIT(60),

@@ -8,7 +8,7 @@
 
 static const struct ScriptCommand s_gs7_g0_s0_station_sref_script[] = { /* 0x819a3d8 */
     DEBUGINFO,
-    { 0x08, 0x00,  0x0000,  0x00000007,  0x00000000, NULL },
+    SELECT_MAP(7),
     CJUMP_SCENARIO_0(SCENARIO_MAIN),
     COND(JUDGE_LT, 4, /* to label */ 0),
     COND(JUDGE_EQ, 4, /* to label */ 1),
@@ -16,16 +16,16 @@ static const struct ScriptCommand s_gs7_g0_s0_station_sref_script[] = { /* 0x819
     JUMP_LABEL(2),
     JUMP_LABEL(0),
   LABEL(1), /* = 0x01 */
-    { 0x0c, 0x00,  0x0001,  0x00000000,  0x00000000, NULL },
+    SELECT_ENTITIES(1, 0),
     JUMP_LABEL(0),
   LABEL(2), /* = 0x02 */
-    { 0x0c, 0x00,  0x0001,  0x00000000,  0x00000000, NULL },
+    SELECT_ENTITIES(1, 0),
     JUMP_LABEL(0),
   LABEL(0), /* = 0x00 */
     CJUMP_VAR(GROUND_GETOUT),
     COND_EQUAL(6, /* to label */ 3),
   LABEL(3), /* = 0x03 */
-    { 0x0d, 0x01,  0x0000,  0x00000000,  0x00000000, NULL },
+    SELECT_LIVES(0, 1),
     JUMP_LABEL(4),
   LABEL(4), /* = 0x04 */
     { 0x44, 0x00,  0x0000,  0x0000006e,  0x00000000, NULL },
