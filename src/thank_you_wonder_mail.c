@@ -143,7 +143,7 @@ const MenuItem gUnknown_80DEE7C[4] =
     {NULL, 0x0},
 };
 
-ALIGNED(4) static const u8 DontSendItem_Text[] =  _("Don{APOSTROPHE}t Send Item");
+ALIGNED(4) static const u8 DontSendItem_Text[] =  _("Don't Send Item");
 ALIGNED(4) static const u8 SendItem_Text[] = "Send Item";
 
 const MenuItem gUnknown_80DEEBC[3] =

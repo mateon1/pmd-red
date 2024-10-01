@@ -65,7 +65,7 @@ const u8 * const gUnknown_80E086C[] =
     OkdRescue
 };
 
-ALIGNED(4) const u8 OkdRescue[] = _("OK{APOSTROPHE}d Rescues");
+ALIGNED(4) const u8 OkdRescue[] = _("OK'd Rescues");
 ALIGNED(4) const u8 CompletedJobs[] = "Completed Jobs";
 ALIGNED(4) const u8 ThanksList[] = "Thanks List";
 ALIGNED(4) const u8 AOKMail[] = "A-OK Mail";
