@@ -29,21 +29,21 @@ static const struct ScriptCommand s_gs6_g0_s0_station_sref_script[] = { /* 0x819
     SELECT_LIVES(0, 2),
     JUMP_LABEL(7),
   LABEL(2), /* = 0x02 */
-    { 0x1e, 0x00,  0x0004, -0x00000001,  0x00000000, NULL },
+    EXECUTE_SUBSTATION(-1, 4, 0),
     SET_DUNGEON_RES(/* result */ 0, /* enter */ -1),
     RET,
   LABEL(3), /* = 0x03 */
-    { 0x1e, 0x00,  0x0003, -0x00000001,  0x00000000, NULL },
+    EXECUTE_SUBSTATION(-1, 3, 0),
     SET_DUNGEON_RES(/* result */ 0, /* enter */ -1),
     RET,
   LABEL(4), /* = 0x04 */
     SET_DUNGEON_RES(/* result */ 0, /* enter */ -1),
     { 0x3b, 0x0d,  0x0000,  0x00000000,  0x00000000, NULL },
     COND_EQUAL(1, /* to label */ 8),
-    { 0x1e, 0x00,  0x0002, -0x00000001,  0x00000000, NULL },
+    EXECUTE_SUBSTATION(-1, 2, 0),
     RET,
   LABEL(8), /* = 0x08 */
-    { 0x1e, 0x00,  0x0005, -0x00000001,  0x00000000, NULL },
+    EXECUTE_SUBSTATION(-1, 5, 0),
     RET,
   LABEL(7), /* = 0x07 */
     SET_DUNGEON_RES(/* result */ 0, /* enter */ -1),

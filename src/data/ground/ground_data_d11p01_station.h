@@ -11,7 +11,7 @@
 static const struct ScriptCommand s_gs201_g0_s0_station_sref_script[] = { /* 0x8251f44 */
     DEBUGINFO,
     JUMPIF_SCENARIOCHECK(5, /* to label */ 0),
-    { 0x1d, 0x00,  0x0000,  0x0000000c,  0x00000000, NULL },
+    EXECUTE_STATION(12, 0, 0),
   LABEL(0), /* = 0x00 */
     SELECT_MAP(201),
     CJUMP_SCENARIO_0(SCENARIO_MAIN),
@@ -299,13 +299,13 @@ static const struct ScriptRef s_gs201_g2_s0_station_sref = { 403, 8, NULL /* STA
 
 static const struct ScriptCommand s_gs201_g2_s0_lives0_dlg2[] = { /* 0x8253848 */
     DEBUGINFO,
-    { 0x1d, 0x01,  0x0002, -0x00000001,  0x00000000, NULL },
+    EXECUTE_STATION(-1, 2, 1),
     HALT,
 };
 
 static const struct ScriptCommand s_gs201_g2_s0_evt0_sref_script[] = { /* 0x8253878 */
     DEBUGINFO,
-    { 0x1d, 0x01,  0x0002, -0x00000001,  0x00000000, NULL },
+    EXECUTE_STATION(-1, 2, 1),
     HALT,
 };
 

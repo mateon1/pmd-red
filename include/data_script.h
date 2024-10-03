@@ -27,6 +27,9 @@
 #define SPAWN_EFFECT(k,d,g,s)   { 0x1A, s, g, d, k, NULL }
 #define EXECUTE_FUNCTION(f)     { 0x1B, 0, f, 0, 0, NULL }
 #define EXECUTE_SUBROUTINE(f)   { 0x1C, 0, f, 0, 0, NULL }
+#define EXECUTE_STATION(m,g,s)  { 0x1D, s, g, m, 0, NULL }
+#define EXECUTE_SUBSTATION(m,g,s){0x1E, s, g, m, 0, NULL }
+#define RESCUE_SELECT           { 0x1F, 0, 0, 0, 0, NULL }
 #define RESET_ARRAY(v)          { 0xA4, 0, v, 0, 0, NULL }
 #define CLEAR_ARRAY(v)          { 0xA5, 0, v, 0, 0, NULL }
 #define UPDATE_VARINT(o,v,i)    { 0xA6, o, v, i, 0, NULL }

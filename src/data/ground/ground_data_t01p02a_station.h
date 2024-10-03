@@ -503,19 +503,19 @@ static const struct ScriptCommand s_gs2_g4_s0_obj0_dlg2[] = { /* 0x817f758 */
 
 static const struct ScriptCommand s_gs2_g5_s0_lives0_dlg2[] = { /* 0x817f788 */
     DEBUGINFO,
-    { 0x1d, 0x00,  0x0006, -0x00000001,  0x00000000, NULL },
+    EXECUTE_STATION(-1, 6, 0),
     HALT,
 };
 
 static const struct ScriptCommand s_gs2_g5_s0_lives1_dlg2[] = { /* 0x817f7b8 */
     DEBUGINFO,
-    { 0x1d, 0x00,  0x0006, -0x00000001,  0x00000000, NULL },
+    EXECUTE_STATION(-1, 6, 0),
     HALT,
 };
 
 static const struct ScriptCommand s_gs2_g5_s0_evt0_sref_script[] = { /* 0x817f7e8 */
     DEBUGINFO,
-    { 0x1d, 0x00,  0x0006, -0x00000001,  0x00000000, NULL },
+    EXECUTE_STATION(-1, 6, 0),
     HALT,
 };
 
@@ -716,19 +716,19 @@ static const struct ScriptCommand s_gs2_g6_s0_lives3_dlg0[] = { /* 0x818034c */
 
 static const struct ScriptCommand s_gs2_g7_s0_lives0_dlg2[] = { /* 0x81804fc */
     DEBUGINFO,
-    { 0x1d, 0x00,  0x0008, -0x00000001,  0x00000000, NULL },
+    EXECUTE_STATION(-1, 8, 0),
     HALT,
 };
 
 static const struct ScriptCommand s_gs2_g7_s0_lives1_dlg2[] = { /* 0x818052c */
     DEBUGINFO,
-    { 0x1d, 0x00,  0x0008, -0x00000001,  0x00000000, NULL },
+    EXECUTE_STATION(-1, 8, 0),
     HALT,
 };
 
 static const struct ScriptCommand s_gs2_g7_s0_evt0_sref_script[] = { /* 0x818055c */
     DEBUGINFO,
-    { 0x1d, 0x00,  0x0008, -0x00000001,  0x00000000, NULL },
+    EXECUTE_STATION(-1, 8, 0),
     HALT,
 };
 
@@ -920,7 +920,7 @@ static const struct ScriptCommand s_gs2_g9_s0_lives0_dlg0[] = { /* 0x81811c0 */
 
 static const struct ScriptCommand s_gs2_g9_s0_lives0_dlg2[] = { /* 0x8181200 */
     DEBUGINFO,
-    { 0x1d, 0x01,  0x0009, -0x00000001,  0x00000000, NULL },
+    EXECUTE_STATION(-1, 9, 1),
     HALT,
 };
 
@@ -1328,7 +1328,7 @@ static const struct ScriptCommand s_gs2_g16_s0_lives0_dlg2[] = { /* 0x8182a70 */
     { 0x48, 0x00,  0x005a,  0x00000000,  0x00000000, NULL },
     { 0x34, 0x00,  0x0001,  0x00000000,  0x00000000, _(" Hohoho. Fine, then.#W\nLet me recount the tale.") },
     { 0x30, 0x00,  0x0000,  0x00000000,  0x00000000, NULL },
-    { 0x1d, 0x01,  0x0010, -0x00000001,  0x00000000, NULL },
+    EXECUTE_STATION(-1, 16, 1),
     HALT,
   LABEL(2), /* = 0x02 */
     { 0x34, 0x00,  0x0001,  0x00000000,  0x00000000, _(" I see.") },
@@ -1525,7 +1525,7 @@ static const struct ScriptCommand s_gs2_g16_s1_lives2_dlg2[] = { /* 0x8183d24 */
     CHOICE(/* label */  2, _("No.")),
   LABEL(1), /* = 0x01 */
     { 0x34, 0x00,  0x0001,  0x00000000,  0x00000000, _(" Hohoho. Fine, then.#W\nLet me recount the tale.") },
-    { 0x1d, 0x01,  0x0010, -0x00000001,  0x00000000, NULL },
+    EXECUTE_STATION(-1, 16, 1),
     HALT,
   LABEL(2), /* = 0x02 */
     { 0x34, 0x00,  0x0001,  0x00000000,  0x00000000, _(" I see.") },

@@ -22,7 +22,7 @@ static const struct ScriptCommand s_gs12_g0_s0_station_sref_script[] = { /* 0x81
     COND(JUDGE_LE, 2, /* to label */ 3),
     JUMP_LABEL(2),
   LABEL(3), /* = 0x03 */
-    { 0x1d, 0x01,  0x0010, -0x00000001,  0x00000000, NULL },
+    EXECUTE_STATION(-1, 16, 1),
     RET,
   LABEL(1), /* = 0x01 */
     CJUMP_SCENARIO_1(SCENARIO_MAIN),
@@ -30,10 +30,10 @@ static const struct ScriptCommand s_gs12_g0_s0_station_sref_script[] = { /* 0x81
     COND(JUDGE_LE, 2, /* to label */ 5),
     JUMP_LABEL(2),
   LABEL(4), /* = 0x04 */
-    { 0x1d, 0x00,  0x002d, -0x00000001,  0x00000000, NULL },
+    EXECUTE_STATION(-1, 45, 0),
     RET,
   LABEL(5), /* = 0x05 */
-    { 0x1d, 0x01,  0x002e, -0x00000001,  0x00000000, NULL },
+    EXECUTE_STATION(-1, 46, 1),
     RET,
   LABEL(2), /* = 0x02 */
     CJUMP_VAR(START_MODE),
@@ -59,17 +59,17 @@ static const struct ScriptCommand s_gs12_g0_s0_station_sref_script[] = { /* 0x81
   LABEL(8), /* = 0x08 */
     CALL_SCRIPT(DISMISSAL_SALLY_MEMBER3_FUNC),
     CALL_SCRIPT(EVENT_DIVIDE_NEXT_DAY_FUNC),
-    { 0x1e, 0x00,  0x0007, -0x00000001,  0x00000000, NULL },
+    EXECUTE_SUBSTATION(-1, 7, 0),
     RET,
   LABEL(10), /* = 0x0a */
     CALL_SCRIPT(DISMISSAL_SALLY_MEMBER_FUNC),
     CALL_SCRIPT(EVENT_DIVIDE_NEXT_DAY_FUNC),
-    { 0x1e, 0x00,  0x0008, -0x00000001,  0x00000000, NULL },
+    EXECUTE_SUBSTATION(-1, 8, 0),
     RET,
   LABEL(9), /* = 0x09 */
     CALL_SCRIPT(DISMISSAL_SALLY_MEMBER2_FUNC),
     CALL_SCRIPT(EVENT_DIVIDE_NEXT_DAY_FUNC),
-    { 0x1e, 0x00,  0x0007, -0x00000001,  0x00000000, NULL },
+    EXECUTE_SUBSTATION(-1, 7, 0),
     RET,
   LABEL(11), /* = 0x0b */
     SELECT_LIVES(0, 1),
@@ -139,7 +139,7 @@ static const struct ScriptCommand s_gs12_g0_s0_obj0_dlg2[] = { /* 0x81e1f40 */
     COND_EQUAL(6, /* to label */ 3),
     JUMP_SCRIPT(END_TALK),
   LABEL(3), /* = 0x03 */
-    { 0x1d, 0x00,  0x0001, -0x00000001,  0x00000000, NULL },
+    EXECUTE_STATION(-1, 1, 0),
     HALT,
 };
 

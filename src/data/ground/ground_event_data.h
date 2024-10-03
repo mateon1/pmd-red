@@ -677,8 +677,8 @@ static const struct ScriptCommand s_script_SAVE_AND_WAREHOUSE_POINT[] = { /* 0x8
 
 static const struct ScriptCommand s_script_WORLD_MAP_POINT[] = { /* 0x8121034 */
     DEBUGINFO,
-    { 0x1e, 0x00,  0x0001,  0x000000e4,  0x00000000, NULL },
-    { 0x1e, 0x01,  0x0001,  0x0000000c,  0x00000000, NULL },
+    EXECUTE_SUBSTATION(228, 1, 0),
+    EXECUTE_SUBSTATION(12, 1, 1),
     HALT,
 };
 
@@ -698,7 +698,7 @@ static const struct ScriptCommand s_script_FORMATION_HERO[] = { /* 0x8121074 */
 
 static const struct ScriptCommand s_script_EVOLUTION_HERO[] = { /* 0x8121124 */
     DEBUGINFO,
-    { 0x1d, 0x01,  0x0001,  0x00000008,  0x00000000, NULL },
+    EXECUTE_STATION(8, 1, 1),
     HALT,
 };
 
@@ -1147,7 +1147,7 @@ static const struct ScriptCommand s_script_EVENT_DIVIDE[] = { /* 0x8121f94 */
 static const struct ScriptCommand s_script_EVENT_DIVIDE_NEXT[] = { /* 0x81226e4 */
     DEBUGINFO,
     CALL_SCRIPT(EVENT_DIVIDE_NEXT_DAY_FUNC),
-    { 0x1e, 0x00,  0x0003,  0x0000000c,  0x00000000, NULL },
+    EXECUTE_SUBSTATION(12, 3, 0),
     RET,
 };
 
@@ -1804,7 +1804,7 @@ static const struct ScriptCommand s_script_EVENT_RESCUE_ENTER_CHECK[] = { /* 0x8
 static const struct ScriptCommand s_script_EVENT_RESCUE[] = { /* 0x8124fc0 */
     DEBUGINFO,
     { 0xdf, 0x00,  0x0000,  0x00000000,  0x00000000, NULL },
-    { 0x1f, 0x00,  0x0000,  0x00000000,  0x00000000, NULL },
+    RESCUE_SELECT,
     RET,
 };
 
@@ -1825,31 +1825,31 @@ static const struct ScriptCommand s_script_DEMO_CANCEL[] = { /* 0x8125070 */
 
 static const struct ScriptCommand s_script_DEMO_01[] = { /* 0x8125090 */
     DEBUGINFO,
-    { 0x1e, 0x00,  0x0001,  0x000000e3,  0x00000000, NULL },
+    EXECUTE_SUBSTATION(227, 1, 0),
     { 0x3b, 0x41,  0x003c,  0x00000000,  0x00000000, NULL },
     HALT,
 };
 
 static const struct ScriptCommand s_script_DEMO_02[] = { /* 0x81250d0 */
     DEBUGINFO,
-    { 0x1e, 0x00,  0x0001,  0x000000e2,  0x00000000, NULL },
+    EXECUTE_SUBSTATION(226, 1, 0),
     { 0x3b, 0x41,  0x003c,  0x00000000,  0x00000000, NULL },
     HALT,
 };
 
 static const struct ScriptCommand s_script_DEMO_03[] = { /* 0x8125110 */
     DEBUGINFO,
-    { 0x1e, 0x00,  0x0005,  0x00000005,  0x00000000, NULL },
-    { 0x1e, 0x00,  0x001d,  0x00000004,  0x00000000, NULL },
-    { 0x1e, 0x00,  0x0001,  0x000000e1,  0x00000000, NULL },
-    { 0x1e, 0x00,  0x0003,  0x000000e0,  0x00000000, NULL },
+    EXECUTE_SUBSTATION(5, 5, 0),
+    EXECUTE_SUBSTATION(4, 29, 0),
+    EXECUTE_SUBSTATION(225, 1, 0),
+    EXECUTE_SUBSTATION(224, 3, 0),
     { 0x3b, 0x41,  0x003c,  0x00000000,  0x00000000, NULL },
     HALT,
 };
 
 static const struct ScriptCommand s_script_DEMO_04[] = { /* 0x8125180 */
     DEBUGINFO,
-    { 0x1e, 0x00,  0x0004,  0x000000e0,  0x00000000, NULL },
+    EXECUTE_SUBSTATION(224, 4, 0),
     { 0x3b, 0x41,  0x003c,  0x00000000,  0x00000000, NULL },
     HALT,
 };
@@ -1858,7 +1858,7 @@ static const struct ScriptCommand s_script_EVENT_M00E01A_L001[] = { /* 0x81251c0
     DEBUGINFO,
     { 0x47, 0x00,  0x0000,  0x00000000,  0x00000000, NULL },
     { 0x3b, 0x39,  0x0001,  0x00000000,  0x00000000, NULL },
-    { 0x1e, 0x00,  0x0001,  0x000000df,  0x00000000, NULL },
+    EXECUTE_SUBSTATION(223, 1, 0),
     { 0x3b, 0x39,  0x0000,  0x00000000,  0x00000000, NULL },
     SCENARIO_CALC(SCENARIO_MAIN,  2,  0),
     JUMP_SCRIPT(EVENT_DIVIDE),
@@ -1866,25 +1866,25 @@ static const struct ScriptCommand s_script_EVENT_M00E01A_L001[] = { /* 0x81251c0
 
 static const struct ScriptCommand s_script_EVENT_M01E01A_L001[] = { /* 0x8125230 */
     DEBUGINFO,
-    { 0x1e, 0x00,  0x0001,  0x000000b2,  0x00000000, NULL },
+    EXECUTE_SUBSTATION(178, 1, 0),
     { 0xaf, 0x01,  0x0000,  0x00000000,  0x00000000, NULL },
     RET,
 };
 
 static const struct ScriptCommand s_script_EVENT_M01E01A_L002[] = { /* 0x8125270 */
     DEBUGINFO,
-    { 0x1e, 0x00,  0x0002,  0x000000b2,  0x00000000, NULL },
+    EXECUTE_SUBSTATION(178, 2, 0),
     RET,
 };
 
 static const struct ScriptCommand s_script_EVENT_M01E01A_L003[] = { /* 0x81252a0 */
     DEBUGINFO,
     { 0x3b, 0x39,  0x0004,  0x00000000,  0x00000000, NULL },
-    { 0x1e, 0x00,  0x0001,  0x000000b3,  0x00000000, NULL },
-    { 0x1e, 0x00,  0x0003,  0x000000b2,  0x00000000, NULL },
-    { 0x1e, 0x00,  0x0011,  0x00000009,  0x00000000, NULL },
+    EXECUTE_SUBSTATION(179, 1, 0),
+    EXECUTE_SUBSTATION(178, 3, 0),
+    EXECUTE_SUBSTATION(9, 17, 0),
     { 0x3b, 0x39,  0x0001,  0x00000000,  0x00000000, NULL },
-    { 0x1e, 0x00,  0x0002,  0x000000e0,  0x00000000, NULL },
+    EXECUTE_SUBSTATION(224, 2, 0),
     { 0x3b, 0x39,  0x0000,  0x00000000,  0x00000000, NULL },
     { 0xb0, 0x01,  0x0000,  0x00000000,  0x00000000, NULL },
     SCENARIO_CALC(SCENARIO_MAIN,  3,  0),
@@ -1893,7 +1893,7 @@ static const struct ScriptCommand s_script_EVENT_M01E01A_L003[] = { /* 0x81252a0
 
 static const struct ScriptCommand s_script_EVENT_M01E02A_L001[] = { /* 0x8125350 */
     DEBUGINFO,
-    { 0x1e, 0x00,  0x000f,  0x0000000c,  0x00000000, NULL },
+    EXECUTE_SUBSTATION(12, 15, 0),
     SCENARIO_CALC(SCENARIO_MAIN,  3,  2),
     RET,
 };
@@ -1906,21 +1906,21 @@ static const struct ScriptCommand s_script_EVENT_M01E02A_L001B[] = { /* 0x812539
 
 static const struct ScriptCommand s_script_EVENT_M01E02A_L001C[] = { /* 0x81253c0 */
     DEBUGINFO,
-    { 0x1e, 0x00,  0x0011,  0x0000000c,  0x00000000, NULL },
+    EXECUTE_SUBSTATION(12, 17, 0),
     SCENARIO_CALC(SCENARIO_MAIN,  3,  4),
     RET,
 };
 
 static const struct ScriptCommand s_script_EVENT_M01E02A_L002[] = { /* 0x8125400 */
     DEBUGINFO,
-    { 0x1e, 0x00,  0x0012,  0x00000009,  0x00000000, NULL },
+    EXECUTE_SUBSTATION(9, 18, 0),
     SCENARIO_CALC(SCENARIO_MAIN,  3,  5),
     RET,
 };
 
 static const struct ScriptCommand s_script_EVENT_M01E02A_L003[] = { /* 0x8125440 */
     DEBUGINFO,
-    { 0x1e, 0x00,  0x0001,  0x000000b4,  0x00000000, NULL },
+    EXECUTE_SUBSTATION(180, 1, 0),
     { 0xaf, 0x01,  0x0001,  0x00000000,  0x00000000, NULL },
     SCENARIO_CALC(SCENARIO_MAIN,  3,  6),
     RET,
@@ -1928,21 +1928,21 @@ static const struct ScriptCommand s_script_EVENT_M01E02A_L003[] = { /* 0x8125440
 
 static const struct ScriptCommand s_script_EVENT_M01E02A_L004[] = { /* 0x8125490 */
     DEBUGINFO,
-    { 0x1e, 0x00,  0x0012,  0x0000000c,  0x00000000, NULL },
+    EXECUTE_SUBSTATION(12, 18, 0),
     RET,
 };
 
 static const struct ScriptCommand s_script_EVENT_M01E02A_L005[] = { /* 0x81254c0 */
     DEBUGINFO,
-    { 0x1e, 0x00,  0x0002,  0x000000b4,  0x00000000, NULL },
+    EXECUTE_SUBSTATION(180, 2, 0),
     RET,
 };
 
 static const struct ScriptCommand s_script_EVENT_M01E02A_L006[] = { /* 0x81254f0 */
     DEBUGINFO,
-    { 0x1e, 0x00,  0x0001,  0x000000b5,  0x00000000, NULL },
-    { 0x1e, 0x00,  0x0003,  0x000000b4,  0x00000000, NULL },
-    { 0x1e, 0x00,  0x0017,  0x00000009,  0x00000000, NULL },
+    EXECUTE_SUBSTATION(181, 1, 0),
+    EXECUTE_SUBSTATION(180, 3, 0),
+    EXECUTE_SUBSTATION(9, 23, 0),
     { 0xb0, 0x01,  0x0001,  0x00000000,  0x00000000, NULL },
     SCENARIO_CALC(SCENARIO_MAIN,  4,  0),
     UPDATE_VARINT(CALC_SET, GROUND_PLACE, 11),
@@ -1952,16 +1952,16 @@ static const struct ScriptCommand s_script_EVENT_M01E02A_L006[] = { /* 0x81254f0
 
 static const struct ScriptCommand s_script_EVENT_M01E02B_L001[] = { /* 0x8125580 */
     DEBUGINFO,
-    { 0x1e, 0x00,  0x0002,  0x0000000c,  0x00000000, NULL },
-    { 0x1e, 0x00,  0x0001,  0x000000a2,  0x00000000, NULL },
-    { 0x1e, 0x00,  0x0013,  0x0000000c,  0x00000000, NULL },
+    EXECUTE_SUBSTATION(12, 2, 0),
+    EXECUTE_SUBSTATION(162, 1, 0),
+    EXECUTE_SUBSTATION(12, 19, 0),
     SCENARIO_CALC(SCENARIO_MAIN,  4,  2),
     RET,
 };
 
 static const struct ScriptCommand s_script_EVENT_M01E02B_L002[] = { /* 0x81255e0 */
     DEBUGINFO,
-    { 0x1e, 0x00,  0x0006,  0x00000001,  0x00000000, NULL },
+    EXECUTE_SUBSTATION(1, 6, 0),
     SCENARIO_CALC(SCENARIO_MAIN,  4,  3),
     UPDATE_VARINT(CALC_SET, WARP_LOCK, 3),
     RET,
@@ -1969,7 +1969,7 @@ static const struct ScriptCommand s_script_EVENT_M01E02B_L002[] = { /* 0x81255e0
 
 static const struct ScriptCommand s_script_EVENT_M01E02B_L003[] = { /* 0x8125630 */
     DEBUGINFO,
-    { 0x1e, 0x00,  0x000c,  0x00000004,  0x00000000, NULL },
+    EXECUTE_SUBSTATION(4, 12, 0),
     SCENARIO_CALC(SCENARIO_MAIN,  4,  4),
     UPDATE_VARINT(CALC_SET, WARP_LOCK, 0),
     RET,
@@ -1977,9 +1977,9 @@ static const struct ScriptCommand s_script_EVENT_M01E02B_L003[] = { /* 0x8125630
 
 static const struct ScriptCommand s_script_EVENT_M01E02B_L004[] = { /* 0x8125680 */
     DEBUGINFO,
-    { 0x1e, 0x00,  0x0002,  0x0000000c,  0x00000000, NULL },
-    { 0x1e, 0x00,  0x0002,  0x000000a2,  0x00000000, NULL },
-    { 0x1e, 0x00,  0x0014,  0x0000000c,  0x00000000, NULL },
+    EXECUTE_SUBSTATION(12, 2, 0),
+    EXECUTE_SUBSTATION(162, 2, 0),
+    EXECUTE_SUBSTATION(12, 20, 0),
     { 0xaf, 0x01,  0x0002,  0x00000000,  0x00000000, NULL },
     SCENARIO_CALC(SCENARIO_MAIN,  4,  5),
     RET,
@@ -1987,35 +1987,35 @@ static const struct ScriptCommand s_script_EVENT_M01E02B_L004[] = { /* 0x8125680
 
 static const struct ScriptCommand s_script_EVENT_M01E02B_L004B[] = { /* 0x81256f0 */
     DEBUGINFO,
-    { 0x1e, 0x00,  0x001a,  0x00000009,  0x00000000, NULL },
+    EXECUTE_SUBSTATION(9, 26, 0),
     SCENARIO_CALC(SCENARIO_MAIN,  4,  6),
     RET,
 };
 
 static const struct ScriptCommand s_script_EVENT_M01E02B_L005[] = { /* 0x8125730 */
     DEBUGINFO,
-    { 0x1e, 0x00,  0x0001,  0x000000b6,  0x00000000, NULL },
+    EXECUTE_SUBSTATION(182, 1, 0),
     { 0x02, 0x00,  0x0000,  0x00000002,  0x00000000, NULL },
     RET,
 };
 
 static const struct ScriptCommand s_script_EVENT_M01E02B_L006[] = { /* 0x8125770 */
     DEBUGINFO,
-    { 0x1e, 0x00,  0x0015,  0x0000000c,  0x00000000, NULL },
+    EXECUTE_SUBSTATION(12, 21, 0),
     RET,
 };
 
 static const struct ScriptCommand s_script_EVENT_M01E02B_L007[] = { /* 0x81257a0 */
     DEBUGINFO,
-    { 0x1e, 0x00,  0x0002,  0x000000b6,  0x00000000, NULL },
+    EXECUTE_SUBSTATION(182, 2, 0),
     { 0x02, 0x00,  0x0000,  0x00000002,  0x00000000, NULL },
     RET,
 };
 
 static const struct ScriptCommand s_script_EVENT_M01E02B_L008[] = { /* 0x81257e0 */
     DEBUGINFO,
-    { 0x1e, 0x00,  0x0001,  0x000000b7,  0x00000000, NULL },
-    { 0x1e, 0x00,  0x001c,  0x00000009,  0x00000000, NULL },
+    EXECUTE_SUBSTATION(183, 1, 0),
+    EXECUTE_SUBSTATION(9, 28, 0),
     { 0xb0, 0x01,  0x0002,  0x00000000,  0x00000000, NULL },
     SCENARIO_CALC(SCENARIO_MAIN,  5,  0),
     UPDATE_VARINT(CALC_SET, GROUND_PLACE, 11),
@@ -2025,23 +2025,23 @@ static const struct ScriptCommand s_script_EVENT_M01E02B_L008[] = { /* 0x81257e0
 
 static const struct ScriptCommand s_script_EVENT_M01E03A_L000[] = { /* 0x8125860 */
     DEBUGINFO,
-    { 0x1e, 0x00,  0x0003,  0x0000000c,  0x00000000, NULL },
+    EXECUTE_SUBSTATION(12, 3, 0),
     SCENARIO_CALC(SCENARIO_MAIN,  5,  1),
     RET,
 };
 
 static const struct ScriptCommand s_script_EVENT_M01E03A_L001[] = { /* 0x81258a0 */
     DEBUGINFO,
-    { 0x1e, 0x00,  0x0002,  0x0000000c,  0x00000000, NULL },
-    { 0x1e, 0x00,  0x0003,  0x000000a2,  0x00000000, NULL },
-    { 0x1e, 0x00,  0x0016,  0x0000000c,  0x00000000, NULL },
+    EXECUTE_SUBSTATION(12, 2, 0),
+    EXECUTE_SUBSTATION(162, 3, 0),
+    EXECUTE_SUBSTATION(12, 22, 0),
     SCENARIO_CALC(SCENARIO_MAIN,  5,  2),
     RET,
 };
 
 static const struct ScriptCommand s_script_EVENT_M01E03A_L002[] = { /* 0x8125900 */
     DEBUGINFO,
-    { 0x1e, 0x00,  0x001d,  0x00000009,  0x00000000, NULL },
+    EXECUTE_SUBSTATION(9, 29, 0),
     SCENARIO_CALC(SCENARIO_MAIN,  5,  3),
     UPDATE_VARINT(CALC_SET, WARP_LOCK, 4),
     SET_DUNGEON_RES(/* result */ 0, /* enter */ -1),
@@ -2059,7 +2059,7 @@ static const struct ScriptCommand s_script_EVENT_M01E03A_L003[] = { /* 0x81259b0
     UPDATE_VARINT(CALC_SET, WARP_LOCK, 0),
     { 0x3b, 0x03,  0x0000,  0x00000000,  0x00000000, NULL },
     JUMPIF(JUDGE_GE, CLEAR_COUNT, 3, /* to label */ 0),
-    { 0x1e, 0x00,  0x0003,  0x0000000c,  0x00000000, NULL },
+    EXECUTE_SUBSTATION(12, 3, 0),
     SCENARIO_CALC(SCENARIO_MAIN,  5,  5),
     RET,
   LABEL(0), /* = 0x00 */
@@ -2068,7 +2068,7 @@ static const struct ScriptCommand s_script_EVENT_M01E03A_L003[] = { /* 0x81259b0
 
 static const struct ScriptCommand s_script_EVENT_M01E03A_L004[] = { /* 0x8125a50 */
     DEBUGINFO,
-    { 0x1e, 0x00,  0x0017,  0x0000000c,  0x00000000, NULL },
+    EXECUTE_SUBSTATION(12, 23, 0),
     SCENARIO_CALC(SCENARIO_MAIN,  5,  6),
     UPDATE_VARINT(CALC_SET, WARP_LOCK, 0),
     RET,
@@ -2076,7 +2076,7 @@ static const struct ScriptCommand s_script_EVENT_M01E03A_L004[] = { /* 0x8125a50
 
 static const struct ScriptCommand s_script_EVENT_M01E03A_L005[] = { /* 0x8125aa0 */
     DEBUGINFO,
-    { 0x1e, 0x00,  0x001e,  0x00000009,  0x00000000, NULL },
+    EXECUTE_SUBSTATION(9, 30, 0),
     SCENARIO_CALC(SCENARIO_MAIN,  5,  7),
     UPDATE_VARINT(CALC_SET, WARP_LOCK, 0),
     RET,
@@ -2084,14 +2084,14 @@ static const struct ScriptCommand s_script_EVENT_M01E03A_L005[] = { /* 0x8125aa0
 
 static const struct ScriptCommand s_script_EVENT_M01E03A_L006[] = { /* 0x8125af0 */
     DEBUGINFO,
-    { 0x1e, 0x00,  0x0018,  0x0000000c,  0x00000000, NULL },
+    EXECUTE_SUBSTATION(12, 24, 0),
     SCENARIO_CALC(SCENARIO_MAIN,  5,  8),
     RET,
 };
 
 static const struct ScriptCommand s_script_EVENT_M01E03A_L007[] = { /* 0x8125b30 */
     DEBUGINFO,
-    { 0x1e, 0x00,  0x001f,  0x00000009,  0x00000000, NULL },
+    EXECUTE_SUBSTATION(9, 31, 0),
     { 0xaf, 0x01,  0x0003,  0x00000000,  0x00000000, NULL },
     SCENARIO_CALC(SCENARIO_MAIN,  5,  9),
     RET,
@@ -2099,27 +2099,27 @@ static const struct ScriptCommand s_script_EVENT_M01E03A_L007[] = { /* 0x8125b30
 
 static const struct ScriptCommand s_script_EVENT_M01E03A_L008[] = { /* 0x8125b80 */
     DEBUGINFO,
-    { 0x1e, 0x00,  0x0001,  0x000000b8,  0x00000000, NULL },
+    EXECUTE_SUBSTATION(184, 1, 0),
     RET,
 };
 
 static const struct ScriptCommand s_script_EVENT_M01E03A_L009[] = { /* 0x8125bb0 */
     DEBUGINFO,
     CALL_SCRIPT(DISMISSAL_SALLY_MEMBER3_FUNC),
-    { 0x1e, 0x00,  0x0019,  0x0000000c,  0x00000000, NULL },
+    EXECUTE_SUBSTATION(12, 25, 0),
     RET,
 };
 
 static const struct ScriptCommand s_script_EVENT_M01E03A_L010[] = { /* 0x8125bf0 */
     DEBUGINFO,
-    { 0x1e, 0x00,  0x0002,  0x000000b8,  0x00000000, NULL },
+    EXECUTE_SUBSTATION(184, 2, 0),
     RET,
 };
 
 static const struct ScriptCommand s_script_EVENT_M01E03A_L011[] = { /* 0x8125c20 */
     DEBUGINFO,
-    { 0x1e, 0x00,  0x0001,  0x000000b9,  0x00000000, NULL },
-    { 0x1e, 0x00,  0x0022,  0x00000009,  0x00000000, NULL },
+    EXECUTE_SUBSTATION(185, 1, 0),
+    EXECUTE_SUBSTATION(9, 34, 0),
     { 0xb0, 0x01,  0x0003,  0x00000000,  0x00000000, NULL },
     SCENARIO_CALC(SCENARIO_MAIN,  6,  0),
     CALL_SCRIPT(DISMISSAL_SALLY_MEMBER_FUNC),
@@ -2130,24 +2130,24 @@ static const struct ScriptCommand s_script_EVENT_M01E03A_L011[] = { /* 0x8125c20
 
 static const struct ScriptCommand s_script_EVENT_M01E04A_L000[] = { /* 0x8125cb0 */
     DEBUGINFO,
-    { 0x1e, 0x00,  0x0003,  0x0000000c,  0x00000000, NULL },
+    EXECUTE_SUBSTATION(12, 3, 0),
     SCENARIO_CALC(SCENARIO_MAIN,  6,  1),
     RET,
 };
 
 static const struct ScriptCommand s_script_EVENT_M01E04A_L001[] = { /* 0x8125cf0 */
     DEBUGINFO,
-    { 0x1e, 0x00,  0x001a,  0x0000000c,  0x00000000, NULL },
+    EXECUTE_SUBSTATION(12, 26, 0),
     SCENARIO_CALC(SCENARIO_MAIN,  6,  2),
     RET,
 };
 
 static const struct ScriptCommand s_script_EVENT_M01E04A_L002[] = { /* 0x8125d30 */
     DEBUGINFO,
-    { 0x1e, 0x00,  0x0023,  0x00000009,  0x00000000, NULL },
+    EXECUTE_SUBSTATION(9, 35, 0),
     { 0x3b, 0x3b,  0x0000,  0x00000000,  0x00000000, NULL },
-    { 0x1e, 0x00,  0x000c,  0x00000001,  0x00000000, NULL },
-    { 0x1e, 0x00,  0x0024,  0x00000009,  0x00000000, NULL },
+    EXECUTE_SUBSTATION(1, 12, 0),
+    EXECUTE_SUBSTATION(9, 36, 0),
     { 0xaf, 0x01,  0x0004,  0x00000000,  0x00000000, NULL },
     SCENARIO_CALC(SCENARIO_MAIN,  6,  3),
     RET,
@@ -2155,14 +2155,14 @@ static const struct ScriptCommand s_script_EVENT_M01E04A_L002[] = { /* 0x8125d30
 
 static const struct ScriptCommand s_script_EVENT_M01E04A_L003[] = { /* 0x8125db0 */
     DEBUGINFO,
-    { 0x1e, 0x00,  0x0001,  0x000000ba,  0x00000000, NULL },
+    EXECUTE_SUBSTATION(186, 1, 0),
     RET,
 };
 
 static const struct ScriptCommand s_script_EVENT_M01E04A_L004[] = { /* 0x8125de0 */
     DEBUGINFO,
     CALL_SCRIPT(DISMISSAL_SALLY_MEMBER3_FUNC),
-    { 0x1e, 0x00,  0x001b,  0x0000000c,  0x00000000, NULL },
+    EXECUTE_SUBSTATION(12, 27, 0),
     RET,
 };
 
@@ -2174,8 +2174,8 @@ static const struct ScriptCommand s_script_EVENT_M01E04A_L005[] = { /* 0x8125e20
 
 static const struct ScriptCommand s_script_EVENT_M01E04A_L006[] = { /* 0x8125e50 */
     DEBUGINFO,
-    { 0x1e, 0x00,  0x0001,  0x000000bb,  0x00000000, NULL },
-    { 0x1e, 0x00,  0x0027,  0x00000009,  0x00000000, NULL },
+    EXECUTE_SUBSTATION(187, 1, 0),
+    EXECUTE_SUBSTATION(9, 39, 0),
     { 0xb0, 0x01,  0x0004,  0x00000000,  0x00000000, NULL },
     SCENARIO_CALC(SCENARIO_MAIN,  7,  0),
     CALL_SCRIPT(DISMISSAL_SALLY_MEMBER_FUNC),
@@ -2186,21 +2186,21 @@ static const struct ScriptCommand s_script_EVENT_M01E04A_L006[] = { /* 0x8125e50
 
 static const struct ScriptCommand s_script_EVENT_M01E04B_L000[] = { /* 0x8125ee0 */
     DEBUGINFO,
-    { 0x1e, 0x00,  0x0003,  0x0000000c,  0x00000000, NULL },
+    EXECUTE_SUBSTATION(12, 3, 0),
     SCENARIO_CALC(SCENARIO_MAIN,  7,  1),
     RET,
 };
 
 static const struct ScriptCommand s_script_EVENT_M01E04B_L001[] = { /* 0x8125f20 */
     DEBUGINFO,
-    { 0x1e, 0x00,  0x001c,  0x0000000c,  0x00000000, NULL },
+    EXECUTE_SUBSTATION(12, 28, 0),
     SCENARIO_CALC(SCENARIO_MAIN,  7,  2),
     RET,
 };
 
 static const struct ScriptCommand s_script_EVENT_M01E04B_L002[] = { /* 0x8125f60 */
     DEBUGINFO,
-    { 0x1e, 0x00,  0x0028,  0x00000009,  0x00000000, NULL },
+    EXECUTE_SUBSTATION(9, 40, 0),
     { 0xaf, 0x01,  0x0005,  0x00000000,  0x00000000, NULL },
     SCENARIO_CALC(SCENARIO_MAIN,  7,  3),
     RET,
@@ -2208,32 +2208,32 @@ static const struct ScriptCommand s_script_EVENT_M01E04B_L002[] = { /* 0x8125f60
 
 static const struct ScriptCommand s_script_EVENT_M01E04B_L003[] = { /* 0x8125fb0 */
     DEBUGINFO,
-    { 0x1e, 0x00,  0x0001,  0x000000bc,  0x00000000, NULL },
+    EXECUTE_SUBSTATION(188, 1, 0),
     RET,
 };
 
 static const struct ScriptCommand s_script_EVENT_M01E04B_L004[] = { /* 0x8125fe0 */
     DEBUGINFO,
     CALL_SCRIPT(DISMISSAL_SALLY_MEMBER3_FUNC),
-    { 0x1e, 0x00,  0x001d,  0x0000000c,  0x00000000, NULL },
+    EXECUTE_SUBSTATION(12, 29, 0),
     RET,
 };
 
 static const struct ScriptCommand s_script_EVENT_M01E04B_L005[] = { /* 0x8126020 */
     DEBUGINFO,
-    { 0x1e, 0x00,  0x0002,  0x000000bc,  0x00000000, NULL },
+    EXECUTE_SUBSTATION(188, 2, 0),
     RET,
 };
 
 static const struct ScriptCommand s_script_EVENT_M01E04B_L006[] = { /* 0x8126050 */
     DEBUGINFO,
-    { 0x1e, 0x00,  0x0001,  0x000000bd,  0x00000000, NULL },
+    EXECUTE_SUBSTATION(189, 1, 0),
     RET,
 };
 
 static const struct ScriptCommand s_script_EVENT_M01E04B_L007[] = { /* 0x8126080 */
     DEBUGINFO,
-    { 0x1e, 0x00,  0x0001,  0x000000be,  0x00000000, NULL },
+    EXECUTE_SUBSTATION(190, 1, 0),
     { 0xb0, 0x01,  0x0005,  0x00000000,  0x00000000, NULL },
     SCENARIO_CALC(SCENARIO_MAIN,  8,  0),
     CALL_SCRIPT(DISMISSAL_SALLY_MEMBER_FUNC),
@@ -2244,21 +2244,21 @@ static const struct ScriptCommand s_script_EVENT_M01E04B_L007[] = { /* 0x8126080
 
 static const struct ScriptCommand s_script_EVENT_M01E05A_L000[] = { /* 0x8126100 */
     DEBUGINFO,
-    { 0x1e, 0x00,  0x0003,  0x0000000c,  0x00000000, NULL },
+    EXECUTE_SUBSTATION(12, 3, 0),
     SCENARIO_CALC(SCENARIO_MAIN,  8,  1),
     RET,
 };
 
 static const struct ScriptCommand s_script_EVENT_M01E05A_L001[] = { /* 0x8126140 */
     DEBUGINFO,
-    { 0x1e, 0x00,  0x001e,  0x0000000c,  0x00000000, NULL },
+    EXECUTE_SUBSTATION(12, 30, 0),
     SCENARIO_CALC(SCENARIO_MAIN,  8,  2),
     RET,
 };
 
 static const struct ScriptCommand s_script_EVENT_M01E05A_L002[] = { /* 0x8126180 */
     DEBUGINFO,
-    { 0x1e, 0x00,  0x002b,  0x00000009,  0x00000000, NULL },
+    EXECUTE_SUBSTATION(9, 43, 0),
     { 0xaf, 0x01,  0x0006,  0x00000000,  0x00000000, NULL },
     SCENARIO_CALC(SCENARIO_MAIN,  8,  3),
     RET,
@@ -2266,26 +2266,26 @@ static const struct ScriptCommand s_script_EVENT_M01E05A_L002[] = { /* 0x8126180
 
 static const struct ScriptCommand s_script_EVENT_M01E05A_L003[] = { /* 0x81261d0 */
     DEBUGINFO,
-    { 0x1e, 0x00,  0x0001,  0x000000bf,  0x00000000, NULL },
+    EXECUTE_SUBSTATION(191, 1, 0),
     RET,
 };
 
 static const struct ScriptCommand s_script_EVENT_M01E05A_L004[] = { /* 0x8126200 */
     DEBUGINFO,
     CALL_SCRIPT(DISMISSAL_SALLY_MEMBER3_FUNC),
-    { 0x1e, 0x00,  0x001f,  0x0000000c,  0x00000000, NULL },
+    EXECUTE_SUBSTATION(12, 31, 0),
     RET,
 };
 
 static const struct ScriptCommand s_script_EVENT_M01E05A_L005[] = { /* 0x8126240 */
     DEBUGINFO,
-    { 0x1e, 0x00,  0x0002,  0x000000bf,  0x00000000, NULL },
+    EXECUTE_SUBSTATION(191, 2, 0),
     RET,
 };
 
 static const struct ScriptCommand s_script_EVENT_M01E05A_L006[] = { /* 0x8126270 */
     DEBUGINFO,
-    { 0x1e, 0x00,  0x0002,  0x000000c0,  0x00000000, NULL },
+    EXECUTE_SUBSTATION(192, 2, 0),
     { 0xb0, 0x01,  0x0006,  0x00000000,  0x00000000, NULL },
     SCENARIO_CALC(SCENARIO_MAIN,  9,  0),
     CALL_SCRIPT(DISMISSAL_SALLY_MEMBER_FUNC),
@@ -2296,21 +2296,21 @@ static const struct ScriptCommand s_script_EVENT_M01E05A_L006[] = { /* 0x8126270
 
 static const struct ScriptCommand s_script_EVENT_M01E05B_L000[] = { /* 0x81262f0 */
     DEBUGINFO,
-    { 0x1e, 0x00,  0x0003,  0x0000000c,  0x00000000, NULL },
+    EXECUTE_SUBSTATION(12, 3, 0),
     SCENARIO_CALC(SCENARIO_MAIN,  9,  1),
     RET,
 };
 
 static const struct ScriptCommand s_script_EVENT_M01E05B_L001[] = { /* 0x8126330 */
     DEBUGINFO,
-    { 0x1e, 0x00,  0x0020,  0x0000000c,  0x00000000, NULL },
+    EXECUTE_SUBSTATION(12, 32, 0),
     SCENARIO_CALC(SCENARIO_MAIN,  9,  2),
     RET,
 };
 
 static const struct ScriptCommand s_script_EVENT_M01E05B_L002[] = { /* 0x8126370 */
     DEBUGINFO,
-    { 0x1e, 0x00,  0x002d,  0x00000009,  0x00000000, NULL },
+    EXECUTE_SUBSTATION(9, 45, 0),
     SCENARIO_CALC(SCENARIO_MAIN,  9,  3),
     RET,
 };
@@ -2323,49 +2323,49 @@ static const struct ScriptCommand s_script_EVENT_M01E05B_L003[] = { /* 0x81263b0
 
 static const struct ScriptCommand s_script_EVENT_M01E05B_L004[] = { /* 0x81263e0 */
     DEBUGINFO,
-    { 0x1e, 0x00,  0x0011,  0x00000002,  0x00000000, NULL },
+    EXECUTE_SUBSTATION(2, 17, 0),
     SCENARIO_CALC(SCENARIO_MAIN,  9,  5),
     RET,
 };
 
 static const struct ScriptCommand s_script_EVENT_M01E05B_L005[] = { /* 0x8126420 */
     DEBUGINFO,
-    { 0x1e, 0x00,  0x002e,  0x00000009,  0x00000000, NULL },
+    EXECUTE_SUBSTATION(9, 46, 0),
     SCENARIO_CALC(SCENARIO_MAIN, 10,  0),
     JUMP_SCRIPT(EVENT_DIVIDE),
 };
 
 static const struct ScriptCommand s_script_EVENT_M01E06A_L001[] = { /* 0x8126460 */
     DEBUGINFO,
-    { 0x1e, 0x00,  0x0002,  0x0000000c,  0x00000000, NULL },
-    { 0x1e, 0x00,  0x0004,  0x000000a2,  0x00000000, NULL },
-    { 0x1e, 0x00,  0x0021,  0x0000000c,  0x00000000, NULL },
+    EXECUTE_SUBSTATION(12, 2, 0),
+    EXECUTE_SUBSTATION(162, 4, 0),
+    EXECUTE_SUBSTATION(12, 33, 0),
     { 0x3b, 0x3b,  0x0000,  0x00000000,  0x00000000, NULL },
-    { 0x1e, 0x00,  0x0012,  0x00000002,  0x00000000, NULL },
-    { 0x1e, 0x00,  0x0022,  0x0000000c,  0x00000000, NULL },
+    EXECUTE_SUBSTATION(2, 18, 0),
+    EXECUTE_SUBSTATION(12, 34, 0),
     SCENARIO_CALC(SCENARIO_MAIN, 10,  2),
     RET,
 };
 
 static const struct ScriptCommand s_script_EVENT_M01E06A_L002[] = { /* 0x81264f0 */
     DEBUGINFO,
-    { 0x1e, 0x00,  0x002f,  0x00000009,  0x00000000, NULL },
+    EXECUTE_SUBSTATION(9, 47, 0),
     SCENARIO_CALC(SCENARIO_MAIN, 10,  3),
     RET,
 };
 
 static const struct ScriptCommand s_script_EVENT_M01E06A_L003[] = { /* 0x8126530 */
     DEBUGINFO,
-    { 0x1e, 0x00,  0x0014,  0x00000001,  0x00000000, NULL },
-    { 0x1e, 0x00,  0x0015,  0x00000001,  0x00000000, NULL },
-    { 0x1e, 0x00,  0x0030,  0x00000009,  0x00000000, NULL },
+    EXECUTE_SUBSTATION(1, 20, 0),
+    EXECUTE_SUBSTATION(1, 21, 0),
+    EXECUTE_SUBSTATION(9, 48, 0),
     SCENARIO_CALC(SCENARIO_MAIN, 11,  0),
     JUMP_SCRIPT(EVENT_DIVIDE),
 };
 
 static const struct ScriptCommand s_script_EVENT_M01E07A_L001[] = { /* 0x8126590 */
     DEBUGINFO,
-    { 0x1e, 0x00,  0x0031,  0x00000009,  0x00000000, NULL },
+    EXECUTE_SUBSTATION(9, 49, 0),
     SCENARIO_CALC(SCENARIO_MAIN, 11,  2),
     UPDATE_VARINT(CALC_SET, WARP_LOCK, 5),
     RET,
@@ -2374,12 +2374,12 @@ static const struct ScriptCommand s_script_EVENT_M01E07A_L001[] = { /* 0x8126590
 static const struct ScriptCommand s_script_EVENT_M01E07A_L002[] = { /* 0x81265e0 */
     DEBUGINFO,
     SCENARIO_CALC(SCENARIO_MAIN, 11,  4),
-    { 0x1e, 0x00,  0x0033,  0x00000009,  0x00000000, NULL },
-    { 0x1e, 0x00,  0x0034,  0x00000009,  0x00000000, NULL },
-    { 0x1e, 0x00,  0x0035,  0x00000009,  0x00000000, NULL },
+    EXECUTE_SUBSTATION(9, 51, 0),
+    EXECUTE_SUBSTATION(9, 52, 0),
+    EXECUTE_SUBSTATION(9, 53, 0),
     { 0x3b, 0x39,  0x0001,  0x00000000,  0x00000000, NULL },
-    { 0x1e, 0x00,  0x0001,  0x000000a4,  0x00000000, NULL },
-    { 0x1e, 0x00,  0x0001,  0x000000a5,  0x00000000, NULL },
+    EXECUTE_SUBSTATION(164, 1, 0),
+    EXECUTE_SUBSTATION(165, 1, 0),
     { 0x3b, 0x39,  0x0000,  0x00000000,  0x00000000, NULL },
     UPDATE_VARINT(CALC_SET, WARP_LOCK, 0),
     { 0x3b, 0x09,  0x0000,  0x00000000,  0x00000000, NULL },
@@ -2388,25 +2388,25 @@ static const struct ScriptCommand s_script_EVENT_M01E07A_L002[] = { /* 0x81265e0
 
 static const struct ScriptCommand s_script_EVENT_M01E07A_L003[] = { /* 0x81266a0 */
     DEBUGINFO,
-    { 0x1e, 0x00,  0x0001,  0x000000c1,  0x00000000, NULL },
+    EXECUTE_SUBSTATION(193, 1, 0),
     { 0xaf, 0x01,  0x0007,  0x00000000,  0x00000000, NULL },
     RET,
 };
 
 static const struct ScriptCommand s_script_EVENT_M01E07A_L004[] = { /* 0x81266e0 */
     DEBUGINFO,
-    { 0x1e, 0x00,  0x0002,  0x000000c1,  0x00000000, NULL },
+    EXECUTE_SUBSTATION(193, 2, 0),
     RET,
 };
 
 static const struct ScriptCommand s_script_EVENT_M01E07A_L005[] = { /* 0x8126710 */
     DEBUGINFO,
-    { 0x1e, 0x00,  0x0001,  0x000000c2,  0x00000000, NULL },
-    { 0x1e, 0x00,  0x0001,  0x000000a6,  0x00000000, NULL },
+    EXECUTE_SUBSTATION(194, 1, 0),
+    EXECUTE_SUBSTATION(166, 1, 0),
     { 0x3b, 0x39,  0x0001,  0x00000000,  0x00000000, NULL },
-    { 0x1e, 0x00,  0x0001,  0x000000a7,  0x00000000, NULL },
+    EXECUTE_SUBSTATION(167, 1, 0),
     { 0x3b, 0x39,  0x0000,  0x00000000,  0x00000000, NULL },
-    { 0x1e, 0x00,  0x0002,  0x000000a6,  0x00000000, NULL },
+    EXECUTE_SUBSTATION(166, 2, 0),
     { 0xb0, 0x01,  0x0007,  0x00000000,  0x00000000, NULL },
     SCENARIO_CALC(SCENARIO_MAIN, 12,  0),
     UPDATE_VARINT(CALC_SET, GROUND_PLACE, 24),
@@ -2416,19 +2416,19 @@ static const struct ScriptCommand s_script_EVENT_M01E07A_L005[] = { /* 0x8126710
 
 static const struct ScriptCommand s_script_EVENT_M01E07A_T001[] = { /* 0x81267d0 */
     DEBUGINFO,
-    { 0x1e, 0x00,  0x0005,  0x000000c1,  0x00000000, NULL },
+    EXECUTE_SUBSTATION(193, 5, 0),
     RET,
 };
 
 static const struct ScriptCommand s_script_EVENT_M01E07A_T002[] = { /* 0x8126800 */
     DEBUGINFO,
-    { 0x1e, 0x00,  0x0004,  0x000000c1,  0x00000000, NULL },
+    EXECUTE_SUBSTATION(193, 4, 0),
     RET,
 };
 
 static const struct ScriptCommand s_script_EVENT_M01E07B_L001[] = { /* 0x8126830 */
     DEBUGINFO,
-    { 0x1e, 0x00,  0x0001,  0x000000c3,  0x00000000, NULL },
+    EXECUTE_SUBSTATION(195, 1, 0),
     SCENARIO_CALC(SCENARIO_MAIN, 12,  2),
     JUMP_SCRIPT(EVENT_M01E07B_L002),
 };
@@ -2441,21 +2441,21 @@ static const struct ScriptCommand s_script_EVENT_M01E07B_L002[] = { /* 0x8126870
 
 static const struct ScriptCommand s_script_EVENT_M01E07B_L003[] = { /* 0x81268a0 */
     DEBUGINFO,
-    { 0x1e, 0x00,  0x0003,  0x000000c3,  0x00000000, NULL },
+    EXECUTE_SUBSTATION(195, 3, 0),
     RET,
 };
 
 static const struct ScriptCommand s_script_EVENT_M01E07B_L004[] = { /* 0x81268d0 */
     DEBUGINFO,
-    { 0x1e, 0x00,  0x0001,  0x000000c4,  0x00000000, NULL },
+    EXECUTE_SUBSTATION(196, 1, 0),
     RET,
 };
 
 static const struct ScriptCommand s_script_EVENT_M01E07B_L005[] = { /* 0x8126900 */
     DEBUGINFO,
-    { 0x1e, 0x00,  0x0001,  0x000000c5,  0x00000000, NULL },
+    EXECUTE_SUBSTATION(197, 1, 0),
     { 0x3b, 0x39,  0x0001,  0x00000000,  0x00000000, NULL },
-    { 0x1e, 0x00,  0x0002,  0x000000a7,  0x00000000, NULL },
+    EXECUTE_SUBSTATION(167, 2, 0),
     { 0x3b, 0x39,  0x0000,  0x00000000,  0x00000000, NULL },
     { 0xb0, 0x01,  0x0008,  0x00000000,  0x00000000, NULL },
     SCENARIO_CALC(SCENARIO_MAIN, 13,  0),
@@ -2466,22 +2466,22 @@ static const struct ScriptCommand s_script_EVENT_M01E07B_L005[] = { /* 0x8126900
 
 static const struct ScriptCommand s_script_EVENT_M01E07B_T001[] = { /* 0x81269a0 */
     DEBUGINFO,
-    { 0x1e, 0x00,  0x0005,  0x000000c3,  0x00000000, NULL },
+    EXECUTE_SUBSTATION(195, 5, 0),
     RET,
 };
 
 static const struct ScriptCommand s_script_EVENT_M01E07B_T002[] = { /* 0x81269d0 */
     DEBUGINFO,
-    { 0x1e, 0x00,  0x0004,  0x000000c3,  0x00000000, NULL },
+    EXECUTE_SUBSTATION(195, 4, 0),
     RET,
 };
 
 static const struct ScriptCommand s_script_EVENT_M01E08A_L001[] = { /* 0x8126a00 */
     DEBUGINFO,
     { 0x3b, 0x39,  0x0001,  0x00000000,  0x00000000, NULL },
-    { 0x1e, 0x00,  0x0001,  0x000000a8,  0x00000000, NULL },
-    { 0x1e, 0x00,  0x0002,  0x000000a8,  0x00000000, NULL },
-    { 0x1e, 0x00,  0x0001,  0x000000a9,  0x00000000, NULL },
+    EXECUTE_SUBSTATION(168, 1, 0),
+    EXECUTE_SUBSTATION(168, 2, 0),
+    EXECUTE_SUBSTATION(169, 1, 0),
     { 0x3b, 0x39,  0x0000,  0x00000000,  0x00000000, NULL },
     SCENARIO_CALC(SCENARIO_MAIN, 13,  2),
     JUMP_SCRIPT(EVENT_M01E08A_L002),
@@ -2489,31 +2489,31 @@ static const struct ScriptCommand s_script_EVENT_M01E08A_L001[] = { /* 0x8126a00
 
 static const struct ScriptCommand s_script_EVENT_M01E08A_L002[] = { /* 0x8126a80 */
     DEBUGINFO,
-    { 0x1e, 0x00,  0x0001,  0x000000c6,  0x00000000, NULL },
+    EXECUTE_SUBSTATION(198, 1, 0),
     { 0xaf, 0x01,  0x0009,  0x00000000,  0x00000000, NULL },
     RET,
 };
 
 static const struct ScriptCommand s_script_EVENT_M01E08A_L003[] = { /* 0x8126ac0 */
     DEBUGINFO,
-    { 0x1e, 0x00,  0x0003,  0x000000c6,  0x00000000, NULL },
+    EXECUTE_SUBSTATION(198, 3, 0),
     RET,
 };
 
 static const struct ScriptCommand s_script_EVENT_M01E08A_L004[] = { /* 0x8126af0 */
     DEBUGINFO,
     JUMPIF_UNK_BC(8, /* to label */ 0),
-    { 0x1e, 0x00,  0x0001,  0x000000c7,  0x00000000, NULL },
+    EXECUTE_SUBSTATION(199, 1, 0),
     JUMP_LABEL(1),
   LABEL(0), /* = 0x00 */
-    { 0x1e, 0x00,  0x0002,  0x000000c7,  0x00000000, NULL },
+    EXECUTE_SUBSTATION(199, 2, 0),
   LABEL(1), /* = 0x01 */
     RET,
 };
 
 static const struct ScriptCommand s_script_EVENT_M01E08A_L005[] = { /* 0x8126b70 */
     DEBUGINFO,
-    { 0x1e, 0x00,  0x0001,  0x000000c8,  0x00000000, NULL },
+    EXECUTE_SUBSTATION(200, 1, 0),
     { 0xb0, 0x01,  0x0009,  0x00000000,  0x00000000, NULL },
     SCENARIO_CALC(SCENARIO_MAIN, 14,  0),
     UPDATE_VARINT(CALC_SET, GROUND_PLACE, 28),
@@ -2523,22 +2523,22 @@ static const struct ScriptCommand s_script_EVENT_M01E08A_L005[] = { /* 0x8126b70
 
 static const struct ScriptCommand s_script_EVENT_M01E08A_T001[] = { /* 0x8126be0 */
     DEBUGINFO,
-    { 0x1e, 0x00,  0x0006,  0x000000c6,  0x00000000, NULL },
+    EXECUTE_SUBSTATION(198, 6, 0),
     RET,
 };
 
 static const struct ScriptCommand s_script_EVENT_M01E08A_T002[] = { /* 0x8126c10 */
     DEBUGINFO,
-    { 0x1e, 0x00,  0x0005,  0x000000c6,  0x00000000, NULL },
+    EXECUTE_SUBSTATION(198, 5, 0),
     RET,
 };
 
 static const struct ScriptCommand s_script_EVENT_M01E08B_L001[] = { /* 0x8126c40 */
     DEBUGINFO,
     { 0x3b, 0x39,  0x0001,  0x00000000,  0x00000000, NULL },
-    { 0x1e, 0x00,  0x0001,  0x000000aa,  0x00000000, NULL },
-    { 0x1e, 0x00,  0x0005,  0x000000a2,  0x00000000, NULL },
-    { 0x1e, 0x00,  0x0002,  0x000000aa,  0x00000000, NULL },
+    EXECUTE_SUBSTATION(170, 1, 0),
+    EXECUTE_SUBSTATION(162, 5, 0),
+    EXECUTE_SUBSTATION(170, 2, 0),
     { 0x3b, 0x39,  0x0000,  0x00000000,  0x00000000, NULL },
     SCENARIO_CALC(SCENARIO_MAIN, 14,  2),
     JUMP_SCRIPT(EVENT_M01E08B_L002),
@@ -2546,33 +2546,33 @@ static const struct ScriptCommand s_script_EVENT_M01E08B_L001[] = { /* 0x8126c40
 
 static const struct ScriptCommand s_script_EVENT_M01E08B_L002[] = { /* 0x8126cc0 */
     DEBUGINFO,
-    { 0x1e, 0x00,  0x0001,  0x000000c9,  0x00000000, NULL },
+    EXECUTE_SUBSTATION(201, 1, 0),
     { 0xaf, 0x01,  0x000a,  0x00000000,  0x00000000, NULL },
     RET,
 };
 
 static const struct ScriptCommand s_script_EVENT_M01E08B_L003[] = { /* 0x8126d00 */
     DEBUGINFO,
-    { 0x1e, 0x00,  0x0003,  0x000000c9,  0x00000000, NULL },
+    EXECUTE_SUBSTATION(201, 3, 0),
     RET,
 };
 
 static const struct ScriptCommand s_script_EVENT_M01E08B_L004[] = { /* 0x8126d30 */
     DEBUGINFO,
-    { 0x1e, 0x00,  0x0002,  0x000000cb,  0x00000000, NULL },
+    EXECUTE_SUBSTATION(203, 2, 0),
     RET,
 };
 
 static const struct ScriptCommand s_script_EVENT_M01E08B_L005[] = { /* 0x8126d60 */
     DEBUGINFO,
-    { 0x1e, 0x00,  0x0001,  0x000000ca,  0x00000000, NULL },
+    EXECUTE_SUBSTATION(202, 1, 0),
     RET,
 };
 
 static const struct ScriptCommand s_script_EVENT_M01E08B_L006[] = { /* 0x8126d90 */
     DEBUGINFO,
-    { 0x1e, 0x00,  0x0002,  0x000000cb,  0x00000000, NULL },
-    { 0x1e, 0x00,  0x0003,  0x000000cb,  0x00000000, NULL },
+    EXECUTE_SUBSTATION(203, 2, 0),
+    EXECUTE_SUBSTATION(203, 3, 0),
     { 0xb0, 0x01,  0x000a,  0x00000000,  0x00000000, NULL },
     SCENARIO_CALC(SCENARIO_MAIN, 15,  0),
     UPDATE_VARINT(CALC_SET, GROUND_PLACE, 2),
@@ -2582,77 +2582,77 @@ static const struct ScriptCommand s_script_EVENT_M01E08B_L006[] = { /* 0x8126d90
 
 static const struct ScriptCommand s_script_EVENT_M01E08B_T001[] = { /* 0x8126e10 */
     DEBUGINFO,
-    { 0x1e, 0x00,  0x0005,  0x000000c9,  0x00000000, NULL },
+    EXECUTE_SUBSTATION(201, 5, 0),
     RET,
 };
 
 static const struct ScriptCommand s_script_EVENT_M01E08B_T002[] = { /* 0x8126e40 */
     DEBUGINFO,
-    { 0x1e, 0x00,  0x0004,  0x000000c9,  0x00000000, NULL },
+    EXECUTE_SUBSTATION(201, 4, 0),
     RET,
 };
 
 static const struct ScriptCommand s_script_EVENT_M01E09A_L001[] = { /* 0x8126e70 */
     DEBUGINFO,
-    { 0x1e, 0x00,  0x0017,  0x00000001,  0x00000000, NULL },
+    EXECUTE_SUBSTATION(1, 23, 0),
     CALL_SCRIPT(DISMISSAL_SALLY_MEMBER_FUNC),
-    { 0x1e, 0x00,  0x0023,  0x0000000c,  0x00000000, NULL },
+    EXECUTE_SUBSTATION(12, 35, 0),
     SCENARIO_CALC(SCENARIO_MAIN, 15,  2),
     RET,
 };
 
 static const struct ScriptCommand s_script_EVENT_M01E09A_L002[] = { /* 0x8126ed0 */
     DEBUGINFO,
-    { 0x1e, 0x00,  0x0037,  0x00000009,  0x00000000, NULL },
+    EXECUTE_SUBSTATION(9, 55, 0),
     SCENARIO_CALC(SCENARIO_MAIN, 15,  3),
     RET,
 };
 
 static const struct ScriptCommand s_script_EVENT_M01E09A_L003[] = { /* 0x8126f10 */
     DEBUGINFO,
-    { 0x1e, 0x00,  0x0002,  0x0000000c,  0x00000000, NULL },
-    { 0x1e, 0x00,  0x0006,  0x000000a2,  0x00000000, NULL },
-    { 0x1e, 0x00,  0x0024,  0x0000000c,  0x00000000, NULL },
-    { 0x1e, 0x00,  0x0007,  0x000000a2,  0x00000000, NULL },
-    { 0x1e, 0x00,  0x0025,  0x0000000c,  0x00000000, NULL },
+    EXECUTE_SUBSTATION(12, 2, 0),
+    EXECUTE_SUBSTATION(162, 6, 0),
+    EXECUTE_SUBSTATION(12, 36, 0),
+    EXECUTE_SUBSTATION(162, 7, 0),
+    EXECUTE_SUBSTATION(12, 37, 0),
     SCENARIO_CALC(SCENARIO_MAIN, 15,  4),
     RET,
 };
 
 static const struct ScriptCommand s_script_EVENT_M01E09A_L004[] = { /* 0x8126f90 */
     DEBUGINFO,
-    { 0x1e, 0x00,  0x0039,  0x00000009,  0x00000000, NULL },
+    EXECUTE_SUBSTATION(9, 57, 0),
     SCENARIO_CALC(SCENARIO_MAIN, 15,  5),
     RET,
 };
 
 static const struct ScriptCommand s_script_EVENT_M01E09A_L005[] = { /* 0x8126fd0 */
     DEBUGINFO,
-    { 0x1e, 0x00,  0x0026,  0x0000000c,  0x00000000, NULL },
+    EXECUTE_SUBSTATION(12, 38, 0),
     SCENARIO_CALC(SCENARIO_MAIN, 15,  6),
     RET,
 };
 
 static const struct ScriptCommand s_script_EVENT_M01E09A_L006[] = { /* 0x8127010 */
     DEBUGINFO,
-    { 0x1e, 0x00,  0x003a,  0x00000009,  0x00000000, NULL },
-    { 0x1e, 0x00,  0x001a,  0x00000001,  0x00000000, NULL },
+    EXECUTE_SUBSTATION(9, 58, 0),
+    EXECUTE_SUBSTATION(1, 26, 0),
     SCENARIO_CALC(SCENARIO_MAIN, 15,  7),
-    { 0x1e, 0x00,  0x003b,  0x00000009,  0x00000000, NULL },
+    EXECUTE_SUBSTATION(9, 59, 0),
     RET,
 };
 
 static const struct ScriptCommand s_script_EVENT_M01E09A_L007[] = { /* 0x8127070 */
     DEBUGINFO,
-    { 0x1e, 0x00,  0x0027,  0x0000000c,  0x00000000, NULL },
+    EXECUTE_SUBSTATION(12, 39, 0),
     SCENARIO_CALC(SCENARIO_MAIN, 15,  8),
     JUMP_SCRIPT(EVENT_M01E09A_L008),
 };
 
 static const struct ScriptCommand s_script_EVENT_M01E09A_L008[] = { /* 0x81270b0 */
     DEBUGINFO,
-    { 0x1e, 0x00,  0x001c,  0x00000001,  0x00000000, NULL },
-    { 0x1e, 0x00,  0x003c,  0x00000009,  0x00000000, NULL },
+    EXECUTE_SUBSTATION(1, 28, 0),
+    EXECUTE_SUBSTATION(9, 60, 0),
     SCENARIO_CALC(SCENARIO_MAIN, 15,  9),
     UPDATE_VARINT(CALC_SET, WARP_LOCK, 6),
     RET,
@@ -2660,10 +2660,10 @@ static const struct ScriptCommand s_script_EVENT_M01E09A_L008[] = { /* 0x81270b0
 
 static const struct ScriptCommand s_script_EVENT_M01E09A_L009[] = { /* 0x8127110 */
     DEBUGINFO,
-    { 0x1e, 0x00,  0x0002,  0x0000000c,  0x00000000, NULL },
-    { 0x1e, 0x00,  0x0008,  0x000000a2,  0x00000000, NULL },
+    EXECUTE_SUBSTATION(12, 2, 0),
+    EXECUTE_SUBSTATION(162, 8, 0),
     { 0x3b, 0x03,  0x0000,  0x00000000,  0x00000000, NULL },
-    { 0x1e, 0x00,  0x0028,  0x0000000c,  0x00000000, NULL },
+    EXECUTE_SUBSTATION(12, 40, 0),
     { 0xaf, 0x01,  0x000b,  0x00000000,  0x00000000, NULL },
     SCENARIO_CALC(SCENARIO_MAIN, 15, 10),
     UPDATE_VARINT(CALC_SET, WARP_LOCK, 0),
@@ -2672,7 +2672,7 @@ static const struct ScriptCommand s_script_EVENT_M01E09A_L009[] = { /* 0x8127110
 
 static const struct ScriptCommand s_script_EVENT_M01E09A_L010[] = { /* 0x81271a0 */
     DEBUGINFO,
-    { 0x1e, 0x00,  0x003e,  0x00000009,  0x00000000, NULL },
+    EXECUTE_SUBSTATION(9, 62, 0),
     { 0xaf, 0x01,  0x000b,  0x00000000,  0x00000000, NULL },
     SCENARIO_CALC(SCENARIO_MAIN, 15, 11),
     RET,
@@ -2680,32 +2680,32 @@ static const struct ScriptCommand s_script_EVENT_M01E09A_L010[] = { /* 0x81271a0
 
 static const struct ScriptCommand s_script_EVENT_M01E09A_L011[] = { /* 0x81271f0 */
     DEBUGINFO,
-    { 0x1e, 0x00,  0x0001,  0x000000cc,  0x00000000, NULL },
+    EXECUTE_SUBSTATION(204, 1, 0),
     RET,
 };
 
 static const struct ScriptCommand s_script_EVENT_M01E09A_L012[] = { /* 0x8127220 */
     DEBUGINFO,
     CALL_SCRIPT(DISMISSAL_SALLY_MEMBER3_FUNC),
-    { 0x1e, 0x00,  0x0029,  0x0000000c,  0x00000000, NULL },
+    EXECUTE_SUBSTATION(12, 41, 0),
     RET,
 };
 
 static const struct ScriptCommand s_script_EVENT_M01E09A_L013[] = { /* 0x8127260 */
     DEBUGINFO,
-    { 0x1e, 0x00,  0x0002,  0x000000cc,  0x00000000, NULL },
+    EXECUTE_SUBSTATION(204, 2, 0),
     RET,
 };
 
 static const struct ScriptCommand s_script_EVENT_M01E09A_L014[] = { /* 0x8127290 */
     DEBUGINFO,
-    { 0x1e, 0x00,  0x0001,  0x000000cd,  0x00000000, NULL },
+    EXECUTE_SUBSTATION(205, 1, 0),
     RET,
 };
 
 static const struct ScriptCommand s_script_EVENT_M01E09A_L015[] = { /* 0x81272c0 */
     DEBUGINFO,
-    { 0x1e, 0x00,  0x0001,  0x000000ce,  0x00000000, NULL },
+    EXECUTE_SUBSTATION(206, 1, 0),
     { 0xb0, 0x01,  0x000b,  0x00000000,  0x00000000, NULL },
     SCENARIO_CALC(SCENARIO_MAIN, 16,  0),
     CALL_SCRIPT(DISMISSAL_SALLY_MEMBER_FUNC),
@@ -2717,12 +2717,12 @@ static const struct ScriptCommand s_script_EVENT_M01E09A_L015[] = { /* 0x81272c0
 static const struct ScriptCommand s_script_EVENT_M01E10A_L001[] = { /* 0x8127340 */
     DEBUGINFO,
     SCENARIO_CALC(SCENARIO_MAIN, 16,  1),
-    { 0x1e, 0x00,  0x001f,  0x00000001,  0x00000000, NULL },
-    { 0x1e, 0x00,  0x0001,  0x000000ab,  0x00000000, NULL },
-    { 0x1e, 0x00,  0x0001,  0x000000ad,  0x00000000, NULL },
-    { 0x1e, 0x00,  0x0002,  0x000000ab,  0x00000000, NULL },
-    { 0x1e, 0x00,  0x0020,  0x00000001,  0x00000000, NULL },
-    { 0x1e, 0x00,  0x0021,  0x00000001,  0x00000000, NULL },
+    EXECUTE_SUBSTATION(1, 31, 0),
+    EXECUTE_SUBSTATION(171, 1, 0),
+    EXECUTE_SUBSTATION(173, 1, 0),
+    EXECUTE_SUBSTATION(171, 2, 0),
+    EXECUTE_SUBSTATION(1, 32, 0),
+    EXECUTE_SUBSTATION(1, 33, 0),
     SCENARIO_CALC(SCENARIO_MAIN, 16,  2),
     UPDATE_VARINT(CALC_SET, WARP_LOCK, 7),
     RET,
@@ -2731,13 +2731,13 @@ static const struct ScriptCommand s_script_EVENT_M01E10A_L001[] = { /* 0x8127340
 static const struct ScriptCommand s_script_EVENT_M01E10A_L002[] = { /* 0x81273f0 */
     DEBUGINFO,
     SCENARIO_CALC(SCENARIO_MAIN, 16,  3),
-    { 0x1e, 0x00,  0x0002,  0x0000000c,  0x00000000, NULL },
-    { 0x1e, 0x00,  0x0001,  0x000000a3,  0x00000000, NULL },
-    { 0x1e, 0x00,  0x002a,  0x0000000c,  0x00000000, NULL },
-    { 0x1e, 0x00,  0x0002,  0x000000a3,  0x00000000, NULL },
-    { 0x1e, 0x00,  0x0009,  0x000000a2,  0x00000000, NULL },
+    EXECUTE_SUBSTATION(12, 2, 0),
+    EXECUTE_SUBSTATION(163, 1, 0),
+    EXECUTE_SUBSTATION(12, 42, 0),
+    EXECUTE_SUBSTATION(163, 2, 0),
+    EXECUTE_SUBSTATION(162, 9, 0),
     { 0x3b, 0x03,  0x0000,  0x00000000,  0x00000000, NULL },
-    { 0x1e, 0x00,  0x002b,  0x0000000c,  0x00000000, NULL },
+    EXECUTE_SUBSTATION(12, 43, 0),
     { 0xaf, 0x01,  0x000c,  0x00000000,  0x00000000, NULL },
     UPDATE_VARINT(CALC_SET, WARP_LOCK, 0),
     RET,
@@ -2745,7 +2745,7 @@ static const struct ScriptCommand s_script_EVENT_M01E10A_L002[] = { /* 0x81273f0
 
 static const struct ScriptCommand s_script_EVENT_M01E10A_L003[] = { /* 0x81274b0 */
     DEBUGINFO,
-    { 0x1e, 0x00,  0x0041,  0x00000009,  0x00000000, NULL },
+    EXECUTE_SUBSTATION(9, 65, 0),
     { 0xaf, 0x01,  0x000c,  0x00000000,  0x00000000, NULL },
     SCENARIO_CALC(SCENARIO_MAIN, 16,  4),
     UPDATE_VARINT(CALC_SET, WARP_LOCK, 0),
@@ -2754,41 +2754,41 @@ static const struct ScriptCommand s_script_EVENT_M01E10A_L003[] = { /* 0x81274b0
 
 static const struct ScriptCommand s_script_EVENT_M01E10A_L004[] = { /* 0x8127510 */
     DEBUGINFO,
-    { 0x1e, 0x00,  0x0003,  0x000000ab,  0x00000000, NULL },
-    { 0x1e, 0x00,  0x000a,  0x000000a2,  0x00000000, NULL },
-    { 0x1e, 0x00,  0x0004,  0x000000ab,  0x00000000, NULL },
-    { 0x1e, 0x00,  0x0001,  0x000000cf,  0x00000000, NULL },
-    { 0x1e, 0x00,  0x0001,  0x000000ac,  0x00000000, NULL },
-    { 0x1e, 0x00,  0x0002,  0x000000cf,  0x00000000, NULL },
+    EXECUTE_SUBSTATION(171, 3, 0),
+    EXECUTE_SUBSTATION(162, 10, 0),
+    EXECUTE_SUBSTATION(171, 4, 0),
+    EXECUTE_SUBSTATION(207, 1, 0),
+    EXECUTE_SUBSTATION(172, 1, 0),
+    EXECUTE_SUBSTATION(207, 2, 0),
     RET,
 };
 
 static const struct ScriptCommand s_script_EVENT_M01E10A_L005[] = { /* 0x8127590 */
     DEBUGINFO,
     CALL_SCRIPT(DISMISSAL_SALLY_MEMBER3_FUNC),
-    { 0x1e, 0x00,  0x002c,  0x0000000c,  0x00000000, NULL },
+    EXECUTE_SUBSTATION(12, 44, 0),
     RET,
 };
 
 static const struct ScriptCommand s_script_EVENT_M01E10A_L006[] = { /* 0x81275d0 */
     DEBUGINFO,
-    { 0x1e, 0x00,  0x0003,  0x000000cf,  0x00000000, NULL },
+    EXECUTE_SUBSTATION(207, 3, 0),
     RET,
 };
 
 static const struct ScriptCommand s_script_EVENT_M01E10A_L007[] = { /* 0x8127600 */
     DEBUGINFO,
-    { 0x1e, 0x00,  0x0001,  0x000000d0,  0x00000000, NULL },
+    EXECUTE_SUBSTATION(208, 1, 0),
     RET,
 };
 
 static const struct ScriptCommand s_script_EVENT_M01E10A_L008[] = { /* 0x8127630 */
     DEBUGINFO,
-    { 0x1e, 0x00,  0x0001,  0x000000d1,  0x00000000, NULL },
-    { 0x1e, 0x00,  0x0002,  0x000000ad,  0x00000000, NULL },
-    { 0x1e, 0x00,  0x0002,  0x000000d1,  0x00000000, NULL },
-    { 0x1e, 0x00,  0x0003,  0x000000ad,  0x00000000, NULL },
-    { 0x1e, 0x00,  0x0003,  0x000000d1,  0x00000000, NULL },
+    EXECUTE_SUBSTATION(209, 1, 0),
+    EXECUTE_SUBSTATION(173, 2, 0),
+    EXECUTE_SUBSTATION(209, 2, 0),
+    EXECUTE_SUBSTATION(173, 3, 0),
+    EXECUTE_SUBSTATION(209, 3, 0),
     { 0xb0, 0x01,  0x000c,  0x00000000,  0x00000000, NULL },
     SCENARIO_CALC(SCENARIO_MAIN, 17,  0),
     JUMP_SCRIPT(EVENT_DIVIDE),
@@ -2797,21 +2797,21 @@ static const struct ScriptCommand s_script_EVENT_M01E10A_L008[] = { /* 0x8127630
 static const struct ScriptCommand s_script_EVENT_M01END_L001[] = { /* 0x81276c0 */
     DEBUGINFO,
     { 0x3b, 0x39,  0x0001,  0x00000000,  0x00000000, NULL },
-    { 0x1e, 0x00,  0x0001,  0x000000ae,  0x00000000, NULL },
-    { 0x1e, 0x00,  0x0005,  0x000000ab,  0x00000000, NULL },
-    { 0x1e, 0x00,  0x0025,  0x00000001,  0x00000000, NULL },
-    { 0x1e, 0x00,  0x001c,  0x00000002,  0x00000000, NULL },
-    { 0x1e, 0x00,  0x001b,  0x00000004,  0x00000000, NULL },
-    { 0x1e, 0x00,  0x0006,  0x000000ab,  0x00000000, NULL },
-    { 0x1e, 0x00,  0x0007,  0x000000ab,  0x00000000, NULL },
+    EXECUTE_SUBSTATION(174, 1, 0),
+    EXECUTE_SUBSTATION(171, 5, 0),
+    EXECUTE_SUBSTATION(1, 37, 0),
+    EXECUTE_SUBSTATION(2, 28, 0),
+    EXECUTE_SUBSTATION(4, 27, 0),
+    EXECUTE_SUBSTATION(171, 6, 0),
+    EXECUTE_SUBSTATION(171, 7, 0),
     { 0x3b, 0x39,  0x0001,  0x00000000,  0x00000000, NULL },
-    { 0x1e, 0x00,  0x0001,  0x000000af,  0x00000000, NULL },
-    { 0x1e, 0x00,  0x0001,  0x000000b0,  0x00000000, NULL },
+    EXECUTE_SUBSTATION(175, 1, 0),
+    EXECUTE_SUBSTATION(176, 1, 0),
     SCENARIO_CALC(SCENARIO_MAIN, 18,  0),
     CALL_SCRIPT(EVENT_DIVIDE_INIT_FUNC),
-    { 0x1e, 0x00,  0x0002,  0x000000af,  0x00000000, NULL },
-    { 0x1e, 0x00,  0x0044,  0x00000009,  0x00000000, NULL },
-    { 0x1e, 0x00,  0x0001,  0x000000b1,  0x00000000, NULL },
+    EXECUTE_SUBSTATION(175, 2, 0),
+    EXECUTE_SUBSTATION(9, 68, 0),
+    EXECUTE_SUBSTATION(177, 1, 0),
     { 0x3b, 0x42,  0x0000,  0x00000000,  0x00000000, NULL },
     HALT,
 };
@@ -2819,35 +2819,35 @@ static const struct ScriptCommand s_script_EVENT_M01END_L001[] = { /* 0x81276c0 
 static const struct ScriptCommand s_script_EVENT_M01END_L002[] = { /* 0x81277f0 */
     DEBUGINFO,
     { 0x3b, 0x39,  0x0001,  0x00000000,  0x00000000, NULL },
-    { 0x1e, 0x00,  0x0001,  0x000000af,  0x00000000, NULL },
-    { 0x1e, 0x00,  0x0001,  0x000000b0,  0x00000000, NULL },
+    EXECUTE_SUBSTATION(175, 1, 0),
+    EXECUTE_SUBSTATION(176, 1, 0),
     SCENARIO_CALC(SCENARIO_MAIN, 18,  0),
     CALL_SCRIPT(EVENT_DIVIDE_INIT_FUNC),
-    { 0x1e, 0x00,  0x0002,  0x000000af,  0x00000000, NULL },
-    { 0x1e, 0x00,  0x0044,  0x00000009,  0x00000000, NULL },
-    { 0x1e, 0x00,  0x0001,  0x000000b1,  0x00000000, NULL },
+    EXECUTE_SUBSTATION(175, 2, 0),
+    EXECUTE_SUBSTATION(9, 68, 0),
+    EXECUTE_SUBSTATION(177, 1, 0),
     { 0x3b, 0x42,  0x0000,  0x00000000,  0x00000000, NULL },
     HALT,
 };
 
 static const struct ScriptCommand s_script_EVENT_M02E01A_L001[] = { /* 0x81278a0 */
     DEBUGINFO,
-    { 0x1e, 0x00,  0x002d,  0x0000000c,  0x00000000, NULL },
+    EXECUTE_SUBSTATION(12, 45, 0),
     SCENARIO_CALC(SCENARIO_MAIN, 18,  2),
     RET,
 };
 
 static const struct ScriptCommand s_script_EVENT_M02E01A_L002[] = { /* 0x81278e0 */
     DEBUGINFO,
-    { 0x1e, 0x00,  0x0045,  0x00000009,  0x00000000, NULL },
-    { 0x1e, 0x00,  0x001d,  0x00000002,  0x00000000, NULL },
+    EXECUTE_SUBSTATION(9, 69, 0),
+    EXECUTE_SUBSTATION(2, 29, 0),
     SCENARIO_CALC(SCENARIO_MAIN, 18,  3),
     RET,
 };
 
 static const struct ScriptCommand s_script_EVENT_M02E01A_L003[] = { /* 0x8127930 */
     DEBUGINFO,
-    { 0x1e, 0x00,  0x0048,  0x00000009,  0x00000000, NULL },
+    EXECUTE_SUBSTATION(9, 72, 0),
     SCENARIO_CALC(SCENARIO_MAIN, 18,  4),
     RET,
 };
@@ -2856,7 +2856,7 @@ static const struct ScriptCommand s_script_EVENT_M02E02A_L001[] = { /* 0x8127970
     DEBUGINFO,
     SCENARIO_CALC(SCENARIO_MAIN, 19,  2),
     CALL_SCRIPT(EVENT_DIVIDE_NEXT_DAY_FUNC),
-    { 0x1e, 0x00,  0x0006,  0x0000000c,  0x00000000, NULL },
+    EXECUTE_SUBSTATION(12, 6, 0),
     RET,
 };
 
@@ -2864,7 +2864,7 @@ static const struct ScriptCommand s_script_EVENT_M02E02B_L001[] = { /* 0x81279c0
     DEBUGINFO,
     SCENARIO_CALC(SCENARIO_MAIN, 20,  2),
     CALL_SCRIPT(EVENT_DIVIDE_NEXT_DAY_FUNC),
-    { 0x1e, 0x00,  0x0006,  0x0000000c,  0x00000000, NULL },
+    EXECUTE_SUBSTATION(12, 6, 0),
     RET,
 };
 
@@ -2872,7 +2872,7 @@ static const struct ScriptCommand s_script_EVENT_M02E02C_L001[] = { /* 0x8127a10
     DEBUGINFO,
     SCENARIO_CALC(SCENARIO_MAIN, 21,  2),
     CALL_SCRIPT(EVENT_DIVIDE_NEXT_DAY_FUNC),
-    { 0x1e, 0x00,  0x0006,  0x0000000c,  0x00000000, NULL },
+    EXECUTE_SUBSTATION(12, 6, 0),
     RET,
 };
 
@@ -2880,7 +2880,7 @@ static const struct ScriptCommand s_script_EVENT_M02E02D_L001[] = { /* 0x8127a60
     DEBUGINFO,
     SCENARIO_CALC(SCENARIO_MAIN, 22,  2),
     CALL_SCRIPT(EVENT_DIVIDE_NEXT_DAY_FUNC),
-    { 0x1e, 0x00,  0x0006,  0x0000000c,  0x00000000, NULL },
+    EXECUTE_SUBSTATION(12, 6, 0),
     RET,
 };
 
@@ -2888,7 +2888,7 @@ static const struct ScriptCommand s_script_EVENT_M02E02E_L001[] = { /* 0x8127ab0
     DEBUGINFO,
     SCENARIO_CALC(SCENARIO_MAIN, 23,  2),
     CALL_SCRIPT(EVENT_DIVIDE_NEXT_DAY_FUNC),
-    { 0x1e, 0x00,  0x0006,  0x0000000c,  0x00000000, NULL },
+    EXECUTE_SUBSTATION(12, 6, 0),
     RET,
 };
 
@@ -2896,7 +2896,7 @@ static const struct ScriptCommand s_script_EVENT_M02E02F_L001[] = { /* 0x8127b00
     DEBUGINFO,
     SCENARIO_CALC(SCENARIO_MAIN, 24,  2),
     CALL_SCRIPT(EVENT_DIVIDE_NEXT_DAY_FUNC),
-    { 0x1e, 0x00,  0x0006,  0x0000000c,  0x00000000, NULL },
+    EXECUTE_SUBSTATION(12, 6, 0),
     RET,
 };
 
@@ -2904,7 +2904,7 @@ static const struct ScriptCommand s_script_EVENT_M02E02G_L001[] = { /* 0x8127b50
     DEBUGINFO,
     SCENARIO_CALC(SCENARIO_MAIN, 25,  2),
     CALL_SCRIPT(EVENT_DIVIDE_NEXT_DAY_FUNC),
-    { 0x1e, 0x00,  0x0006,  0x0000000c,  0x00000000, NULL },
+    EXECUTE_SUBSTATION(12, 6, 0),
     RET,
 };
 
@@ -2912,13 +2912,13 @@ static const struct ScriptCommand s_script_EVENT_M02E02H_L001[] = { /* 0x8127ba0
     DEBUGINFO,
     SCENARIO_CALC(SCENARIO_MAIN, 26,  2),
     CALL_SCRIPT(EVENT_DIVIDE_NEXT_DAY_FUNC),
-    { 0x1e, 0x00,  0x0006,  0x0000000c,  0x00000000, NULL },
+    EXECUTE_SUBSTATION(12, 6, 0),
     RET,
 };
 
 static const struct ScriptCommand s_script_EVENT_M02END_L001[] = { /* 0x8127bf0 */
     DEBUGINFO,
-    { 0x1e, 0x00,  0x0006,  0x0000000c,  0x00000000, NULL },
+    EXECUTE_SUBSTATION(12, 6, 0),
     SCENARIO_CALC(SCENARIO_MAIN, 27,  2),
     RET,
 };
@@ -2927,13 +2927,13 @@ static const struct ScriptCommand s_script_EVENT_S00E01A_L001[] = { /* 0x8127c30
     DEBUGINFO,
     CALL_SCRIPT(DISMISSAL_SALLY_MEMBER3_FUNC),
     CALL_SCRIPT(EVENT_DIVIDE_NEXT_DAY_FUNC),
-    { 0x1e, 0x00,  0x0007,  0x0000000c,  0x00000000, NULL },
+    EXECUTE_SUBSTATION(12, 7, 0),
     RET,
 };
 
 static const struct ScriptCommand s_script_EVENT_S00E01A_L002[] = { /* 0x8127c80 */
     DEBUGINFO,
-    { 0x1e, 0x00,  0x0006,  0x00000009,  0x00000000, NULL },
+    EXECUTE_SUBSTATION(9, 6, 0),
     UPDATE_VARINT(CALC_SET, GROUND_ENTER, 12),
     UPDATE_VARINT(CALC_SET, GROUND_GETOUT, 12),
     CALL_SCRIPT(DISMISSAL_SALLY_MEMBER_FUNC),
@@ -2943,13 +2943,13 @@ static const struct ScriptCommand s_script_EVENT_S00E01A_L002[] = { /* 0x8127c80
 
 static const struct ScriptCommand s_script_EVENT_S00E01A_L003[] = { /* 0x8127cf0 */
     DEBUGINFO,
-    { 0x1e, 0x00,  0x0004,  0x0000000c,  0x00000000, NULL },
+    EXECUTE_SUBSTATION(12, 4, 0),
     RET,
 };
 
 static const struct ScriptCommand s_script_EVENT_S00E01A_L004[] = { /* 0x8127d20 */
     DEBUGINFO,
-    { 0x1e, 0x00,  0x0005,  0x0000000c,  0x00000000, NULL },
+    EXECUTE_SUBSTATION(12, 5, 0),
     RET,
 };
 
@@ -3001,19 +3001,19 @@ static const struct ScriptCommand s_script_EVENT_S01E01A_L001[] = { /* 0x8127ea0
 
 static const struct ScriptCommand s_script_EVENT_S01E01A_L002[] = { /* 0x8127f60 */
     DEBUGINFO,
-    { 0x1e, 0x00,  0x0003,  0x00000004,  0x00000000, NULL },
+    EXECUTE_SUBSTATION(4, 3, 0),
     { 0xaf, 0x01,  0x000e,  0x00000000,  0x00000000, NULL },
     SCENARIO_CALC(SCENARIO_SUB1, 29,  3),
     SET_DUNGEON_RES(/* result */ 0, /* enter */ -1),
     UPDATE_VARINT(CALC_SET, GROUND_ENTER, 4),
     UPDATE_VARINT(CALC_SET, GROUND_GETOUT, 4),
-    { 0x1e, 0x00,  0x0000,  0x00000004,  0x00000000, NULL },
+    EXECUTE_SUBSTATION(4, 0, 0),
     RET,
 };
 
 static const struct ScriptCommand s_script_EVENT_S01E01A_L003[] = { /* 0x8127ff0 */
     DEBUGINFO,
-    { 0x1e, 0x00,  0x004b,  0x00000009,  0x00000000, NULL },
+    EXECUTE_SUBSTATION(9, 75, 0),
     { 0xb0, 0x01,  0x000e,  0x00000000,  0x00000000, NULL },
     JUMP_SCRIPT(EVENT_S01E01B_L001),
 };
@@ -3021,7 +3021,7 @@ static const struct ScriptCommand s_script_EVENT_S01E01A_L003[] = { /* 0x8127ff0
 static const struct ScriptCommand s_script_EVENT_S01E01B_L001[] = { /* 0x8128030 */
     DEBUGINFO,
     UPDATE_VARINT(CALC_SET, BASE_LEVEL, 1),
-    { 0x1e, 0x00,  0x004c,  0x00000009,  0x00000000, NULL },
+    EXECUTE_SUBSTATION(9, 76, 0),
     SCENARIO_CALC(SCENARIO_SUB1, 30,  0),
     CALL_SCRIPT(DISMISSAL_SALLY_MEMBER_FUNC),
     UPDATE_VARINT(CALC_SET, GROUND_PLACE, 11),
@@ -3032,14 +3032,14 @@ static const struct ScriptCommand s_script_EVENT_S01E01B_L001[] = { /* 0x8128030
 
 static const struct ScriptCommand s_script_EVENT_S01E01B_L001L[] = { /* 0x81280c0 */
     DEBUGINFO,
-    { 0x1e, 0x00,  0x0008,  0x0000000c,  0x00000000, NULL },
+    EXECUTE_SUBSTATION(12, 8, 0),
     RET,
 };
 
 static const struct ScriptCommand s_script_EVENT_S01E01C_L001[] = { /* 0x81280f0 */
     DEBUGINFO,
     UPDATE_VARINT(CALC_SET, BASE_LEVEL, 2),
-    { 0x1e, 0x00,  0x004e,  0x00000009,  0x00000000, NULL },
+    EXECUTE_SUBSTATION(9, 78, 0),
     SCENARIO_CALC(SCENARIO_SUB1, 31,  0),
     { 0x3b, 0x03,  0x0000,  0x00000000,  0x00000000, NULL },
     EXECUTE_FUNCTION(EVENT_DIVIDE_NEXT),
@@ -3073,20 +3073,20 @@ static const struct ScriptCommand s_script_EVENT_S01E02A_END[] = { /* 0x8128200 
 
 static const struct ScriptCommand s_script_EVENT_S01E02A_L001[] = { /* 0x8128290 */
     DEBUGINFO,
-    { 0x1e, 0x00,  0x0005,  0x00000004,  0x00000000, NULL },
+    EXECUTE_SUBSTATION(4, 5, 0),
     { 0xaf, 0x01,  0x000f,  0x00000000,  0x00000000, NULL },
     SCENARIO_CALC(SCENARIO_SUB1, 31,  2),
     SET_DUNGEON_RES(/* result */ 0, /* enter */ -1),
     UPDATE_VARINT(CALC_SET, GROUND_ENTER, 4),
     UPDATE_VARINT(CALC_SET, GROUND_GETOUT, 4),
-    { 0x1e, 0x00,  0x0000,  0x00000004,  0x00000000, NULL },
+    EXECUTE_SUBSTATION(4, 0, 0),
     RET,
 };
 
 static const struct ScriptCommand s_script_EVENT_S01E02A_L002[] = { /* 0x8128320 */
     DEBUGINFO,
     SCENARIO_CALC(SCENARIO_SUB1, 32,  0),
-    { 0x1e, 0x00,  0x004f,  0x00000009,  0x00000000, NULL },
+    EXECUTE_SUBSTATION(9, 79, 0),
     { 0xb0, 0x01,  0x000f,  0x00000000,  0x00000000, NULL },
     CALL_SCRIPT(DISMISSAL_SALLY_MEMBER_FUNC),
     UPDATE_VARINT(CALC_SET, GROUND_PLACE, 11),
@@ -3098,7 +3098,7 @@ static const struct ScriptCommand s_script_EVENT_S01E02A_L002[] = { /* 0x8128320
 static const struct ScriptCommand s_script_EVENT_S01E02A_L002L[] = { /* 0x81283b0 */
     DEBUGINFO,
     CALL_SCRIPT(EVENT_DIVIDE_NEXT_DAY2_FUNC),
-    { 0x1e, 0x00,  0x0008,  0x0000000c,  0x00000000, NULL },
+    EXECUTE_SUBSTATION(12, 8, 0),
     RET,
 };
 
@@ -3167,7 +3167,7 @@ static const struct ScriptCommand s_script_EVENT_S02E01A_L004[] = { /* 0x81285d0
 static const struct ScriptCommand s_script_EVENT_S02E01A_L004L[] = { /* 0x8128650 */
     DEBUGINFO,
     CALL_SCRIPT(EVENT_DIVIDE_NEXT_DAY_FUNC),
-    { 0x1e, 0x00,  0x0008,  0x0000000c,  0x00000000, NULL },
+    EXECUTE_SUBSTATION(12, 8, 0),
     RET,
 };
 
@@ -3201,10 +3201,10 @@ static const struct ScriptCommand s_script_EVENT_S02E02A_L001[] = { /* 0x8128790
 
 static const struct ScriptCommand s_script_EVENT_S02E02A_L002[] = { /* 0x81287c0 */
     DEBUGINFO,
-    { 0x1e, 0x00,  0x0002,  0x0000009e,  0x00000000, NULL },
+    EXECUTE_SUBSTATION(158, 2, 0),
     { 0xaf, 0x01,  0x0011,  0x00000000,  0x00000000, NULL },
     SCENARIO_CALC(SCENARIO_SUB2, 34,  3),
-    { 0x1e, 0x00,  0x0004,  0x0000000c,  0x00000000, NULL },
+    EXECUTE_SUBSTATION(12, 4, 0),
     RET,
 };
 
@@ -3222,7 +3222,7 @@ static const struct ScriptCommand s_script_EVENT_S02E02A_L003[] = { /* 0x8128820
 static const struct ScriptCommand s_script_EVENT_S02E02A_L003L[] = { /* 0x81288a0 */
     DEBUGINFO,
     CALL_SCRIPT(EVENT_DIVIDE_NEXT_DAY_FUNC),
-    { 0x1e, 0x00,  0x0008,  0x0000000c,  0x00000000, NULL },
+    EXECUTE_SUBSTATION(12, 8, 0),
     RET,
 };
 
@@ -3259,8 +3259,8 @@ static const struct ScriptCommand s_script_EVENT_S03E01A_L001[] = { /* 0x8128a20
     DEBUGINFO,
     { 0xaf, 0x01,  0x0012,  0x00000000,  0x00000000, NULL },
     SCENARIO_CALC(SCENARIO_SUB3, 36,  2),
-    { 0x1e, 0x00,  0x0051,  0x00000009,  0x00000000, NULL },
-    { 0x1e, 0x00,  0x0004,  0x0000000c,  0x00000000, NULL },
+    EXECUTE_SUBSTATION(9, 81, 0),
+    EXECUTE_SUBSTATION(12, 4, 0),
     RET,
 };
 
@@ -3278,7 +3278,7 @@ static const struct ScriptCommand s_script_EVENT_S03E01A_L002[] = { /* 0x8128a80
 static const struct ScriptCommand s_script_EVENT_S03E01A_L002L[] = { /* 0x8128b00 */
     DEBUGINFO,
     CALL_SCRIPT(EVENT_DIVIDE_NEXT_DAY_FUNC),
-    { 0x1e, 0x00,  0x0008,  0x0000000c,  0x00000000, NULL },
+    EXECUTE_SUBSTATION(12, 8, 0),
     RET,
 };
 
@@ -3321,8 +3321,8 @@ static const struct ScriptCommand s_script_EVENT_S04E01A_END[] = { /* 0x8128c50 
 
 static const struct ScriptCommand s_script_EVENT_S04E01A_L001[] = { /* 0x8128d00 */
     DEBUGINFO,
-    { 0x1e, 0x00,  0x0052,  0x00000009,  0x00000000, NULL },
-    { 0x1e, 0x00,  0x0009,  0x0000000c,  0x00000000, NULL },
+    EXECUTE_SUBSTATION(9, 82, 0),
+    EXECUTE_SUBSTATION(12, 9, 0),
     { 0xaf, 0x01,  0x0013,  0x00000000,  0x00000000, NULL },
     SCENARIO_CALC(SCENARIO_SUB4, 38,  2),
     RET,
@@ -3330,7 +3330,7 @@ static const struct ScriptCommand s_script_EVENT_S04E01A_L001[] = { /* 0x8128d00
 
 static const struct ScriptCommand s_script_EVENT_S04E01A_L002[] = { /* 0x8128d60 */
     DEBUGINFO,
-    { 0x1e, 0x00,  0x0001,  0x000000c0,  0x00000000, NULL },
+    EXECUTE_SUBSTATION(192, 1, 0),
     { 0xaf, 0x00,  0x0013,  0x00000000,  0x00000000, NULL },
     { 0xaf, 0x01,  0x0014,  0x00000000,  0x00000000, NULL },
     SCENARIO_CALC(SCENARIO_SUB4, 39,  0),
@@ -3349,7 +3349,7 @@ static const struct ScriptCommand s_script_EVENT_S04E01A_L002L[] = { /* 0x8128e0
 
 static const struct ScriptCommand s_script_EVENT_S04E01B_L001[] = { /* 0x8128e30 */
     DEBUGINFO,
-    { 0x1e, 0x00,  0x0001,  0x000000d4,  0x00000000, NULL },
+    EXECUTE_SUBSTATION(212, 1, 0),
     { 0xb0, 0x01,  0x0014,  0x00000000,  0x00000000, NULL },
     { 0xaf, 0x01,  0x0015,  0x00000000,  0x00000000, NULL },
     SCENARIO_CALC(SCENARIO_SUB4, 40,  0),
@@ -3368,7 +3368,7 @@ static const struct ScriptCommand s_script_EVENT_S04E01B_L001L[] = { /* 0x8128ed
 
 static const struct ScriptCommand s_script_EVENT_S04E01C_L001[] = { /* 0x8128f00 */
     DEBUGINFO,
-    { 0x1e, 0x00,  0x0001,  0x000000d5,  0x00000000, NULL },
+    EXECUTE_SUBSTATION(213, 1, 0),
     { 0xb0, 0x01,  0x0015,  0x00000000,  0x00000000, NULL },
     { 0xaf, 0x01,  0x0016,  0x00000000,  0x00000000, NULL },
     SCENARIO_CALC(SCENARIO_SUB4, 41,  0),
@@ -3387,7 +3387,7 @@ static const struct ScriptCommand s_script_EVENT_S04E01C_L001L[] = { /* 0x8128fa
 
 static const struct ScriptCommand s_script_EVENT_S04E01D_L001[] = { /* 0x8128fd0 */
     DEBUGINFO,
-    { 0x1e, 0x00,  0x0001,  0x000000d6,  0x00000000, NULL },
+    EXECUTE_SUBSTATION(214, 1, 0),
     { 0xb0, 0x01,  0x0016,  0x00000000,  0x00000000, NULL },
     { 0xaf, 0x01,  0x0017,  0x00000000,  0x00000000, NULL },
     SCENARIO_CALC(SCENARIO_SUB4, 42,  0),
@@ -3460,9 +3460,9 @@ static const struct ScriptCommand s_script_EVENT_S05E01A_L001[] = { /* 0x81292c0
     DEBUGINFO,
     { 0xaf, 0x01,  0x0018,  0x00000000,  0x00000000, NULL },
     SCENARIO_CALC(SCENARIO_SUB5, 44,  2),
-    { 0x1e, 0x00,  0x0001,  0x000000d8,  0x00000000, NULL },
-    { 0x1e, 0x00,  0x002e,  0x00000001,  0x00000000, NULL },
-    { 0x1e, 0x00,  0x0004,  0x0000000c,  0x00000000, NULL },
+    EXECUTE_SUBSTATION(216, 1, 0),
+    EXECUTE_SUBSTATION(1, 46, 0),
+    EXECUTE_SUBSTATION(12, 4, 0),
     RET,
 };
 
@@ -3521,17 +3521,17 @@ static const struct ScriptCommand s_script_EVENT_S06E01A_L001[] = { /* 0x8129570
     DEBUGINFO,
     { 0xaf, 0x01,  0x0019,  0x00000000,  0x00000000, NULL },
     SCENARIO_CALC(SCENARIO_SUB6, 46,  2),
-    { 0x1e, 0x00,  0x000a,  0x0000000c,  0x00000000, NULL },
-    { 0x1e, 0x00,  0x0053,  0x00000009,  0x00000000, NULL },
-    { 0x1e, 0x00,  0x000b,  0x0000000c,  0x00000000, NULL },
-    { 0x1e, 0x00,  0x002f,  0x00000001,  0x00000000, NULL },
-    { 0x1e, 0x00,  0x0005,  0x0000000c,  0x00000000, NULL },
+    EXECUTE_SUBSTATION(12, 10, 0),
+    EXECUTE_SUBSTATION(9, 83, 0),
+    EXECUTE_SUBSTATION(12, 11, 0),
+    EXECUTE_SUBSTATION(1, 47, 0),
+    EXECUTE_SUBSTATION(12, 5, 0),
     RET,
 };
 
 static const struct ScriptCommand s_script_EVENT_S06E01A_L002[] = { /* 0x8129600 */
     DEBUGINFO,
-    { 0x1e, 0x00,  0x0001,  0x000000d9,  0x00000000, NULL },
+    EXECUTE_SUBSTATION(217, 1, 0),
     { 0xb0, 0x01,  0x0019,  0x00000000,  0x00000000, NULL },
     SCENARIO_CALC(SCENARIO_SUB6, 47,  2),
     UPDATE_VARINT(CALC_SET, GROUND_PLACE, 2),
@@ -3547,18 +3547,18 @@ static const struct ScriptCommand s_script_EVENT_S06E01A_L002L[] = { /* 0x812968
 
 static const struct ScriptCommand s_script_EVENT_S06E01B_L001[] = { /* 0x81296a0 */
     DEBUGINFO,
-    { 0x1e, 0x00,  0x0030,  0x00000001,  0x00000000, NULL },
+    EXECUTE_SUBSTATION(1, 48, 0),
     { 0xaf, 0x01,  0x001a,  0x00000000,  0x00000000, NULL },
     SCENARIO_CALC(SCENARIO_SUB6, 47,  2),
     CALL_SCRIPT(DISMISSAL_SALLY_MEMBER_FUNC),
-    { 0x1e, 0x00,  0x0005,  0x0000000c,  0x00000000, NULL },
+    EXECUTE_SUBSTATION(12, 5, 0),
     RET,
 };
 
 static const struct ScriptCommand s_script_EVENT_S06E01B_L002[] = { /* 0x8129710 */
     DEBUGINFO,
-    { 0x1e, 0x00,  0x0001,  0x000000da,  0x00000000, NULL },
-    { 0x1e, 0x00,  0x0031,  0x00000001,  0x00000000, NULL },
+    EXECUTE_SUBSTATION(218, 1, 0),
+    EXECUTE_SUBSTATION(1, 49, 0),
     { 0xb0, 0x01,  0x001a,  0x00000000,  0x00000000, NULL },
     SCENARIO_CALC(SCENARIO_SUB6, 48,  0),
     CALL_SCRIPT(DISMISSAL_SALLY_MEMBER_FUNC),
@@ -3571,7 +3571,7 @@ static const struct ScriptCommand s_script_EVENT_S06E01B_L002[] = { /* 0x8129710
 static const struct ScriptCommand s_script_EVENT_S06E01B_L002L[] = { /* 0x81297b0 */
     DEBUGINFO,
     CALL_SCRIPT(EVENT_DIVIDE_NEXT_DAY_FUNC),
-    { 0x1e, 0x00,  0x0008,  0x0000000c,  0x00000000, NULL },
+    EXECUTE_SUBSTATION(12, 8, 0),
     RET,
 };
 
@@ -3621,7 +3621,7 @@ static const struct ScriptCommand s_script_EVENT_S07E01A_L003[] = { /* 0x8129930
 static const struct ScriptCommand s_script_EVENT_S07E01A_L003L[] = { /* 0x81299b0 */
     DEBUGINFO,
     CALL_SCRIPT(EVENT_DIVIDE_NEXT_DAY_FUNC),
-    { 0x1e, 0x00,  0x0008,  0x0000000c,  0x00000000, NULL },
+    EXECUTE_SUBSTATION(12, 8, 0),
     RET,
 };
 
@@ -3677,19 +3677,19 @@ static const struct ScriptCommand s_script_EVENT_S08E01A_L005[] = { /* 0x8129b80
 
 static const struct ScriptCommand s_script_EVENT_S08E01A_L005B[] = { /* 0x8129bc0 */
     DEBUGINFO,
-    { 0x1e, 0x00,  0x0007,  0x00000004,  0x00000000, NULL },
+    EXECUTE_SUBSTATION(4, 7, 0),
     { 0xaf, 0x01,  0x001c,  0x00000000,  0x00000000, NULL },
     SCENARIO_CALC(SCENARIO_SUB8, 51,  8),
     SET_DUNGEON_RES(/* result */ 0, /* enter */ -1),
     UPDATE_VARINT(CALC_SET, GROUND_ENTER, 4),
     UPDATE_VARINT(CALC_SET, GROUND_GETOUT, 4),
-    { 0x1e, 0x00,  0x0000,  0x00000004,  0x00000000, NULL },
+    EXECUTE_SUBSTATION(4, 0, 0),
     RET,
 };
 
 static const struct ScriptCommand s_script_EVENT_S08E01A_L006[] = { /* 0x8129c50 */
     DEBUGINFO,
-    { 0x1e, 0x00,  0x0054,  0x00000009,  0x00000000, NULL },
+    EXECUTE_SUBSTATION(9, 84, 0),
     { 0xb0, 0x01,  0x001c,  0x00000000,  0x00000000, NULL },
     SCENARIO_CALC(SCENARIO_SUB8, 52,  0),
     CALL_SCRIPT(DISMISSAL_SALLY_MEMBER_FUNC),
@@ -3702,7 +3702,7 @@ static const struct ScriptCommand s_script_EVENT_S08E01A_L006[] = { /* 0x8129c50
 static const struct ScriptCommand s_script_EVENT_S08E01A_L006L[] = { /* 0x8129ce0 */
     DEBUGINFO,
     CALL_SCRIPT(EVENT_DIVIDE_NEXT_DAY_FUNC),
-    { 0x1e, 0x00,  0x0008,  0x0000000c,  0x00000000, NULL },
+    EXECUTE_SUBSTATION(12, 8, 0),
     RET,
 };
 
@@ -3733,16 +3733,16 @@ static const struct ScriptCommand s_script_EVENT_S08E01A_L008[] = { /* 0x8129d40
     { 0x3b, 0x29,  0x0000,  0x00000000,  0x00000000, NULL },
     COND_EQUAL(0, /* to label */ 3),
   LABEL(4), /* = 0x04 */
-    { 0x1e, 0x00,  0x000c,  0x0000000c,  0x00000000, NULL },
+    EXECUTE_SUBSTATION(12, 12, 0),
     { 0x3b, 0x2a,  0x0000,  0x00000000,  0x00000000, NULL },
     COND_EQUAL(0, /* to label */ 5),
-    { 0x1e, 0x00,  0x0055,  0x00000009,  0x00000000, NULL },
+    EXECUTE_SUBSTATION(9, 85, 0),
     JUMP_LABEL(5),
   LABEL(2), /* = 0x02 */
     { 0x3b, 0x2d,  0x0000,  0x00000000,  0x00000000, NULL },
     COND_EQUAL(0, /* to label */ 3),
   LABEL(6), /* = 0x06 */
-    { 0x1e, 0x00,  0x000d,  0x0000000c,  0x00000000, NULL },
+    EXECUTE_SUBSTATION(12, 13, 0),
     JUMP_LABEL(5),
   LABEL(3), /* = 0x03 */
     { 0x3b, 0x29,  0x0000,  0x00000000,  0x00000000, NULL },
@@ -3750,7 +3750,7 @@ static const struct ScriptCommand s_script_EVENT_S08E01A_L008[] = { /* 0x8129d40
     COND_EQUAL(2, /* to label */ 4),
     { 0x3b, 0x2d,  0x0000,  0x00000000,  0x00000000, NULL },
     COND_EQUAL(1, /* to label */ 6),
-    { 0x1e, 0x00,  0x000e,  0x0000000c,  0x00000000, NULL },
+    EXECUTE_SUBSTATION(12, 14, 0),
     JUMP_LABEL(5),
   LABEL(5), /* = 0x05 */
     CALL_SCRIPT(DISMISSAL_SALLY_MEMBER_FUNC),
@@ -3762,7 +3762,7 @@ static const struct ScriptCommand s_script_EVENT_S08E01A_L008[] = { /* 0x8129d40
 
 static const struct ScriptCommand s_script_EVENT_S08E01A_L008L[] = { /* 0x812a034 */
     DEBUGINFO,
-    { 0x1e, 0x00,  0x0005,  0x0000000c,  0x00000000, NULL },
+    EXECUTE_SUBSTATION(12, 5, 0),
     RET,
 };
 
@@ -3770,26 +3770,26 @@ static const struct ScriptCommand s_script_EVENT_S08E01A_L008A[] = { /* 0x812a06
     DEBUGINFO,
     { 0x3b, 0x29,  0x0000,  0x00000000,  0x00000000, NULL },
     COND_EQUAL(0, /* to label */ 0),
-    { 0x1e, 0x00,  0x000c,  0x0000000c,  0x00000000, NULL },
+    EXECUTE_SUBSTATION(12, 12, 0),
     { 0x3b, 0x2a,  0x0000,  0x00000000,  0x00000000, NULL },
     COND_EQUAL(0, /* to label */ 0),
-    { 0x1e, 0x00,  0x0055,  0x00000009,  0x00000000, NULL },
+    EXECUTE_SUBSTATION(9, 85, 0),
   LABEL(0), /* = 0x00 */
-    { 0x1e, 0x00,  0x0005,  0x0000000c,  0x00000000, NULL },
+    EXECUTE_SUBSTATION(12, 5, 0),
     RET,
 };
 
 static const struct ScriptCommand s_script_EVENT_S08E01A_L008B[] = { /* 0x812a104 */
     DEBUGINFO,
-    { 0x1e, 0x00,  0x000d,  0x0000000c,  0x00000000, NULL },
-    { 0x1e, 0x00,  0x0005,  0x0000000c,  0x00000000, NULL },
+    EXECUTE_SUBSTATION(12, 13, 0),
+    EXECUTE_SUBSTATION(12, 5, 0),
     RET,
 };
 
 static const struct ScriptCommand s_script_EVENT_S08E01A_L008C[] = { /* 0x812a144 */
     DEBUGINFO,
-    { 0x1e, 0x00,  0x000e,  0x0000000c,  0x00000000, NULL },
-    { 0x1e, 0x00,  0x0005,  0x0000000c,  0x00000000, NULL },
+    EXECUTE_SUBSTATION(12, 14, 0),
+    EXECUTE_SUBSTATION(12, 5, 0),
     RET,
 };
 
@@ -3833,7 +3833,7 @@ static const struct ScriptCommand s_script_EVENT_S09E01A_L003[] = { /* 0x812a2c4
 
 static const struct ScriptCommand s_script_EVENT_S09E01A_L004[] = { /* 0x812a2f4 */
     DEBUGINFO,
-    { 0x1e, 0x00,  0x0056,  0x00000009,  0x00000000, NULL },
+    EXECUTE_SUBSTATION(9, 86, 0),
     { 0xaf, 0x01,  0x001d,  0x00000000,  0x00000000, NULL },
     SCENARIO_CALC(SCENARIO_SUB9, 53,  6),
     RET,
@@ -3841,15 +3841,15 @@ static const struct ScriptCommand s_script_EVENT_S09E01A_L004[] = { /* 0x812a2f4
 
 static const struct ScriptCommand s_script_EVENT_S09E01A_L004B[] = { /* 0x812a344 */
     DEBUGINFO,
-    { 0x1e, 0x00,  0x0006,  0x000000c9,  0x00000000, NULL },
+    EXECUTE_SUBSTATION(201, 6, 0),
     { 0x02, 0x00,  0x0000,  0x00000025,  0x00000000, NULL },
     RET,
 };
 
 static const struct ScriptCommand s_script_EVENT_S09E01A_L005[] = { /* 0x812a384 */
     DEBUGINFO,
-    { 0x1e, 0x00,  0x0001,  0x000000cb,  0x00000000, NULL },
-    { 0x1e, 0x00,  0x0058,  0x00000009,  0x00000000, NULL },
+    EXECUTE_SUBSTATION(203, 1, 0),
+    EXECUTE_SUBSTATION(9, 88, 0),
     { 0xaf, 0x00,  0x001d,  0x00000000,  0x00000000, NULL },
     SCENARIO_CALC(SCENARIO_SUB9, 54,  0),
     CALL_SCRIPT(DISMISSAL_SALLY_MEMBER_FUNC),
@@ -3861,13 +3861,13 @@ static const struct ScriptCommand s_script_EVENT_S09E01A_L005[] = { /* 0x812a384
 
 static const struct ScriptCommand s_script_EVENT_S09E01A_L005L[] = { /* 0x812a424 */
     DEBUGINFO,
-    { 0x1e, 0x00,  0x0008,  0x0000000c,  0x00000000, NULL },
+    EXECUTE_SUBSTATION(12, 8, 0),
     RET,
 };
 
 static const struct ScriptCommand s_script_EVENT_S09E01B_L001[] = { /* 0x812a454 */
     DEBUGINFO,
-    { 0x1e, 0x00,  0x0059,  0x00000009,  0x00000000, NULL },
+    EXECUTE_SUBSTATION(9, 89, 0),
     { 0xaf, 0x01,  0x001e,  0x00000000,  0x00000000, NULL },
     SCENARIO_CALC(SCENARIO_SUB9, 54,  2),
     RET,
@@ -3875,17 +3875,17 @@ static const struct ScriptCommand s_script_EVENT_S09E01B_L001[] = { /* 0x812a454
 
 static const struct ScriptCommand s_script_EVENT_S09E01B_L001B[] = { /* 0x812a4a4 */
     DEBUGINFO,
-    { 0x1e, 0x00,  0x0001,  0x000000dd,  0x00000000, NULL },
+    EXECUTE_SUBSTATION(221, 1, 0),
     { 0x02, 0x00,  0x0000,  0x00000027,  0x00000000, NULL },
     RET,
 };
 
 static const struct ScriptCommand s_script_EVENT_S09E01B_L002[] = { /* 0x812a4e4 */
     DEBUGINFO,
-    { 0x1e, 0x00,  0x0001,  0x000000dc,  0x00000000, NULL },
-    { 0x1e, 0x00,  0x0003,  0x000000a3,  0x00000000, NULL },
-    { 0x1e, 0x00,  0x0002,  0x000000dc,  0x00000000, NULL },
-    { 0x1e, 0x00,  0x005b,  0x00000009,  0x00000000, NULL },
+    EXECUTE_SUBSTATION(220, 1, 0),
+    EXECUTE_SUBSTATION(163, 3, 0),
+    EXECUTE_SUBSTATION(220, 2, 0),
+    EXECUTE_SUBSTATION(9, 91, 0),
     { 0xb0, 0x01,  0x001e,  0x00000000,  0x00000000, NULL },
     SCENARIO_CALC(SCENARIO_SUB9, 55,  2),
     CALL_SCRIPT(DISMISSAL_SALLY_MEMBER_FUNC),
@@ -3897,7 +3897,7 @@ static const struct ScriptCommand s_script_EVENT_S09E01B_L002[] = { /* 0x812a4e4
 
 static const struct ScriptCommand s_script_EVENT_S09E01B_L002L[] = { /* 0x812a5a4 */
     DEBUGINFO,
-    { 0x1e, 0x00,  0x0008,  0x0000000c,  0x00000000, NULL },
+    EXECUTE_SUBSTATION(12, 8, 0),
     RET,
 };
 
@@ -3911,13 +3911,13 @@ static const struct ScriptCommand s_script_EVENT_R00E01A_L001[] = { /* 0x812a604
     DEBUGINFO,
     CLEAR_ARRAY(EVENT_LOCAL),
   LABEL(0), /* = 0x00 */
-    { 0x1e, 0x00,  0x000b,  0x00000004,  0x00000000, NULL },
+    EXECUTE_SUBSTATION(4, 11, 0),
     CJUMP_SCENARIO_0(SCENARIO_SELECT),
     COND(JUDGE_EQ, 56, /* to label */ 0),
     JUMPIF_EQUAL(START_MODE, 9, /* to label */ 1),
     JUMPIF_EQUAL(EVENT_LOCAL, 0, /* to label */ 2),
   LABEL(1), /* = 0x01 */
-    { 0x1e, 0x00,  0x0006,  0x00000009,  0x00000000, NULL },
+    EXECUTE_SUBSTATION(9, 6, 0),
   LABEL(2), /* = 0x02 */
     CJUMP_VAR(DUNGEON_ENTER_INDEX),
     COND_EQUAL(36, /* to label */ 3),

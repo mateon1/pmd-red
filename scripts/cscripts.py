@@ -457,6 +457,15 @@ def main():
                 elif op == 0x1c:
                     assert b  == a1 == a2 == ap == 0
                     outfile.write(u'    EXECUTE_SUBROUTINE(%s),\n' % SCRIPTNAMES[h])
+                elif op == 0x1d:
+                    assert a2 == ap == 0
+                    outfile.write(u'    EXECUTE_STATION(%d, %d, %d),\n' % (a1, h, b))
+                elif op == 0x1e:
+                    assert a2 == ap == 0
+                    outfile.write(u'    EXECUTE_SUBSTATION(%d, %d, %d),\n' % (a1, h, b))
+                elif op == 0x1f:
+                    assert b == h == a1 == a2 == ap == 0
+                    outfile.write(u'    RESCUE_SELECT,\n')
                 # 9b..a3: camera-related, needs reversing
                 elif op == 0xa4:
                     assert b == a1 == a2 == ap == 0

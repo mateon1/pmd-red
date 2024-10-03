@@ -392,34 +392,34 @@ static const struct ScriptCommand s_gs9_g0_s0_station_sref_script[] = { /* 0x819
     COND_EQUAL(17, /* to label */ 64),
     COND_EQUAL(19, /* to label */ 65),
   LABEL(57), /* = 0x39 */
-    { 0x1e, 0x00,  0x0005,  0x00000009,  0x00000000, NULL },
+    EXECUTE_SUBSTATION(9, 5, 0),
     RET,
   LABEL(58), /* = 0x3a */
-    { 0x1e, 0x00,  0x0015,  0x00000009,  0x00000000, NULL },
+    EXECUTE_SUBSTATION(9, 21, 0),
     RET,
   LABEL(59), /* = 0x3b */
-    { 0x1e, 0x00,  0x001b,  0x00000009,  0x00000000, NULL },
+    EXECUTE_SUBSTATION(9, 27, 0),
     RET,
   LABEL(60), /* = 0x3c */
-    { 0x1e, 0x00,  0x0021,  0x00000009,  0x00000000, NULL },
+    EXECUTE_SUBSTATION(9, 33, 0),
     RET,
   LABEL(61), /* = 0x3d */
-    { 0x1e, 0x00,  0x0026,  0x00000009,  0x00000000, NULL },
+    EXECUTE_SUBSTATION(9, 38, 0),
     RET,
   LABEL(62), /* = 0x3e */
-    { 0x1e, 0x00,  0x002a,  0x00000009,  0x00000000, NULL },
+    EXECUTE_SUBSTATION(9, 42, 0),
     RET,
   LABEL(63), /* = 0x3f */
-    { 0x1e, 0x00,  0x002c,  0x00000009,  0x00000000, NULL },
+    EXECUTE_SUBSTATION(9, 44, 0),
     RET,
   LABEL(64), /* = 0x40 */
-    { 0x1e, 0x00,  0x003f,  0x00000009,  0x00000000, NULL },
+    EXECUTE_SUBSTATION(9, 63, 0),
     RET,
   LABEL(65), /* = 0x41 */
-    { 0x1e, 0x00,  0x0043,  0x00000009,  0x00000000, NULL },
+    EXECUTE_SUBSTATION(9, 67, 0),
     RET,
   LABEL(54), /* = 0x36 */
-    { 0x1e, 0x00,  0x0007,  0x00000009,  0x00000000, NULL },
+    EXECUTE_SUBSTATION(9, 7, 0),
     RET,
 };
 
@@ -432,7 +432,7 @@ static const struct ScriptCommand s_gs9_g0_s0_evt0_sref_script[] = { /* 0x819bed
     { 0x01, 0x00, -0x0001,  0x00000001,  0x00000000, NULL },
     HALT,
   LABEL(0), /* = 0x00 */
-    { 0x1d, 0x01,  0x0016, -0x00000001,  0x00000000, NULL },
+    EXECUTE_STATION(-1, 22, 1),
     HALT,
 };
 
@@ -457,7 +457,7 @@ static const struct ScriptCommand s_gs9_g0_s0_evt1_sref_script[] = { /* 0x819bf5
   LABEL(4), /* = 0x04 */
     RET,
   LABEL(0), /* = 0x00 */
-    { 0x1d, 0x02,  0x0016, -0x00000001,  0x00000000, NULL },
+    EXECUTE_STATION(-1, 22, 2),
     HALT,
   LABEL(1), /* = 0x01 */
     JUMPIF(JUDGE_LE, FRIEND_SUM, 2, /* to label */ 2),
@@ -489,16 +489,16 @@ static const struct ScriptCommand s_gs9_g0_s0_evt2_sref_script[] = { /* 0x819c18
   LABEL(6), /* = 0x06 */
     RET,
   LABEL(1), /* = 0x01 */
-    { 0x1d, 0x03,  0x0032, -0x00000001,  0x00000000, NULL },
+    EXECUTE_STATION(-1, 50, 3),
     HALT,
   LABEL(2), /* = 0x02 */
-    { 0x1d, 0x01,  0x003d, -0x00000001,  0x00000000, NULL },
+    EXECUTE_STATION(-1, 61, 1),
     HALT,
   LABEL(3), /* = 0x03 */
-    { 0x1d, 0x01,  0x0040, -0x00000001,  0x00000000, NULL },
+    EXECUTE_STATION(-1, 64, 1),
     HALT,
   LABEL(5), /* = 0x05 */
-    { 0x1d, 0x00,  0x0047,  0x00000009,  0x00000000, NULL },
+    EXECUTE_STATION(9, 71, 0),
     HALT,
 };
 
@@ -2188,7 +2188,7 @@ static const struct ScriptCommand s_gs9_g19_s0_obj0_dlg2[] = { /* 0x81a4254 */
     COND_EQUAL(0, /* to label */ 0),
     { 0x32, 0x00, -0x0001,  0x00000000,  0x00000000, _("#+$n0 checked the Mailbox.") },
     { 0x30, 0x00,  0x0000,  0x00000000,  0x00000000, NULL },
-    { 0x1d, 0x00,  0x0014, -0x00000001,  0x00000000, NULL },
+    EXECUTE_STATION(-1, 20, 0),
     HALT,
   LABEL(0), /* = 0x00 */
     { 0x32, 0x00, -0x0001,  0x00000000,  0x00000000, _("#+There is a warning tag\n#+on the side of the Mailbox.") },
@@ -2198,7 +2198,7 @@ static const struct ScriptCommand s_gs9_g19_s0_obj0_dlg2[] = { /* 0x81a4254 */
 
 static const struct ScriptCommand s_gs9_g19_s0_evt0_sref_script[] = { /* 0x81a4350 */
     DEBUGINFO,
-    { 0x1d, 0x01,  0x0013, -0x00000001,  0x00000000, NULL },
+    EXECUTE_STATION(-1, 19, 1),
     HALT,
 };
 
@@ -2659,7 +2659,7 @@ static const struct ScriptCommand s_gs9_g24_s0_obj0_dlg2[] = { /* 0x81a6384 */
     { 0x32, 0x00, -0x0001,  0x00000000,  0x00000000, _("#+$n0 checked the Mailbox.") },
     { 0x32, 0x00, -0x0001,  0x00000000,  0x00000000, _("#+But there was no mail seeking\n#+help from the rescue team.") },
     { 0x30, 0x00,  0x0000,  0x00000000,  0x00000000, NULL },
-    { 0x1d, 0x00,  0x0019, -0x00000001,  0x00000000, NULL },
+    EXECUTE_STATION(-1, 25, 0),
     HALT,
   LABEL(0), /* = 0x00 */
     { 0x32, 0x00, -0x0001,  0x00000000,  0x00000000, _("#+There is a warning tag\n#+on the side of the Mailbox.") },
@@ -2670,7 +2670,7 @@ static const struct ScriptCommand s_gs9_g24_s0_obj0_dlg2[] = { /* 0x81a6384 */
 
 static const struct ScriptCommand s_gs9_g24_s0_evt0_sref_script[] = { /* 0x81a64b4 */
     DEBUGINFO,
-    { 0x1d, 0x01,  0x0018, -0x00000001,  0x00000000, NULL },
+    EXECUTE_STATION(-1, 24, 1),
     HALT,
 };
 
@@ -7438,7 +7438,7 @@ static const struct ScriptCommand s_gs9_g50_s0_lives0_dlg2[] = { /* 0x81beef8 */
 static const struct ScriptCommand s_gs9_g50_s1_evt0_sref_script[] = { /* 0x81bf0b0 */
     DEBUGINFO,
     JUMPIF_SCENE_GT(SCENARIO_MAIN, 11, 2, /* to label */ 0),
-    { 0x1d, 0x02,  0x0032, -0x00000001,  0x00000000, NULL },
+    EXECUTE_STATION(-1, 50, 2),
     HALT,
   LABEL(0), /* = 0x00 */
     RET,
@@ -9905,7 +9905,7 @@ static const struct ScriptCommand s_gs9_g72_s2_lives0_dlg0[] = { /* 0x81ca500 */
 
 static const struct ScriptCommand s_gs9_g73_s0_evt0_sref_script[] = { /* 0x81ca580 */
     DEBUGINFO,
-    { 0x1d, 0x00,  0x004a, -0x00000001,  0x00000000, NULL },
+    EXECUTE_STATION(-1, 74, 0),
     HALT,
 };
 
@@ -11573,7 +11573,7 @@ static const struct ScriptCommand s_gs9_g77_s0_lives0_dlg2[] = { /* 0x81d1bf4 */
     { 0x34, 0x00,  0x0001,  0x00000000,  0x00000000, _(" We see peeled #CIChestnuts#R\nsometimes in #CDUproar Forest#R.\nWe want them out of the shell.") },
     JUMP_SCRIPT(END_TALK),
   LABEL(0), /* = 0x00 */
-    { 0x1d, 0x01, -0x0001, -0x00000001,  0x00000000, NULL },
+    EXECUTE_STATION(-1, -1, 1),
     HALT,
 };
 
@@ -11597,7 +11597,7 @@ static const struct ScriptCommand s_gs9_g77_s0_lives1_dlg2[] = { /* 0x81d1e24 */
     { 0x34, 0x00,  0x0001,  0x00000000,  0x00000000, _(" We see #CIChestnuts#R\nsometimes in #CDUproar Forest#R.\nWe want them out of the shell.") },
     JUMP_SCRIPT(END_TALK),
   LABEL(0), /* = 0x00 */
-    { 0x1d, 0x01, -0x0001, -0x00000001,  0x00000000, NULL },
+    EXECUTE_STATION(-1, -1, 1),
     HALT,
 };
 
@@ -11621,7 +11621,7 @@ static const struct ScriptCommand s_gs9_g77_s0_lives2_dlg2[] = { /* 0x81d1f8c */
     { 0x34, 0x00,  0x0001,  0x00000000,  0x00000000, _(" We see #CIChestnuts#R\nsometimes in #CDUproar Forest#R.\nWe want them out of the shell.") },
     JUMP_SCRIPT(END_TALK),
   LABEL(0), /* = 0x00 */
-    { 0x1d, 0x01, -0x0001, -0x00000001,  0x00000000, NULL },
+    EXECUTE_STATION(-1, -1, 1),
     HALT,
 };
 

@@ -78,7 +78,7 @@ static const struct ScriptCommand s_gs196_g0_s0_evt1_sref_script[] = { /* 0x8248
     { 0x23, 0x01, -0x0001,  0x00000000,  0x00000000, NULL },
     CALL_SCRIPT(DISMISSAL_SALLY_MEMBER4_FUNC),
     SET_DUNGEON_RES(/* result */ 10, /* enter */ -1),
-    { 0x1d, 0x00,  0x0004,  0x0000000c,  0x00000000, NULL },
+    EXECUTE_STATION(12, 4, 0),
     HALT,
   LABEL(0), /* = 0x00 */
     ASK1(FALSE, /*default*/ 0, /* speaker */ -1, _("Return to the entrance?")),
