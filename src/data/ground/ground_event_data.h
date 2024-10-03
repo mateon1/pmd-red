@@ -692,7 +692,7 @@ static const struct ScriptCommand s_script_FORMATION_HERO[] = { /* 0x8121074 */
   LABEL(0), /* = 0x00 */
     UPDATE_VARVAR(CALC_SET, GROUND_GETOUT, GROUND_ENTER),
     UPDATE_VARINT(CALC_SET, START_MODE, 2),
-    { 0x1b, 0x00,  0x0066,  0x00000000,  0x00000000, NULL },
+    EXECUTE_FUNCTION(EVENT_DIVIDE),
     HALT,
 };
 
@@ -1180,7 +1180,7 @@ static const struct ScriptCommand s_script_EVENT_DIVIDE_NEXT_DAY_FUNC[] = { /* 0
   LABEL(3), /* = 0x03 */
     RET_DIRECT,
   LABEL(4), /* = 0x04 */
-    { 0x1b, 0x00,  0x0066,  0x00000000,  0x00000000, NULL },
+    EXECUTE_FUNCTION(EVENT_DIVIDE),
     HALT,
   LABEL(1), /* = 0x01 */
     SCENARIO_CALC(SCENARIO_MAIN, 19,  1),
@@ -1213,19 +1213,19 @@ static const struct ScriptCommand s_script_EVENT_DIVIDE_NEXT_DAY_FUNC[] = { /* 0
     JUMPIF_SCENE_EQ(SCENARIO_SUB3, 36, 1, /* to label */ 12),
     JUMP_LABEL(13),
   LABEL(12), /* = 0x0c */
-    { 0x1b, 0x00,  0x011d,  0x00000000,  0x00000000, NULL },
+    EXECUTE_FUNCTION(EVENT_S03E01A_L001),
     HALT,
   LABEL(13), /* = 0x0d */
     JUMPIF_SCENE_EQ(SCENARIO_SUB5, 44, 1, /* to label */ 14),
     JUMP_LABEL(15),
   LABEL(14), /* = 0x0e */
-    { 0x1b, 0x00,  0x0132,  0x00000000,  0x00000000, NULL },
+    EXECUTE_FUNCTION(EVENT_S05E01A_L001),
     HALT,
   LABEL(15), /* = 0x0f */
     JUMPIF_SCENE_EQ(SCENARIO_SUB6, 46, 1, /* to label */ 16),
     JUMP_LABEL(17),
   LABEL(16), /* = 0x10 */
-    { 0x1b, 0x00,  0x0138,  0x00000000,  0x00000000, NULL },
+    EXECUTE_FUNCTION(EVENT_S06E01A_L001),
     HALT,
   LABEL(17), /* = 0x11 */
     RET_DIRECT,
@@ -1243,7 +1243,7 @@ static const struct ScriptCommand s_script_EVENT_DIVIDE_NEXT_DAY2_FUNC[] = { /* 
   LABEL(3), /* = 0x03 */
     RET_DIRECT,
   LABEL(4), /* = 0x04 */
-    { 0x1b, 0x00,  0x0066,  0x00000000,  0x00000000, NULL },
+    EXECUTE_FUNCTION(EVENT_DIVIDE),
     HALT,
   LABEL(1), /* = 0x01 */
     SCENARIO_CALC(SCENARIO_MAIN, 19,  1),
@@ -3042,7 +3042,7 @@ static const struct ScriptCommand s_script_EVENT_S01E01C_L001[] = { /* 0x81280f0
     { 0x1e, 0x00,  0x004e,  0x00000009,  0x00000000, NULL },
     SCENARIO_CALC(SCENARIO_SUB1, 31,  0),
     { 0x3b, 0x03,  0x0000,  0x00000000,  0x00000000, NULL },
-    { 0x1b, 0x00,  0x0067,  0x00000000,  0x00000000, NULL },
+    EXECUTE_FUNCTION(EVENT_DIVIDE_NEXT),
     RET,
 };
 

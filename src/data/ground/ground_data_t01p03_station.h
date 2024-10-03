@@ -187,15 +187,15 @@ static const struct ScriptCommand s_gs4_g0_s0_obj0_dlg2[] = { /* 0x818a1f8 */
     JUMP_SCRIPT(END_TALK),
   LABEL(0), /* = 0x00 */
     { 0x23, 0x01,  0x001e,  0x00000000,  0x00000000, NULL },
-    { 0x1b, 0x00,  0x0101,  0x00000000,  0x00000000, NULL },
+    EXECUTE_FUNCTION(EVENT_S01E01A_L002),
     HALT,
   LABEL(1), /* = 0x01 */
     { 0x23, 0x01,  0x001e,  0x00000000,  0x00000000, NULL },
-    { 0x1b, 0x00,  0x0108,  0x00000000,  0x00000000, NULL },
+    EXECUTE_FUNCTION(EVENT_S01E02A_L001),
     HALT,
   LABEL(2), /* = 0x02 */
     { 0x23, 0x01,  0x001e,  0x00000000,  0x00000000, NULL },
-    { 0x1b, 0x00,  0x014b,  0x00000000,  0x00000000, NULL },
+    EXECUTE_FUNCTION(EVENT_S08E01A_L005B),
     HALT,
 };
 
@@ -948,7 +948,7 @@ static const struct ScriptCommand s_gs4_g4_s0_lives0_dlg2[] = { /* 0x818d588 */
     JUMP_SCRIPT(END_TALK),
   LABEL(1), /* = 0x01 */
     { 0x30, 0x00,  0x0000,  0x00000000,  0x00000000, NULL },
-    { 0x1b, 0x00,  0x0108,  0x00000000,  0x00000000, NULL },
+    EXECUTE_FUNCTION(EVENT_S01E02A_L001),
     CANCEL_ENTITIES(4, 0),
     JUMP_SCRIPT(END_TALK),
 };
@@ -1221,7 +1221,7 @@ static const struct ScriptCommand s_gs4_g9_s0_station_sref_script[] = { /* 0x818
     SELECT_ENTITIES(-1, -1),
     { 0xe3, 0x00,  0x0003,  0x00000000,  0x00000000, NULL },
     SELECT_ENTITIES(10, 0),
-    { 0x1b, 0x00,  0x0157,  0x00000000,  0x00000000, NULL },
+    EXECUTE_FUNCTION(EVENT_S09E01A_L002),
     RET,
 };
 

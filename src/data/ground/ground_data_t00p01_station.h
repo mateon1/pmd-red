@@ -293,31 +293,31 @@ static const struct ScriptCommand s_gs0_g1_s0_lives10_dlg2[] = { /* 0x8133068 */
     JUMP_LABEL(1),
   LABEL(22), /* = 0x16 */
     { 0x30, 0x00,  0x0000,  0x00000000,  0x00000000, NULL },
-    { 0x1b, 0x00,  0x0073,  0x00000000,  0x00000000, NULL },
+    EXECUTE_FUNCTION(DEMO_01),
     HALT,
   LABEL(23), /* = 0x17 */
     { 0x30, 0x00,  0x0000,  0x00000000,  0x00000000, NULL },
-    { 0x1b, 0x00,  0x0074,  0x00000000,  0x00000000, NULL },
+    EXECUTE_FUNCTION(DEMO_02),
     HALT,
   LABEL(24), /* = 0x18 */
     { 0x30, 0x00,  0x0000,  0x00000000,  0x00000000, NULL },
-    { 0x1b, 0x00,  0x0075,  0x00000000,  0x00000000, NULL },
+    EXECUTE_FUNCTION(DEMO_03),
     HALT,
   LABEL(25), /* = 0x19 */
     { 0x30, 0x00,  0x0000,  0x00000000,  0x00000000, NULL },
-    { 0x1b, 0x00,  0x0077,  0x00000000,  0x00000000, NULL },
+    EXECUTE_FUNCTION(EVENT_M00E01A_L001),
     HALT,
   LABEL(26), /* = 0x1a */
     { 0x30, 0x00,  0x0000,  0x00000000,  0x00000000, NULL },
-    { 0x1b, 0x00,  0x0078,  0x00000000,  0x00000000, NULL },
+    EXECUTE_FUNCTION(EVENT_M01E01A_L001),
     HALT,
   LABEL(27), /* = 0x1b */
     { 0x30, 0x00,  0x0000,  0x00000000,  0x00000000, NULL },
-    { 0x1b, 0x00,  0x0079,  0x00000000,  0x00000000, NULL },
+    EXECUTE_FUNCTION(EVENT_M01E01A_L002),
     HALT,
   LABEL(28), /* = 0x1c */
     { 0x30, 0x00,  0x0000,  0x00000000,  0x00000000, NULL },
-    { 0x1b, 0x00,  0x007a,  0x00000000,  0x00000000, NULL },
+    EXECUTE_FUNCTION(EVENT_M01E01A_L003),
     HALT,
   LABEL(5), /* = 0x05 */
     ASK_DEBUG(FALSE, /*default*/ 0, /* speaker */ -1, NULL),
@@ -330,27 +330,27 @@ static const struct ScriptCommand s_gs0_g1_s0_lives10_dlg2[] = { /* 0x8133068 */
     JUMP_LABEL(1),
   LABEL(29), /* = 0x1d */
     { 0x30, 0x00,  0x0000,  0x00000000,  0x00000000, NULL },
-    { 0x1b, 0x00,  0x007b,  0x00000000,  0x00000000, NULL },
+    EXECUTE_FUNCTION(EVENT_M01E02A_L001),
     HALT,
   LABEL(30), /* = 0x1e */
     { 0x30, 0x00,  0x0000,  0x00000000,  0x00000000, NULL },
-    { 0x1b, 0x00,  0x007e,  0x00000000,  0x00000000, NULL },
+    EXECUTE_FUNCTION(EVENT_M01E02A_L002),
     HALT,
   LABEL(31), /* = 0x1f */
     { 0x30, 0x00,  0x0000,  0x00000000,  0x00000000, NULL },
-    { 0x1b, 0x00,  0x007f,  0x00000000,  0x00000000, NULL },
+    EXECUTE_FUNCTION(EVENT_M01E02A_L003),
     HALT,
   LABEL(32), /* = 0x20 */
     { 0x30, 0x00,  0x0000,  0x00000000,  0x00000000, NULL },
-    { 0x1b, 0x00,  0x0080,  0x00000000,  0x00000000, NULL },
+    EXECUTE_FUNCTION(EVENT_M01E02A_L004),
     HALT,
   LABEL(33), /* = 0x21 */
     { 0x30, 0x00,  0x0000,  0x00000000,  0x00000000, NULL },
-    { 0x1b, 0x00,  0x0081,  0x00000000,  0x00000000, NULL },
+    EXECUTE_FUNCTION(EVENT_M01E02A_L005),
     HALT,
   LABEL(34), /* = 0x22 */
     { 0x30, 0x00,  0x0000,  0x00000000,  0x00000000, NULL },
-    { 0x1b, 0x00,  0x0082,  0x00000000,  0x00000000, NULL },
+    EXECUTE_FUNCTION(EVENT_M01E02A_L006),
     HALT,
   LABEL(6), /* = 0x06 */
     ASK_DEBUG(FALSE, /*default*/ 0, /* speaker */ -1, NULL),
@@ -365,35 +365,35 @@ static const struct ScriptCommand s_gs0_g1_s0_lives10_dlg2[] = { /* 0x8133068 */
     JUMP_LABEL(1),
   LABEL(35), /* = 0x23 */
     { 0x30, 0x00,  0x0000,  0x00000000,  0x00000000, NULL },
-    { 0x1b, 0x00,  0x0083,  0x00000000,  0x00000000, NULL },
+    EXECUTE_FUNCTION(EVENT_M01E02B_L001),
     HALT,
   LABEL(36), /* = 0x24 */
     { 0x30, 0x00,  0x0000,  0x00000000,  0x00000000, NULL },
-    { 0x1b, 0x00,  0x0084,  0x00000000,  0x00000000, NULL },
+    EXECUTE_FUNCTION(EVENT_M01E02B_L002),
     HALT,
   LABEL(37), /* = 0x25 */
     { 0x30, 0x00,  0x0000,  0x00000000,  0x00000000, NULL },
-    { 0x1b, 0x00,  0x0085,  0x00000000,  0x00000000, NULL },
+    EXECUTE_FUNCTION(EVENT_M01E02B_L003),
     HALT,
   LABEL(38), /* = 0x26 */
     { 0x30, 0x00,  0x0000,  0x00000000,  0x00000000, NULL },
-    { 0x1b, 0x00,  0x0086,  0x00000000,  0x00000000, NULL },
+    EXECUTE_FUNCTION(EVENT_M01E02B_L004),
     HALT,
   LABEL(39), /* = 0x27 */
     { 0x30, 0x00,  0x0000,  0x00000000,  0x00000000, NULL },
-    { 0x1b, 0x00,  0x0088,  0x00000000,  0x00000000, NULL },
+    EXECUTE_FUNCTION(EVENT_M01E02B_L005),
     HALT,
   LABEL(40), /* = 0x28 */
     { 0x30, 0x00,  0x0000,  0x00000000,  0x00000000, NULL },
-    { 0x1b, 0x00,  0x0089,  0x00000000,  0x00000000, NULL },
+    EXECUTE_FUNCTION(EVENT_M01E02B_L006),
     HALT,
   LABEL(41), /* = 0x29 */
     { 0x30, 0x00,  0x0000,  0x00000000,  0x00000000, NULL },
-    { 0x1b, 0x00,  0x008a,  0x00000000,  0x00000000, NULL },
+    EXECUTE_FUNCTION(EVENT_M01E02B_L007),
     HALT,
   LABEL(42), /* = 0x2a */
     { 0x30, 0x00,  0x0000,  0x00000000,  0x00000000, NULL },
-    { 0x1b, 0x00,  0x008b,  0x00000000,  0x00000000, NULL },
+    EXECUTE_FUNCTION(EVENT_M01E02B_L008),
     HALT,
   LABEL(7), /* = 0x07 */
     ASK_DEBUG(FALSE, /*default*/ 0, /* speaker */ -1, NULL),
@@ -408,35 +408,35 @@ static const struct ScriptCommand s_gs0_g1_s0_lives10_dlg2[] = { /* 0x8133068 */
     JUMP_LABEL(1),
   LABEL(43), /* = 0x2b */
     { 0x30, 0x00,  0x0000,  0x00000000,  0x00000000, NULL },
-    { 0x1b, 0x00,  0x008c,  0x00000000,  0x00000000, NULL },
+    EXECUTE_FUNCTION(EVENT_M01E03A_L000),
     HALT,
   LABEL(44), /* = 0x2c */
     { 0x30, 0x00,  0x0000,  0x00000000,  0x00000000, NULL },
-    { 0x1b, 0x00,  0x008d,  0x00000000,  0x00000000, NULL },
+    EXECUTE_FUNCTION(EVENT_M01E03A_L001),
     HALT,
   LABEL(45), /* = 0x2d */
     { 0x30, 0x00,  0x0000,  0x00000000,  0x00000000, NULL },
-    { 0x1b, 0x00,  0x008e,  0x00000000,  0x00000000, NULL },
+    EXECUTE_FUNCTION(EVENT_M01E03A_L002),
     HALT,
   LABEL(46), /* = 0x2e */
     { 0x30, 0x00,  0x0000,  0x00000000,  0x00000000, NULL },
-    { 0x1b, 0x00,  0x008f,  0x00000000,  0x00000000, NULL },
+    EXECUTE_FUNCTION(EVENT_M01E03A_L003),
     HALT,
   LABEL(47), /* = 0x2f */
     { 0x30, 0x00,  0x0000,  0x00000000,  0x00000000, NULL },
-    { 0x1b, 0x00,  0x0090,  0x00000000,  0x00000000, NULL },
+    EXECUTE_FUNCTION(EVENT_M01E03A_L004),
     HALT,
   LABEL(48), /* = 0x30 */
     { 0x30, 0x00,  0x0000,  0x00000000,  0x00000000, NULL },
-    { 0x1b, 0x00,  0x0091,  0x00000000,  0x00000000, NULL },
+    EXECUTE_FUNCTION(EVENT_M01E03A_L005),
     HALT,
   LABEL(49), /* = 0x31 */
     { 0x30, 0x00,  0x0000,  0x00000000,  0x00000000, NULL },
-    { 0x1b, 0x00,  0x0092,  0x00000000,  0x00000000, NULL },
+    EXECUTE_FUNCTION(EVENT_M01E03A_L006),
     HALT,
   LABEL(50), /* = 0x32 */
     { 0x30, 0x00,  0x0000,  0x00000000,  0x00000000, NULL },
-    { 0x1b, 0x00,  0x0093,  0x00000000,  0x00000000, NULL },
+    EXECUTE_FUNCTION(EVENT_M01E03A_L007),
     HALT,
   LABEL(8), /* = 0x08 */
     ASK_DEBUG(FALSE, /*default*/ 0, /* speaker */ -1, NULL),
@@ -447,19 +447,19 @@ static const struct ScriptCommand s_gs0_g1_s0_lives10_dlg2[] = { /* 0x8133068 */
     JUMP_LABEL(1),
   LABEL(51), /* = 0x33 */
     { 0x30, 0x00,  0x0000,  0x00000000,  0x00000000, NULL },
-    { 0x1b, 0x00,  0x0094,  0x00000000,  0x00000000, NULL },
+    EXECUTE_FUNCTION(EVENT_M01E03A_L008),
     HALT,
   LABEL(52), /* = 0x34 */
     { 0x30, 0x00,  0x0000,  0x00000000,  0x00000000, NULL },
-    { 0x1b, 0x00,  0x0095,  0x00000000,  0x00000000, NULL },
+    EXECUTE_FUNCTION(EVENT_M01E03A_L009),
     HALT,
   LABEL(53), /* = 0x35 */
     { 0x30, 0x00,  0x0000,  0x00000000,  0x00000000, NULL },
-    { 0x1b, 0x00,  0x0096,  0x00000000,  0x00000000, NULL },
+    EXECUTE_FUNCTION(EVENT_M01E03A_L010),
     HALT,
   LABEL(54), /* = 0x36 */
     { 0x30, 0x00,  0x0000,  0x00000000,  0x00000000, NULL },
-    { 0x1b, 0x00,  0x0097,  0x00000000,  0x00000000, NULL },
+    EXECUTE_FUNCTION(EVENT_M01E03A_L011),
     HALT,
   LABEL(9), /* = 0x09 */
     ASK_DEBUG(FALSE, /*default*/ 0, /* speaker */ -1, NULL),
@@ -473,31 +473,31 @@ static const struct ScriptCommand s_gs0_g1_s0_lives10_dlg2[] = { /* 0x8133068 */
     JUMP_LABEL(1),
   LABEL(55), /* = 0x37 */
     { 0x30, 0x00,  0x0000,  0x00000000,  0x00000000, NULL },
-    { 0x1b, 0x00,  0x0098,  0x00000000,  0x00000000, NULL },
+    EXECUTE_FUNCTION(EVENT_M01E04A_L000),
     HALT,
   LABEL(56), /* = 0x38 */
     { 0x30, 0x00,  0x0000,  0x00000000,  0x00000000, NULL },
-    { 0x1b, 0x00,  0x0099,  0x00000000,  0x00000000, NULL },
+    EXECUTE_FUNCTION(EVENT_M01E04A_L001),
     HALT,
   LABEL(57), /* = 0x39 */
     { 0x30, 0x00,  0x0000,  0x00000000,  0x00000000, NULL },
-    { 0x1b, 0x00,  0x009a,  0x00000000,  0x00000000, NULL },
+    EXECUTE_FUNCTION(EVENT_M01E04A_L002),
     HALT,
   LABEL(58), /* = 0x3a */
     { 0x30, 0x00,  0x0000,  0x00000000,  0x00000000, NULL },
-    { 0x1b, 0x00,  0x009b,  0x00000000,  0x00000000, NULL },
+    EXECUTE_FUNCTION(EVENT_M01E04A_L003),
     HALT,
   LABEL(59), /* = 0x3b */
     { 0x30, 0x00,  0x0000,  0x00000000,  0x00000000, NULL },
-    { 0x1b, 0x00,  0x009c,  0x00000000,  0x00000000, NULL },
+    EXECUTE_FUNCTION(EVENT_M01E04A_L004),
     HALT,
   LABEL(60), /* = 0x3c */
     { 0x30, 0x00,  0x0000,  0x00000000,  0x00000000, NULL },
-    { 0x1b, 0x00,  0x009d,  0x00000000,  0x00000000, NULL },
+    EXECUTE_FUNCTION(EVENT_M01E04A_L005),
     HALT,
   LABEL(61), /* = 0x3d */
     { 0x30, 0x00,  0x0000,  0x00000000,  0x00000000, NULL },
-    { 0x1b, 0x00,  0x009e,  0x00000000,  0x00000000, NULL },
+    EXECUTE_FUNCTION(EVENT_M01E04A_L006),
     HALT,
   LABEL(10), /* = 0x0a */
     ASK_DEBUG(FALSE, /*default*/ 0, /* speaker */ -1, NULL),
@@ -512,35 +512,35 @@ static const struct ScriptCommand s_gs0_g1_s0_lives10_dlg2[] = { /* 0x8133068 */
     JUMP_LABEL(1),
   LABEL(62), /* = 0x3e */
     { 0x30, 0x00,  0x0000,  0x00000000,  0x00000000, NULL },
-    { 0x1b, 0x00,  0x009f,  0x00000000,  0x00000000, NULL },
+    EXECUTE_FUNCTION(EVENT_M01E04B_L000),
     HALT,
   LABEL(63), /* = 0x3f */
     { 0x30, 0x00,  0x0000,  0x00000000,  0x00000000, NULL },
-    { 0x1b, 0x00,  0x00a0,  0x00000000,  0x00000000, NULL },
+    EXECUTE_FUNCTION(EVENT_M01E04B_L001),
     HALT,
   LABEL(64), /* = 0x40 */
     { 0x30, 0x00,  0x0000,  0x00000000,  0x00000000, NULL },
-    { 0x1b, 0x00,  0x00a1,  0x00000000,  0x00000000, NULL },
+    EXECUTE_FUNCTION(EVENT_M01E04B_L002),
     HALT,
   LABEL(65), /* = 0x41 */
     { 0x30, 0x00,  0x0000,  0x00000000,  0x00000000, NULL },
-    { 0x1b, 0x00,  0x00a2,  0x00000000,  0x00000000, NULL },
+    EXECUTE_FUNCTION(EVENT_M01E04B_L003),
     HALT,
   LABEL(66), /* = 0x42 */
     { 0x30, 0x00,  0x0000,  0x00000000,  0x00000000, NULL },
-    { 0x1b, 0x00,  0x00a3,  0x00000000,  0x00000000, NULL },
+    EXECUTE_FUNCTION(EVENT_M01E04B_L004),
     HALT,
   LABEL(67), /* = 0x43 */
     { 0x30, 0x00,  0x0000,  0x00000000,  0x00000000, NULL },
-    { 0x1b, 0x00,  0x00a4,  0x00000000,  0x00000000, NULL },
+    EXECUTE_FUNCTION(EVENT_M01E04B_L005),
     HALT,
   LABEL(68), /* = 0x44 */
     { 0x30, 0x00,  0x0000,  0x00000000,  0x00000000, NULL },
-    { 0x1b, 0x00,  0x00a5,  0x00000000,  0x00000000, NULL },
+    EXECUTE_FUNCTION(EVENT_M01E04B_L006),
     HALT,
   LABEL(69), /* = 0x45 */
     { 0x30, 0x00,  0x0000,  0x00000000,  0x00000000, NULL },
-    { 0x1b, 0x00,  0x00a6,  0x00000000,  0x00000000, NULL },
+    EXECUTE_FUNCTION(EVENT_M01E04B_L007),
     HALT,
   LABEL(11), /* = 0x0b */
     ASK_DEBUG(FALSE, /*default*/ 0, /* speaker */ -1, NULL),
@@ -554,31 +554,31 @@ static const struct ScriptCommand s_gs0_g1_s0_lives10_dlg2[] = { /* 0x8133068 */
     JUMP_LABEL(2),
   LABEL(70), /* = 0x46 */
     { 0x30, 0x00,  0x0000,  0x00000000,  0x00000000, NULL },
-    { 0x1b, 0x00,  0x00a7,  0x00000000,  0x00000000, NULL },
+    EXECUTE_FUNCTION(EVENT_M01E05A_L000),
     HALT,
   LABEL(71), /* = 0x47 */
     { 0x30, 0x00,  0x0000,  0x00000000,  0x00000000, NULL },
-    { 0x1b, 0x00,  0x00a8,  0x00000000,  0x00000000, NULL },
+    EXECUTE_FUNCTION(EVENT_M01E05A_L001),
     HALT,
   LABEL(72), /* = 0x48 */
     { 0x30, 0x00,  0x0000,  0x00000000,  0x00000000, NULL },
-    { 0x1b, 0x00,  0x00a9,  0x00000000,  0x00000000, NULL },
+    EXECUTE_FUNCTION(EVENT_M01E05A_L002),
     HALT,
   LABEL(73), /* = 0x49 */
     { 0x30, 0x00,  0x0000,  0x00000000,  0x00000000, NULL },
-    { 0x1b, 0x00,  0x00aa,  0x00000000,  0x00000000, NULL },
+    EXECUTE_FUNCTION(EVENT_M01E05A_L003),
     HALT,
   LABEL(74), /* = 0x4a */
     { 0x30, 0x00,  0x0000,  0x00000000,  0x00000000, NULL },
-    { 0x1b, 0x00,  0x00ab,  0x00000000,  0x00000000, NULL },
+    EXECUTE_FUNCTION(EVENT_M01E05A_L004),
     HALT,
   LABEL(75), /* = 0x4b */
     { 0x30, 0x00,  0x0000,  0x00000000,  0x00000000, NULL },
-    { 0x1b, 0x00,  0x00ac,  0x00000000,  0x00000000, NULL },
+    EXECUTE_FUNCTION(EVENT_M01E05A_L005),
     HALT,
   LABEL(76), /* = 0x4c */
     { 0x30, 0x00,  0x0000,  0x00000000,  0x00000000, NULL },
-    { 0x1b, 0x00,  0x00ad,  0x00000000,  0x00000000, NULL },
+    EXECUTE_FUNCTION(EVENT_M01E05A_L006),
     HALT,
   LABEL(12), /* = 0x0c */
     ASK_DEBUG(FALSE, /*default*/ 0, /* speaker */ -1, NULL),
@@ -591,27 +591,27 @@ static const struct ScriptCommand s_gs0_g1_s0_lives10_dlg2[] = { /* 0x8133068 */
     JUMP_LABEL(2),
   LABEL(77), /* = 0x4d */
     { 0x30, 0x00,  0x0000,  0x00000000,  0x00000000, NULL },
-    { 0x1b, 0x00,  0x00ae,  0x00000000,  0x00000000, NULL },
+    EXECUTE_FUNCTION(EVENT_M01E05B_L000),
     HALT,
   LABEL(78), /* = 0x4e */
     { 0x30, 0x00,  0x0000,  0x00000000,  0x00000000, NULL },
-    { 0x1b, 0x00,  0x00af,  0x00000000,  0x00000000, NULL },
+    EXECUTE_FUNCTION(EVENT_M01E05B_L001),
     HALT,
   LABEL(79), /* = 0x4f */
     { 0x30, 0x00,  0x0000,  0x00000000,  0x00000000, NULL },
-    { 0x1b, 0x00,  0x00b0,  0x00000000,  0x00000000, NULL },
+    EXECUTE_FUNCTION(EVENT_M01E05B_L002),
     HALT,
   LABEL(80), /* = 0x50 */
     { 0x30, 0x00,  0x0000,  0x00000000,  0x00000000, NULL },
-    { 0x1b, 0x00,  0x00b1,  0x00000000,  0x00000000, NULL },
+    EXECUTE_FUNCTION(EVENT_M01E05B_L003),
     HALT,
   LABEL(81), /* = 0x51 */
     { 0x30, 0x00,  0x0000,  0x00000000,  0x00000000, NULL },
-    { 0x1b, 0x00,  0x00b2,  0x00000000,  0x00000000, NULL },
+    EXECUTE_FUNCTION(EVENT_M01E05B_L004),
     HALT,
   LABEL(82), /* = 0x52 */
     { 0x30, 0x00,  0x0000,  0x00000000,  0x00000000, NULL },
-    { 0x1b, 0x00,  0x00b3,  0x00000000,  0x00000000, NULL },
+    EXECUTE_FUNCTION(EVENT_M01E05B_L005),
     HALT,
   LABEL(13), /* = 0x0d */
     ASK_DEBUG(FALSE, /*default*/ 0, /* speaker */ -1, NULL),
@@ -621,15 +621,15 @@ static const struct ScriptCommand s_gs0_g1_s0_lives10_dlg2[] = { /* 0x8133068 */
     JUMP_LABEL(2),
   LABEL(83), /* = 0x53 */
     { 0x30, 0x00,  0x0000,  0x00000000,  0x00000000, NULL },
-    { 0x1b, 0x00,  0x00b4,  0x00000000,  0x00000000, NULL },
+    EXECUTE_FUNCTION(EVENT_M01E06A_L001),
     HALT,
   LABEL(84), /* = 0x54 */
     { 0x30, 0x00,  0x0000,  0x00000000,  0x00000000, NULL },
-    { 0x1b, 0x00,  0x00b5,  0x00000000,  0x00000000, NULL },
+    EXECUTE_FUNCTION(EVENT_M01E06A_L002),
     HALT,
   LABEL(85), /* = 0x55 */
     { 0x30, 0x00,  0x0000,  0x00000000,  0x00000000, NULL },
-    { 0x1b, 0x00,  0x00b6,  0x00000000,  0x00000000, NULL },
+    EXECUTE_FUNCTION(EVENT_M01E06A_L003),
     HALT,
   LABEL(14), /* = 0x0e */
     ASK_DEBUG(FALSE, /*default*/ 0, /* speaker */ -1, NULL),
@@ -641,23 +641,23 @@ static const struct ScriptCommand s_gs0_g1_s0_lives10_dlg2[] = { /* 0x8133068 */
     JUMP_LABEL(2),
   LABEL(86), /* = 0x56 */
     { 0x30, 0x00,  0x0000,  0x00000000,  0x00000000, NULL },
-    { 0x1b, 0x00,  0x00b7,  0x00000000,  0x00000000, NULL },
+    EXECUTE_FUNCTION(EVENT_M01E07A_L001),
     HALT,
   LABEL(87), /* = 0x57 */
     { 0x30, 0x00,  0x0000,  0x00000000,  0x00000000, NULL },
-    { 0x1b, 0x00,  0x00b8,  0x00000000,  0x00000000, NULL },
+    EXECUTE_FUNCTION(EVENT_M01E07A_L002),
     HALT,
   LABEL(88), /* = 0x58 */
     { 0x30, 0x00,  0x0000,  0x00000000,  0x00000000, NULL },
-    { 0x1b, 0x00,  0x00b9,  0x00000000,  0x00000000, NULL },
+    EXECUTE_FUNCTION(EVENT_M01E07A_L003),
     HALT,
   LABEL(89), /* = 0x59 */
     { 0x30, 0x00,  0x0000,  0x00000000,  0x00000000, NULL },
-    { 0x1b, 0x00,  0x00ba,  0x00000000,  0x00000000, NULL },
+    EXECUTE_FUNCTION(EVENT_M01E07A_L004),
     HALT,
   LABEL(90), /* = 0x5a */
     { 0x30, 0x00,  0x0000,  0x00000000,  0x00000000, NULL },
-    { 0x1b, 0x00,  0x00bb,  0x00000000,  0x00000000, NULL },
+    EXECUTE_FUNCTION(EVENT_M01E07A_L005),
     HALT,
   LABEL(15), /* = 0x0f */
     ASK_DEBUG(FALSE, /*default*/ 0, /* speaker */ -1, NULL),
@@ -669,23 +669,23 @@ static const struct ScriptCommand s_gs0_g1_s0_lives10_dlg2[] = { /* 0x8133068 */
     JUMP_LABEL(2),
   LABEL(91), /* = 0x5b */
     { 0x30, 0x00,  0x0000,  0x00000000,  0x00000000, NULL },
-    { 0x1b, 0x00,  0x00be,  0x00000000,  0x00000000, NULL },
+    EXECUTE_FUNCTION(EVENT_M01E07B_L001),
     HALT,
   LABEL(92), /* = 0x5c */
     { 0x30, 0x00,  0x0000,  0x00000000,  0x00000000, NULL },
-    { 0x1b, 0x00,  0x00bf,  0x00000000,  0x00000000, NULL },
+    EXECUTE_FUNCTION(EVENT_M01E07B_L002),
     HALT,
   LABEL(93), /* = 0x5d */
     { 0x30, 0x00,  0x0000,  0x00000000,  0x00000000, NULL },
-    { 0x1b, 0x00,  0x00c0,  0x00000000,  0x00000000, NULL },
+    EXECUTE_FUNCTION(EVENT_M01E07B_L003),
     HALT,
   LABEL(94), /* = 0x5e */
     { 0x30, 0x00,  0x0000,  0x00000000,  0x00000000, NULL },
-    { 0x1b, 0x00,  0x00c1,  0x00000000,  0x00000000, NULL },
+    EXECUTE_FUNCTION(EVENT_M01E07B_L004),
     HALT,
   LABEL(95), /* = 0x5f */
     { 0x30, 0x00,  0x0000,  0x00000000,  0x00000000, NULL },
-    { 0x1b, 0x00,  0x00c2,  0x00000000,  0x00000000, NULL },
+    EXECUTE_FUNCTION(EVENT_M01E07B_L005),
     HALT,
   LABEL(16), /* = 0x10 */
     ASK_DEBUG(FALSE, /*default*/ 0, /* speaker */ -1, NULL),
@@ -697,23 +697,23 @@ static const struct ScriptCommand s_gs0_g1_s0_lives10_dlg2[] = { /* 0x8133068 */
     JUMP_LABEL(3),
   LABEL(96), /* = 0x60 */
     { 0x30, 0x00,  0x0000,  0x00000000,  0x00000000, NULL },
-    { 0x1b, 0x00,  0x00c5,  0x00000000,  0x00000000, NULL },
+    EXECUTE_FUNCTION(EVENT_M01E08A_L001),
     HALT,
   LABEL(97), /* = 0x61 */
     { 0x30, 0x00,  0x0000,  0x00000000,  0x00000000, NULL },
-    { 0x1b, 0x00,  0x00c6,  0x00000000,  0x00000000, NULL },
+    EXECUTE_FUNCTION(EVENT_M01E08A_L002),
     HALT,
   LABEL(98), /* = 0x62 */
     { 0x30, 0x00,  0x0000,  0x00000000,  0x00000000, NULL },
-    { 0x1b, 0x00,  0x00c7,  0x00000000,  0x00000000, NULL },
+    EXECUTE_FUNCTION(EVENT_M01E08A_L003),
     HALT,
   LABEL(99), /* = 0x63 */
     { 0x30, 0x00,  0x0000,  0x00000000,  0x00000000, NULL },
-    { 0x1b, 0x00,  0x00c8,  0x00000000,  0x00000000, NULL },
+    EXECUTE_FUNCTION(EVENT_M01E08A_L004),
     HALT,
   LABEL(100), /* = 0x64 */
     { 0x30, 0x00,  0x0000,  0x00000000,  0x00000000, NULL },
-    { 0x1b, 0x00,  0x00c9,  0x00000000,  0x00000000, NULL },
+    EXECUTE_FUNCTION(EVENT_M01E08A_L005),
     HALT,
   LABEL(17), /* = 0x11 */
     ASK_DEBUG(FALSE, /*default*/ 0, /* speaker */ -1, NULL),
@@ -726,27 +726,27 @@ static const struct ScriptCommand s_gs0_g1_s0_lives10_dlg2[] = { /* 0x8133068 */
     JUMP_LABEL(3),
   LABEL(101), /* = 0x65 */
     { 0x30, 0x00,  0x0000,  0x00000000,  0x00000000, NULL },
-    { 0x1b, 0x00,  0x00cc,  0x00000000,  0x00000000, NULL },
+    EXECUTE_FUNCTION(EVENT_M01E08B_L001),
     HALT,
   LABEL(102), /* = 0x66 */
     { 0x30, 0x00,  0x0000,  0x00000000,  0x00000000, NULL },
-    { 0x1b, 0x00,  0x00cd,  0x00000000,  0x00000000, NULL },
+    EXECUTE_FUNCTION(EVENT_M01E08B_L002),
     HALT,
   LABEL(103), /* = 0x67 */
     { 0x30, 0x00,  0x0000,  0x00000000,  0x00000000, NULL },
-    { 0x1b, 0x00,  0x00ce,  0x00000000,  0x00000000, NULL },
+    EXECUTE_FUNCTION(EVENT_M01E08B_L003),
     HALT,
   LABEL(104), /* = 0x68 */
     { 0x30, 0x00,  0x0000,  0x00000000,  0x00000000, NULL },
-    { 0x1b, 0x00,  0x00cf,  0x00000000,  0x00000000, NULL },
+    EXECUTE_FUNCTION(EVENT_M01E08B_L004),
     HALT,
   LABEL(105), /* = 0x69 */
     { 0x30, 0x00,  0x0000,  0x00000000,  0x00000000, NULL },
-    { 0x1b, 0x00,  0x00d0,  0x00000000,  0x00000000, NULL },
+    EXECUTE_FUNCTION(EVENT_M01E08B_L005),
     HALT,
   LABEL(106), /* = 0x6a */
     { 0x30, 0x00,  0x0000,  0x00000000,  0x00000000, NULL },
-    { 0x1b, 0x00,  0x00d1,  0x00000000,  0x00000000, NULL },
+    EXECUTE_FUNCTION(EVENT_M01E08B_L006),
     HALT,
   LABEL(18), /* = 0x12 */
     ASK_DEBUG(FALSE, /*default*/ 0, /* speaker */ -1, NULL),
@@ -761,35 +761,35 @@ static const struct ScriptCommand s_gs0_g1_s0_lives10_dlg2[] = { /* 0x8133068 */
     JUMP_LABEL(3),
   LABEL(107), /* = 0x6b */
     { 0x30, 0x00,  0x0000,  0x00000000,  0x00000000, NULL },
-    { 0x1b, 0x00,  0x00d4,  0x00000000,  0x00000000, NULL },
+    EXECUTE_FUNCTION(EVENT_M01E09A_L001),
     HALT,
   LABEL(108), /* = 0x6c */
     { 0x30, 0x00,  0x0000,  0x00000000,  0x00000000, NULL },
-    { 0x1b, 0x00,  0x00d5,  0x00000000,  0x00000000, NULL },
+    EXECUTE_FUNCTION(EVENT_M01E09A_L002),
     HALT,
   LABEL(109), /* = 0x6d */
     { 0x30, 0x00,  0x0000,  0x00000000,  0x00000000, NULL },
-    { 0x1b, 0x00,  0x00d6,  0x00000000,  0x00000000, NULL },
+    EXECUTE_FUNCTION(EVENT_M01E09A_L003),
     HALT,
   LABEL(110), /* = 0x6e */
     { 0x30, 0x00,  0x0000,  0x00000000,  0x00000000, NULL },
-    { 0x1b, 0x00,  0x00d7,  0x00000000,  0x00000000, NULL },
+    EXECUTE_FUNCTION(EVENT_M01E09A_L004),
     HALT,
   LABEL(111), /* = 0x6f */
     { 0x30, 0x00,  0x0000,  0x00000000,  0x00000000, NULL },
-    { 0x1b, 0x00,  0x00d8,  0x00000000,  0x00000000, NULL },
+    EXECUTE_FUNCTION(EVENT_M01E09A_L005),
     HALT,
   LABEL(112), /* = 0x70 */
     { 0x30, 0x00,  0x0000,  0x00000000,  0x00000000, NULL },
-    { 0x1b, 0x00,  0x00d9,  0x00000000,  0x00000000, NULL },
+    EXECUTE_FUNCTION(EVENT_M01E09A_L006),
     HALT,
   LABEL(113), /* = 0x71 */
     { 0x30, 0x00,  0x0000,  0x00000000,  0x00000000, NULL },
-    { 0x1b, 0x00,  0x00da,  0x00000000,  0x00000000, NULL },
+    EXECUTE_FUNCTION(EVENT_M01E09A_L007),
     HALT,
   LABEL(114), /* = 0x72 */
     { 0x30, 0x00,  0x0000,  0x00000000,  0x00000000, NULL },
-    { 0x1b, 0x00,  0x00db,  0x00000000,  0x00000000, NULL },
+    EXECUTE_FUNCTION(EVENT_M01E09A_L008),
     HALT,
   LABEL(19), /* = 0x13 */
     ASK_DEBUG(FALSE, /*default*/ 0, /* speaker */ -1, NULL),
@@ -803,31 +803,31 @@ static const struct ScriptCommand s_gs0_g1_s0_lives10_dlg2[] = { /* 0x8133068 */
     JUMP_LABEL(3),
   LABEL(115), /* = 0x73 */
     { 0x30, 0x00,  0x0000,  0x00000000,  0x00000000, NULL },
-    { 0x1b, 0x00,  0x00dc,  0x00000000,  0x00000000, NULL },
+    EXECUTE_FUNCTION(EVENT_M01E09A_L009),
     HALT,
   LABEL(116), /* = 0x74 */
     { 0x30, 0x00,  0x0000,  0x00000000,  0x00000000, NULL },
-    { 0x1b, 0x00,  0x00dd,  0x00000000,  0x00000000, NULL },
+    EXECUTE_FUNCTION(EVENT_M01E09A_L010),
     HALT,
   LABEL(117), /* = 0x75 */
     { 0x30, 0x00,  0x0000,  0x00000000,  0x00000000, NULL },
-    { 0x1b, 0x00,  0x00de,  0x00000000,  0x00000000, NULL },
+    EXECUTE_FUNCTION(EVENT_M01E09A_L011),
     HALT,
   LABEL(118), /* = 0x76 */
     { 0x30, 0x00,  0x0000,  0x00000000,  0x00000000, NULL },
-    { 0x1b, 0x00,  0x00df,  0x00000000,  0x00000000, NULL },
+    EXECUTE_FUNCTION(EVENT_M01E09A_L012),
     HALT,
   LABEL(119), /* = 0x77 */
     { 0x30, 0x00,  0x0000,  0x00000000,  0x00000000, NULL },
-    { 0x1b, 0x00,  0x00e0,  0x00000000,  0x00000000, NULL },
+    EXECUTE_FUNCTION(EVENT_M01E09A_L013),
     HALT,
   LABEL(120), /* = 0x78 */
     { 0x30, 0x00,  0x0000,  0x00000000,  0x00000000, NULL },
-    { 0x1b, 0x00,  0x00e1,  0x00000000,  0x00000000, NULL },
+    EXECUTE_FUNCTION(EVENT_M01E09A_L014),
     HALT,
   LABEL(121), /* = 0x79 */
     { 0x30, 0x00,  0x0000,  0x00000000,  0x00000000, NULL },
-    { 0x1b, 0x00,  0x00e2,  0x00000000,  0x00000000, NULL },
+    EXECUTE_FUNCTION(EVENT_M01E09A_L015),
     HALT,
   LABEL(20), /* = 0x14 */
     ASK_DEBUG(FALSE, /*default*/ 0, /* speaker */ -1, NULL),
@@ -842,35 +842,35 @@ static const struct ScriptCommand s_gs0_g1_s0_lives10_dlg2[] = { /* 0x8133068 */
     JUMP_LABEL(3),
   LABEL(122), /* = 0x7a */
     { 0x30, 0x00,  0x0000,  0x00000000,  0x00000000, NULL },
-    { 0x1b, 0x00,  0x00e3,  0x00000000,  0x00000000, NULL },
+    EXECUTE_FUNCTION(EVENT_M01E10A_L001),
     HALT,
   LABEL(123), /* = 0x7b */
     { 0x30, 0x00,  0x0000,  0x00000000,  0x00000000, NULL },
-    { 0x1b, 0x00,  0x00e4,  0x00000000,  0x00000000, NULL },
+    EXECUTE_FUNCTION(EVENT_M01E10A_L002),
     HALT,
   LABEL(124), /* = 0x7c */
     { 0x30, 0x00,  0x0000,  0x00000000,  0x00000000, NULL },
-    { 0x1b, 0x00,  0x00e5,  0x00000000,  0x00000000, NULL },
+    EXECUTE_FUNCTION(EVENT_M01E10A_L003),
     HALT,
   LABEL(125), /* = 0x7d */
     { 0x30, 0x00,  0x0000,  0x00000000,  0x00000000, NULL },
-    { 0x1b, 0x00,  0x00e6,  0x00000000,  0x00000000, NULL },
+    EXECUTE_FUNCTION(EVENT_M01E10A_L004),
     HALT,
   LABEL(126), /* = 0x7e */
     { 0x30, 0x00,  0x0000,  0x00000000,  0x00000000, NULL },
-    { 0x1b, 0x00,  0x00e7,  0x00000000,  0x00000000, NULL },
+    EXECUTE_FUNCTION(EVENT_M01E10A_L005),
     HALT,
   LABEL(127), /* = 0x7f */
     { 0x30, 0x00,  0x0000,  0x00000000,  0x00000000, NULL },
-    { 0x1b, 0x00,  0x00e8,  0x00000000,  0x00000000, NULL },
+    EXECUTE_FUNCTION(EVENT_M01E10A_L006),
     HALT,
   LABEL(128), /* = 0x80 */
     { 0x30, 0x00,  0x0000,  0x00000000,  0x00000000, NULL },
-    { 0x1b, 0x00,  0x00e9,  0x00000000,  0x00000000, NULL },
+    EXECUTE_FUNCTION(EVENT_M01E10A_L007),
     HALT,
   LABEL(129), /* = 0x81 */
     { 0x30, 0x00,  0x0000,  0x00000000,  0x00000000, NULL },
-    { 0x1b, 0x00,  0x00ea,  0x00000000,  0x00000000, NULL },
+    EXECUTE_FUNCTION(EVENT_M01E10A_L008),
     HALT,
   LABEL(21), /* = 0x15 */
     ASK_DEBUG(FALSE, /*default*/ 0, /* speaker */ -1, NULL),
@@ -883,27 +883,27 @@ static const struct ScriptCommand s_gs0_g1_s0_lives10_dlg2[] = { /* 0x8133068 */
     JUMP_LABEL(3),
   LABEL(130), /* = 0x82 */
     { 0x30, 0x00,  0x0000,  0x00000000,  0x00000000, NULL },
-    { 0x1b, 0x00,  0x00eb,  0x00000000,  0x00000000, NULL },
+    EXECUTE_FUNCTION(EVENT_M01END_L001),
     HALT,
   LABEL(131), /* = 0x83 */
     { 0x30, 0x00,  0x0000,  0x00000000,  0x00000000, NULL },
-    { 0x1b, 0x00,  0x00ed,  0x00000000,  0x00000000, NULL },
+    EXECUTE_FUNCTION(EVENT_M02E01A_L001),
     HALT,
   LABEL(132), /* = 0x84 */
     { 0x30, 0x00,  0x0000,  0x00000000,  0x00000000, NULL },
-    { 0x1b, 0x00,  0x00ee,  0x00000000,  0x00000000, NULL },
+    EXECUTE_FUNCTION(EVENT_M02E01A_L002),
     HALT,
   LABEL(133), /* = 0x85 */
     { 0x30, 0x00,  0x0000,  0x00000000,  0x00000000, NULL },
-    { 0x1b, 0x00,  0x00ef,  0x00000000,  0x00000000, NULL },
+    EXECUTE_FUNCTION(EVENT_M02E01A_L003),
     HALT,
   LABEL(134), /* = 0x86 */
     { 0x30, 0x00,  0x0000,  0x00000000,  0x00000000, NULL },
-    { 0x1b, 0x00,  0x00f0,  0x00000000,  0x00000000, NULL },
+    EXECUTE_FUNCTION(EVENT_M02E02A_L001),
     HALT,
   LABEL(135), /* = 0x87 */
     { 0x30, 0x00,  0x0000,  0x00000000,  0x00000000, NULL },
-    { 0x1b, 0x00,  0x00f8,  0x00000000,  0x00000000, NULL },
+    EXECUTE_FUNCTION(EVENT_M02END_L001),
     HALT,
 };
 
@@ -944,15 +944,15 @@ static const struct ScriptCommand s_gs0_g1_s0_lives11_dlg2[] = { /* 0x8136060 */
     JUMP_LABEL(1),
   LABEL(13), /* = 0x0d */
     { 0x30, 0x00,  0x0000,  0x00000000,  0x00000000, NULL },
-    { 0x1b, 0x00,  0x00f9,  0x00000000,  0x00000000, NULL },
+    EXECUTE_FUNCTION(EVENT_S00E01A_L001),
     HALT,
   LABEL(14), /* = 0x0e */
     { 0x30, 0x00,  0x0000,  0x00000000,  0x00000000, NULL },
-    { 0x1b, 0x00,  0x00fa,  0x00000000,  0x00000000, NULL },
+    EXECUTE_FUNCTION(EVENT_S00E01A_L002),
     HALT,
   LABEL(15), /* = 0x0f */
     { 0x30, 0x00,  0x0000,  0x00000000,  0x00000000, NULL },
-    { 0x1b, 0x00,  0x00fb,  0x00000000,  0x00000000, NULL },
+    EXECUTE_FUNCTION(EVENT_S00E01A_L003),
     HALT,
   LABEL(4), /* = 0x04 */
     ASK_DEBUG(FALSE, /*default*/ 0, /* speaker */ -1, NULL),
@@ -966,31 +966,31 @@ static const struct ScriptCommand s_gs0_g1_s0_lives11_dlg2[] = { /* 0x8136060 */
     JUMP_LABEL(1),
   LABEL(16), /* = 0x10 */
     { 0x30, 0x00,  0x0000,  0x00000000,  0x00000000, NULL },
-    { 0x1b, 0x00,  0x0100,  0x00000000,  0x00000000, NULL },
+    EXECUTE_FUNCTION(EVENT_S01E01A_L001),
     HALT,
   LABEL(17), /* = 0x11 */
     { 0x30, 0x00,  0x0000,  0x00000000,  0x00000000, NULL },
-    { 0x1b, 0x00,  0x0101,  0x00000000,  0x00000000, NULL },
+    EXECUTE_FUNCTION(EVENT_S01E01A_L002),
     HALT,
   LABEL(18), /* = 0x12 */
     { 0x30, 0x00,  0x0000,  0x00000000,  0x00000000, NULL },
-    { 0x1b, 0x00,  0x0102,  0x00000000,  0x00000000, NULL },
+    EXECUTE_FUNCTION(EVENT_S01E01A_L003),
     HALT,
   LABEL(19), /* = 0x13 */
     { 0x30, 0x00,  0x0000,  0x00000000,  0x00000000, NULL },
-    { 0x1b, 0x00,  0x0103,  0x00000000,  0x00000000, NULL },
+    EXECUTE_FUNCTION(EVENT_S01E01B_L001),
     HALT,
   LABEL(20), /* = 0x14 */
     { 0x30, 0x00,  0x0000,  0x00000000,  0x00000000, NULL },
-    { 0x1b, 0x00,  0x0105,  0x00000000,  0x00000000, NULL },
+    EXECUTE_FUNCTION(EVENT_S01E01C_L001),
     HALT,
   LABEL(21), /* = 0x15 */
     { 0x30, 0x00,  0x0000,  0x00000000,  0x00000000, NULL },
-    { 0x1b, 0x00,  0x0108,  0x00000000,  0x00000000, NULL },
+    EXECUTE_FUNCTION(EVENT_S01E02A_L001),
     HALT,
   LABEL(22), /* = 0x16 */
     { 0x30, 0x00,  0x0000,  0x00000000,  0x00000000, NULL },
-    { 0x1b, 0x00,  0x0109,  0x00000000,  0x00000000, NULL },
+    EXECUTE_FUNCTION(EVENT_S01E02A_L002),
     HALT,
   LABEL(5), /* = 0x05 */
     ASK_DEBUG(FALSE, /*default*/ 0, /* speaker */ -1, NULL),
@@ -1004,31 +1004,31 @@ static const struct ScriptCommand s_gs0_g1_s0_lives11_dlg2[] = { /* 0x8136060 */
     JUMP_LABEL(1),
   LABEL(23), /* = 0x17 */
     { 0x30, 0x00,  0x0000,  0x00000000,  0x00000000, NULL },
-    { 0x1b, 0x00,  0x010f,  0x00000000,  0x00000000, NULL },
+    EXECUTE_FUNCTION(EVENT_S02E01A_L001),
     HALT,
   LABEL(24), /* = 0x18 */
     { 0x30, 0x00,  0x0000,  0x00000000,  0x00000000, NULL },
-    { 0x1b, 0x00,  0x0110,  0x00000000,  0x00000000, NULL },
+    EXECUTE_FUNCTION(EVENT_S02E01A_L002),
     HALT,
   LABEL(25), /* = 0x19 */
     { 0x30, 0x00,  0x0000,  0x00000000,  0x00000000, NULL },
-    { 0x1b, 0x00,  0x0111,  0x00000000,  0x00000000, NULL },
+    EXECUTE_FUNCTION(EVENT_S02E01A_L003),
     HALT,
   LABEL(26), /* = 0x1a */
     { 0x30, 0x00,  0x0000,  0x00000000,  0x00000000, NULL },
-    { 0x1b, 0x00,  0x0112,  0x00000000,  0x00000000, NULL },
+    EXECUTE_FUNCTION(EVENT_S02E01A_L004),
     HALT,
   LABEL(27), /* = 0x1b */
     { 0x30, 0x00,  0x0000,  0x00000000,  0x00000000, NULL },
-    { 0x1b, 0x00,  0x0116,  0x00000000,  0x00000000, NULL },
+    EXECUTE_FUNCTION(EVENT_S02E02A_L001),
     HALT,
   LABEL(28), /* = 0x1c */
     { 0x30, 0x00,  0x0000,  0x00000000,  0x00000000, NULL },
-    { 0x1b, 0x00,  0x0117,  0x00000000,  0x00000000, NULL },
+    EXECUTE_FUNCTION(EVENT_S02E02A_L002),
     HALT,
   LABEL(29), /* = 0x1d */
     { 0x30, 0x00,  0x0000,  0x00000000,  0x00000000, NULL },
-    { 0x1b, 0x00,  0x0118,  0x00000000,  0x00000000, NULL },
+    EXECUTE_FUNCTION(EVENT_S02E02A_L003),
     HALT,
   LABEL(6), /* = 0x06 */
     ASK_DEBUG(FALSE, /*default*/ 0, /* speaker */ -1, NULL),
@@ -1037,11 +1037,11 @@ static const struct ScriptCommand s_gs0_g1_s0_lives11_dlg2[] = { /* 0x8136060 */
     JUMP_LABEL(1),
   LABEL(30), /* = 0x1e */
     { 0x30, 0x00,  0x0000,  0x00000000,  0x00000000, NULL },
-    { 0x1b, 0x00,  0x011d,  0x00000000,  0x00000000, NULL },
+    EXECUTE_FUNCTION(EVENT_S03E01A_L001),
     HALT,
   LABEL(31), /* = 0x1f */
     { 0x30, 0x00,  0x0000,  0x00000000,  0x00000000, NULL },
-    { 0x1b, 0x00,  0x011e,  0x00000000,  0x00000000, NULL },
+    EXECUTE_FUNCTION(EVENT_S03E01A_L002),
     HALT,
   LABEL(7), /* = 0x07 */
     ASK_DEBUG(FALSE, /*default*/ 0, /* speaker */ -1, NULL),
@@ -1055,31 +1055,31 @@ static const struct ScriptCommand s_gs0_g1_s0_lives11_dlg2[] = { /* 0x8136060 */
     JUMP_LABEL(1),
   LABEL(32), /* = 0x20 */
     { 0x30, 0x00,  0x0000,  0x00000000,  0x00000000, NULL },
-    { 0x1b, 0x00,  0x0123,  0x00000000,  0x00000000, NULL },
+    EXECUTE_FUNCTION(EVENT_S04E01A_L001),
     HALT,
   LABEL(33), /* = 0x21 */
     { 0x30, 0x00,  0x0000,  0x00000000,  0x00000000, NULL },
-    { 0x1b, 0x00,  0x0124,  0x00000000,  0x00000000, NULL },
+    EXECUTE_FUNCTION(EVENT_S04E01A_L002),
     HALT,
   LABEL(34), /* = 0x22 */
     { 0x30, 0x00,  0x0000,  0x00000000,  0x00000000, NULL },
-    { 0x1b, 0x00,  0x0126,  0x00000000,  0x00000000, NULL },
+    EXECUTE_FUNCTION(EVENT_S04E01B_L001),
     HALT,
   LABEL(35), /* = 0x23 */
     { 0x30, 0x00,  0x0000,  0x00000000,  0x00000000, NULL },
-    { 0x1b, 0x00,  0x0128,  0x00000000,  0x00000000, NULL },
+    EXECUTE_FUNCTION(EVENT_S04E01C_L001),
     HALT,
   LABEL(36), /* = 0x24 */
     { 0x30, 0x00,  0x0000,  0x00000000,  0x00000000, NULL },
-    { 0x1b, 0x00,  0x012a,  0x00000000,  0x00000000, NULL },
+    EXECUTE_FUNCTION(EVENT_S04E01D_L001),
     HALT,
   LABEL(37), /* = 0x25 */
     { 0x30, 0x00,  0x0000,  0x00000000,  0x00000000, NULL },
-    { 0x1b, 0x00,  0x012c,  0x00000000,  0x00000000, NULL },
+    EXECUTE_FUNCTION(EVENT_S04E01E_L001),
     HALT,
   LABEL(38), /* = 0x26 */
     { 0x30, 0x00,  0x0000,  0x00000000,  0x00000000, NULL },
-    { 0x1b, 0x00,  0x012e,  0x00000000,  0x00000000, NULL },
+    EXECUTE_FUNCTION(EVENT_S04E01F_L001),
     HALT,
   LABEL(8), /* = 0x08 */
     ASK_DEBUG(FALSE, /*default*/ 0, /* speaker */ -1, NULL),
@@ -1088,11 +1088,11 @@ static const struct ScriptCommand s_gs0_g1_s0_lives11_dlg2[] = { /* 0x8136060 */
     JUMP_LABEL(2),
   LABEL(39), /* = 0x27 */
     { 0x30, 0x00,  0x0000,  0x00000000,  0x00000000, NULL },
-    { 0x1b, 0x00,  0x0132,  0x00000000,  0x00000000, NULL },
+    EXECUTE_FUNCTION(EVENT_S05E01A_L001),
     HALT,
   LABEL(40), /* = 0x28 */
     { 0x30, 0x00,  0x0000,  0x00000000,  0x00000000, NULL },
-    { 0x1b, 0x00,  0x0133,  0x00000000,  0x00000000, NULL },
+    EXECUTE_FUNCTION(EVENT_S05E01A_L002),
     HALT,
   LABEL(9), /* = 0x09 */
     ASK_DEBUG(FALSE, /*default*/ 0, /* speaker */ -1, NULL),
@@ -1103,19 +1103,19 @@ static const struct ScriptCommand s_gs0_g1_s0_lives11_dlg2[] = { /* 0x8136060 */
     JUMP_LABEL(2),
   LABEL(41), /* = 0x29 */
     { 0x30, 0x00,  0x0000,  0x00000000,  0x00000000, NULL },
-    { 0x1b, 0x00,  0x0138,  0x00000000,  0x00000000, NULL },
+    EXECUTE_FUNCTION(EVENT_S06E01A_L001),
     HALT,
   LABEL(42), /* = 0x2a */
     { 0x30, 0x00,  0x0000,  0x00000000,  0x00000000, NULL },
-    { 0x1b, 0x00,  0x0139,  0x00000000,  0x00000000, NULL },
+    EXECUTE_FUNCTION(EVENT_S06E01A_L002),
     HALT,
   LABEL(43), /* = 0x2b */
     { 0x30, 0x00,  0x0000,  0x00000000,  0x00000000, NULL },
-    { 0x1b, 0x00,  0x013b,  0x00000000,  0x00000000, NULL },
+    EXECUTE_FUNCTION(EVENT_S06E01B_L001),
     HALT,
   LABEL(44), /* = 0x2c */
     { 0x30, 0x00,  0x0000,  0x00000000,  0x00000000, NULL },
-    { 0x1b, 0x00,  0x013c,  0x00000000,  0x00000000, NULL },
+    EXECUTE_FUNCTION(EVENT_S06E01B_L002),
     HALT,
   LABEL(10), /* = 0x0a */
     ASK_DEBUG(FALSE, /*default*/ 0, /* speaker */ -1, NULL),
@@ -1125,15 +1125,15 @@ static const struct ScriptCommand s_gs0_g1_s0_lives11_dlg2[] = { /* 0x8136060 */
     JUMP_LABEL(2),
   LABEL(45), /* = 0x2d */
     { 0x30, 0x00,  0x0000,  0x00000000,  0x00000000, NULL },
-    { 0x1b, 0x00,  0x0140,  0x00000000,  0x00000000, NULL },
+    EXECUTE_FUNCTION(EVENT_S07E01A_L001),
     HALT,
   LABEL(46), /* = 0x2e */
     { 0x30, 0x00,  0x0000,  0x00000000,  0x00000000, NULL },
-    { 0x1b, 0x00,  0x0141,  0x00000000,  0x00000000, NULL },
+    EXECUTE_FUNCTION(EVENT_S07E01A_L002),
     HALT,
   LABEL(47), /* = 0x2f */
     { 0x30, 0x00,  0x0000,  0x00000000,  0x00000000, NULL },
-    { 0x1b, 0x00,  0x0142,  0x00000000,  0x00000000, NULL },
+    EXECUTE_FUNCTION(EVENT_S07E01A_L003),
     HALT,
   LABEL(11), /* = 0x0b */
     ASK_DEBUG(FALSE, /*default*/ 0, /* speaker */ -1, NULL),
@@ -1148,35 +1148,35 @@ static const struct ScriptCommand s_gs0_g1_s0_lives11_dlg2[] = { /* 0x8136060 */
     JUMP_LABEL(2),
   LABEL(48), /* = 0x30 */
     { 0x30, 0x00,  0x0000,  0x00000000,  0x00000000, NULL },
-    { 0x1b, 0x00,  0x0146,  0x00000000,  0x00000000, NULL },
+    EXECUTE_FUNCTION(EVENT_S08E01A_L001),
     HALT,
   LABEL(49), /* = 0x31 */
     { 0x30, 0x00,  0x0000,  0x00000000,  0x00000000, NULL },
-    { 0x1b, 0x00,  0x0147,  0x00000000,  0x00000000, NULL },
+    EXECUTE_FUNCTION(EVENT_S08E01A_L002),
     HALT,
   LABEL(50), /* = 0x32 */
     { 0x30, 0x00,  0x0000,  0x00000000,  0x00000000, NULL },
-    { 0x1b, 0x00,  0x0148,  0x00000000,  0x00000000, NULL },
+    EXECUTE_FUNCTION(EVENT_S08E01A_L003),
     HALT,
   LABEL(51), /* = 0x33 */
     { 0x30, 0x00,  0x0000,  0x00000000,  0x00000000, NULL },
-    { 0x1b, 0x00,  0x0149,  0x00000000,  0x00000000, NULL },
+    EXECUTE_FUNCTION(EVENT_S08E01A_L004),
     HALT,
   LABEL(52), /* = 0x34 */
     { 0x30, 0x00,  0x0000,  0x00000000,  0x00000000, NULL },
-    { 0x1b, 0x00,  0x014a,  0x00000000,  0x00000000, NULL },
+    EXECUTE_FUNCTION(EVENT_S08E01A_L005),
     HALT,
   LABEL(53), /* = 0x35 */
     { 0x30, 0x00,  0x0000,  0x00000000,  0x00000000, NULL },
-    { 0x1b, 0x00,  0x014c,  0x00000000,  0x00000000, NULL },
+    EXECUTE_FUNCTION(EVENT_S08E01A_L006),
     HALT,
   LABEL(54), /* = 0x36 */
     { 0x30, 0x00,  0x0000,  0x00000000,  0x00000000, NULL },
-    { 0x1b, 0x00,  0x014e,  0x00000000,  0x00000000, NULL },
+    EXECUTE_FUNCTION(EVENT_S08E01A_L007),
     HALT,
   LABEL(55), /* = 0x37 */
     { 0x30, 0x00,  0x0000,  0x00000000,  0x00000000, NULL },
-    { 0x1b, 0x00,  0x014f,  0x00000000,  0x00000000, NULL },
+    EXECUTE_FUNCTION(EVENT_S08E01A_L008),
     HALT,
   LABEL(12), /* = 0x0c */
     ASK_DEBUG(FALSE, /*default*/ 0, /* speaker */ -1, NULL),
@@ -1191,35 +1191,35 @@ static const struct ScriptCommand s_gs0_g1_s0_lives11_dlg2[] = { /* 0x8136060 */
     JUMP_LABEL(2),
   LABEL(56), /* = 0x38 */
     { 0x30, 0x00,  0x0000,  0x00000000,  0x00000000, NULL },
-    { 0x1b, 0x00,  0x0156,  0x00000000,  0x00000000, NULL },
+    EXECUTE_FUNCTION(EVENT_S09E01A_L001),
     HALT,
   LABEL(57), /* = 0x39 */
     { 0x30, 0x00,  0x0000,  0x00000000,  0x00000000, NULL },
-    { 0x1b, 0x00,  0x0157,  0x00000000,  0x00000000, NULL },
+    EXECUTE_FUNCTION(EVENT_S09E01A_L002),
     HALT,
   LABEL(58), /* = 0x3a */
     { 0x30, 0x00,  0x0000,  0x00000000,  0x00000000, NULL },
-    { 0x1b, 0x00,  0x0158,  0x00000000,  0x00000000, NULL },
+    EXECUTE_FUNCTION(EVENT_S09E01A_L003),
     HALT,
   LABEL(59), /* = 0x3b */
     { 0x30, 0x00,  0x0000,  0x00000000,  0x00000000, NULL },
-    { 0x1b, 0x00,  0x0159,  0x00000000,  0x00000000, NULL },
+    EXECUTE_FUNCTION(EVENT_S09E01A_L004),
     HALT,
   LABEL(60), /* = 0x3c */
     { 0x30, 0x00,  0x0000,  0x00000000,  0x00000000, NULL },
-    { 0x1b, 0x00,  0x015b,  0x00000000,  0x00000000, NULL },
+    EXECUTE_FUNCTION(EVENT_S09E01A_L005),
     HALT,
   LABEL(61), /* = 0x3d */
     { 0x30, 0x00,  0x0000,  0x00000000,  0x00000000, NULL },
-    { 0x1b, 0x00,  0x015d,  0x00000000,  0x00000000, NULL },
+    EXECUTE_FUNCTION(EVENT_S09E01B_L001),
     HALT,
   LABEL(62), /* = 0x3e */
     { 0x30, 0x00,  0x0000,  0x00000000,  0x00000000, NULL },
-    { 0x1b, 0x00,  0x015f,  0x00000000,  0x00000000, NULL },
+    EXECUTE_FUNCTION(EVENT_S09E01B_L002),
     HALT,
   LABEL(63), /* = 0x3f */
     { 0x30, 0x00,  0x0000,  0x00000000,  0x00000000, NULL },
-    { 0x1b, 0x00,  0x0161,  0x00000000,  0x00000000, NULL },
+    EXECUTE_FUNCTION(EVENT_S09E01C_L001),
     HALT,
 };
 
@@ -1243,11 +1243,11 @@ static const struct ScriptCommand s_gs0_g1_s0_lives13_dlg2[] = { /* 0x81376f8 */
     JUMP_SCRIPT(END_TALK),
   LABEL(0), /* = 0x00 */
     { 0x30, 0x00,  0x0000,  0x00000000,  0x00000000, NULL },
-    { 0x1a, 0x00,  0x0001,  0x00000062,  0x00000007, NULL },
+    SPAWN_EFFECT(/*kind*/7, /*script*/EFFECT_TEST1, /*group/sector*/ 1, 0),
     JUMP_LABEL(4),
   LABEL(1), /* = 0x01 */
     { 0x30, 0x00,  0x0000,  0x00000000,  0x00000000, NULL },
-    { 0x1a, 0x00,  0x0001,  0x00000063,  0x00000007, NULL },
+    SPAWN_EFFECT(/*kind*/7, /*script*/EFFECT_TEST2, /*group/sector*/ 1, 0),
     JUMP_LABEL(4),
   LABEL(2), /* = 0x02 */
     { 0x30, 0x00,  0x0000,  0x00000000,  0x00000000, NULL },

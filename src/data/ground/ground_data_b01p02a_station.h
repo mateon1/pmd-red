@@ -175,7 +175,7 @@ static const struct ScriptCommand s_gs12_g1_s0_station_sref_script[] = { /* 0x81
     DEBUGINFO,
     SELECT_ENTITIES(-1, -1),
     { 0x23, 0x01,  0x001e,  0x00000000,  0x00000000, NULL },
-    { 0x1b, 0x00,  0x0044,  0x00000000,  0x00000000, NULL },
+    EXECUTE_FUNCTION(WORLD_MAP_POINT),
     RET,
 };
 
@@ -1346,7 +1346,7 @@ static const struct ScriptCommand s_gs12_g16_s0_station_sref_script[] = { /* 0x8
 
 static const struct ScriptRef s_gs12_g16_s0_station_sref = { 403, 8, NULL /* STATION_CONTROL */, s_gs12_g16_s0_station_sref_script }; /* 0x81e77f4 */
 
-static const struct ScriptCommand s_gs12_g16_s0_evt0_sref_script[] = { /* 0x81e7800 */
+static const struct ScriptCommand s_gs12_g16_s0_evt0_sref_script[] = { /* 0x81e7800 - Likely door event/nearby trigger */
     DEBUGINFO,
     { 0x54, 0x00,  0x0002,  0x00000000,  0x00000000, NULL },
     { 0x2d, 0x07,  0x0000,  0x00000000,  0x00000000, NULL },
@@ -1360,7 +1360,7 @@ static const struct ScriptCommand s_gs12_g16_s0_evt0_sref_script[] = { /* 0x81e7
 static const struct ScriptRef s_gs12_g16_s0_evt0_sref = { 357, 2, NULL /* GETOUT_NORMAL */, s_gs12_g16_s0_evt0_sref_script }; /* 0x81e78b8 */
 
 
-static const struct ScriptCommand s_gs12_g16_s0_evt1_sref_script[] = { /* 0x81e78c4 */
+static const struct ScriptCommand s_gs12_g16_s0_evt1_sref_script[] = { /* 0x81e78c4 - PART 1 0:22:53-0:23:04 - Bed, sleep trigger */
     DEBUGINFO,
     { 0x54, 0x00,  0x0002,  0x00000000,  0x00000000, NULL },
     { 0x2d, 0x07,  0x0000,  0x00000000,  0x00000000, NULL },
@@ -1373,7 +1373,7 @@ static const struct ScriptCommand s_gs12_g16_s0_evt1_sref_script[] = { /* 0x81e7
     SCENARIO_CALC(SCENARIO_MAIN,  3,  3),
     { 0x3c, 0x0e,  0x0000,  0x00000000,  0x00000000, NULL },
     CALL_SCRIPT(SAVE_WAIT_FUNC),
-    { 0x1b, 0x00,  0x007d,  0x00000000,  0x00000000, NULL },
+    EXECUTE_FUNCTION(EVENT_M01E02A_L001C),
     HALT,
 };
 

@@ -312,6 +312,8 @@ COMMENTS = {
     0x81e7424: "PART 1 0:22:25-0:22:53 - First day cutscene",
     0x81e7560: "PART 1 0:22:30-0:22:53 - Player",
     0x81e77c4: "PART 1 0:22:53 - First day, setup playable state",
+    0x81e7800: "Likely door event/nearby trigger",
+    0x81e78c4: "PART 1 0:22:53-0:23:04 - Bed, sleep trigger",
 }
 
 def main():
@@ -443,6 +445,18 @@ def main():
                 elif op == 0x18:
                     assert b == h == a1 == a2 == ap == 0
                     outfile.write(u'    CANCEL_OFFSCREEN_EFFECTS,\n')
+                elif op == 0x19:
+                    assert ap == 0
+                    outfile.write(u'    SPAWN_OBJECT(/*kind*/%d, /*script*/%s, /*group/sector*/ %d, %d),\n' % (a2, SCRIPTNAMES[a1], h, b))
+                elif op == 0x1a:
+                    assert ap == 0
+                    outfile.write(u'    SPAWN_EFFECT(/*kind*/%d, /*script*/%s, /*group/sector*/ %d, %d),\n' % (a2, SCRIPTNAMES[a1], h, b))
+                elif op == 0x1b:
+                    assert b  == a1 == a2 == ap == 0
+                    outfile.write(u'    EXECUTE_FUNCTION(%s),\n' % SCRIPTNAMES[h])
+                elif op == 0x1c:
+                    assert b  == a1 == a2 == ap == 0
+                    outfile.write(u'    EXECUTE_SUBROUTINE(%s),\n' % SCRIPTNAMES[h])
                 # 9b..a3: camera-related, needs reversing
                 elif op == 0xa4:
                     assert b == a1 == a2 == ap == 0

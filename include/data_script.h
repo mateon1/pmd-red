@@ -23,6 +23,10 @@
 #define CANCEL_OFFSCREEN_LIVES  { 0x16, 0, 0, 0, 0, NULL }
 #define CANCEL_OFFSCREEN_OBJECTS {0x17, 0, 0, 0, 0, NULL }
 #define CANCEL_OFFSCREEN_EFFECTS {0x18, 0, 0, 0, 0, NULL }
+#define SPAWN_OBJECT(k,d,g,s)   { 0x19, s, g, d, k, NULL }
+#define SPAWN_EFFECT(k,d,g,s)   { 0x1A, s, g, d, k, NULL }
+#define EXECUTE_FUNCTION(f)     { 0x1B, 0, f, 0, 0, NULL }
+#define EXECUTE_SUBROUTINE(f)   { 0x1C, 0, f, 0, 0, NULL }
 #define RESET_ARRAY(v)          { 0xA4, 0, v, 0, 0, NULL }
 #define CLEAR_ARRAY(v)          { 0xA5, 0, v, 0, 0, NULL }
 #define UPDATE_VARINT(o,v,i)    { 0xA6, o, v, i, 0, NULL }

@@ -528,7 +528,7 @@ static const struct ScriptCommand s_gs9_g0_s0_obj0_dlg2[] = { /* 0x819c378 */
     { 0x32, 0x00, -0x0001,  0x00000000,  0x00000000, _("#+There is a warning tag\n#+on the side of the Mailbox.") },
     { 0x32, 0x00, -0x0001,  0x00000000,  0x00000000, _("#+- Open the Mailbox at the front -") },
     JUMP_SCRIPT(END_TALK),
-    { 0x1b, 0x00,  0x0108,  0x00000000,  0x00000000, NULL },
+    EXECUTE_FUNCTION(EVENT_S01E02A_L001),
     JUMP_SCRIPT(END_TALK),
   LABEL(1), /* = 0x01 */
     { 0x3b, 0x08,  0x0000,  0x00000000,  0x00000000, NULL },
@@ -1421,7 +1421,7 @@ static const struct ScriptCommand s_gs9_g10_s0_lives0_dlg2[] = { /* 0x819fbf0 */
   LABEL(1), /* = 0x01 */
     { 0x30, 0x00,  0x0000,  0x00000000,  0x00000000, NULL },
     { 0x23, 0x01,  0x001e,  0x00000000,  0x00000000, NULL },
-    { 0x1b, 0x00,  0x011d,  0x00000000,  0x00000000, NULL },
+    EXECUTE_FUNCTION(EVENT_S03E01A_L001),
     HALT,
 };
 
@@ -1457,7 +1457,7 @@ static const struct ScriptCommand s_gs9_g12_s0_lives0_dlg2[] = { /* 0x819fe08 */
   LABEL(1), /* = 0x01 */
     { 0x30, 0x00,  0x0000,  0x00000000,  0x00000000, NULL },
     { 0x23, 0x01,  0x001e,  0x00000000,  0x00000000, NULL },
-    { 0x1b, 0x00,  0x0132,  0x00000000,  0x00000000, NULL },
+    EXECUTE_FUNCTION(EVENT_S05E01A_L001),
     HALT,
 };
 
@@ -1475,7 +1475,7 @@ static const struct ScriptCommand s_gs9_g13_s0_lives0_dlg2[] = { /* 0x819ff1c */
   LABEL(1), /* = 0x01 */
     { 0x30, 0x00,  0x0000,  0x00000000,  0x00000000, NULL },
     { 0x23, 0x01,  0x001e,  0x00000000,  0x00000000, NULL },
-    { 0x1b, 0x00,  0x0138,  0x00000000,  0x00000000, NULL },
+    EXECUTE_FUNCTION(EVENT_S06E01A_L001),
     HALT,
 };
 
@@ -1510,7 +1510,7 @@ static const struct ScriptCommand s_gs9_g15_s0_lives0_dlg2[] = { /* 0x81a013c */
     JUMP_SCRIPT(END_TALK),
   LABEL(1), /* = 0x01 */
     { 0x30, 0x00,  0x0000,  0x00000000,  0x00000000, NULL },
-    { 0x1b, 0x00,  0x0146,  0x00000000,  0x00000000, NULL },
+    EXECUTE_FUNCTION(EVENT_S08E01A_L001),
     CANCEL_ENTITIES(15, 0),
     JUMP_SCRIPT(END_TALK),
 };
@@ -1528,7 +1528,7 @@ static const struct ScriptCommand s_gs9_g16_s0_lives0_dlg2[] = { /* 0x81a0244 */
     JUMP_SCRIPT(END_TALK),
   LABEL(1), /* = 0x01 */
     { 0x30, 0x00,  0x0000,  0x00000000,  0x00000000, NULL },
-    { 0x1b, 0x00,  0x0156,  0x00000000,  0x00000000, NULL },
+    EXECUTE_FUNCTION(EVENT_S09E01A_L001),
     CANCEL_ENTITIES(16, 0),
     JUMP_SCRIPT(END_TALK),
 };
@@ -2257,7 +2257,7 @@ static const struct ScriptCommand s_gs9_g19_s1_lives1_dlg2[] = { /* 0x81a4574 */
     VARIANT_DEFAULT(_(" Tell me when you're\nready.#W\nWe'll leave right away then.")),
     JUMP_SCRIPT(END_TALK),
   LABEL(1), /* = 0x01 */
-    { 0x1b, 0x00,  0x00b8,  0x00000000,  0x00000000, NULL },
+    EXECUTE_FUNCTION(EVENT_M01E07A_L002),
     HALT,
 };
 
@@ -2705,7 +2705,7 @@ static const struct ScriptCommand s_gs9_g25_s0_station_sref_script[] = { /* 0x81
     { 0xe3, 0x00,  0x0003,  0x00000000,  0x00000000, NULL },
     WAIT(60),
     { 0x23, 0x01,  0x001e,  0x00000000,  0x00000000, NULL },
-    { 0x1b, 0x00,  0x0084,  0x00000000,  0x00000000, NULL },
+    EXECUTE_FUNCTION(EVENT_M01E02B_L002),
     RET,
 };
 
@@ -7378,7 +7378,7 @@ static const struct ScriptCommand s_gs9_g49_s0_lives0_dlg0[] = { /* 0x81bea68 */
     { 0xe4, 0x00,  0x0003,  0x00000000,  0x00000000, NULL },
     RET,
   LABEL(2), /* = 0x02 */
-    { 0x1b, 0x00,  0x00b8,  0x00000000,  0x00000000, NULL },
+    EXECUTE_FUNCTION(EVENT_M01E07A_L002),
     HALT,
 };
 
@@ -7430,7 +7430,7 @@ static const struct ScriptCommand s_gs9_g50_s0_lives0_dlg2[] = { /* 0x81beef8 */
     VARIANT_DEFAULT(_(" Tell me when you're\nready.#W\nLet's leave then.")),
     JUMP_SCRIPT(END_TALK),
   LABEL(1), /* = 0x01 */
-    { 0x1b, 0x00,  0x00b8,  0x00000000,  0x00000000, NULL },
+    EXECUTE_FUNCTION(EVENT_M01E07A_L002),
     HALT,
 };
 
@@ -7506,7 +7506,7 @@ static const struct ScriptCommand s_gs9_g50_s2_lives1_dlg2[] = { /* 0x81bf4bc */
     VARIANT_DEFAULT(_(" Tell me when you're\nready.#W\nLet's leave then.")),
     JUMP_SCRIPT(END_TALK),
   LABEL(1), /* = 0x01 */
-    { 0x1b, 0x00,  0x00b8,  0x00000000,  0x00000000, NULL },
+    EXECUTE_FUNCTION(EVENT_M01E07A_L002),
     HALT,
 };
 
@@ -8703,7 +8703,7 @@ static const struct ScriptCommand s_gs9_g61_s0_lives0_dlg2[] = { /* 0x81c4a70 */
     { 0x48, 0x00,  0x005a,  0x00000000,  0x00000000, NULL },
     { 0x23, 0x01,  0x003c,  0x00000000,  0x00000000, NULL },
     WAIT(60),
-    { 0x1b, 0x00,  0x00dc,  0x00000000,  0x00000000, NULL },
+    EXECUTE_FUNCTION(EVENT_M01E09A_L009),
     HALT,
 };
 
@@ -9708,7 +9708,7 @@ static const struct ScriptCommand s_gs9_g71_s0_station_sref_script[] = { /* 0x81
     { 0xe3, 0x00,  0x0003,  0x00000000,  0x00000000, NULL },
     { 0x23, 0x01,  0x001e,  0x00000000,  0x00000000, NULL },
     WAIT(30),
-    { 0x1b, 0x00,  0x00ef,  0x00000000,  0x00000000, NULL },
+    EXECUTE_FUNCTION(EVENT_M02E01A_L003),
     HALT,
 };
 
@@ -9916,7 +9916,7 @@ static const struct ScriptCommand s_gs9_g74_s0_station_sref_script[] = { /* 0x81
     SELECT_ENTITIES(-1, 0),
     CANCEL_ENTITIES(73, 0),
     { 0xe3, 0x00,  0x0003,  0x00000000,  0x00000000, NULL },
-    { 0x1b, 0x00,  0x0100,  0x00000000,  0x00000000, NULL },
+    EXECUTE_FUNCTION(EVENT_S01E01A_L001),
     RET,
 };
 
@@ -11845,7 +11845,7 @@ static const struct ScriptCommand s_gs9_g77_s1_lives0_dlg0[] = { /* 0x81d23bc */
   LABEL(8), /* = 0x08 */
     { 0x48, 0x00,  0x003c,  0x00000000,  0x00000000, NULL },
     { 0x23, 0x01,  0x003c,  0x00000000,  0x00000000, NULL },
-    { 0x1b, 0x00,  0x0105,  0x00000000,  0x00000000, NULL },
+    EXECUTE_FUNCTION(EVENT_S01E01C_L001),
     HALT,
 };
 

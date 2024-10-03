@@ -2402,7 +2402,7 @@ static const struct ScriptCommand s_gs1_g10_s0_station_sref_script[] = { /* 0x81
     { 0xe3, 0x00,  0x0003,  0x00000000,  0x00000000, NULL },
     { 0x23, 0x01,  0x003c,  0x00000000,  0x00000000, NULL },
     WAIT(60),
-    { 0x1b, 0x00,  0x008f,  0x00000000,  0x00000000, NULL },
+    EXECUTE_FUNCTION(EVENT_M01E03A_L003),
     RET,
 };
 
@@ -4114,7 +4114,7 @@ static const struct ScriptCommand s_gs1_g19_s0_station_sref_script[] = { /* 0x81
     { 0x48, 0x00,  0x002d,  0x00000000,  0x00000000, NULL },
     { 0x23, 0x01,  0x002d,  0x00000000,  0x00000000, NULL },
     WAIT(30),
-    { 0x1b, 0x00,  0x00b3,  0x00000000,  0x00000000, NULL },
+    EXECUTE_FUNCTION(EVENT_M01E05B_L005),
     HALT,
 };
 
@@ -11836,7 +11836,7 @@ static const struct ScriptCommand s_gs1_g34_s0_lives0_dlg2[] = { /* 0x8167dbc */
     { 0x48, 0x00,  0x0096,  0x00000000,  0x00000000, NULL },
     { 0x23, 0x01,  0x002d,  0x00000000,  0x00000000, NULL },
     WAIT(180),
-    { 0x1b, 0x00,  0x00e4,  0x00000000,  0x00000000, NULL },
+    EXECUTE_FUNCTION(EVENT_M01E10A_L002),
     HALT,
 };
 
@@ -12956,7 +12956,7 @@ static const struct ScriptCommand s_gs1_g43_s0_station_sref_script[] = { /* 0x81
     WAIT(10),
     { 0x48, 0x00,  0x003c,  0x00000000,  0x00000000, NULL },
     { 0x23, 0x01,  0x003c,  0x00000000,  0x00000000, NULL },
-    { 0x1b, 0x00,  0x0123,  0x00000000,  0x00000000, NULL },
+    EXECUTE_FUNCTION(EVENT_S04E01A_L001),
     RET,
 };
 
