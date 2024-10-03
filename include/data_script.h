@@ -6,6 +6,7 @@
 #define CPOS_HALFTILE 0x2
 #define CPOS_CURRENT  0x4
 
+// 01..07: complex map/dungeon selection/check commands
 #define SELECT_MAP(m)           { 0x08, 0, 0, m, 0, NULL }
 #define SELECT_GROUND(m)        { 0x09, 0, 0, m, 0, NULL }
 #define SELECT_DUNGEON(m,d,f,b) { 0x0A, b, f, d, m, NULL }
@@ -30,6 +31,20 @@
 #define EXECUTE_STATION(m,g,s)  { 0x1D, s, g, m, 0, NULL }
 #define EXECUTE_SUBSTATION(m,g,s){0x1E, s, g, m, 0, NULL }
 #define RESCUE_SELECT           { 0x1F, 0, 0, 0, 0, NULL }
+// 20: execute script as parented object, maybe? Unused in ROM
+// 21: follow object/make object follow/get parented?
+// 22..2f: ???
+// 30..39: various text printing
+// 3a..3c: unknown textbox-related
+// 3d..3e: input boxes?
+// 40: unused?
+#define REMOVE_ITEMSTACK(i)     { 0x41, 0, i, 0, 0, NULL }
+// 42..4e: music and sfx
+// 4f..57: more movement/position? Some sprite stuff?
+// 58..95: position and movement-related
+// 96: unused?
+// 97..9a: ??? (maybe more camera?)
+// 9b..a3: camera-related
 #define RESET_ARRAY(v)          { 0xA4, 0, v, 0, 0, NULL }
 #define CLEAR_ARRAY(v)          { 0xA5, 0, v, 0, 0, NULL }
 #define UPDATE_VARINT(o,v,i)    { 0xA6, o, v, i, 0, NULL }
@@ -39,6 +54,7 @@
 #define SCENARIO_ADVANCE(v,a)   { 0xAA, 0, v, a, 0, NULL }
 #define SET_DUNGEON_RES(r,e)    { 0xAB, 0, r, e, 0, NULL }
 #define SET_PLAYER_KIND(k)      { 0xAC, 0, k, 0, 0, NULL }
+// ad..b2: opaque functions
 #define JUMPIF_EQUAL(v,i,l)     { 0xB3, l, v, i, 0, NULL }
 #define JUMPIF(o,v,i,l)         { 0xB4, o, l, v, i, NULL }
 #define JUMPIF_2(o,a,b,l)       { 0xB5, o, l, a, b, NULL }
@@ -85,6 +101,8 @@
 #define CHOICE(h,s)             { 0xD9, 0, h, 0, 0, s    }
 #define WAIT(f)                 { 0xDB, 0, f, 0, 0, NULL }
 #define WAIT_RANDOM(a,b)        { 0xDC, 0, a, b, 0, NULL }
+// dd..e2 - various HandleAction commands
+// e3..e5 - locking/condvar commands
 #define CALL_LABEL(x)           { 0xE6, 0, x, 0, 0, NULL }
 #define JUMP_LABEL(x)           { 0xE7, 0, x, 0, 0, NULL }
 #define CALL_SCRIPT(x)          { 0xE8, 0, x, 0, 0, NULL }

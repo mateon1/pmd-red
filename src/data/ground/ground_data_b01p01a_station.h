@@ -11817,7 +11817,7 @@ static const struct ScriptCommand s_gs9_g77_s1_lives0_dlg0[] = { /* 0x81d23bc */
     { 0x34, 0x00,  0x0002,  0x00000000,  0x00000000, _(" We'll carry in the materials\nand get the place built. Double-quick!#W\nYou just wait!") },
     { 0x30, 0x00,  0x0000,  0x00000000,  0x00000000, NULL },
     SCENARIO_ADVANCE(SCENARIO_SUB1, /*unused*/ 30),
-    { 0x41, 0x00,  0x0068,  0x00000000,  0x00000000, NULL },
+    REMOVE_ITEMSTACK(ITEM_CHESTNUT),
     JUMPIF_SCENE_LT(SCENARIO_SUB1, 30, 2, /* to label */ 7),
     JUMP_LABEL(8),
   LABEL(7), /* = 0x07 */
