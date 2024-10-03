@@ -8,7 +8,7 @@
 
 static const struct ScriptCommand s_gs176_g0_s0_station_sref_script[] = { /* 0x822b66c */
     DEBUGINFO,
-    { 0x47, 0x00,  0x0000,  0x00000000,  0x00000000, NULL },
+    BGM_STOP,
     SELECT_MAP(176),
     JUMP_SCRIPT(COMMON_ENTER),
 };
@@ -81,7 +81,7 @@ static const struct ScriptCommand s_gs176_g1_s0_station_sref_script[] = { /* 0x8
     WAIT(45),
     { 0x3c, 0x2e,  0x0000,  0x0000001a,  0x000000b5, NULL },
     WAIT(120),
-    { 0x48, 0x00,  0x014a,  0x00000000,  0x00000000, NULL },
+    BGM_FADEOUT(330),
     { 0x23, 0x01,  0x0078,  0x00000000,  0x00000000, NULL },
     { 0x25, 0x01,  0x0000,  0x00000000,  0x00000000, NULL },
     WAIT(210),

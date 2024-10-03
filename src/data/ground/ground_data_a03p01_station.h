@@ -9,7 +9,7 @@
 static const struct ScriptCommand s_gs168_g0_s0_station_sref_script[] = { /* 0x821ba24 */
     DEBUGINFO,
     SELECT_MAP(168),
-    { 0x47, 0x00,  0x0000,  0x00000000,  0x00000000, NULL },
+    BGM_STOP,
     JUMP_SCRIPT(COMMON_ENTER),
 };
 
@@ -20,7 +20,7 @@ static const struct ScriptCommand s_gs168_g1_s0_station_sref_script[] = { /* 0x8
     SELECT_MAP(168),
     SELECT_WEATHER(-1),
     SELECT_ENTITIES(-1, 0),
-    { 0x45, 0x00,  0x0078,  0x00000024,  0x00000000, NULL },
+    BGM_FADEIN(120, FALSE, 36),
     { 0x22, 0x01,  0x001e,  0x00000000,  0x00000000, NULL },
     { 0xe3, 0x00,  0x0003,  0x00000000,  0x00000000, NULL },
     { 0x23, 0x01,  0x001e,  0x00000000,  0x00000000, NULL },
@@ -60,7 +60,7 @@ static const struct ScriptCommand s_gs168_g1_s0_lives0_dlg0[] = { /* 0x821bbf8 *
     { 0x30, 0x00,  0x0000,  0x00000000,  0x00000000, NULL },
     { 0xe4, 0x00,  0x0006,  0x00000000,  0x00000000, NULL },
     WAIT(8),
-    { 0x4c, 0x00,  0x0000,  0x000001e0,  0x00000000, NULL },
+    FANFARE_PLAY2(480),
     { 0x2e, 0x02,  0x0001,  0x00000007,  0x00000000, NULL },
     { 0x34, 0x00,  0x0001,  0x00000000,  0x00000000, _(" Hachoo!") },
     { 0x30, 0x00,  0x0000,  0x00000000,  0x00000000, NULL },
@@ -94,7 +94,7 @@ static const struct ScriptCommand s_gs168_g1_s0_lives0_dlg0[] = { /* 0x821bbf8 *
     { 0x30, 0x00,  0x0000,  0x00000000,  0x00000000, NULL },
     { 0x3b, 0x36,  0x0000,  0x00000000,  0x00000000, NULL },
     { 0x54, 0x00,  0x0002,  0x00000000,  0x00000000, NULL },
-    { 0x4c, 0x00,  0x0000,  0x000001d1,  0x00000000, NULL },
+    FANFARE_PLAY2(465),
     CALL_SCRIPT(NOTICE_FUNC),
     { 0xe4, 0x00,  0x0006,  0x00000000,  0x00000000, NULL },
     { 0xe3, 0x00,  0x0005,  0x00000000,  0x00000000, NULL },
@@ -206,7 +206,7 @@ static const struct ScriptCommand s_gs168_g1_s0_lives2_dlg0[] = { /* 0x821c8e0 *
     { 0x91, 0x04,  0x0002,  0x00000002,  0x00000000, NULL },
     { 0x54, 0x00,  0x0020,  0x00000000,  0x00000000, NULL },
     WAIT(9),
-    { 0x4c, 0x00,  0x0000,  0x000001de,  0x00000000, NULL },
+    FANFARE_PLAY2(478),
     { 0x89, 0x50,  0x0400,  0x00000002,  0x00000000, NULL },
     END_DELETE,
 };
@@ -216,7 +216,7 @@ static const struct ScriptCommand s_gs168_g2_s0_station_sref_script[] = { /* 0x8
     SELECT_MAP(168),
     SELECT_WEATHER(-1),
     SELECT_ENTITIES(-1, 0),
-    { 0x44, 0x00,  0x0000,  0x00000024,  0x00000000, NULL },
+    BGM_SWITCH(FALSE, 36),
     { 0x22, 0x01,  0x001e,  0x00000000,  0x00000000, NULL },
     { 0xe3, 0x00,  0x0003,  0x00000000,  0x00000000, NULL },
     { 0x23, 0x01,  0x003c,  0x00000000,  0x00000000, NULL },

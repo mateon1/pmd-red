@@ -11,7 +11,7 @@
 static const struct ScriptCommand s_gs218_g0_s0_station_sref_script[] = { /* 0x8269d74 */
     DEBUGINFO,
     SELECT_MAP(218),
-    { 0x47, 0x00,  0x0000,  0x00000000,  0x00000000, NULL },
+    BGM_STOP,
     JUMP_SCRIPT(COMMON_ENTER),
 };
 
@@ -19,7 +19,7 @@ static const struct ScriptRef s_gs218_g0_s0_station_sref = { 404, 1, NULL /* ENT
 
 static const struct ScriptCommand s_gs218_g1_s0_station_sref_script[] = { /* 0x8269dec */
     DEBUGINFO,
-    { 0x47, 0x00,  0x0000,  0x00000000,  0x00000000, NULL },
+    BGM_STOP,
     SELECT_MAP(218),
     SELECT_ENTITIES(-1, 0),
     { 0xe3, 0x00,  0x0003,  0x00000000,  0x00000000, NULL },
@@ -90,7 +90,7 @@ static const struct ScriptCommand s_gs218_g1_s0_lives0_dlg0[] = { /* 0x826a108 *
     { 0x34, 0x00, -0x0001,  0x00000000,  0x00000000, _(" ...Y-you are...?") },
     { 0x34, 0x00, -0x0001,  0x00000000,  0x00000000, _(" ...Did you maybe...#W\ncome to save me?") },
     { 0x30, 0x00,  0x0000,  0x00000000,  0x00000000, NULL },
-    { 0x45, 0x00,  0x0014,  0x00000072,  0x00000000, NULL },
+    BGM_FADEIN(20, FALSE, 114),
     WAIT(10),
     { 0x22, 0x01,  0x001e,  0x00000000,  0x00000000, NULL },
     { 0xdf, 0x00,  0x0000,  0x00000000,  0x00000000, NULL },
@@ -107,8 +107,8 @@ static const struct ScriptCommand s_gs218_g1_s0_lives0_dlg0[] = { /* 0x826a108 *
     { 0xe4, 0x00,  0x0007,  0x00000000,  0x00000000, NULL },
     { 0x91, 0x04,  0x0002,  0x00000006,  0x00000000, NULL },
     WAIT(30),
-    { 0x48, 0x00,  0x005a,  0x00000000,  0x00000000, NULL },
-    { 0x4c, 0x00,  0x0000,  0x000001f4,  0x00000000, NULL },
+    BGM_FADEOUT(90),
+    FANFARE_PLAY2(500),
     { 0xe4, 0x00,  0x0008,  0x00000000,  0x00000000, NULL },
     { 0xe3, 0x00,  0x0005,  0x00000000,  0x00000000, NULL },
     { 0xe4, 0x00,  0x0009,  0x00000000,  0x00000000, NULL },

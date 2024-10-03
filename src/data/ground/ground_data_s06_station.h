@@ -9,7 +9,7 @@
 static const struct ScriptCommand s_gs228_g0_s0_station_sref_script[] = { /* 0x826f810 */
     DEBUGINFO,
     SELECT_MAP(228),
-    { 0x47, 0x00,  0x0000,  0x00000000,  0x00000000, NULL },
+    BGM_STOP,
     JUMP_SCRIPT(COMMON_ENTER),
 };
 

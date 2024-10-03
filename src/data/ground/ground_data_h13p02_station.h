@@ -43,7 +43,7 @@ static const struct ScriptCommand s_gs138_g0_s0_station_sref_script[] = { /* 0x8
     SELECT_LIVES(0, 1),
     JUMP_LABEL(8),
   LABEL(8), /* = 0x08 */
-    { 0x44, 0x00,  0x0000,  0x00000023,  0x00000000, NULL },
+    BGM_SWITCH(FALSE, 35),
     JUMP_SCRIPT(COMMON_ENTER),
 };
 

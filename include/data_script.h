@@ -35,10 +35,24 @@
 // 21: follow object/make object follow/get parented?
 // 22..2f: ???
 // 30..39: various text printing
-// 3a..3c: unknown textbox-related
+// 3a: yes/no choice
+// 3b..3c: unknown textbox-related
 // 3d..3e: input boxes?
 // 40: unused?
 #define REMOVE_ITEMSTACK(i)     { 0x41, 0, i, 0, 0, NULL }
+#define MUSIC_STOP_ALL          { 0x42, 0, 0, 0, 0, NULL }
+#define MUSIC_FADEOUT_ALL(f)    { 0x43, 0, f, 0, 0, NULL }
+#define BGM_SWITCH(b,i)         { 0x44, b, 0, i, 0, NULL }
+#define BGM_FADEIN(f,b,i)       { 0x45, b, f, i, 0, NULL }
+#define BGM_QUEUE(b,i)          { 0x46, b, 0, i, 0, NULL }
+#define BGM_STOP                { 0x47, 0, 0, 0, 0, NULL }
+#define BGM_FADEOUT(f)          { 0x48, 0, f, 0, 0, NULL }
+#define FANFARE_PLAY(i)         { 0x49, 0, 0, i, 0, NULL }
+#define FANFARE_STOP(i)         { 0x4a, 0, 0, i, 0, NULL }
+#define FANFARE_FADEOUT(f,i)    { 0x4b, 0, f, i, 0, NULL }
+#define FANFARE_PLAY2(i)        { 0x4c, 0, 0, i, 0, NULL }
+#define FANFARE_STOP2(i)        { 0x4d, 0, 0, i, 0, NULL }
+#define FANFARE_FADEOUT2(f,i)   { 0x4e, 0, f, i, 0, NULL }
 // 42..4e: music and sfx
 // 4f..57: more movement/position? Some sprite stuff?
 // 58..95: position and movement-related

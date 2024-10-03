@@ -11,7 +11,7 @@
 static const struct ScriptCommand s_gs194_g0_s0_station_sref_script[] = { /* 0x8245514 */
     DEBUGINFO,
     SELECT_MAP(194),
-    { 0x47, 0x00,  0x0000,  0x00000000,  0x00000000, NULL },
+    BGM_STOP,
     JUMP_SCRIPT(COMMON_ENTER),
 };
 
@@ -21,7 +21,7 @@ static const struct ScriptCommand s_gs194_g1_s0_station_sref_script[] = { /* 0x8
     DEBUGINFO,
     SELECT_MAP(194),
     SELECT_ENTITIES(-1, 0),
-    { 0x44, 0x00,  0x0000,  0x0000000a,  0x00000000, NULL },
+    BGM_SWITCH(FALSE, 10),
     { 0x22, 0x01,  0x001e,  0x00000000,  0x00000000, NULL },
     { 0xe3, 0x00,  0x0003,  0x00000000,  0x00000000, NULL },
     { 0x23, 0x01,  0x001e,  0x00000000,  0x00000000, NULL },
@@ -65,7 +65,7 @@ static const struct ScriptCommand s_gs194_g1_s0_lives0_dlg0[] = { /* 0x8245734 *
     { 0xe3, 0x00,  0x0005,  0x00000000,  0x00000000, NULL },
     WAIT(10),
     { 0x34, 0x00, -0x0001,  0x00000000,  0x00000000, _(" Hey, look! There they are!\nOver there!") },
-    { 0x4c, 0x00,  0x0000,  0x000001d1,  0x00000000, NULL },
+    FANFARE_PLAY2(465),
     { 0xe4, 0x00,  0x0006,  0x00000000,  0x00000000, NULL },
     CALL_SCRIPT(NOTICE_FUNC),
     { 0x34, 0x00, -0x0001,  0x00000000,  0x00000000, _(" Catch $n0!") },

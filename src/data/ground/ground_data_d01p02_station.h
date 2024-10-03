@@ -11,7 +11,7 @@
 static const struct ScriptCommand s_gs179_g0_s0_station_sref_script[] = { /* 0x822fcbc */
     DEBUGINFO,
     SELECT_MAP(179),
-    { 0x47, 0x00,  0x0000,  0x00000000,  0x00000000, NULL },
+    BGM_STOP,
     JUMP_SCRIPT(COMMON_ENTER),
 };
 
@@ -21,7 +21,7 @@ static const struct ScriptCommand s_gs179_g1_s0_station_sref_script[] = { /* 0x8
     DEBUGINFO,
     SELECT_MAP(179),
     SELECT_ENTITIES(-1, 0),
-    { 0x44, 0x00,  0x0000,  0x00000072,  0x00000000, NULL },
+    BGM_SWITCH(FALSE, 114),
     { 0x22, 0x01,  0x001e,  0x00000000,  0x00000000, NULL },
     { 0xe3, 0x00,  0x0003,  0x00000000,  0x00000000, NULL },
     { 0x23, 0x01,  0x001e,  0x00000000,  0x00000000, NULL },
@@ -91,7 +91,7 @@ static const struct ScriptCommand s_gs179_g1_s0_lives2_dlg0[] = { /* 0x8230108 -
     { 0x2d, 0x07,  0x0002,  0x00000000,  0x00000000, NULL },
     { 0xe3, 0x00,  0x0007,  0x00000000,  0x00000000, NULL },
     { 0x56, 0x00,  0x0000,  0x0000003e,  0x00000000, NULL },
-    { 0x4c, 0x00,  0x0000,  0x000001c9,  0x00000000, NULL },
+    FANFARE_PLAY2(457),
     { 0xde, 0x00,  0x0000,  0x00000000,  0x00000000, NULL },
     { 0xe2, 0x00,  0x01c9,  0x00000000,  0x00000000, NULL },
     { 0xe4, 0x00,  0x0005,  0x00000000,  0x00000000, NULL },

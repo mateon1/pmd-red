@@ -41,7 +41,7 @@ static const struct ScriptCommand s_gs5_g0_s0_station_sref_script[] = { /* 0x819
     RET,
   LABEL(6), /* = 0x06 */
     SET_DUNGEON_RES(/* result */ 0, /* enter */ -1),
-    { 0x44, 0x00,  0x0000,  0x00000007,  0x00000000, NULL },
+    BGM_SWITCH(FALSE, 7),
     JUMP_SCRIPT(COMMON_ENTER),
 };
 
@@ -92,7 +92,7 @@ static const struct ScriptCommand s_gs5_g1_s0_lives0_dlg2[] = { /* 0x8197d5c */
   LABEL(0), /* = 0x00 */
     { 0x05, 0x00,  0x001e,  0x00000000,  0x00000000, NULL },
     COND_EQUAL(-1, /* to label */ 1),
-    { 0x48, 0x00,  0x001e,  0x00000000,  0x00000000, NULL },
+    BGM_FADEOUT(30),
     HALT,
   LABEL(1), /* = 0x01 */
     JUMP_SCRIPT(END_TALK),
@@ -128,7 +128,7 @@ static const struct ScriptCommand s_gs5_g2_s0_station_sref_script[] = { /* 0x819
     CALL_SCRIPT(DISMISSAL_SALLY_MEMBER_FUNC),
     CALL_STATION(  1,  0),
     SELECT_ENTITIES(-1, -1),
-    { 0x44, 0x00,  0x0000,  0x00000007,  0x00000000, NULL },
+    BGM_SWITCH(FALSE, 7),
     { 0x22, 0x01, -0x0001,  0x00000000,  0x00000000, NULL },
     { 0xe3, 0x00,  0x0003,  0x00000000,  0x00000000, NULL },
     CALL_STATION(  1,  0),
@@ -178,7 +178,7 @@ static const struct ScriptCommand s_gs5_g3_s0_station_sref_script[] = { /* 0x819
     CALL_SCRIPT(DISMISSAL_SALLY_MEMBER2_FUNC),
     CALL_STATION(  1,  0),
     SELECT_ENTITIES(-1, -1),
-    { 0x44, 0x00,  0x0000,  0x00000007,  0x00000000, NULL },
+    BGM_SWITCH(FALSE, 7),
     { 0x22, 0x01, -0x0001,  0x00000000,  0x00000000, NULL },
     { 0xe3, 0x00,  0x0003,  0x00000000,  0x00000000, NULL },
     CALL_STATION(  1,  0),
@@ -231,7 +231,7 @@ static const struct ScriptCommand s_gs5_g4_s0_station_sref_script[] = { /* 0x819
     CALL_SCRIPT(DISMISSAL_SALLY_MEMBER3_FUNC),
     CALL_STATION(  1,  0),
     SELECT_ENTITIES(-1, -1),
-    { 0x44, 0x00,  0x0000,  0x00000007,  0x00000000, NULL },
+    BGM_SWITCH(FALSE, 7),
     { 0x22, 0x01, -0x0001,  0x00000000,  0x00000000, NULL },
     { 0xe3, 0x00,  0x0003,  0x00000000,  0x00000000, NULL },
     CALL_STATION(  1,  0),
@@ -282,7 +282,7 @@ static const struct ScriptCommand s_gs5_g5_s0_station_sref_script[] = { /* 0x819
     DEBUGINFO,
     SELECT_MAP(5),
     SELECT_ENTITIES(-1, -1),
-    { 0x44, 0x00,  0x0000,  0x00000028,  0x00000000, NULL },
+    BGM_SWITCH(FALSE, 40),
     { 0x22, 0x01,  0x001e,  0x00000000,  0x00000000, NULL },
     { 0xe3, 0x00,  0x0003,  0x00000000,  0x00000000, NULL },
     { 0x23, 0x01,  0x001e,  0x00000000,  0x00000000, NULL },

@@ -43,7 +43,7 @@ static const struct ScriptCommand s_gs202_g0_s0_station_sref_script[] = { /* 0x8
     SELECT_LIVES(0, 1),
     JUMP_LABEL(7),
   LABEL(7), /* = 0x07 */
-    { 0x44, 0x00,  0x0000,  0x00000073,  0x00000000, NULL },
+    BGM_SWITCH(FALSE, 115),
     JUMP_SCRIPT(COMMON_ENTER),
 };
 
@@ -58,7 +58,7 @@ static const struct ScriptCommand s_gs202_g0_s0_evt0_sref_script[] = { /* 0x8255
     JUMP_SCRIPT(END_TALK),
   LABEL(0), /* = 0x00 */
     { 0x30, 0x00,  0x0000,  0x00000000,  0x00000000, NULL },
-    { 0x48, 0x00,  0x003c,  0x00000000,  0x00000000, NULL },
+    BGM_FADEOUT(60),
     JUMPIF_ARRAY(RESCUE_SCENARIO_JOB_LIST, 29, /* to label */ 2),
     { 0x02, 0x00,  0x001e,  0x00000010,  0x00000000, NULL },
     COND_EQUAL(-1, /* to label */ 1),
@@ -81,7 +81,7 @@ static const struct ScriptCommand s_gs202_g0_s0_evt1_sref_script[] = { /* 0x8255
     JUMP_SCRIPT(END_TALK),
   LABEL(1), /* = 0x01 */
     { 0x30, 0x00,  0x0000,  0x00000000,  0x00000000, NULL },
-    { 0x48, 0x00,  0x001e,  0x00000000,  0x00000000, NULL },
+    BGM_FADEOUT(30),
     { 0x23, 0x01, -0x0001,  0x00000000,  0x00000000, NULL },
     CALL_SCRIPT(DISMISSAL_SALLY_MEMBER4_FUNC),
     SET_DUNGEON_RES(/* result */ 10, /* enter */ -1),
@@ -161,7 +161,7 @@ static const struct ScriptCommand s_gs202_g1_s0_station_sref_script[] = { /* 0x8
     SELECT_MAP(202),
     CALL_STATION(  2,  0),
     SELECT_ENTITIES(-1, 0),
-    { 0x44, 0x00,  0x0000,  0x00000073,  0x00000000, NULL },
+    BGM_SWITCH(FALSE, 115),
     { 0x22, 0x01,  0x001e,  0x00000000,  0x00000000, NULL },
     { 0xe3, 0x00,  0x0003,  0x00000000,  0x00000000, NULL },
     SELECT_EVENTS(0, 0),

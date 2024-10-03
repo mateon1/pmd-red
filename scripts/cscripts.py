@@ -469,6 +469,48 @@ def main():
                 elif op == 0x41:
                     assert b == a1 == a2 == ap == 0
                     outfile.write(u'    REMOVE_ITEMSTACK(%s),\n' % (ITEM[h],))
+                elif op == 0x42:
+                    assert b == h == a1 == a2 == ap == 0
+                    outfile.write(u'    MUSIC_STOP_ALL,\n')
+                elif op == 0x43:
+                    assert b == a1 == a2 == ap == 0
+                    outfile.write(u'    MUSIC_FADEOUT_ALL(%d),\n' % h)
+                elif op == 0x44:
+                    assert h == a2 == ap == 0
+                    assert b in {0,1}
+                    outfile.write(u'    BGM_SWITCH(%s, %d),\n' % (str(bool(b)).upper(), a1))
+                elif op == 0x45:
+                    assert a2 == ap == 0
+                    assert b in {0,1}
+                    outfile.write(u'    BGM_FADEIN(%d, %s, %d),\n' % (h, str(bool(b)).upper(), a1))
+                elif op == 0x46:
+                    assert h == a2 == ap == 0
+                    assert b in {0,1}
+                    outfile.write(u'    BGM_QUEUE(%s, %d),\n' % (str(bool(b)).upper(), a1))
+                elif op == 0x47:
+                    assert b == h == a1 == a2 == ap == 0
+                    outfile.write(u'    BGM_STOP,\n')
+                elif op == 0x48:
+                    assert b == a1 == a2 == ap == 0
+                    outfile.write(u'    BGM_FADEOUT(%d),\n' % (h,))
+                elif op == 0x49:
+                    assert b == h == a2 == ap == 0
+                    outfile.write(u'    FANFARE_PLAY(%d),\n' % (a1,))
+                elif op == 0x4a:
+                    assert b == h == a2 == ap == 0
+                    outfile.write(u'    FANFARE_STOP(%d),\n' % (a1,))
+                elif op == 0x4b:
+                    assert b == a2 == ap == 0
+                    outfile.write(u'    FANFARE_FADEOUT(%d, %d),\n' % (h, a1,))
+                elif op == 0x4c:
+                    assert b == h == a2 == ap == 0
+                    outfile.write(u'    FANFARE_PLAY2(%d),\n' % (a1,))
+                elif op == 0x4d:
+                    assert b == h == a2 == ap == 0
+                    outfile.write(u'    FANFARE_STOP2(%d),\n' % (a1,))
+                elif op == 0x4e:
+                    assert b == a2 == ap == 0
+                    outfile.write(u'    FANFARE_FADEOUT2(%d, %d),\n' % (h, a1,))
                 # 9b..a3: camera-related, needs reversing
                 elif op == 0xa4:
                     assert b == a1 == a2 == ap == 0

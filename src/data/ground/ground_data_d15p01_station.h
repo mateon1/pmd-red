@@ -9,7 +9,7 @@
 static const struct ScriptCommand s_gs211_g0_s0_station_sref_script[] = { /* 0x8264158 */
     DEBUGINFO,
     SELECT_MAP(211),
-    { 0x47, 0x00,  0x0000,  0x00000000,  0x00000000, NULL },
+    BGM_STOP,
     JUMP_SCRIPT(COMMON_ENTER),
 };
 
@@ -19,7 +19,7 @@ static const struct ScriptCommand s_gs211_g1_s0_station_sref_script[] = { /* 0x8
     DEBUGINFO,
     SELECT_MAP(211),
     SELECT_ENTITIES(-1, 0),
-    { 0x44, 0x00,  0x0000,  0x0000000a,  0x00000000, NULL },
+    BGM_SWITCH(FALSE, 10),
     { 0x22, 0x01,  0x001e,  0x00000000,  0x00000000, NULL },
     { 0xe3, 0x00,  0x0003,  0x00000000,  0x00000000, NULL },
     { 0x23, 0x01,  0x001e,  0x00000000,  0x00000000, NULL },
@@ -52,11 +52,11 @@ static const struct ScriptCommand s_gs211_g1_s0_lives0_dlg0[] = { /* 0x826425c *
     { 0x34, 0x00,  0x0002,  0x00000000,  0x00000000, _(" If you are lucky enough to\nmeet Suicune...") },
     { 0x34, 0x00,  0x0002,  0x00000000,  0x00000000, _(" Perhaps your wish will\ncome true!") },
     { 0x30, 0x00,  0x0000,  0x00000000,  0x00000000, NULL },
-    { 0x49, 0x00,  0x0000,  0x000000d4,  0x00000000, NULL },
+    FANFARE_PLAY(212),
     { 0x32, 0x00, -0x0001,  0x00000000,  0x00000000, _("#+$n0 received\n#+the #CISunset Wing#R.") },
     { 0xe1, 0x00,  0x00d4,  0x00000000,  0x00000000, NULL },
     { 0x32, 0x00, -0x0001,  0x00000000,  0x00000000, _("#+And...") },
-    { 0x49, 0x00,  0x0000,  0x000000cd,  0x00000000, NULL },
+    FANFARE_PLAY(205),
     { 0x32, 0x00, -0x0001,  0x00000000,  0x00000000, _("#+Gained access to\n#+the #CDNorthwind Field#R!") },
     { 0xe1, 0x00,  0x00cd,  0x00000000,  0x00000000, NULL },
     { 0x30, 0x00,  0x0000,  0x00000000,  0x00000000, NULL },

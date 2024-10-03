@@ -9,7 +9,7 @@
 static const struct ScriptCommand s_gs223_g0_s0_station_sref_script[] = { /* 0x826df80 */
     DEBUGINFO,
     SELECT_MAP(223),
-    { 0x47, 0x00,  0x0000,  0x00000000,  0x00000000, NULL },
+    BGM_STOP,
     JUMP_SCRIPT(COMMON_ENTER),
 };
 
@@ -17,7 +17,7 @@ static const struct ScriptRef s_gs223_g0_s0_station_sref = { 404, 1, NULL /* ENT
 
 static const struct ScriptCommand s_gs223_g1_s0_station_sref_script[] = { /* 0x826dff8 - PART 1 0:00:31-0:00:45 - New game intro to personality test */
     DEBUGINFO,
-    { 0x47, 0x00,  0x0000,  0x00000000,  0x00000000, NULL },
+    BGM_STOP,
     SELECT_MAP(223),
     { 0x37, 0x00, -0x0001,  0x00000000,  0x00000000, _("#+Welcome!") },
     { 0x37, 0x00, -0x0001,  0x00000000,  0x00000000, _("#+This is the portal that leads\n#+to the world of Pokémon!") },
@@ -27,10 +27,10 @@ static const struct ScriptCommand s_gs223_g1_s0_station_sref_script[] = { /* 0x8
     { 0x37, 0x00, -0x0001,  0x00000000,  0x00000000, _("#+OK...#W\n#+Let the interview begin!") },
     { 0x30, 0x00,  0x0000,  0x00000000,  0x00000000, NULL },
     SELECT_ENTITIES(-1, 0),
-    { 0x44, 0x00,  0x0000,  0x0000000c,  0x00000000, NULL },
+    BGM_SWITCH(FALSE, 12),
     { 0x22, 0x01,  0x001e,  0x00000000,  0x00000000, NULL },
     { 0x3c, 0x28,  0x0000,  0x00000000,  0x00000000, NULL },
-    { 0x48, 0x00,  0x001e,  0x00000000,  0x00000000, NULL },
+    BGM_FADEOUT(30),
     { 0x23, 0x01,  0x001e,  0x00000000,  0x00000000, NULL },
     RET,
 };

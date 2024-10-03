@@ -11,7 +11,7 @@
 static const struct ScriptCommand s_gs184_g0_s0_station_sref_script[] = { /* 0x82342f4 */
     DEBUGINFO,
     SELECT_MAP(184),
-    { 0x47, 0x00,  0x0000,  0x00000000,  0x00000000, NULL },
+    BGM_STOP,
     JUMP_SCRIPT(COMMON_ENTER),
 };
 
@@ -21,7 +21,7 @@ static const struct ScriptCommand s_gs184_g1_s0_station_sref_script[] = { /* 0x8
     DEBUGINFO,
     SELECT_MAP(184),
     SELECT_ENTITIES(-1, 0),
-    { 0x44, 0x00,  0x0000,  0x0000000f,  0x00000000, NULL },
+    BGM_SWITCH(FALSE, 15),
     { 0x22, 0x01,  0x001e,  0x00000000,  0x00000000, NULL },
     { 0xe3, 0x00,  0x0003,  0x00000000,  0x00000000, NULL },
     { 0x02, 0x00,  0x001e,  0x00000004,  0x00000000, NULL },
@@ -78,7 +78,7 @@ static const struct ScriptCommand s_gs184_g2_s0_station_sref_script[] = { /* 0x8
     DEBUGINFO,
     SELECT_MAP(184),
     SELECT_ENTITIES(-1, 0),
-    { 0x44, 0x00,  0x0000,  0x0000000f,  0x00000000, NULL },
+    BGM_SWITCH(FALSE, 15),
     { 0x22, 0x01,  0x001e,  0x00000000,  0x00000000, NULL },
     { 0xe3, 0x00,  0x0003,  0x00000000,  0x00000000, NULL },
     { 0x02, 0x00,  0x001e,  0x00000004,  0x00000000, NULL },
