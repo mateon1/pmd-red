@@ -35,9 +35,10 @@
 // 21: follow object/make object follow/get parented?
 // 22..2f: ???
 // 30..39: various text printing
-// 3a: yes/no choice
-// 3b..3c: unknown textbox-related
-// 3d..3e: input boxes?
+// 3a: yes/no choice (only used for saving)
+// 3b: uber command (conditional jump)
+// 3c: unknown textbox-related cjump
+// 3d..3f: input boxes?
 // 40: unused?
 #define REMOVE_ITEMSTACK(i)     { 0x41, 0, i, 0, 0, NULL }
 #define MUSIC_STOP_ALL          { 0x42, 0, 0, 0, 0, NULL }
@@ -53,7 +54,6 @@
 #define FANFARE_PLAY2(i)        { 0x4c, 0, 0, i, 0, NULL }
 #define FANFARE_STOP2(i)        { 0x4d, 0, 0, i, 0, NULL }
 #define FANFARE_FADEOUT2(f,i)   { 0x4e, 0, f, i, 0, NULL }
-// 42..4e: music and sfx
 // 4f..57: more movement/position? Some sprite stuff?
 // 58..95: position and movement-related
 // 96: unused?
