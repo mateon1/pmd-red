@@ -42,9 +42,9 @@
 #define REMOVE_ITEMSTACK(i)     { 0x41, 0, i, 0, 0, NULL }
 #define MUSIC_STOP_ALL          { 0x42, 0, 0, 0, 0, NULL }
 #define MUSIC_FADEOUT_ALL(f)    { 0x43, 0, f, 0, 0, NULL }
-#define BGM_SWITCH(b,i)         { 0x44, b, 0, i, 0, NULL }
-#define BGM_FADEIN(f,b,i)       { 0x45, b, f, i, 0, NULL }
-#define BGM_QUEUE(b,i)          { 0x46, b, 0, i, 0, NULL }
+#define BGM_SWITCH(i)           { 0x44, 0, 0, i, 0, NULL }
+#define BGM_FADEIN(f,i)         { 0x45, 0, f, i, 0, NULL }
+#define BGM_QUEUE(i)            { 0x46, 0, 0, i, 0, NULL }
 #define BGM_STOP                { 0x47, 0, 0, 0, 0, NULL }
 #define BGM_FADEOUT(f)          { 0x48, 0, f, 0, 0, NULL }
 #define FANFARE_PLAY(i)         { 0x49, 0, 0, i, 0, NULL }

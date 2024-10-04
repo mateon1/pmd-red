@@ -957,7 +957,7 @@ static const struct ScriptCommand s_script_SAVE_START_FUNC[] = { /* 0x8121cb4 */
     DEBUGINFO,
     { 0x23, 0x01,  0x001e,  0x00000000,  0x00000000, NULL },
     { 0x3b, 0x43,  0x0000,  0x00000000,  0x00000000, NULL },
-    BGM_SWITCH(FALSE, 50),
+    BGM_SWITCH(50),
     RET_DIRECT,
 };
 
@@ -979,7 +979,7 @@ static const struct ScriptCommand s_script_SAVE_END_FUNC[] = { /* 0x8121d44 */
 static const struct ScriptCommand s_script_SAVE_SOUND_FUNC[] = { /* 0x8121d94 */
     DEBUGINFO,
     { 0x3b, 0x43,  0x0000,  0x00000000,  0x00000000, NULL },
-    BGM_SWITCH(FALSE, 50),
+    BGM_SWITCH(50),
     { 0xe0, 0x00,  0x0032,  0x00000000,  0x00000000, NULL },
     { 0x3b, 0x45,  0x001e,  0x00000000,  0x00000000, NULL },
     RET_DIRECT,

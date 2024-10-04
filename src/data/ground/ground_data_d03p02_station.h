@@ -24,7 +24,7 @@ static const struct ScriptCommand s_gs183_g1_s0_station_sref_script[] = { /* 0x8
     DEBUGINFO,
     SELECT_MAP(183),
     SELECT_ENTITIES(-1, 0),
-    BGM_SWITCH(FALSE, 114),
+    BGM_SWITCH(114),
     { 0x22, 0x01,  0x001e,  0x00000000,  0x00000000, NULL },
     { 0xe3, 0x00,  0x0003,  0x00000000,  0x00000000, NULL },
     WAIT(30),

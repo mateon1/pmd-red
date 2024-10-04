@@ -41,7 +41,7 @@ static const struct ScriptCommand s_gs196_g0_s0_station_sref_script[] = { /* 0x8
     SELECT_LIVES(0, 1),
     JUMP_LABEL(7),
   LABEL(7), /* = 0x07 */
-    BGM_SWITCH(FALSE, 25),
+    BGM_SWITCH(25),
     JUMP_SCRIPT(COMMON_ENTER),
 };
 
@@ -148,7 +148,7 @@ static const struct ScriptCommand s_gs196_g1_s0_station_sref_script[] = { /* 0x8
     UPDATE_VARINT(CALC_SET, PARTNER2_KIND, 0),
     SELECT_MAP(196),
     SELECT_ENTITIES(-1, 0),
-    BGM_SWITCH(FALSE, 25),
+    BGM_SWITCH(25),
     { 0x22, 0x01,  0x001e,  0x00000000,  0x00000000, NULL },
     { 0xe3, 0x00,  0x0003,  0x00000000,  0x00000000, NULL },
     SELECT_EVENTS(0, 0),

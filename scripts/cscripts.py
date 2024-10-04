@@ -477,16 +477,16 @@ def main():
                     outfile.write(u'    MUSIC_FADEOUT_ALL(%d),\n' % h)
                 elif op == 0x44:
                     assert h == a2 == ap == 0
-                    assert b in {0,1}
-                    outfile.write(u'    BGM_SWITCH(%s, %d),\n' % (str(bool(b)).upper(), a1))
+                    assert b == 0 # can equal 1, bypassing a music/sfx filter, but that's unused
+                    outfile.write(u'    BGM_SWITCH(%d),\n' % (a1,))
                 elif op == 0x45:
                     assert a2 == ap == 0
-                    assert b in {0,1}
-                    outfile.write(u'    BGM_FADEIN(%d, %s, %d),\n' % (h, str(bool(b)).upper(), a1))
+                    assert b == 0
+                    outfile.write(u'    BGM_FADEIN(%d, %d),\n' % (h, a1,))
                 elif op == 0x46:
                     assert h == a2 == ap == 0
-                    assert b in {0,1}
-                    outfile.write(u'    BGM_QUEUE(%s, %d),\n' % (str(bool(b)).upper(), a1))
+                    assert b == 0
+                    outfile.write(u'    BGM_QUEUE(%d),\n' % (a1,))
                 elif op == 0x47:
                     assert b == h == a1 == a2 == ap == 0
                     outfile.write(u'    BGM_STOP,\n')

@@ -90,7 +90,7 @@ static const struct ScriptCommand s_gs218_g1_s0_lives0_dlg0[] = { /* 0x826a108 *
     { 0x34, 0x00, -0x0001,  0x00000000,  0x00000000, _(" ...Y-you are...?") },
     { 0x34, 0x00, -0x0001,  0x00000000,  0x00000000, _(" ...Did you maybe...#W\ncome to save me?") },
     { 0x30, 0x00,  0x0000,  0x00000000,  0x00000000, NULL },
-    BGM_FADEIN(20, FALSE, 114),
+    BGM_FADEIN(20, 114),
     WAIT(10),
     { 0x22, 0x01,  0x001e,  0x00000000,  0x00000000, NULL },
     { 0xdf, 0x00,  0x0000,  0x00000000,  0x00000000, NULL },

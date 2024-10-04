@@ -27,7 +27,7 @@ static const struct ScriptCommand s_gs223_g1_s0_station_sref_script[] = { /* 0x8
     { 0x37, 0x00, -0x0001,  0x00000000,  0x00000000, _("#+OK...#W\n#+Let the interview begin!") },
     { 0x30, 0x00,  0x0000,  0x00000000,  0x00000000, NULL },
     SELECT_ENTITIES(-1, 0),
-    BGM_SWITCH(FALSE, 12),
+    BGM_SWITCH(12),
     { 0x22, 0x01,  0x001e,  0x00000000,  0x00000000, NULL },
     { 0x3c, 0x28,  0x0000,  0x00000000,  0x00000000, NULL },
     BGM_FADEOUT(30),
