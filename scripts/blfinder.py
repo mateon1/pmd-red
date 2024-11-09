@@ -71,7 +71,6 @@ class Flags:
         self.c = c
         self.v = v
 
-
 class Val:
     @staticmethod
     def of(val):
@@ -236,6 +235,11 @@ def main():
             regstate[15] = Val(i+4)
             if insn & 0xf000 != 0xf000: hi = None
             if insn == 0x0000 and wasterm:
+                continue
+            if insn & 0xff00 in {0xb100, 0xb200, 0xb300, 0xb600, 0xb700, 0xb800, 0xb900, 0xba00, 0xbb00, 0xbf00, 0xde00}:
+                wasterm = True
+                print("%08x: %04x       ! UNDEF !" % (i, insn))
+                regstate = unkregstate()
                 continue
 
             wasterm = False
@@ -424,7 +428,17 @@ def main():
                 elif insn & 0xff00 == 0xdf00:
                     op = "(swi 0x%04x" % (insn & 0xff)
                     regstate = unkregstate()
-                elif insn & 0xf000 == 0xd000: op = "(cond branch)"
+                elif insn & 0xf000 == 0xd000:
+                    cond = insn>>8 & 0xF
+                    assert cond <= 0xd
+                    condst = "EQ NE CS CC MI PL VS VC HI LS GE LT GT LE".split(" ")[cond]
+                    condhi = "== != u>= u< - 0+ overflow no-overflow u> u<= s>= s< s> s<=".split(" ")[cond]
+                    o = ((insn&~(~0<<8)) ^ (1<<7)) - (1<<7)
+                    o <<= 1
+                    tgt = i + 4 + o
+                    notdataaddrs.add(tgt)
+                    op = "b%s %08x" % (condst.lower(), tgt)
+                    comm = condhi
                 if op[0] == "(" and not 'cond branch' in op:
                     regstate = unkregstate()
                     #continue
